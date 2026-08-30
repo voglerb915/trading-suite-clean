@@ -1,0 +1,34 @@
+.grid-table-industries {
+    display: grid;
+    grid-template-columns: 1fr 56px 32px 32px 32px;
+    row-gap: 2px;
+}
+
+.grid-row-industry {
+    display: contents;
+    font-size: 0.95em;
+}
+
+.grid-cell-industry {
+    padding: 6px 0;
+}
+
+.grid-cell-industry:first-child {
+    padding-left: 10px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid-cell-industry:nth-child(n+2) {
+    text-align: right;
+    font-weight: bold;
+}
+
+.grid-cell-industry.count-cell {
+    font-weight: normal !important;
+    color: #000;
+    opacity: 1;
+    padding-right: 6px;
+}

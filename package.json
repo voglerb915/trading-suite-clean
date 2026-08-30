@@ -1,0 +1,22 @@
+{
+  "name": "trading-suite",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "cockpit": "powershell -ExecutionPolicy Bypass -File ./start-cockpit.ps1"
+  },
+  "dependencies": {
+    "axios": "^1.19.0",
+    "cheerio": "^1.2.0",
+    "compression": "^1.8.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "ib-sdk": "^0.11.3",
+    "mssql": "^12.2.0",
+    "puppeteer": "^25.5.0",
+    "winston": "^3.19.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

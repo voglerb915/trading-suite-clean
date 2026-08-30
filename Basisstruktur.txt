@@ -1,0 +1,43 @@
+// vite.config.js
+export default {
+  root: 'apps/cockpit',   // oder root: '.' mit expliziten input-Pfaden
+  server: {
+    proxy: { '/api': 'http://localhost:3000' }
+  }
+}
+```
+
+Bei mehreren Apps (Multi-Page) wird die Config etwas umfangreicher – aber das ist lösbar.
+
+---
+
+### Finale Struktur – so würde ich es machen
+```
+/trading-suite
+│
+├── package.json
+│
+├── /backend
+│     package.json
+│     server.js
+│     /routes
+│     /db
+│     /utils
+│
+└── /frontend
+      package.json
+      vite.config.js
+      │
+      /apps
+      │   /cockpit        ← Entry-Point, lädt alle anderen
+      │   /dashboard
+      │   /journal
+      │   /charting-tool
+      │   /control-center
+      │   /lab
+      │
+      /shared
+          /api            ← HTTP-Clients zu deinem Backend
+          /components     ← wiederverwendbare UI-Bausteine
+          /state          ← globalState, dataStore
+          /utils          ← math, date, format

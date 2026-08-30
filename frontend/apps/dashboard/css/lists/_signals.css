@@ -1,0 +1,233 @@
+.signal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.signal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ticker-line {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.origin-label {
+    font-size: 11px;
+    color: #888;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.details-line {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.btn-delete-active {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-delete-active:hover {
+    transform: scale(1.2);
+}
+
+.btn-delete-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.signal-visual-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phase-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.phase-badge.active-phase {
+    background-color: #1976d2 !important;
+    color: white !important;
+    border-color: #0d47a1 !important;
+}
+
+.signal-visual {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    min-width: 30px;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 4px;
+    background-color: #e0e0e0;
+}
+
+.bar-1 { height: 18px; }
+.bar-2 { height: 14px; }
+.bar-3 { height: 11px; }
+.bar-4 { height: 8px; }
+.bar-5 { height: 5px; }
+
+.bg-green  { background-color: #28a745 !important; }
+.bg-red    { background-color: #dc3545 !important; }
+.bg-orange { background-color: #fd7e14 !important; }
+.bg-yellow { background-color: #ffc107 !important; color: #000 !important; }
+
+.note-btn {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.note-btn:hover {
+    transform: scale(1.2);
+}
+
+.note-active {
+    color: #f39c12 !important;
+}
+
+.note-empty {
+    color: #ccc !important;
+}
+
+.pill-dropdown-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.pill-long {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 0.65rem;
+    opacity: 0.7;
+}
+
+.pill-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 4px;
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 8px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.pill-dropdown-menu label {
+    display: block;
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.pill-dropdown-menu label:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.pill-dropdown-menu.show {
+    display: block !important;
+}
+
+.pill-dropdown-menu .dropdown-item {
+    color: #ffffff; /* Macht den Text weiß */
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.pill-dropdown-menu .dropdown-item:hover {
+    background: #444; /* Optional: Dezenter Hover-Effekt */
+}
+
+.market-phase-pill {
+    display: inline-block;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 12px;
+    margin-right: 4px;
+    color: #fff;
+    text-align: center;
+}
+
+.market-phase-pill.phase-green {
+    background-color: #28a745;
+}
+
+.market-phase-pill.phase-red {
+    background-color: #dc3545;
+}
+
+.market-phase-pill.phase-yellow {
+    background-color: #ffc107;
+    color: #212529; /* Dunkler Text bei Gelb für bessere Lesbarkeit */
+}
+
+.market-phase-pill.phase-orange {
+    background-color: #fd7e14;
+}
+
+.market-phase-pill.phase-gray {
+    background-color: #6c757d;
+}
+
+.trend-strength-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.trend-bar {
+    width: 3px;
+    background-color: #444; /* Inaktiver Balken (gedimmt) */
+    border-radius: 1px;
+}
+
+/* Ansteigende Höhen für die 5 Balken */
+.trend-bar:nth-child(1) { height: 4px; }
+.trend-bar:nth-child(2) { height: 6px; }
+.trend-bar:nth-child(3) { height: 8px; }
+.trend-bar:nth-child(4) { height: 10px; }
+.trend-bar:nth-child(5) { height: 12px; }
+
+/* Aktive Balken leuchten in Akzentfarbe (z. B. passend zum Thema oder hellgrau/weiß) */
+.trend-bar.active {
+    background-color: #00d26a; /* Oder ein passender Ton deines Dashboards */
+}

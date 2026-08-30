@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New RS Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+    
+    <link rel="stylesheet" href="/apps/dashboard/css/structureDashboard.css">
+    <link rel="stylesheet" href="/apps/dashboard/css/components.css">
+    <link rel="stylesheet" href="/apps/dashboard/css/lists.css">
+    <link rel="stylesheet" href="/apps/dashboard/css/modal.css">
+    <link rel="stylesheet" href="/shared/css/sector.css">
+
+</head>
+
+<body>
+  
+  <div id="notification" class="notification"></div>
+
+  <!-- ⭐ MODULARER HEADER -->
+  <div class="dashboard-header">
+      <div id="dashboard-header-left"></div>
+      <div id="dashboard-header-center"></div>
+      <div id="dashboard-header-right"></div>
+  </div>
+
+  <!-- ⭐ 4-SPALTEN-DASHBOARD -->
+  <div class="dashboard-container">
+
+    <div class="column" id="sectors">
+      <div id="sector-list-container"></div>
+    </div>
+
+    <div class="column" id="industries">
+      <div id="industry-list-container"></div>
+    </div>
+
+    <div class="column" id="stocks">
+      <div class="column-header">
+          <h2>Stocks</h2>
+          <div class="pill-container" id="stocks-pill-container"></div>
+          <div class="button-container" id="stocks-button-container"></div>
+      </div>
+      <div id="stocks-list-container">
+        <ul id="stocks-list"></ul>
+     </div>
+    </div>
+
+    <div class="column" id="tools-tips-column">
+        <div class="column-header"> 
+            <h2>Top-Lists</h2>
+            <div class="pill-container" id="tools-pill-container"></div>
+            <div class="button-container" id="tools-button-container"></div>
+        </div>
+        <div class="tab-header">
+            <div class="tab-item active" data-tab="signals">🔔 Signals</div>
+            <div class="tab-item" data-tab="watchlist">⭐ Watch</div>
+            <div class="tab-item" data-tab="open-orders">📉 Open</div>
+            <div class="tab-item" data-tab="active-orders">📈 Active</div>
+            <div class="tab-item" data-tab="etfs">📊 ETFs</div>
+        </div>
+            <div class="tab-content" id="tools-tab-content"></div>
+
+    </div> 
+  </div>
+
+  <!-- ⭐ MODAL -->
+  <div id="chart-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);">
+      <div style="background: #fff; margin: 2% auto; width: 90%; max-width: 1200px; height: 85vh; border-radius: 12px; position: relative; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+          <span id="close-modal" style="position:absolute; right:20px; top:10px; font-size:35px; cursor:pointer; color:#999;">&times;</span>
+          <h2 id="modal-ticker-title" style="margin-top:0; font-family: sans-serif; color: #333;">Analyse</h2>
+          <div id="chart-container" style="width: 100%; height: calc(100% - 60px);"></div>
+          <div id="chart-range-buttons" style="display:flex; gap:8px; margin-top:10px;"> 
+              <button data-range="1M">1M</button> 
+              <button data-range="3M">3M</button> 
+              <button data-range="6M">6M</button> 
+              <button data-range="1Y">1Y</button> 
+              <button data-range="YTD">YTD</button> 
+              <button data-range="MAX">MAX</button> 
+          </div>
+      </div>
+  </div>
+  
+  <script type="module" src="/apps/dashboard/dashboard.js"></script>
+  <button id="scrollTopBtn" title="Nach oben">↑</button>
+  
+</body>
+</html>

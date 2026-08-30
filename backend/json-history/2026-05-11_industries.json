@@ -1,0 +1,3170 @@
+[
+  {
+    "name": "Computer Hardware",
+    "sector": "Technology",
+    "score": 99.178,
+    "rankWonDb": 1,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 8.01,
+    "perf_month": 40.66,
+    "perf_quart": 59.8,
+    "perf_half": 89.01,
+    "perf_year": 246.62,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.61
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Electrical Equipment & Parts",
+    "sector": "Industrials",
+    "score": 85.94400000000002,
+    "rankWonDb": 2,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 5.16,
+    "perf_month": 27.63,
+    "perf_quart": 51.44,
+    "perf_half": 66.88,
+    "perf_year": 232.33,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 5.9
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Silver",
+    "sector": "Basic Materials",
+    "score": 84.40400000000001,
+    "rankWonDb": 3,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 18.89,
+    "perf_month": 17.49,
+    "perf_quart": 5.9,
+    "perf_half": 108.49,
+    "perf_year": 284.24,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 7.67
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Semiconductor Equipment & Materials",
+    "sector": "Technology",
+    "score": 60.042,
+    "rankWonDb": 4,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 12.04,
+    "perf_month": 9.33,
+    "perf_quart": 23.3,
+    "perf_half": 69.7,
+    "perf_year": 174.58,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.02
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Aluminum",
+    "sector": "Basic Materials",
+    "score": 58.188,
+    "rankWonDb": 5,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.89,
+    "perf_month": -4.53,
+    "perf_quart": 11.9,
+    "perf_half": 90.71,
+    "perf_year": 180.96,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.47
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Semiconductors",
+    "sector": "Technology",
+    "score": 51.39200000000001,
+    "rankWonDb": 6,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 11.28,
+    "perf_month": 26.72,
+    "perf_quart": 31.73,
+    "perf_half": 40.36,
+    "perf_year": 126.42,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.51
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas Drilling",
+    "sector": "Energy",
+    "score": 46.278000000000006,
+    "rankWonDb": 7,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.14,
+    "perf_month": 5.16,
+    "perf_quart": 20.13,
+    "perf_half": 77.53,
+    "perf_year": 108.44,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.74
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Electronic Components",
+    "sector": "Technology",
+    "score": 44.862,
+    "rankWonDb": 8,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.75,
+    "perf_month": 9.84,
+    "perf_quart": 20.81,
+    "perf_half": 35.51,
+    "perf_year": 137.34,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.93
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Communication Equipment",
+    "sector": "Technology",
+    "score": 43.642,
+    "rankWonDb": 9,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.27,
+    "perf_month": 13.98,
+    "perf_quart": 25.52,
+    "perf_half": 52.54,
+    "perf_year": 100.65,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.7
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Engineering & Construction",
+    "sector": "Industrials",
+    "score": 40.852000000000004,
+    "rankWonDb": 10,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.84,
+    "perf_month": 17.4,
+    "perf_quart": 22.4,
+    "perf_half": 43.51,
+    "perf_year": 98.55,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.96
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Other Precious Metals & Mining",
+    "sector": "Basic Materials",
+    "score": 38.35,
+    "rankWonDb": 11,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 16.36,
+    "perf_month": 3.79,
+    "perf_quart": -9.49,
+    "perf_half": 46.85,
+    "perf_year": 160.09,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 6.68
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Uranium",
+    "sector": "Energy",
+    "score": 37.502,
+    "rankWonDb": 12,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.65,
+    "perf_month": 7.79,
+    "perf_quart": -1.77,
+    "perf_half": 31.31,
+    "perf_year": 151.95,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.66
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Scientific & Technical Instruments",
+    "sector": "Technology",
+    "score": 37.306,
+    "rankWonDb": 13,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.62,
+    "perf_month": 7.45,
+    "perf_quart": 23.94,
+    "perf_half": 49.56,
+    "perf_year": 81.64,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.53
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Other Industrial Metals & Mining",
+    "sector": "Basic Materials",
+    "score": 37.129999999999995,
+    "rankWonDb": 14,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 10.16,
+    "perf_month": 11.98,
+    "perf_quart": 14.14,
+    "perf_half": 54.94,
+    "perf_year": 90.45,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.57
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Electronics & Computer Distribution",
+    "sector": "Technology",
+    "score": 36.57000000000001,
+    "rankWonDb": 15,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.28,
+    "perf_month": 21.33,
+    "perf_quart": 26.07,
+    "perf_half": 53.79,
+    "perf_year": 55.59,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.9
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Steel",
+    "sector": "Basic Materials",
+    "score": 34.82,
+    "rankWonDb": 16,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.14,
+    "perf_month": 18.18,
+    "perf_quart": 11.77,
+    "perf_half": 52.03,
+    "perf_year": 80.35,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.16
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Marine Shipping",
+    "sector": "Industrials",
+    "score": 32.402,
+    "rankWonDb": 17,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.54,
+    "perf_month": 7.67,
+    "perf_quart": 20.68,
+    "perf_half": 47.61,
+    "perf_year": 65.37,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.17
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Renewable",
+    "sector": "Utilities",
+    "score": 32.262,
+    "rankWonDb": 18,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.98,
+    "perf_month": 5.72,
+    "perf_quart": 13.91,
+    "perf_half": 31.37,
+    "perf_year": 96.4,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.05
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas Equipment & Services",
+    "sector": "Energy",
+    "score": 32.08200000000001,
+    "rankWonDb": 19,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.89,
+    "perf_month": 4.57,
+    "perf_quart": 14,
+    "perf_half": 47.67,
+    "perf_year": 80.17,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.21
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Farm & Heavy Construction Machinery",
+    "sector": "Industrials",
+    "score": 31.544,
+    "rankWonDb": 20,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.95,
+    "perf_month": 7.54,
+    "perf_quart": 11.57,
+    "perf_half": 42.99,
+    "perf_year": 84.05,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.42
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Chemicals",
+    "sector": "Basic Materials",
+    "score": 28.862000000000002,
+    "rankWonDb": 21,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -4.31,
+    "perf_month": 0.85,
+    "perf_quart": 19.34,
+    "perf_half": 67.77,
+    "perf_year": 37.01,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 4.4
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas Refining & Marketing",
+    "sector": "Energy",
+    "score": 28.728,
+    "rankWonDb": 22,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.07,
+    "perf_month": 8.71,
+    "perf_quart": 18.21,
+    "perf_half": 29.22,
+    "perf_year": 69.29,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.26
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Gold",
+    "sector": "Basic Materials",
+    "score": 26.648,
+    "rankWonDb": 23,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 13.32,
+    "perf_month": -2.59,
+    "perf_quart": -3.83,
+    "perf_half": 41.22,
+    "perf_year": 102.27,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.3
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Internet Content & Information",
+    "sector": "Communication Services",
+    "score": 26.484,
+    "rankWonDb": 24,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.73,
+    "perf_month": 14.35,
+    "perf_quart": 9.89,
+    "perf_half": 21.32,
+    "perf_year": 76.97,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.48
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Copper",
+    "sector": "Basic Materials",
+    "score": 26.298000000000005,
+    "rankWonDb": 25,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 13.26,
+    "perf_month": -3.76,
+    "perf_quart": -6.25,
+    "perf_half": 46.6,
+    "perf_year": 101.15,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.65
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Financial Conglomerates",
+    "sector": "Financial",
+    "score": 21.602000000000004,
+    "rankWonDb": 26,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 7.51,
+    "perf_month": 12.69,
+    "perf_quart": 7.85,
+    "perf_half": 30.98,
+    "perf_year": 48.64,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 5.84
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas Integrated",
+    "sector": "Energy",
+    "score": 20.060000000000002,
+    "rankWonDb": 27,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.59,
+    "perf_month": -2.4,
+    "perf_quart": 9.62,
+    "perf_half": 33.17,
+    "perf_year": 50.29,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.6
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Healthcare Plans",
+    "sector": "Healthcare",
+    "score": 19.752,
+    "rankWonDb": 28,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 5.42,
+    "perf_month": 23.05,
+    "perf_quart": 27.88,
+    "perf_half": 19.18,
+    "perf_year": 0.77,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.04
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Metal Fabrication",
+    "sector": "Industrials",
+    "score": 19.656000000000002,
+    "rankWonDb": 29,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.84,
+    "perf_month": 1.81,
+    "perf_quart": 2.68,
+    "perf_half": 26.94,
+    "perf_year": 64.17,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.04
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Trucking",
+    "sector": "Industrials",
+    "score": 19.226000000000003,
+    "rankWonDb": 30,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.46,
+    "perf_month": -0.21,
+    "perf_quart": 2.69,
+    "perf_half": 47.46,
+    "perf_year": 43.5,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.83
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Farm Products",
+    "sector": "Consumer Defensive",
+    "score": 18.810000000000002,
+    "rankWonDb": 31,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.34,
+    "perf_month": 5.67,
+    "perf_quart": 8.45,
+    "perf_half": 28.94,
+    "perf_year": 42.54,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.98
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas E&P",
+    "sector": "Energy",
+    "score": 16.342,
+    "rankWonDb": 32,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -7.02,
+    "perf_month": -2.84,
+    "perf_quart": 11.79,
+    "perf_half": 30.36,
+    "perf_year": 30.61,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.22
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Publishing",
+    "sector": "Communication Services",
+    "score": 15.856,
+    "rankWonDb": 33,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.65,
+    "perf_month": 2.91,
+    "perf_quart": 17.62,
+    "perf_half": 22.11,
+    "perf_year": 19.02,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.01
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Consumer Electronics",
+    "sector": "Technology",
+    "score": 15.402000000000001,
+    "rankWonDb": 35,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 5.79,
+    "perf_month": 12,
+    "perf_quart": 6.21,
+    "perf_half": 7.12,
+    "perf_year": 45.47,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.06
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Hotel & Motel",
+    "sector": "Real Estate",
+    "score": 15.090000000000002,
+    "rankWonDb": 36,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.15,
+    "perf_month": 7.8,
+    "perf_quart": 8.94,
+    "perf_half": 21.04,
+    "perf_year": 28.73,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.14
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Specialty Industrial Machinery",
+    "sector": "Industrials",
+    "score": 15.002,
+    "rankWonDb": 37,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.5,
+    "perf_month": 1.37,
+    "perf_quart": 2.93,
+    "perf_half": 21.18,
+    "perf_year": 46.6,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.21
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Solar",
+    "sector": "Technology",
+    "score": 14.942000000000002,
+    "rankWonDb": 38,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 9.62,
+    "perf_month": 12.31,
+    "perf_quart": -3.67,
+    "perf_half": -4.43,
+    "perf_year": 74.17,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.06
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Healthcare Facilities",
+    "sector": "Real Estate",
+    "score": 14.244,
+    "rankWonDb": 39,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.6,
+    "perf_month": 3.96,
+    "perf_quart": 7.92,
+    "perf_half": 13.87,
+    "perf_year": 37.55,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.18
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Internet Retail",
+    "sector": "Consumer Cyclical",
+    "score": 13.994,
+    "rankWonDb": 40,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.35,
+    "perf_month": 10.14,
+    "perf_quart": 16.6,
+    "perf_half": 1.32,
+    "perf_year": 25.31,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.49
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Oil & Gas Midstream",
+    "sector": "Energy",
+    "score": 13.364,
+    "rankWonDb": 41,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.81,
+    "perf_month": 0.82,
+    "perf_quart": 9.16,
+    "perf_half": 24.54,
+    "perf_year": 23.14,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.52
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Tools & Accessories",
+    "sector": "Industrials",
+    "score": 12.788,
+    "rankWonDb": 42,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.12,
+    "perf_month": 2.51,
+    "perf_quart": -1.6,
+    "perf_half": 23.99,
+    "perf_year": 40.64,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.34
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Railroads",
+    "sector": "Industrials",
+    "score": 12.554,
+    "rankWonDb": 43,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.66,
+    "perf_month": 4.11,
+    "perf_quart": 5.45,
+    "perf_half": 21,
+    "perf_year": 26.76,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.5
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Biotechnology",
+    "sector": "Healthcare",
+    "score": 12.47,
+    "rankWonDb": 44,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.02,
+    "perf_month": 1.45,
+    "perf_quart": 1.31,
+    "perf_half": 11.15,
+    "perf_year": 47.13,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.2
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Agricultural Inputs",
+    "sector": "Basic Materials",
+    "score": 11.978,
+    "rankWonDb": 45,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.67,
+    "perf_month": -0.74,
+    "perf_quart": 7.88,
+    "perf_half": 27.56,
+    "perf_year": 17.31,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 3.22
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Lodging",
+    "sector": "Consumer Cyclical",
+    "score": 10.75,
+    "rankWonDb": 46,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.05,
+    "perf_month": -1.07,
+    "perf_quart": 2.56,
+    "perf_half": 20.24,
+    "perf_year": 29.46,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.23
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Integrated Freight & Logistics",
+    "sector": "Industrials",
+    "score": 10.512,
+    "rankWonDb": 47,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.72,
+    "perf_month": 1.52,
+    "perf_quart": -5.11,
+    "perf_half": 24.12,
+    "perf_year": 37.14,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.59
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Capital Markets",
+    "sector": "Financial",
+    "score": 10.161999999999999,
+    "rankWonDb": 48,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.7,
+    "perf_month": 6.7,
+    "perf_quart": -0.11,
+    "perf_half": 1.92,
+    "perf_year": 42.41,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.08
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Auto Manufacturers",
+    "sector": "Consumer Cyclical",
+    "score": 9.828000000000001,
+    "rankWonDb": 49,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 9.56,
+    "perf_month": 16.49,
+    "perf_quart": 0.31,
+    "perf_half": -3.11,
+    "perf_year": 35.14,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 2.36
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Coking Coal",
+    "sector": "Basic Materials",
+    "score": 9.786,
+    "rankWonDb": 50,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.59,
+    "perf_month": 1.01,
+    "perf_quart": -8.67,
+    "perf_half": 0.15,
+    "perf_year": 65.11,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.9
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Beverages - Brewers",
+    "sector": "Consumer Defensive",
+    "score": 9.382,
+    "rankWonDb": 51,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.93,
+    "perf_month": 1.89,
+    "perf_quart": 3.36,
+    "perf_half": 25.91,
+    "perf_year": 12.39,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.44
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Rental & Leasing Services",
+    "sector": "Industrials",
+    "score": 9.218,
+    "rankWonDb": 52,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.8,
+    "perf_month": 7.26,
+    "perf_quart": 2.08,
+    "perf_half": 9.69,
+    "perf_year": 24.98,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.69
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Industrial",
+    "sector": "Real Estate",
+    "score": 9.052,
+    "rankWonDb": 53,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.38,
+    "perf_month": 5.3,
+    "perf_quart": 4.98,
+    "perf_half": 13.19,
+    "perf_year": 16.81,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.08
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Specialty Chemicals",
+    "sector": "Basic Materials",
+    "score": 8.888,
+    "rankWonDb": 54,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.85,
+    "perf_month": 0.22,
+    "perf_quart": 3.98,
+    "perf_half": 20.58,
+    "perf_year": 15.68,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.18
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Luxury Goods",
+    "sector": "Consumer Cyclical",
+    "score": 8.636,
+    "rankWonDb": 55,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -4.07,
+    "perf_month": -9.76,
+    "perf_quart": -12.19,
+    "perf_half": 20.29,
+    "perf_year": 57.03,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.01
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Tobacco",
+    "sector": "Consumer Defensive",
+    "score": 8.482000000000001,
+    "rankWonDb": 56,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.26,
+    "perf_month": 7.99,
+    "perf_quart": 0.95,
+    "perf_half": 18.18,
+    "perf_year": 14.34,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 4.47
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Specialty",
+    "sector": "Real Estate",
+    "score": 8.378,
+    "rankWonDb": 57,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.08,
+    "perf_month": 4.08,
+    "perf_quart": 12.8,
+    "perf_half": 11.37,
+    "perf_year": 0.84,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.37
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Banks - Diversified",
+    "sector": "Financial",
+    "score": 7.806000000000001,
+    "rankWonDb": 58,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.03,
+    "perf_month": -0.42,
+    "perf_quart": -4.48,
+    "perf_half": 9.78,
+    "perf_year": 38.63,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.48
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Discount Stores",
+    "sector": "Consumer Defensive",
+    "score": 6.796,
+    "rankWonDb": 59,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.21,
+    "perf_month": -0.01,
+    "perf_quart": -1.79,
+    "perf_half": 19.01,
+    "perf_year": 18.56,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.07
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Retail",
+    "sector": "Real Estate",
+    "score": 6.724,
+    "rankWonDb": 60,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.33,
+    "perf_month": -0.09,
+    "perf_quart": 2.96,
+    "perf_half": 12.51,
+    "perf_year": 15.28,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.05
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Aerospace & Defense",
+    "sector": "Industrials",
+    "score": 5.9879999999999995,
+    "rankWonDb": 61,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 5.05,
+    "perf_month": -2.38,
+    "perf_quart": -4.75,
+    "perf_half": 8.91,
+    "perf_year": 32.91,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.19
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance - Reinsurance",
+    "sector": "Financial",
+    "score": 5.878,
+    "rankWonDb": 62,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.32,
+    "perf_month": 1.82,
+    "perf_quart": 3.46,
+    "perf_half": 11.44,
+    "perf_year": 9.21,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.74
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance - Life",
+    "sector": "Financial",
+    "score": 5.73,
+    "rankWonDb": 63,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.04,
+    "perf_month": 5.73,
+    "perf_quart": 1.54,
+    "perf_half": 6.54,
+    "perf_year": 13.3,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.31
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Diversified",
+    "sector": "Utilities",
+    "score": 5.518000000000001,
+    "rankWonDb": 64,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.7,
+    "perf_month": -4.36,
+    "perf_quart": 2.51,
+    "perf_half": 3.52,
+    "perf_year": 23.41,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.79
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Business Equipment & Supplies",
+    "sector": "Industrials",
+    "score": 4.984,
+    "rankWonDb": 65,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.16,
+    "perf_month": 13.28,
+    "perf_quart": 6.64,
+    "perf_half": 11.67,
+    "perf_year": -13.31,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.19
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Auto & Truck Dealerships",
+    "sector": "Consumer Cyclical",
+    "score": 4.874,
+    "rankWonDb": 66,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.81,
+    "perf_month": 8.39,
+    "perf_quart": -6.77,
+    "perf_half": 18.15,
+    "perf_year": 11.37,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.13
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Industrial Distribution",
+    "sector": "Industrials",
+    "score": 4.84,
+    "rankWonDb": 67,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.07,
+    "perf_month": -1.58,
+    "perf_quart": -3.47,
+    "perf_half": 12.18,
+    "perf_year": 20.54,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.28
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Regulated Electric",
+    "sector": "Utilities",
+    "score": 4.352,
+    "rankWonDb": 68,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.9,
+    "perf_month": -4.01,
+    "perf_quart": 2.68,
+    "perf_half": 6.25,
+    "perf_year": 14.16,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.89
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Regulated Gas",
+    "sector": "Utilities",
+    "score": 4.138,
+    "rankWonDb": 69,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.99,
+    "perf_month": -4.39,
+    "perf_quart": 2.69,
+    "perf_half": 5.97,
+    "perf_year": 13.73,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.18
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Department Stores",
+    "sector": "Consumer Cyclical",
+    "score": 4.047999999999998,
+    "rankWonDb": 70,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.28,
+    "perf_month": -3.88,
+    "perf_quart": -15.14,
+    "perf_half": -7.72,
+    "perf_year": 62.12,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.33
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Beverages - Non-Alcoholic",
+    "sector": "Consumer Defensive",
+    "score": 3.9140000000000006,
+    "rankWonDb": 71,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.69,
+    "perf_month": 0.78,
+    "perf_quart": -2.32,
+    "perf_half": 11.95,
+    "perf_year": 11.48,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.94
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Apparel Manufacturing",
+    "sector": "Consumer Cyclical",
+    "score": 3.758,
+    "rankWonDb": 72,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.01,
+    "perf_month": -3.78,
+    "perf_quart": -5.81,
+    "perf_half": 11.85,
+    "perf_year": 22.34,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -4.48
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Auto Parts",
+    "sector": "Consumer Cyclical",
+    "score": 3.5820000000000003,
+    "rankWonDb": 73,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.38,
+    "perf_month": 4.21,
+    "perf_quart": -1.54,
+    "perf_half": 3.18,
+    "perf_year": 13.6,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.96
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Building Products & Equipment",
+    "sector": "Industrials",
+    "score": 3.496,
+    "rankWonDb": 74,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.58,
+    "perf_month": 2.3,
+    "perf_quart": -2.73,
+    "perf_half": 8.93,
+    "perf_year": 11.71,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.45
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Textile Manufacturing",
+    "sector": "Consumer Cyclical",
+    "score": 3.3439999999999994,
+    "rankWonDb": 75,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 7.74,
+    "perf_month": 7.78,
+    "perf_quart": 2.66,
+    "perf_half": 11.1,
+    "perf_year": -7.48,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.73
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Independent Power Producers",
+    "sector": "Utilities",
+    "score": 3.096,
+    "rankWonDb": 76,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -5.23,
+    "perf_month": 2.53,
+    "perf_quart": 3.92,
+    "perf_half": -14.87,
+    "perf_year": 19.98,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.36
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Software - Infrastructure",
+    "sector": "Technology",
+    "score": 3.0839999999999996,
+    "rankWonDb": 77,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.73,
+    "perf_month": 17.1,
+    "perf_quart": 5.44,
+    "perf_half": -14.18,
+    "perf_year": 1.62,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.43
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Advertising Agencies",
+    "sector": "Communication Services",
+    "score": 2.878,
+    "rankWonDb": 78,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.21,
+    "perf_month": 17.12,
+    "perf_quart": 3.27,
+    "perf_half": -21.21,
+    "perf_year": 11.94,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.72
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Utilities - Regulated Water",
+    "sector": "Utilities",
+    "score": 2.3320000000000003,
+    "rankWonDb": 79,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.83,
+    "perf_month": -7.67,
+    "perf_quart": 4.66,
+    "perf_half": 5.36,
+    "perf_year": 4.65,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.25
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Drug Manufacturers - General",
+    "sector": "Healthcare",
+    "score": 2.0559999999999996,
+    "rankWonDb": 80,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.57,
+    "perf_month": -3.28,
+    "perf_quart": -7.72,
+    "perf_half": 7.02,
+    "perf_year": 21.98,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.46
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Diversified",
+    "sector": "Real Estate",
+    "score": 1.8320000000000003,
+    "rankWonDb": 81,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.61,
+    "perf_month": 2.89,
+    "perf_quart": 0.68,
+    "perf_half": 3.12,
+    "perf_year": 1.79,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.03
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Asset Management",
+    "sector": "Financial",
+    "score": 1.496,
+    "rankWonDb": 82,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.59,
+    "perf_month": 10.38,
+    "perf_quart": -2.64,
+    "perf_half": -0.44,
+    "perf_year": 2.82,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.66
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Residential",
+    "sector": "Real Estate",
+    "score": 1.1180000000000003,
+    "rankWonDb": 83,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.05,
+    "perf_month": 5.24,
+    "perf_quart": 1.81,
+    "perf_half": 5.26,
+    "perf_year": -8.53,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.81
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Food Distribution",
+    "sector": "Consumer Defensive",
+    "score": 0.7680000000000007,
+    "rankWonDb": 84,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.64,
+    "perf_month": -0.23,
+    "perf_quart": -7.22,
+    "perf_half": 6.87,
+    "perf_year": 11.64,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.03
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Education & Training Services",
+    "sector": "Consumer Defensive",
+    "score": 0.6100000000000001,
+    "rankWonDb": 85,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.53,
+    "perf_month": -0.01,
+    "perf_quart": 0.1,
+    "perf_half": 6.47,
+    "perf_year": -3.61,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.05
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Pollution & Treatment Controls",
+    "sector": "Industrials",
+    "score": 0.524,
+    "rankWonDb": 86,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.37,
+    "perf_month": 3.12,
+    "perf_quart": -4.03,
+    "perf_half": -3.12,
+    "perf_year": 10.68,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.25
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Apparel Retail",
+    "sector": "Consumer Cyclical",
+    "score": 0.4019999999999997,
+    "rankWonDb": 87,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -4.31,
+    "perf_month": -8.25,
+    "perf_quart": -5.38,
+    "perf_half": 7.15,
+    "perf_year": 13.87,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.86
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Real Estate - Development",
+    "sector": "Real Estate",
+    "score": 0.05600000000000005,
+    "rankWonDb": 88,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.34,
+    "perf_month": -1.61,
+    "perf_quart": -7.52,
+    "perf_half": 2.9,
+    "perf_year": 14.03,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.27
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Resorts & Casinos",
+    "sector": "Consumer Cyclical",
+    "score": -0.13800000000000034,
+    "rankWonDb": 89,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.48,
+    "perf_month": -1.33,
+    "perf_quart": -4.97,
+    "perf_half": -6.89,
+    "perf_year": 17.47,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.62
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Confectioners",
+    "sector": "Consumer Defensive",
+    "score": -0.30400000000000027,
+    "rankWonDb": 90,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1,
+    "perf_month": 0.95,
+    "perf_quart": -4.49,
+    "perf_half": 10.28,
+    "perf_year": -3.77,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.23
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Drug Manufacturers - Specialty & Generic",
+    "sector": "Healthcare",
+    "score": -0.4099999999999999,
+    "rankWonDb": 91,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.81,
+    "perf_month": -3.01,
+    "perf_quart": -7.71,
+    "perf_half": 6.77,
+    "perf_year": 9.61,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.57
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Airlines",
+    "sector": "Industrials",
+    "score": -0.605999999999999,
+    "rankWonDb": 92,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.08,
+    "perf_month": -0.38,
+    "perf_quart": -16.9,
+    "perf_half": 6.71,
+    "perf_year": 24.44,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.04
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Mortgage",
+    "sector": "Real Estate",
+    "score": -0.674,
+    "rankWonDb": 93,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.66,
+    "perf_month": 0.34,
+    "perf_quart": -3.21,
+    "perf_half": -0.13,
+    "perf_year": 2.84,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.45
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Telecom Services",
+    "sector": "Communication Services",
+    "score": -0.9339999999999999,
+    "rankWonDb": 94,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.86,
+    "perf_month": -2.79,
+    "perf_quart": -3.36,
+    "perf_half": 6.2,
+    "perf_year": -1.36,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.82
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Financial Data & Stock Exchanges",
+    "sector": "Financial",
+    "score": -0.948,
+    "rankWonDb": 95,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.03,
+    "perf_month": 4.01,
+    "perf_quart": 0.16,
+    "perf_half": -3.95,
+    "perf_year": -5.12,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.69
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Banks - Regional",
+    "sector": "Financial",
+    "score": -1.0200000000000005,
+    "rankWonDb": 96,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.3,
+    "perf_month": -3.41,
+    "perf_quart": -11.37,
+    "perf_half": 4.77,
+    "perf_year": 16.28,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.63
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Leisure",
+    "sector": "Consumer Cyclical",
+    "score": -1.1120000000000005,
+    "rankWonDb": 97,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.9,
+    "perf_month": -0.6,
+    "perf_quart": -10.17,
+    "perf_half": 5.6,
+    "perf_year": 9.78,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.17
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance - Property & Casualty",
+    "sector": "Financial",
+    "score": -1.624,
+    "rankWonDb": 98,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.64,
+    "perf_month": -0.58,
+    "perf_quart": -2.03,
+    "perf_half": 1.5,
+    "perf_year": -4.98,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.4
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Medical Care Facilities",
+    "sector": "Healthcare",
+    "score": -1.6920000000000002,
+    "rankWonDb": 99,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.32,
+    "perf_month": -5.65,
+    "perf_quart": -6.89,
+    "perf_half": -2.57,
+    "perf_year": 13.54,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.34
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Airports & Air Services",
+    "sector": "Industrials",
+    "score": -2.204000000000001,
+    "rankWonDb": 100,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 7.24,
+    "perf_month": 1.67,
+    "perf_quart": -11.98,
+    "perf_half": -5.29,
+    "perf_year": 16.56,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.02
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Building Materials",
+    "sector": "Basic Materials",
+    "score": -2.3939999999999997,
+    "rankWonDb": 101,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.06,
+    "perf_month": -4.05,
+    "perf_quart": -10.78,
+    "perf_half": 2.49,
+    "perf_year": 11.15,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.95
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Conglomerates",
+    "sector": "Industrials",
+    "score": -2.5,
+    "rankWonDb": 102,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.19,
+    "perf_month": -5.14,
+    "perf_quart": -10.09,
+    "perf_half": 3.06,
+    "perf_year": 9.76,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.76
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Entertainment",
+    "sector": "Communication Services",
+    "score": -2.5080000000000005,
+    "rankWonDb": 103,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.33,
+    "perf_month": -6.19,
+    "perf_quart": 4.43,
+    "perf_half": -9.81,
+    "perf_year": -5.4,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.64
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance - Diversified",
+    "sector": "Financial",
+    "score": -2.716,
+    "rankWonDb": 104,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 2.18,
+    "perf_month": 0.13,
+    "perf_quart": -3.21,
+    "perf_half": -1.83,
+    "perf_year": -5.46,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.57
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Specialty Retail",
+    "sector": "Consumer Cyclical",
+    "score": -3.196,
+    "rankWonDb": 105,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.87,
+    "perf_month": -2.67,
+    "perf_quart": -10.98,
+    "perf_half": 0.01,
+    "perf_year": 8.64,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.06
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Thermal Coal",
+    "sector": "Energy",
+    "score": -3.2700000000000005,
+    "rankWonDb": 106,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.44,
+    "perf_month": -6.06,
+    "perf_quart": -14.66,
+    "perf_half": -4.5,
+    "perf_year": 23.53,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 1.26
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Recreational Vehicles",
+    "sector": "Consumer Cyclical",
+    "score": -3.5219999999999994,
+    "rankWonDb": 107,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 6.82,
+    "perf_month": -3.14,
+    "perf_quart": -19.81,
+    "perf_half": -3.19,
+    "perf_year": 28.34,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.24
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "REIT - Office",
+    "sector": "Real Estate",
+    "score": -3.944,
+    "rankWonDb": 108,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 4.81,
+    "perf_month": 12.43,
+    "perf_quart": -4.23,
+    "perf_half": -9.82,
+    "perf_year": -13.87,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.42
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Pharmaceutical Retailers",
+    "sector": "Healthcare",
+    "score": -4.460000000000001,
+    "rankWonDb": 109,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.94,
+    "perf_month": 4.85,
+    "perf_quart": -3.36,
+    "perf_half": -13.34,
+    "perf_year": -7.09,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.14
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Real Estate - Diversified",
+    "sector": "Real Estate",
+    "score": -4.5280000000000005,
+    "rankWonDb": 110,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.91,
+    "perf_month": -1.12,
+    "perf_quart": -15.19,
+    "perf_half": -4.58,
+    "perf_year": 13.44,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.64
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Credit Services",
+    "sector": "Financial",
+    "score": -4.988,
+    "rankWonDb": 111,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.7,
+    "perf_month": 2.44,
+    "perf_quart": -5.91,
+    "perf_half": -9.49,
+    "perf_year": -6.07,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.23
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance - Specialty",
+    "sector": "Financial",
+    "score": -5.148000000000001,
+    "rankWonDb": 112,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.32,
+    "perf_month": 0.84,
+    "perf_quart": -6.43,
+    "perf_half": -4.51,
+    "perf_year": -9.21,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.19
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Restaurants",
+    "sector": "Consumer Cyclical",
+    "score": -5.3180000000000005,
+    "rankWonDb": 113,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.78,
+    "perf_month": -3.99,
+    "perf_quart": -9.47,
+    "perf_half": 3.47,
+    "perf_year": -7.13,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.4
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Travel Services",
+    "sector": "Consumer Cyclical",
+    "score": -6.390000000000001,
+    "rankWonDb": 114,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.29,
+    "perf_month": -3.61,
+    "perf_quart": -9.65,
+    "perf_half": -6.67,
+    "perf_year": -2.37,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.72
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Grocery Stores",
+    "sector": "Consumer Defensive",
+    "score": -6.766000000000001,
+    "rankWonDb": 115,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.02,
+    "perf_month": -3.31,
+    "perf_quart": -4.91,
+    "perf_half": 0.09,
+    "perf_year": -20.79,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.26
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Broadcasting",
+    "sector": "Communication Services",
+    "score": -6.840000000000001,
+    "rankWonDb": 116,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.8,
+    "perf_month": 6.85,
+    "perf_quart": -12.33,
+    "perf_half": -9.33,
+    "perf_year": -7.06,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.05
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Packaging & Containers",
+    "sector": "Consumer Cyclical",
+    "score": -7.172000000000001,
+    "rankWonDb": 117,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.08,
+    "perf_month": -3.62,
+    "perf_quart": -14.58,
+    "perf_half": 2.77,
+    "perf_year": -5.85,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.17
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Residential Construction",
+    "sector": "Consumer Cyclical",
+    "score": -7.662000000000001,
+    "rankWonDb": 118,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.28,
+    "perf_month": -4.03,
+    "perf_quart": -14.37,
+    "perf_half": -7.96,
+    "perf_year": 2.42,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.7
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Mortgage Finance",
+    "sector": "Financial",
+    "score": -7.672000000000001,
+    "rankWonDb": 119,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.74,
+    "perf_month": -0.5,
+    "perf_quart": -22.49,
+    "perf_half": -10.86,
+    "perf_year": 17.98,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -4.89
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Staffing & Employment Services",
+    "sector": "Industrials",
+    "score": -7.734000000000002,
+    "rankWonDb": 120,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.06,
+    "perf_month": 14.41,
+    "perf_quart": -9.22,
+    "perf_half": -3.14,
+    "perf_year": -31.5,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.87
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Waste Management",
+    "sector": "Industrials",
+    "score": -7.858,
+    "rankWonDb": 121,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -5.31,
+    "perf_month": -7.24,
+    "perf_quart": -9.29,
+    "perf_half": 0.95,
+    "perf_year": -14.42,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.69
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Household & Personal Products",
+    "sector": "Consumer Defensive",
+    "score": -8.028,
+    "rankWonDb": 122,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.41,
+    "perf_month": -0.97,
+    "perf_quart": -11.57,
+    "perf_half": -3.29,
+    "perf_year": -12.74,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.2
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Security & Protection Services",
+    "sector": "Industrials",
+    "score": -8.684000000000001,
+    "rankWonDb": 123,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.03,
+    "perf_month": -2.66,
+    "perf_quart": -14.92,
+    "perf_half": -6.55,
+    "perf_year": -4.37,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.52
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Real Estate Services",
+    "sector": "Real Estate",
+    "score": -8.714,
+    "rankWonDb": 124,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 3.12,
+    "perf_month": 3.66,
+    "perf_quart": -15.72,
+    "perf_half": -11.71,
+    "perf_year": -4.08,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.43
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Diagnostics & Research",
+    "sector": "Healthcare",
+    "score": -8.938,
+    "rankWonDb": 125,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.12,
+    "perf_month": -4.67,
+    "perf_quart": -14.64,
+    "perf_half": -16.41,
+    "perf_year": 5.67,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.16
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Lumber & Wood Production",
+    "sector": "Basic Materials",
+    "score": -8.988000000000001,
+    "rankWonDb": 126,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.1,
+    "perf_month": -4.96,
+    "perf_quart": -17.03,
+    "perf_half": 1.23,
+    "perf_year": -7.15,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.72
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Personal Services",
+    "sector": "Consumer Cyclical",
+    "score": -9.052000000000001,
+    "rankWonDb": 127,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.56,
+    "perf_month": -0.95,
+    "perf_quart": -10.89,
+    "perf_half": -10.07,
+    "perf_year": -12.46,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.56
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Paper & Paper Products",
+    "sector": "Basic Materials",
+    "score": -9.098,
+    "rankWonDb": 128,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 1.66,
+    "perf_month": -6.54,
+    "perf_quart": -12.8,
+    "perf_half": -4.18,
+    "perf_year": -9.17,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.26
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Electronic Gaming & Multimedia",
+    "sector": "Communication Services",
+    "score": -9.498,
+    "rankWonDb": 129,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.6,
+    "perf_month": -1.43,
+    "perf_quart": -10.49,
+    "perf_half": -23.56,
+    "perf_year": -1.52,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.06
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Health Information Services",
+    "sector": "Healthcare",
+    "score": -9.786000000000001,
+    "rankWonDb": 130,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.53,
+    "perf_month": 9.01,
+    "perf_quart": -3.15,
+    "perf_half": -29.97,
+    "perf_year": -21.67,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.06
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Specialty Business Services",
+    "sector": "Industrials",
+    "score": -9.892000000000001,
+    "rankWonDb": 131,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3,
+    "perf_month": 0.63,
+    "perf_quart": -4.24,
+    "perf_half": -13.06,
+    "perf_year": -28.55,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.43
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Shell Companies",
+    "sector": "Financial",
+    "score": -10.246000000000002,
+    "rankWonDb": 132,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.39,
+    "perf_month": 7.95,
+    "perf_quart": 11.8,
+    "perf_half": -26.03,
+    "perf_year": -56.75,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": 0.18
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Software - Application",
+    "sector": "Technology",
+    "score": -11.074,
+    "rankWonDb": 133,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -1.77,
+    "perf_month": 11.93,
+    "perf_quart": -4.42,
+    "perf_half": -26.88,
+    "perf_year": -31.58,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.7
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Beverages - Wineries & Distilleries",
+    "sector": "Consumer Defensive",
+    "score": -11.424000000000003,
+    "rankWonDb": 134,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 5.28,
+    "perf_month": 2.54,
+    "perf_quart": -13.97,
+    "perf_half": -4.33,
+    "perf_year": -27.39,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.77
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Medical Instruments & Supplies",
+    "sector": "Healthcare",
+    "score": -12.504,
+    "rankWonDb": 135,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -5.06,
+    "perf_month": -6.61,
+    "perf_quart": -14.49,
+    "perf_half": -12.04,
+    "perf_year": -14.89,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.8
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Furnishings, Fixtures & Appliances",
+    "sector": "Consumer Cyclical",
+    "score": -12.580000000000002,
+    "rankWonDb": 136,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -5.44,
+    "perf_month": -7.67,
+    "perf_quart": -23.42,
+    "perf_half": -8.73,
+    "perf_year": 0.34,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.46
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Insurance Brokers",
+    "sector": "Financial",
+    "score": -12.668000000000001,
+    "rankWonDb": 137,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.45,
+    "perf_month": -4.98,
+    "perf_quart": -6.52,
+    "perf_half": -14.33,
+    "perf_year": -30.99,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -0.76
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Home Improvement Retail",
+    "sector": "Consumer Cyclical",
+    "score": -13.548,
+    "rankWonDb": 138,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": 0.08,
+    "perf_month": -7.59,
+    "perf_quart": -18.43,
+    "perf_half": -12.2,
+    "perf_year": -11.09,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.8
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Packaged Foods",
+    "sector": "Consumer Defensive",
+    "score": -14.516000000000002,
+    "rankWonDb": 139,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -2.02,
+    "perf_month": -5.43,
+    "perf_quart": -16.31,
+    "perf_half": -9.94,
+    "perf_year": -24.59,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.98
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Medical Distribution",
+    "sector": "Healthcare",
+    "score": -15.184000000000001,
+    "rankWonDb": 140,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -10.44,
+    "perf_month": -16.35,
+    "perf_quart": -23.75,
+    "perf_half": -16.78,
+    "perf_year": 4.71,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Consulting Services",
+    "sector": "Industrials",
+    "score": -17.468000000000004,
+    "rankWonDb": 141,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -4.63,
+    "perf_month": -2.75,
+    "perf_quart": -12.22,
+    "perf_half": -21.13,
+    "perf_year": -39.02,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.94
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Footwear & Accessories",
+    "sector": "Consumer Cyclical",
+    "score": -18.246,
+    "rankWonDb": 142,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -0.54,
+    "perf_month": -1.64,
+    "perf_quart": -23.57,
+    "perf_half": -17.89,
+    "perf_year": -24.56,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.51
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Gambling",
+    "sector": "Consumer Cyclical",
+    "score": -19.39,
+    "rankWonDb": 143,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.01,
+    "perf_month": 4.35,
+    "perf_quart": -16.47,
+    "perf_half": -31.51,
+    "perf_year": -36.85,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -3.72
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Medical Devices",
+    "sector": "Healthcare",
+    "score": -20.244,
+    "rankWonDb": 144,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -4.3,
+    "perf_month": -12.37,
+    "perf_quart": -20.16,
+    "perf_half": -23.39,
+    "perf_year": -25.14,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -1.88
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  },
+  {
+    "name": "Information Technology Services",
+    "sector": "Technology",
+    "score": -20.922,
+    "rankWonDb": 145,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": 0,
+    "diffQ": 0,
+    "perf_week": -3.58,
+    "perf_month": -3.03,
+    "perf_quart": -22.08,
+    "perf_half": -25.67,
+    "perf_year": -31.75,
+    "data": [
+      {
+        "date": "2026-05-11",
+        "change": -2.52
+      }
+    ],
+    "anl_datum": "2026-05-11T22:15:37.983Z"
+  }
+]

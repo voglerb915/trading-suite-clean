@@ -1,0 +1,166 @@
+/* ======================================================
+   CSS VARIABLES
+   ====================================================== */
+
+:root {
+    --tab-bar-height: 60px;
+    --section-title-height: 50px;
+    --sticky-offset: calc(var(--tab-bar-height) + var(--section-title-height));
+}
+
+/* ======================================================
+   BASE
+   ====================================================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ======================================================
+   LAYOUT
+   ====================================================== */
+
+#lab-main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+}
+
+#lab-container {
+    display: grid;
+    grid-template-columns: 30vw 30vw 1fr;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#col-1,
+#col-2,
+#col-3 {
+    height: 100vh;
+    overflow-y: auto;
+    padding: 0;
+}
+
+/* ======================================================
+   SCROLLBARS
+   — Global rule covers all columns incl. col-3
+   — Column-specific thumb colours can be added below
+   ====================================================== */
+
+::-webkit-scrollbar       { width: 10px; }
+::-webkit-scrollbar-track { background: #121212; }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 5px; }
+
+
+
+/* ======================================================
+   VOLUME TABLE
+   ====================================================== */
+
+/* Shared grid — header and data rows use the same columns */
+.vol-grid {
+    display: grid;
+    grid-template-columns: 0.5fr 0.8fr 0.8fr 0.8fr 1.5fr 1.1fr 1fr 1fr;
+    align-items: center;
+    padding: 6px 5px;
+}
+
+/* Sticky header — sits below tab bar + section title */
+.volume-header-row {
+    background: #1a1a1a;
+    border-bottom: 2px solid #444;
+    font-weight: bold;
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    /* sticky entfernen */
+    position: static;
+    top: auto;
+    z-index: auto;
+}
+
+
+.volume-data-row {
+    border-bottom: 1px solid #222;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: background 0.1s;
+}
+
+.volume-data-row:hover {
+    background: #1a1a1a;
+}
+
+/* EIN Sticky-Block für Titel + Header */
+.volume-sticky-wrapper {
+    position: sticky;
+    top: 0; /* WICHTIG */
+    z-index: 50;
+    background: #121212;
+}
+
+.section-title {
+    padding-top: 0; /* Abstand oben entfernen */
+}
+
+
+.sticky-header-group {
+    position: sticky;
+    top: var(--tab-bar-height);
+    z-index: 20;
+    background: #121212;
+}
+
+.section-title {
+    color: #ffa500;
+    padding: 10px 5px;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1rem;
+    background: #121212;
+    /* sticky entfernen */
+    position: static;
+    top: auto;
+    z-index: auto;
+}
+
+
+.subtitle {
+    color: #888;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-transform: none;
+}
+
+/* ======================================================
+   UTILITY
+   ====================================================== */
+
+.text-right       { text-align: right; }
+.sortable         { cursor: pointer; color: #58a6ff; }
+.sort-icon        { color: #444; margin-left: 3px; }
+.sort-icon.active { color: #ffa500; }
+
+.empty-state {
+    padding: 24px;
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Color classes — replaces inline style="color:..." */
+.c-positive { color: #00ff00; }
+.c-negative { color: #ff4444; }
+.c-neutral  { color: #888; }
+.c-white    { color: #fff; }
+.c-yellow   { color: yellow; }
+.c-orange   { color: orange; }
+.c-red      { color: #ff4444; }

@@ -1,0 +1,14 @@
+
+===========================
+Export: 00:23:54
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 4
+---------------------------
+GCT
+MSFT
+YAAS
+CSAI
+===========================

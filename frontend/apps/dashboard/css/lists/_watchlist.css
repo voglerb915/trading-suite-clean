@@ -1,0 +1,98 @@
+/* =========================================================
+   Watch LIST (Tab 2) - Clean Icon Buttons
+   ========================================================= */
+
+   /* 🟢 Feste Schriftgröße für die gesamte Watchlist definieren */
+.watchlist-table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 0.9rem; /* Hier kannst du z.B. auf 0.85rem oder 13px reduzieren, falls es noch kleiner sein soll */
+}
+
+.watchlist-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+/* ID Spalte klein halten */
+.watchlist-table th:nth-child(1), .watchlist-table td:nth-child(1) { width: 45px; text-align: center;}
+/* Ticker */
+.watchlist-table th:nth-child(2), .watchlist-table td:nth-child(2) { width: 60px; text-align: left;}
+/* Warenkorb (OC) */
+.watchlist-table th:nth-child(3), .watchlist-table td:nth-child(3) { width: 40px; text-align: center; }
+/* Strategy - bekommt hier deutlich mehr Platz */
+.watchlist-table th:nth-child(4), .watchlist-table td:nth-child(4) { width: auto; min-width: 220px; }
+/* Created Datum */
+.watchlist-table th:nth-child(5), .watchlist-table td:nth-child(5) { width: 85px; text-align: center;}
+/* Delete Mülleimer */
+.watchlist-table th:nth-child(6), .watchlist-table td:nth-child(6) { width: 40px; text-align: center; }
+
+/* Abstand unter dem Tabellenkopf erzeugen */
+.watchlist-table thead th {
+    padding-bottom: 12px;
+}
+
+/* Abstand zwischen den einzelnen Tabellenzeilen */
+.watchlist-table tbody tr {
+    border-top: 8px solid transparent;
+}
+
+/* Gemeinsames Basis-Styling für Cart- und Delete-Buttons (Rahmen und Hintergrund entfernt) */
+.watchlist-table .cart-btn,
+.watchlist-table .delete-btn {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Standard-Icon-Farbe und Größe für beide Buttons */
+.watchlist-table .cart-btn i,
+.watchlist-table .delete-btn i {
+    color: #6c757d;
+    font-size: 1.0rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Hover-Zustand Cart-Button: Nur Icon skaliert und wird satteres Grün */
+.watchlist-table .cart-btn:hover {
+    background: transparent !important;
+    border: none !important;
+}
+
+.watchlist-table .cart-btn:hover i {
+    transform: scale(1.2);
+    color: #1e7e34 !important;
+}
+
+/* Hover-Zustand Delete-Button: Nur Icon skaliert und wird rot */
+.watchlist-table .delete-btn:hover {
+    background: transparent !important;
+    border: none !important;
+}
+
+.watchlist-table .delete-btn:hover i {
+    transform: scale(1.2);
+    color: #dc3545 !important;
+}
+
+/* Hand-Zeiger für alle interaktiven Elemente in der Watchlist */
+.watchlist-table .note-icon,
+.watchlist-table .strategy-text,
+.watchlist-table .cart-btn,
+.watchlist-table .delete-btn {
+    cursor: pointer;
+}
+
+.watchlist-table .strategy-text:hover {
+    color: #007bff;
+}
+
+/* Notiz-Icon grün färben, wenn Text vorhanden ist */
+/* Zielt direkt auf das FontAwesome-Icon ab, wenn das span die Klasse has-notes hat */
+.watchlist-table .note-icon.has-notes i,
+span.note-icon.has-notes i {
+    color: #28a745 !important;
+}

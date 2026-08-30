@@ -1,0 +1,439 @@
+/* =========================================================
+   COMPONENTS.CSS
+   UI-Komponenten: Tabs, Pills, Buttons, Icons, Badges
+   ========================================================= */
+
+
+/* ---------------------------------------------------------
+   TABS (Tools & Lists)
+--------------------------------------------------------- */
+
+.tab-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  background: #e9e9e9;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-size: 0.9em;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.tab-item:hover {
+  background: #dcdcdc;
+}
+
+.tab-item.active {
+  background: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  font-weight: bold;
+  position: relative;
+  top: 1px;
+}
+
+.tab-content {
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0 4px 4px 4px;
+  min-height: 200px;
+}
+
+
+/* ---------------------------------------------------------
+   PILLS (Filter, Sort, Volume, Long/Exit)
+--------------------------------------------------------- */
+
+.pill-container,
+.filter-pills {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pill {
+    padding: 1px 8px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+/* Hover-Effekte */
+.pill-long:hover { background: #e8f5e9; border-color: #28a745; }
+.pill-exit:hover { background: #ffebee; border-color: #dc3545; }
+
+/* Aktiv */
+.pill-long.active {
+    background: #28a745 !important;
+    color: white !important;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+.pill-exit.active {
+    background: #dc3545 !important;
+    color: white !important;
+    border-color: #bd2130;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.pill-all.active {
+    background: #6c757d !important;
+    color: white !important;
+    border-color: #545b62;
+}
+
+/* Volume-Pille */
+.pill-volume.active {
+    background: #ff9800 !important;
+    color: white !important;
+    border-color: #e68900 !important;
+    box-shadow: 0 2px 4px rgba(255, 152, 0, 0.3);
+}
+
+.pill-volume:not(.active):hover {
+    background: #ffefd9 !important;
+    border-color: #ffb74d !important;
+}
+
+/* Sort-Pille */
+.pill-sort {
+    transition: all 0.2s ease;
+}
+
+.pill-sort.active {
+    background: #ff9800;
+    color: white;
+    border-color: #e68900;
+}
+
+.pill-sort:not(.active):hover {
+    background: #ffefd9 !important;
+    border-color: #ffb74d !important;
+}
+/* ---------------------------------------------------------
+   SMALL COUNTER PILL (z.B. Stocks Count)
+--------------------------------------------------------- */
+
+.pill-count {
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 1.0rem;
+    font-weight: bold;
+    background-color: #f2f2f2;
+    color: #333;
+    border: 1px solid #e8e8e8; /* gleiche Outline wie highlight */
+    cursor: default;
+    user-select: none;
+}
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ---------------------------------------------------------
+   Sparkline Dot PILL (z.B. Sectors und Industries)
+--------------------------------------------------------- */
+
+/* Entry-Pille aktiv */
+.pill-entry.active {
+    background: #28a745 !important;
+    color: white !important;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+
+/* Exit-Pille aktiv */
+.pill-exit.active {
+    background: #dc3545 !important;
+    color: white !important;
+    border-color: #bd2130;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+.pill-entry:not(.active):hover {
+    background: #e8f5e9;
+    border-color: #28a745;
+}
+
+.pill-exit:not(.active):hover {
+    background: #ffebee;
+    border-color: #dc3545;
+}
+
+
+
+/* Exit-Pille neue Dashboard Struktur */
+
+/* Entry-Pille aktiv */
+.pill-buy.active {
+    background: #28a745 !important;
+    color: white !important;
+    border-color: #1e7e34;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.3);
+}
+/* Exit-Pille aktiv */
+.pill-sell.active {
+    background: #dc3545 !important;
+    color: white !important;
+    border-color: #bd2130;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+.pill-buy:not(.active):hover {
+    background: #e8f5e9;
+    border-color: #28a745;
+}
+
+.pill-sell:not(.active):hover {
+    background: #ffebee;
+    border-color: #dc3545;
+}
+
+/* ---------------------------------------------------------
+   BUTTONS (Delete, Notes, etc.)
+--------------------------------------------------------- */
+
+.btn-delete-active {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-delete-active:hover {
+    transform: scale(1.2);
+}
+
+.btn-delete-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.note-btn {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.note-btn:hover {
+    transform: scale(1.2);
+}
+
+.note-active {
+    color: #f39c12 !important;
+}
+
+.note-empty {
+    color: #ccc !important;
+}
+
+
+/* ---------------------------------------------------------
+   ICONS (Chart Icons)
+--------------------------------------------------------- */
+
+.signal-chart-icon:hover,
+.stock-chart-icon:hover {
+    color: #000;
+    transform: scale(1.15);
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+
+/* ---------------------------------------------------------
+   BADGES (Market Phase)
+--------------------------------------------------------- */
+
+.phase-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.phase-badge.active-phase {
+    background-color: #1976d2 !important;
+    color: white !important;
+    border-color: #0d47a1 !important;
+}
+
+/* ---------------------------------------------------------
+   BREADCRUMBS (Navigation)
+--------------------------------------------------------- */
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #ddd;
+    gap: 4px;
+}
+
+.bc-link {
+    cursor: pointer;
+    color: #000;
+    transition: color 0.15s ease;
+}
+
+.bc-link:hover {
+    color: #333;
+    text-decoration: underline;
+}
+
+
+.bc-sep {
+    margin: 0 4px;
+    color: #999;
+}
+
+.bc-item {
+    color: #eee;
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------------
+   ACTIVE MARKER (schwarzes Dreieck)
+--------------------------------------------------------- */
+
+.triangle-cell {
+    width: auto;
+    padding-right: 4px; /* optional */
+}
+
+.triangle {
+    font-size: 1.1rem;
+    color: #000;
+    display: inline-block;
+}
+
+/* ---------------------------------------------------------
+   ToolTip (aktuell nur in StocksList)
+--------------------------------------------------------- */
+
+.score-tooltip-trigger {
+    position: relative;
+    display: inline-block;
+}
+
+.score-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    font-size: 13px;              /* ⭐ Größerer Text */
+    line-height: 1.4;             /* ⭐ Mehr Luft */
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: none;
+    border-radius: 4px;           /* ⭐ Optisch angenehmer */
+}
+
+.score-tooltip-trigger:hover .score-tooltip {
+    display: block;
+}
+
+.score-row,
+.score-total {
+    display: grid;
+    grid-template-columns: 80px 60px 50px; /* ⭐ Breitere Spalten */
+    column-gap: 10px;                       /* ⭐ Mehr Abstand */
+    padding: 2px 0;                          /* ⭐ Luft zwischen Zeilen */
+}
+
+.score-label {
+    text-align: left;
+    font-weight: 600;                        /* ⭐ Klarer, lesbarer */
+}
+
+.score-value {
+    text-align: right;
+    font-weight: bold;
+    font-size: 13px;                         /* ⭐ Score gut sichtbar */
+    color: #222;
+}
+
+.score-raw {
+    text-align: right;
+    font-size: 13px;                         /* ⭐ Rohdaten gleich groß */
+    color: #555;
+}
+
+.score-total {
+    margin-top: 6px;
+    border-top: 1px solid #ddd;
+    padding-top: 6px;
+}
+
+/* ---------------------------------------------------------
+   Export Buttons (Stocks Spalte)
+--------------------------------------------------------- */
+.export-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.export-btn {
+  width: 26px;      
+  height: 26px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  padding: 0;
+}
+
+.export-btn:hover {
+  background-color: #e8e8e8;
+  border-color: #bbb;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  fill: #333;
+}
+
+.button-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    flex: 0 0 auto; /* Verhindert, dass die Buttons schrumpfen */
+    margin-left: auto; /* 🟢 Schiebt ab sofort JEDEN Button-Container ganz nach rechts */
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Die ID-spezifische Zeile kann komplett wegfallen, da das jetzt global für alle gilt */

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New RS Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+    
+    <link rel="stylesheet" href="/apps/dashboard/css/dashboard.css">
+</head>
+
+<body>
+  
+  <div id="notification" class="notification"></div>
+
+  <div class="dashboard-header">
+    <div id="reference-stock" class="reference-box"></div>
+    <div class="breadcrumbs-block">
+      <div class="page-title-small">RS Dashboard</div>
+      <div id="breadcrumbs" class="breadcrumbs">Alle Sektoren</div>
+      <button id="reset-btn" onclick="handleReset()">Reset</button>
+    </div>
+
+    <div class="control-block">
+      <div class="strategy-row">
+        <label for="strategy-select">Strategy:</label>
+        <select id="strategy-select">
+          <option value="none">none</option>
+          <option value="ath" disabled>All‑Time‑High</option>
+          <option value="high52">52-week High</option>
+          <option value="insideday52w">Inside Day @ 52W-High</option>
+          <option value="nearhigh52">Max. 5% below High</option>
+          <option value="stage3topping">Stage3 to Stage4</option>
+          <option value="shorttrend" disabled>Short Trend</option>
+        </select>
+      </div>
+
+      <div class="strategy-row">
+        <label for="index-select">Index:</label>
+        <select id="index-select">
+          <option value="all">All</option>
+          <option value="DJIA">DJIA</option>
+          <option value="NDX">NASDAQ-100</option>
+          <option value="S&P 500">S&P 500</option>
+          <option value="RUT">Russell 2000</option>
+        </select>
+      </div>
+
+      <div id="ticker-search-container">
+        <input id="ticker-search" type="text" placeholder="Ticker search..." autocomplete="off" />
+        <button id="search-btn">Search</button>
+        <div id="search-suggestions" class="suggestions"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-container">
+
+    <div class="column" id="sectors">
+      <div id="sector-list-container"></div>
+    </div>
+
+
+
+    <div class="column" id="rs-won-custom">
+      <h2>Industries – William O’Neil RS (DB)</h2>
+      <div id="industry-list-container"></div>
+    </div>
+
+
+    <div class="column" id="stocks">
+      <div class="column-header">
+          <h2>Stocks</h2>
+          <div class="pill-container" id="stocks-pill-container"></div>
+          <div class="button-container" id="stocks-button-container"></div>
+      </div>
+      <div id="stocks-list-container"></div>
+    </div>
+
+
+    <div class="column" id="tools-tips-column">
+        <div class="column-header"> 
+            <h2>Tools & Lists</h2>
+            <div class="pill-container" id="tools-pill-container"></div>
+            <div class="button-container" id="tools-button-container"></div>
+        </div>
+        <div class="tab-header">
+            <div class="tab-item active" data-tab="signals">🔔 Signals</div>
+            <div class="tab-item" data-tab="watchlist">⭐ Watch</div>
+            <div class="tab-item" data-tab="open-orders">📉 Open</div>
+            <div class="tab-item" data-tab="active-orders">📈 Active</div>
+            <div class="tab-item" data-tab="etfs">📊 ETFs</div>
+        </div>
+        <div class="tab-content" id="tools-tab-content">
+            <p>Lade Inhalte...</p>
+        </div>
+    </div> 
+  </div>
+
+  <div id="chart-modal" style="display:none; position:fixed; z-index:10000; left:0; top:0; width:100%; height:100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);">
+      <div style="background: #fff; margin: 2% auto; width: 90%; max-width: 1200px; height: 85vh; border-radius: 12px; position: relative; padding: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+          <span id="close-modal" style="position:absolute; right:20px; top:10px; font-size:35px; cursor:pointer; color:#999;">&times;</span>
+          <h2 id="modal-ticker-title" style="margin-top:0; font-family: sans-serif; color: #333;">Analyse</h2>
+          <div id="chart-container" style="width: 100%; height: calc(100% - 60px);"></div>
+          <div id="chart-range-buttons" style="display:flex; gap:8px; margin-top:10px;"> 
+              <button data-range="1M">1M</button> 
+              <button data-range="3M">3M</button> 
+              <button data-range="6M">6M</button> 
+              <button data-range="1Y">1Y</button> 
+              <button data-range="YTD">YTD</button> 
+              <button data-range="MAX">MAX</button> 
+          </div>
+      </div>
+  </div>
+  
+  <script type="module" src="/apps/dashboard/js/dashboard.js"></script>
+  <button id="scrollTopBtn" title="Nach oben">↑</button>
+  
+</body>
+</html>

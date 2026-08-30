@@ -1,0 +1,24 @@
+[
+  { "date": "2026-06-04", "ticker": "UL",  "name": "Unilever", "sector": "Consumer Staples", "fcf_yield": "8-10%", "ev_fcf": "11-13" },
+  { "date": "2026-06-04", "ticker": "BTI", "name": "British American Tobacco", "sector": "Consumer Staples", "fcf_yield": "12-15%", "ev_fcf": "7-9" },
+  { "date": "2026-06-04", "ticker": "MO",  "name": "Altria", "sector": "Consumer Staples", "fcf_yield": "12-14%", "ev_fcf": "8-10" },
+  { "date": "2026-06-04", "ticker": "KMB", "name": "Kimberly-Clark", "sector": "Consumer Staples", "fcf_yield": "7-9%", "ev_fcf": "12-14" },
+  { "date": "2026-06-04", "ticker": "CL",  "name": "Colgate-Palmolive", "sector": "Consumer Staples", "fcf_yield": "6-8%", "ev_fcf": "14-16" },
+
+  { "date": "2026-06-04", "ticker": "PFE", "name": "Pfizer", "sector": "Healthcare", "fcf_yield": "8-12%", "ev_fcf": "9-11" },
+  { "date": "2026-06-04", "ticker": "GSK", "name": "GSK", "sector": "Healthcare", "fcf_yield": "8-10%", "ev_fcf": "10-12" },
+  { "date": "2026-06-04", "ticker": "SNY", "name": "Sanofi", "sector": "Healthcare", "fcf_yield": "7-9%", "ev_fcf": "11-13" },
+  { "date": "2026-06-04", "ticker": "BMY", "name": "Bristol-Myers Squibb", "sector": "Healthcare", "fcf_yield": "10-12%", "ev_fcf": "8-10" },
+
+  { "date": "2026-06-04", "ticker": "DUK", "name": "Duke Energy", "sector": "Utilities", "fcf_yield": "7-9%", "ev_fcf": "10-12" },
+  { "date": "2026-06-04", "ticker": "NGG", "name": "National Grid", "sector": "Utilities", "fcf_yield": "8-10%", "ev_fcf": "10-12" },
+  { "date": "2026-06-04", "ticker": "SO",  "name": "Southern Company", "sector": "Utilities", "fcf_yield": "7-8%", "ev_fcf": "12-14" },
+
+  { "date": "2026-06-04", "ticker": "VZ",  "name": "Verizon", "sector": "Telecom", "fcf_yield": "10-12%", "ev_fcf": "8-10" },
+  { "date": "2026-06-04", "ticker": "T",   "name": "AT&T", "sector": "Telecom", "fcf_yield": "12-14%", "ev_fcf": "7-9" },
+  { "date": "2026-06-04", "ticker": "VOD", "name": "Vodafone", "sector": "Telecom", "fcf_yield": "10-12%", "ev_fcf": "8-10" },
+
+  { "date": "2026-06-04", "ticker": "AFL", "name": "Aflac", "sector": "Insurance", "fcf_yield": "8-10%", "ev_fcf": "10-12" },
+  { "date": "2026-06-04", "ticker": "PRU", "name": "Prudential", "sector": "Insurance", "fcf_yield": "9-11%", "ev_fcf": "9-11" },
+  { "date": "2026-06-04", "ticker": "MET", "name": "MetLife", "sector": "Insurance", "fcf_yield": "8-10%", "ev_fcf": "10-12" }
+]

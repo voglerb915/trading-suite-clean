@@ -1,0 +1,77 @@
+* [33mf7044c1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m optimierte cockpit.js
+* [33md242186[m signals-list jetzt lauffähig in tab
+* [33m6cc8659[m Filter und Reset optimiert
+* [33m81ac7bc[m signalsList aktiviert - identisch zu stockslist - noch leer
+* [33ma37975c[m New Dashboard, strategy pille nummerierung eingebaut
+* [33m3b33e19[m Spark Signals eingebaut
+* [33mbc6ec24[m Excel-Overview. Balken mit Dreiecken final eingebaut
+* [33mef7ce69[m Excel-Overview Pfeile farblich und horizontal korrekt
+* [33m48d4b40[m Excel bar in Overview eingebaut - noch Pfeile zu fixen
+* [33m7f2cdbc[m Lab, volume C2C wieder gefixed - Änderungen in cockpit.js - Nebenwirkungen möglich
+* [33m0a9a825[m Excel - Tab Next optimiert
+* [33m26debd3[m Cockpit Struktur neu aufgesetzt - iframe statt import
+* [33m7d9d874[m Tabs-Optik zentralisiert
+* [33md1d3945[m VolumenExtract in Lab erstellt
+* [33m044296f[m Tabs in Lab eingebaut, Fehler bei download gefixed - anzeige duration
+* [33mafc3fae[m Signals funktioniert - ist optimiert - quercheck noch notwendig
+* [33m7a06c8b[m Signals eingebunden aber noch nicht über frontend startbar
+* [33m4c6d8c7[m Search funktion voll funktionsfähig
+* [33md90545b[m Index Filter voll funktionsfähig
+* [33macfe389[m New Dashboard mit funktionierendem click-handler
+* [33mf76237d[m 52wHigh strategy eingebaut - erfolgreich
+* [33m945541b[m ETFs in Tab5 zum Laufen gebracht - strategy funktioniert noch nicht
+* [33m6101b7d[m Umbau auf Database finalisiert - fehlerbehebung
+* [33m038de3d[m strategy 52sHigh eingebaut - ladezeiten unterirdisch - fix notwendig
+* [33m0844972[m neue tabelle marketScores in trading  angelegt
+* [33m1a73e75[m Stocks vollständig integiriet mit click handler, breadcrumbs und referenceStpock
+* [33md33e101[m ETFs eingebaut und Optik dem alten Dashboard angepasst
+* [33m374669e[m Excel: Sektor Overview finalisiert , Lab: Indexes importiert, Dashboard: Diff Ranks korriegiert.
+* [33m1b364c4[m Excel: Sektormapping eingebaut über  Backend  sectorIndustrie Map
+* [33m5e57cfa[m Excel: integration Sectors Overview und Top20%
+* [33mf69d57c[m Lab: Industries % und rank eingebaut
+* [33mff96f2d[m Excel Tabellen 1+2 integriert
+* [33mdbd1600[m control: json integriert + rankmaps gebaut
+* [33ma2b7a41[m dashboard: Industry-Groups implementiert
+* [33m0f7dad7[m dashboard: Sectors aktiviert, json schreiben
+* [33m82ae8c5[m Control: Tile Calculations RS_Sectors JSON aktiviert
+* [33m9b0a67a[m Stand for Integration RS pipeline
+* [33mc5e3b7d[m control: json status repariert - wieder korrekt
+* [33md2ecbf9[m control: iphone Erreichbarkeit eingebaut
+* [33med1db3b[m Control: System Status integriert
+* [33mcfbe12f[m Control-Center vollfunktionsfährg von lab transferiert
+* [33m95c2fbe[m lab: voll funktionsfähige Kacheln, checks, downloads
+* [33m840b0f8[m lab: Downloads - duration aktiviert bei Indexes und stocks, stocks noch nicht getestet
+* [33m56fc340[m lab: Download stream geändert - funktionierende Version
+* [33m8478968[m Start aller server mit powershell
+* [33m5915210[m lab: Prüfungen und Downloads optimiert
+* [33m7d64229[m lab: Prüfungen erweitert mit strategies und Optik etwas modifiziert
+* [33mb8fe15e[m lab: Prüfungen erweitert und Downloads erweitert
+* [33m4c398b3[m lab: Optimierung Kachel Prüfungen - Datum/Uhrzeit
+* [33mc5644ba[m lab: Prüfungen optimiert
+* [33m84a07b7[m Lab: Kacheln Downlaods und Prüfungen für  Indices erweitert
+* [33md3ef6c1[m Lab: Kachel Prüfungen aufgesetzt
+* [33m732c082[m Dashboard: Optik Spalte Sectors finalisiert
+* [33mec98cf5[m dashboard: neue struktur der index.html - bereinigt
+* [33m6038f43[m lab: migration short-Strategy stage3to4
+* [33m24d42a5[m lab: vorbereitung control center
+* [33m9665b0d[m lab: journal entfernt, beginn Aufbau control-center
+* [33m7a6a9f8[m shared ordner in frontend ordner angelegt
+* [33m2a784c5[m lab: render funktionen angepasst auf neue struktur
+* [33m747122b[m lab: lab in einzelne Bausteine zerlegt
+* [33m54b020d[m lab: neue lab.js nach Auslagerung in einzelne Bausteine
+* [33m8635c61[m cockpit: Desktop or Laptop connected below Trading Cockpit
+* [33m98d4422[m SQL Verbindungen in server.js und connection.js angepasst für Laptop
+* [33md09c0c7[m journal: Trade Tabelle aus lab transferiert
+* [33m97d6801[m lab: Journal Tabelle finalisiert
+* [33me41f6e0[m lab: R Spalte eingefügt
+* [33m2c42590[m lab: Execute Trades sortiert nach PID und Uhrzeit
+* [33m2079bd0[m lab: neue Spalte pending_id + css für spaltenbreite
+* [33m9dcd060[m lab: style.css korrigiert
+* [33m328449a[m Clean monorepo: remove node_modules, logs, build artifacts
+* [33ma2660ca[m lab: Exit price in Spalte Exit - Backend angepasst
+* [33m771349a[m lab: Spalte Ratio klickbar- Sortierung
+* [33m30b29cf[m Restore lab.js from commit d95c346 and ignore logs
+* [33md95c346[m Volumen und Umsatz klickbar für Sortierung
+* [33m9fd20bf[m Lab.js wieder lauffähig
+* [33m134b6d9[m Convert cockpit and lab from submodules to normal directories
+* [33m79e3fe1[m Initial commit after restructuring

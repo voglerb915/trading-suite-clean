@@ -1,0 +1,10 @@
+/* =========================================================
+   LAB CSS - Zentraler Sammler
+   ========================================================= */
+
+/* 1. Basis-Styles & gemeinsame Elemente */
+@import './_base.css';
+
+/* 2. Tab-Spezifische Komponenten-Styles */
+@import './tabs/_charts.css';
+@import './tabs/_indexes.css';

@@ -1,0 +1,134 @@
+
+===========================
+Export: 11:55:47
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 32
+---------------------------
+FET
+TNK
+PXS
+WHD
+SU
+E
+MUR
+CNQ
+STNG
+WDS
+IMO
+CHRD
+PBR
+HLX
+BP
+OXY
+NOV
+AROC
+COP
+TDW
+FLNG
+FTW
+SMC
+SLNG
+KMI
+MNR
+ARLP
+SGU
+IEP
+CLNE
+INDO
+LSE
+===========================
+
+===========================
+Export: 13:00:23
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: -
+Count: 36
+---------------------------
+BFH
+XNCR
+MCHB
+TRAX
+AMTB
+PCAR
+LIND
+IOND
+ASH
+CNK
+PLSE
+INN
+LTH
+NEO
+CFR
+LAD
+LH
+BLFS
+ANDG
+CBC
+PBF
+HBNC
+MYE
+HST
+IEX
+CORT
+LILA
+LILAK
+THC
+LBRX
+PK
+HIG
+V
+STAK
+FBRX
+CPHI
+===========================
+
+===========================
+Export: 13:00:23
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: All
+Count: 36
+---------------------------
+FBRX
+STAK
+CORT
+PBF
+PLSE
+XNCR
+NEO
+LIND
+MYE
+TRAX
+LTH
+CPHI
+LILA
+ANDG
+THC
+LILAK
+BLFS
+BFH
+LBRX
+INN
+AMTB
+CBC
+HST
+CNK
+LAD
+PK
+ASH
+CFR
+LH
+PCAR
+HBNC
+IEX
+MCHB
+V
+HIG
+IOND
+===========================

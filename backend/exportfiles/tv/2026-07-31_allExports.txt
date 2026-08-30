@@ -1,0 +1,80 @@
+
+===========================
+Export: 00:28:45
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Diversified
+Index: all
+Count: 7
+---------------------------
+BIP
+UTL
+ELPC
+AES
+AVA
+SRE
+AQN
+===========================
+
+===========================
+Export: 00:28:45
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Diversified
+Index: all
+Count: 7
+---------------------------
+BIP
+UTL
+ELPC
+AES
+AVA
+SRE
+AQN
+===========================
+
+===========================
+Export: 00:33:01
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Regulated Water
+Index: all
+Count: 13
+---------------------------
+HTO
+AWR
+CWT
+ARTNA
+MSEX
+WTRG
+AWK
+YORW
+SBS
+PCYO
+GWRS
+CWCO
+CDZI
+===========================
+
+===========================
+Export: 00:33:01
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Regulated Water
+Index: all
+Count: 13
+---------------------------
+HTO
+AWR
+CWT
+ARTNA
+MSEX
+WTRG
+AWK
+YORW
+SBS
+PCYO
+GWRS
+CWCO
+CDZI
+===========================

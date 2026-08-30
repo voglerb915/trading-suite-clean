@@ -1,0 +1,39 @@
+frontend/
+│
+├── vite.config.js
+│
+├── /apps
+│   ├── cockpit/
+│   │     index.html
+│   │     main.js
+│   │     css/
+│   │     render/
+│   │     components/
+│   │
+│   ├── lab/
+│   │     index.html
+│   │     lab.js
+│   │     css/
+│   │     render/
+│   │
+│   ├── journal/
+│   ├── dashboard/
+│   ├── charting-tool/
+│
+└── /shared
+      ├── api/
+      │     journal.js
+      │     volume.js
+      │
+      ├── state/
+      │     globalState.js
+      │
+      ├── utils/
+      │     format.js
+      │     math.js
+      │     date.js
+      │
+      └── components/
+            table.js
+            badge.js
+            layout.js

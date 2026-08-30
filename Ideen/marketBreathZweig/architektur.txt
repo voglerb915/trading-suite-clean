@@ -1,0 +1,171 @@
+Breadth Engine – Architektur (modern, vollständig, modular)
+Die Breadth‑Engine besteht aus 3 Schichten:
+
+1) Rohdaten‑Schicht (Raw Metrics)
+Diese Schicht berechnet die 5 fundamentalen Marktbreite‑Daten, die ALLE Breadth‑Indikatoren benötigen.
+
+A) Advancers
+Anzahl Aktien mit perf_day > 0.
+
+B) Decliners
+Anzahl Aktien mit perf_day < 0.
+
+C) New Highs
+Aktien, die ein 52‑Wochen‑Hoch machen.
+
+D) New Lows
+Aktien, die ein 52‑Wochen‑Tief machen.
+
+E) % über MA50
+Anteil der Aktien über ihrem 50‑Tage‑GD.
+
+F) % über MA200
+Anteil der Aktien über ihrem 200‑Tage‑GD.
+
+G) Up Volume / Down Volume
+Volumen der steigenden vs. fallenden Aktien.
+
+2) Indikator‑Schicht (Derived Indicators)
+Aus den Rohdaten entstehen die klassischen Breadth‑Indikatoren.
+
+A) Zweig Breadth Thrust
+EMA
+10
+(
+𝐴
+𝑑
+𝑣
+𝐴
+𝑑
+𝑣
++
+𝐷
+𝑒
+𝑐
+)
+B) McClellan Oscillator
+EMA
+19
+(
+𝑁
+𝑒
+𝑡
+𝐴
+𝑑
+𝑣
+)
+−
+EMA
+39
+(
+𝑁
+𝑒
+𝑡
+𝐴
+𝑑
+𝑣
+)
+C) McClellan Summation Index
+∑
+McClellan Oscillator
+D) A/D‑Line
+A/D Line
+=
+∑
+(
+𝐴
+𝑑
+𝑣
+−
+𝐷
+𝑒
+𝑐
+)
+E) High‑Low Index
+𝑁
+𝑒
+𝑤
+𝐻
+𝑖
+𝑔
+ℎ
+𝑠
+−
+𝑁
+𝑒
+𝑤
+𝐿
+𝑜
+𝑤
+𝑠
+𝑇
+𝑜
+𝑡
+𝑎
+𝑙
+𝑆
+𝑡
+𝑜
+𝑐
+𝑘
+𝑠
+F) MA50 Breadth
+\frac{\text{#Stocks > MA50}}{\text{TotalStocks}}
+G) MA200 Breadth
+\frac{\text{#Stocks > MA200}}{\text{TotalStocks}}
+H) Volume Thrust
+EMA
+10
+(
+𝑈
+𝑝
+𝑉
+𝑜
+𝑙
+𝑈
+𝑝
+𝑉
+𝑜
+𝑙
++
+𝐷
+𝑜
+𝑤
+𝑛
+𝑉
+𝑜
+𝑙
+)
+3) Signal‑Schicht (Breadth Signals)
+Hier entstehen die Top‑ und Bottom‑Signale, die du für dein Handelssystem brauchst.
+
+A) Breadth Divergence Top
+Index macht neues Hoch → Breadth‑Indikator nicht.
+
+B) Summation Index Roll‑Over
+Summation Index fällt → Index steigt noch.
+
+C) MA200 Breadth Collapse
+MA200‑Breite fällt unter 40 % → Index noch stark.
+
+D) High‑Low Collapse
+New Highs brechen ein → Index macht Hoch.
+
+E) Zweig Thrust Failure
+Breadth steigt stark → erreicht aber nicht die Thrust‑Schwelle.
+
+F) Volume Exhaustion
+Up‑Volume fällt → Index steigt noch.
+
+🟦 Warum diese Engine perfekt ist
+Modular → jede Komponente einzeln berechenbar
+
+Erweiterbar → du kannst neue Breadth‑Indikatoren hinzufügen
+
+Robust → funktioniert mit deinem Finviz‑Universum
+
+Modern → basiert auf Zweig, McClellan, Lowry, Sentimentrader
+
+Quant‑tauglich → klare, saubere Datenpipelines
+
+Dashboard‑freundlich → perfekt für deine JS‑Architektur

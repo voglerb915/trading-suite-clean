@@ -1,0 +1,95 @@
+/trading-suite (Frontend)
+│
+├── /cockpit
+│     index.html
+│     /js
+│         main.js
+│         navigation.js
+│         kpi-loader.js
+│     /css
+│         style.css
+│
+├── /dashboard               ← NEU: zukünftige modulare Version deines Dashboards
+│     index.html
+│     /js
+│         main.js            ← später: Einstiegspunkt
+│         state.js           ← später: globaler Dashboard-State
+│         ui/                ← später: Rendering-Funktionen
+│         controllers/       ← später: Order-Flow, Watchlist, Signals
+│         data/              ← später: API-Calls, Loader
+│     /css
+│         style.css
+│
+├── /journal
+│     index.html
+│     /js
+│         main.js
+│         trades-table.js
+│         analytics.js
+│     /css
+│         style.css
+│
+├── /charting-tool
+│     index.html
+│     /js
+│         main.js
+│         sector-charts.js
+│         industry-charts.js
+│         index-charts.js
+│         rs-william-oneill.js
+│     /css
+│         style.css
+│
+├── /control-center
+│     index.html
+│     /js
+│         main.js
+│         data-checks.js
+│         download-monitor.js
+│         db-integrity.js
+│     /css
+│         style.css
+│
+└── /shared
+      /api
+          api-client.js
+          marketdata.js
+          orders.js
+          sectors.js
+          industries.js
+      /components
+          chart.js
+          table.js
+          tabs.js
+          layout.js
+      /utils
+          math.js
+          date.js
+          format.js
+      /state
+          globalState.js
+          dataStore.js
+
+/trading-suite (backend)
+│
+├── server.js
+│
+├── /routes
+│     marketContext.js
+│     ibkr.js
+│     orders.js
+│     sectors.js
+│     industries.js
+│     stocks.js
+│     metricsVolume.js   ← deine neue vma_20 Route
+│     metrics.js
+│     chart.js
+│
+├── /db
+│     connection.js
+│
+└── /utils
+      logger.js
+      exportService.js
+      dateHelper.js
+      archiveHelper.js

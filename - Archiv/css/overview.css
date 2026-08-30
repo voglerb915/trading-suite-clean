@@ -1,0 +1,112 @@
+/* ---------------------------------------------------------
+   OVERVIEW – SECTOR TILE RIGHT BLOCK (SÄULE + HEADER)
+   --------------------------------------------------------- */
+
+/* Gesamter Stats‑Block rechts im SectorTile */
+.sector-stats,
+.stats-column {
+    pointer-events: none;
+}
+
+.sector-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+/* Header: Industrieanzahl + Prozent */
+.stats-header {
+    display: flex;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.stats-count,
+.stats-percent {
+    white-space: nowrap;
+}
+
+/* ---------------------------------------------------------
+   SÄULE (einfarbiger Block)
+   --------------------------------------------------------- */
+
+.stats-column {
+    position: relative;
+    width: 22px;
+    height: 100px; /* Muss zu JS COLUMN_HEIGHT passen */
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* ---------------------------------------------------------
+   STRICHE: Min / Avg / Max
+   --------------------------------------------------------- */
+
+.line-min,
+.line-avg,
+.line-max {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    opacity: 0.9;
+}
+
+/* Min = dünn */
+.line-min {
+    height: 2px;
+}
+
+/* Avg = dicker, dunkler */
+.line-avg {
+    height: 3px;
+    background: #000;
+    opacity: 1;
+}
+
+/* Max = dünn */
+.line-max {
+    height: 2px;
+}
+
+/* Optional: leichte Schatten für bessere Sichtbarkeit */
+.line-min,
+.line-max {
+    box-shadow: 0 0 2px rgba(0,0,0,0.6);
+}
+
+.line-avg {
+    box-shadow: 0 0 3px rgba(255,255,255,0.8);
+}
+
+/* ---------------------------------------------------------
+   HEATMAP-FARBEN (hm-0 bis hm-6)
+   Konsistent für Overview + Säulen
+   --------------------------------------------------------- */
+
+/* Sehr schwach */
+.hm-0 { background-color: #5a0000; }
+
+/* Schwach */
+.hm-1 { background-color: #a00000; }
+
+/* Mittel */
+.hm-2 { background-color: #c06000; }
+
+/* Neutral */
+.hm-3 { background-color: #d0b000; }
+
+/* Gut */
+.hm-4 { background-color: #8ac000; }
+
+/* Stark */
+.hm-5 { background-color: #3ea000; }
+
+/* Sehr stark */
+.hm-6 { background-color: #006400; }

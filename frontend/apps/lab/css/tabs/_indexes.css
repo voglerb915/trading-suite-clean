@@ -1,0 +1,48 @@
+/* ======================================================
+   INDEX.CSS – Tabellen-Design & Sticky Header
+====================================================== */
+
+/* Tabelle global ausrichten */
+.index-base-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0; /* Abstand oben entfernt, damit Sticky Header sauber klebt */
+}
+
+/* Kopfzeile (Sticky) */
+.index-base-table th {
+    text-align: left;
+    padding: 15px 20px;
+    background: #222;
+    color: #fff;
+    font-weight: 600;
+    
+    /* Sticky Fix: Klebt direkt am oberen Rand des scrollenden Tab-Containers */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 2px solid #444;
+}
+
+/* Zellen-Inhalt */
+.index-base-table td {
+    padding: 6px 20px !important;
+    border-bottom: 1px solid #333;
+}
+
+/* Hover-Effekt */
+.index-base-table tr:hover {
+    background: #1a1a1a;
+}
+
+/* Container-Layout (Kein Padding hier, damit der Sticky Header keinen Abstand hat) */
+#tab-overviews {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+#col-3-overviews {
+    min-height: 100%;
+    padding: 0;
+}
+

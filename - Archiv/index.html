@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading Cockpit</title>
+    <link rel="stylesheet" href="/apps/cockpit/css/cockpit.css">
+    <link rel="stylesheet" href="/apps/cockpit/css/tiles.css">
+
+</head>
+
+<body>
+
+<header id="topbar">
+    <div class="logo">Trading Cockpit</div>
+
+    <nav id="main-nav">
+        
+        <a href="#" data-tool="cockpit">Cockpit</a>
+        <a href="#" data-tool="lab">Lab</a>
+        <a href="#" data-tool="dashboard">Dashboard (Current)</a> 
+        <a href="#" data-tool="new-dashboard">New Dashboard</a>
+        
+        <a href="#" data-tool="journal">Journal</a>
+        <a href="#" data-tool="charting">Charting</a>
+
+        <!-- NEU: Excel -->
+        <a href="#" data-tool="excel">Excel</a>
+
+        <a href="#" data-tool="control">Control-Center</a>
+    </nav>
+</header>
+
+<main id="content">
+
+    
+
+    <!-- ⭐ IFRAME-TOOLS -->
+    <iframe id="iframe-cockpit" src="/apps/cockpit/index.html" class="tool-iframe"></iframe>
+
+    <iframe id="iframe-lab" src="/apps/lab/index.html" class="tool-iframe"></iframe>
+    <iframe id="iframe-dashboard" src="http://localhost:3000" class="tool-iframe active"></iframe> 
+    <iframe id="iframe-new-dashboard" src="/apps/dashboard/index.html" class="tool-iframe"></iframe>
+    <iframe id="iframe-journal" src="/apps/journal/index.html" class="tool-iframe"></iframe>
+    <iframe id="iframe-charting" src="/apps/charting-tool/index.html" class="tool-iframe"></iframe>
+
+    <!-- NEU: Excel -->
+    <iframe id="iframe-excel" src="/apps/excel/index.html" class="tool-iframe"></iframe>
+
+    <iframe id="iframe-control" src="/apps/control-center/index.html" class="tool-iframe"></iframe>
+
+</main>
+
+<!-- ⭐ WICHTIG: Cockpit-Controller -->
+<script type="module" src="/apps/cockpit/cockpit.js"></script>
+
+
+</body>
+</html>

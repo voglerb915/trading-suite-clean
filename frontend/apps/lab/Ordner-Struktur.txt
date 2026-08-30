@@ -1,0 +1,14 @@
+frontend/
+└── apps/
+    └── lab/
+        ├── index.html
+        ├── lab.js
+        ├── css/
+        │   └── style.css
+        ├── render/
+        │   ├── renderVolumeTable.js
+        │   └── renderJournalTable.js
+        ├── components/
+        │   └── tableRow.js        ← optional, falls du später UI-Bausteine willst
+        └── utils/
+            └── labHelpers.js      ← nur lab-spezifische Mini-Utils

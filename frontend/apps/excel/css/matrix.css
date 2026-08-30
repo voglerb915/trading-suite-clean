@@ -1,0 +1,374 @@
+/* ==========================================================================
+   1. ZENTRALE TYPOGRAFIE & EXCEL-BASIS (Gilt für ALLE Kacheln im Grid)
+   ========================================================================== */
+
+
+.sector-tile,
+.industries-tile {
+    background: #ffffff;
+    border: 1px solid #c8ced3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    
+    /* Übernimmt die Schriftart direkt aus deiner table.css */
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Header (Die blaue Titelzeile der Kacheln) */
+.tile-header {
+    background-color: #4682B4;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid #c8ced3;
+}
+
+/* ==========================================================================
+   MATRIX.CSS – Ergänzung für den Container-Namespace
+   ========================================================================== */
+
+#excel-main-container .matrix-dashboard-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+#excel-main-container .sectors-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 15px;
+    padding: 15px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Alle anderen Regeln deiner Datei bleiben exakt wie sie sind 
+   und werden durch die oben stehende Kapselung nun sauber 
+   in das neue Excel-Main-Layout eingereiht. */
+/* ==========================================================================
+   2. SPALTENÜBERSCHRIFTEN & RANG-SKALA (Zentral gesteuert für alle Kacheln)
+   ========================================================================== */
+.matrix-table thead th,
+.industries-table thead th,
+.scale-cell-num {                             /* NEU: Rang-Zahlen hier hinzugefügt */
+    font-size: 13px !important;               /* <-- Diese Größe gilt jetzt für Überschriften UND die Ränge 1-11 */
+    font-family: "Segoe UI", Arial, sans-serif !important;
+    color: #000000 !important;
+    box-sizing: border-box;
+}
+
+/* Tabellenköpfe behalten ihr spezifisches Excel-Design */
+.matrix-table thead th,
+.industries-table thead th {
+    font-weight: 600 !important;
+    padding: 6px 4px !important;
+    background: #e6e6e6 !important;
+    text-align: center !important;
+    border-bottom: 2px solid #000000 !important;
+}
+
+/* Linke Rang-Skala spezifische Abmessungen (ohne die Schriftgröße zu überschreiben) */
+.scale-cell-num {
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    font-weight: bold;                        /* Knackig fett für den Excel-Look */
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 2px solid #000000;
+    padding: 0;
+}
+/* ==========================================================================
+   3. BRANDMAUER & COCKPIT-RASTER
+   ========================================================================== */
+.matrix-dashboard-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.sectors-tile-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 15px;
+    padding: 15px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* ==========================================================================
+   4. SECTOR TILE – MATRIX SPEZIFISCH (18 Spalten)
+   ========================================================================== */
+
+/* Die Matrix-Tabelle weicht wegen des 18-Spalten-Rasters in der Gesamtbreite ab */
+.matrix-table {
+    border-collapse: collapse;
+    margin: 10px;
+    width: 354px !important; /* 30px (Rank) + (18 * 18px Spalten) = 354px */
+    min-width: 354px !important;
+    table-layout: fixed;
+}
+
+/* Überschreibt den Hintergrund für den Matrix-Header auf Weiß, damit die Punkte wirken */
+.matrix-table thead th {
+    background: #ffffff !important; 
+    font-size: 12px !important; /* Hält die 18 gestauchten Matrix-Spalten lesbar */
+    padding: 4px 0 !important;
+}
+
+.th-matrix-rank {
+    width: 30px !important;
+    min-width: 30px !important;
+    border-right: 2px solid #000000 !important;
+}
+
+.th-matrix-group {
+    letter-spacing: 0.5px;
+}
+
+.th-matrix-group.header-break {
+    border-right: 2px solid #000000 !important;
+}
+
+/* Linke Rang-Skala */
+.scale-cell-num {
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 2px solid #000000;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Datenzellen (Punkte-Raster) */
+.matrix-td {
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+    font-size: 8px !important;
+    line-height: 15px !important;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+
+.matrix-td.border-break {
+    border-right: 2px solid #000000 !important;
+}
+
+.tile-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.25);
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   5. INDUSTRIES TOP 20% TILE SPEZIFISCH (Kompakt & Fixiert gegen Überlauf)
+   ========================================================================== */
+
+.industries-table {
+    width: 95% !important;
+    max-width: 100% !important;    /* Absolute Obergrenze: Keinen Pixel breiter als die Kachel! */
+    border-collapse: collapse;
+    table-layout: fixed;           /* Garantiert, dass die 150px links exakt eingehalten werden */
+}
+
+/* Die linke Industrie-Namen-Spalte – FELSENFEST AUF 150px */
+.industries-table thead th:first-child,
+.industries-sector-cell {
+    width: 140px !important;       /* Bleibt eisern bei 150px */
+    min-width: 140px !important;   
+    max-width: 140px !important;   
+    font-size: 11px !important;    
+    font-weight: 600 !important;
+    text-align: left !important;
+    border-right: 2px solid #000000 !important; 
+    padding-left: 6px !important;
+    padding-top: 3px !important;   
+    padding-bottom: 3px !important;
+    white-space: nowrap;           
+    overflow: hidden;              
+    text-overflow: ellipsis;       
+    background: #ffffff !important;
+    box-sizing: border-box;
+}
+
+/* Zahlenzellen (Die restlichen 9 Spalten werden jetzt radikal geschrumpft) */
+.industries-value-cell {
+    width: calc((100% - 140px) / 9) !important; /* Berechnet mathematisch den exakt verfügbaren Restplatz */
+    font-size: 12px !important;    
+    padding: 3px 0 !important;     /* Horizontalen Innenabstand auf 0 gesetzt, um Platz zu sparen */
+    text-align: center !important; 
+    border-bottom: 1px solid #ddd !important;
+    background: #ffffff !important;
+    box-sizing: border-box;
+}
+
+/* Tabellen-Header für die Zahlenspalten (Week, Month, Quarter) */
+.industries-table thead th:not(:first-child) {
+    width: calc((100% - 150px) / 9) !important; /* Gleiche schmale Berechnung für den Kopf */
+    font-size: 11px !important;    /* Falls die Wörter "Week" etc. zu groß sind, machen wir den Text hier dezent kleiner */
+    text-align: center !important; 
+}
+
+/* Spaltentrenner für die inneren Werte */
+.industries-table td,
+.industries-table th {
+    border-right: 1px solid #e0e0e0;
+}
+
+.industries-table td:last-child,
+.industries-table th:last-child {
+    border-right: none;
+}
+
+/* ============================================================
+   SECTOR TILE – Stats rechts oben
+   ============================================================ */
+
+.sector-tile {
+    position: relative;
+    padding-top: 6px;
+}
+
+.sector-stats {
+    position: absolute;
+    right: 16px;
+    top: 45px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 jetzt mittig */
+    gap: 6px;
+
+    width: 46px;
+    min-width: 46px;
+
+    pointer-events: none;
+}
+
+.stats-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 jetzt mittig */
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    gap: 2px;
+}
+
+.stats-count {
+    font-weight: 800;
+}
+
+.stats-percent {
+    font-weight: 800;
+}
+
+/* ============================================================
+   FINAL: RANK BAR (144px)
+   ============================================================ */
+
+.sector-rank-bar-container {
+    width: 20px;
+    height: 144px;
+    margin-top: 6px;
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+.sector-rank-bar {
+    width: 100%;
+    height: 144px;
+    border-radius: 4px;
+    position: relative !important;
+    overflow: visible;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   MARKER (Pfeile) - Korrektur: Spitze zeigt nach INNEN
+   ============================================================ */
+/* Basis für alle Marker */
+.rank-marker {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    margin-top: -6px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+/* Marker LINKS: Wir drehen ihn um 180 Grad, damit die Spitze nach RECHTS zeigt */
+.marker-left {
+    border-right: 10px solid; /* Spitze zeigt nach rechts */
+    left: -10px;
+}
+
+/* Marker RECHTS: Wir lassen ihn so, damit die Spitze nach LINKS zeigt */
+.marker-right {
+    border-left: 10px solid; /* Spitze zeigt nach links */
+    right: -10px;
+}
+
+/* DER NOT-AUS-SCHALTER: Falls sie immer noch falsch zeigen */
+.pfeil-gedreht {
+    transform: rotate(180deg);
+}
+/* Basis-Klasse für die Form */
+/* ============================================================
+   MARKER (Pfeile) - Spitze zeigt nach INNEN
+   ============================================================ */
+
+.rank-marker {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    margin-top: -6px;
+    /* Basis-Dreieck: Immer 6px hoch */
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    /* Die 10px werden wir per JS steuern */
+}
+/* ============================================================
+   HEATMAP
+   ============================================================ */
+
+.hm-0 { background-color: #5a0000; }
+.hm-1 { background-color: #a00000; }
+.hm-2 { background-color: #c06000; }
+.hm-3 { background-color: #d0b000; }
+.hm-4 { background-color: #8ac000; }
+.hm-5 { background-color: #3ea000; }
+.hm-6 { background-color: #006400; }

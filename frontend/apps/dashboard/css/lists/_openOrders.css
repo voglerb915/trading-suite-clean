@@ -1,0 +1,56 @@
+/* Basis-Styling für die Spalte */
+.order-dir {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Long: Dunkles Grün (mit !important, um Inline-Styles zu überschreiben) */
+.order-dir-long,
+.order-dir[data-dir="long"] {
+    color: #14b11e !important; /* Kräftiges, dunkles Grün */
+}
+
+/* Short: Rot (mit !important) */
+.order-dir-short,
+.order-dir[data-dir="short"] {
+    color: #c62828 !important; /* Kräftiges Rot */
+}
+
+/* =========================================================
+   Open Orders List
+   ========================================================= */
+
+/* =========================================================
+   Open Orders List - Abstände & Layout
+   ========================================================= */
+
+.open-orders-table {
+    width: 100%;
+    table-layout: fixed;
+    font-size: 0.9rem;
+    border-collapse: separate; /* Wichtig, damit Abstände zwischen Zeilen greifen */
+    border-spacing: 0 4px;     /* 4px vertikaler Abstand zwischen den Zeilen */
+}
+
+/* Innenabstand für Zellen, damit Text nicht am Rand klebt */
+.open-orders-table th,
+.open-orders-table td {
+    padding: 8px 1px; /* Oben/Unten 8px, Links/Rechts 6px */
+}
+
+/* Optional: Dem Tabellenkopf unten etwas mehr Luft geben */
+.open-orders-table thead th {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eee;
+}
+
+/* Spaltenbreiten und Ausrichtung zentral definiert */
+.open-orders-table th:nth-child(1), .open-orders-table td:nth-child(1) { width: 45px; text-align: center; } /* Rank */
+.open-orders-table th:nth-child(2), .open-orders-table td:nth-child(2) { width: 60px; text-align: left; }   /* Ticker */
+.open-orders-table th:nth-child(3), .open-orders-table td:nth-child(3) { width: 30px; text-align: left; }   /* Direction */
+.open-orders-table th:nth-child(4), .open-orders-table td:nth-child(4) { width: 55px; text-align: right; }  /* Limit */
+.open-orders-table th:nth-child(5), .open-orders-table td:nth-child(5) { width: 55px; text-align: right; }  /* Entry */
+.open-orders-table th:nth-child(6), .open-orders-table td:nth-child(6) { width: 55px; text-align: right; }  /* Initial SL */
+.open-orders-table th:nth-child(7), .open-orders-table td:nth-child(7) { width: 35px; text-align: center; } /* Quantity */
+.open-orders-table th:nth-child(8), .open-orders-table td:nth-child(8) { width: 35px; text-align: center; } /* Delete */
+

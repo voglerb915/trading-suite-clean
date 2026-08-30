@@ -1,0 +1,89 @@
+/* ======================================================
+   SQL-STATUS.CSS – Mini-Statusmodul für SQL-Verfügbarkeit
+====================================================== */
+
+#sql-status-widget {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    width: 260px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* ----------------------------------------------
+   LINIEN
+---------------------------------------------- */
+.sql-status-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.sql-status-label {
+    opacity: 0.8;
+}
+
+.sql-status-value {
+    font-weight: 700;
+}
+
+.sql-ok      { color: #2ecc71; }
+.sql-error   { color: #e74c3c; }
+.sql-warning { color: #f1c40f; }
+
+/* ----------------------------------------------
+   HEADER (wie Prüfungen)
+---------------------------------------------- */
+.system-status-header {
+    display: flex;
+    flex-direction: column;   /* Titel oben */
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.system-status-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.system-status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----------------------------------------------
+   BADGE (wie Prüfungen)
+---------------------------------------------- */
+.badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.badge-green  { background: #2ecc71; }
+.badge-yellow { background: #f1c40f; color: #000; }
+.badge-red    { background: #e74c3c; }
+
+/* ----------------------------------------------
+   MINI-HEATMAP (wie Prüfungen)
+---------------------------------------------- */
+.mini-heatmap {
+    display: flex;
+    gap: 4px;
+}
+
+.hm {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.hm-success { background: #2ecc71; }
+.hm-warning { background: #f1c40f; }
+.hm-error   { background: #e74c3c; }

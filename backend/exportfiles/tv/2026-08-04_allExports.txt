@@ -1,0 +1,82 @@
+
+===========================
+Export: 23:06:22
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 14
+---------------------------
+SCHL
+NMAX
+BATRK
+BATRA
+MSGM
+MOMO
+META
+RDDT
+FVRR
+FTRK
+NIXX
+DKI
+RBLX
+XHLD
+===========================
+
+===========================
+Export: 23:09:13
+Strategy: none
+Sector: Technology
+Industry: Consumer Electronics
+Index: All
+Count: 19
+---------------------------
+SONO
+AAPL
+TBCH
+VUZI
+SONY
+UEIC
+FEBO
+MSN
+WLDS
+AXIL
+KOSS
+LPL
+GPRO
+FOXX
+FXHO
+BOXL
+RIME
+ZEPP
+GMEX
+===========================
+
+===========================
+Export: 23:09:13
+Strategy: none
+Sector: Technology
+Industry: Consumer Electronics
+Index: -
+Count: 19
+---------------------------
+SONO
+AAPL
+TBCH
+VUZI
+SONY
+UEIC
+FEBO
+MSN
+WLDS
+AXIL
+KOSS
+LPL
+GPRO
+FOXX
+FXHO
+BOXL
+RIME
+ZEPP
+GMEX
+===========================

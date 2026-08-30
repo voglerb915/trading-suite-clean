@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry RS & Performance Dashboard</title>
+    <link rel="stylesheet" href="./chart.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- LINKE SEITE: Master Kombi-Chart (RS Score & Performance) -->
+        <div class="pane left-pane">
+            <h2>Industry RS Score & Performance (3M)</h2>
+            
+<!-- Sektor-Filter & Globale Metrik-Toggles nebeneinander -->
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+    <div id="sector-filter-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 6px;"></div>
+    
+    <!-- Globale Metrik-Pillen (Score & Perf) -->
+    <div class="global-metric-toggles" style="display: flex; gap: 6px; flex-shrink: 0;">
+        <button id="btn-toggle-score" class="sector-pill active" data-metric="score">Score</button>
+        <button id="btn-toggle-perf" class="sector-pill" data-metric="perf">Perf</button>
+    </div>
+</div>
+
+            <div class="chart-wrapper">
+                <canvas id="combinedIndustryChart"></canvas>
+            </div>
+        </div>
+
+        <!-- RECHTE SEITE: 2 horizontal geteilte Panes für Historie -->
+        <div class="pane right-pane-container">
+            
+            <!-- Oben: Ausgewählter Sektor (Historie) mit erzwungener Flexbox-Zeile -->
+            <div class="sub-pane">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                    <h3 id="sector-history-title" style="margin: 0; font-size: 1.1rem;">Sektor Verlauf (3M)</h3>
+                </div>
+                <div class="sub-chart-wrapper">
+                    <canvas id="sectorHistoryChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Unten: Ausgewählte Industrie (Historie) -->
+            <div class="sub-pane">
+                <h3 id="industry-history-title" style="margin-bottom: 8px; font-size: 1.1rem;">Industrie Verlauf (3M) - Bitte wählen</h3>
+                <div class="sub-chart-wrapper">
+                    <canvas id="industryHistoryChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./renderChart.js"></script>
+</body>
+</html>

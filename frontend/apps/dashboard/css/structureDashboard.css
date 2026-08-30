@@ -1,0 +1,467 @@
+/* =========================================================
+   STRUCTURDASHBOARD.CSS – Grundlayout, Header, Container
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Grundlayout
+--------------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* ---------------------------------------------------------
+   Dashboard-Container
+--------------------------------------------------------- */
+.dashboard-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.column {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+}
+
+/* ---------------------------------------------------------
+   Einheitliche Spalten-Header
+--------------------------------------------------------- */
+.column h2,
+.stocks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  margin: 0 0 15px 0;
+  padding: 0 0 8px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+.stocks-header h2 {
+  border-bottom: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: auto !important;
+}
+
+/* ---------------------------------------------------------
+   Dashboard Header (oben)
+--------------------------------------------------------- */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 12px;
+  background: #fafafa;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* =========================================================
+   HEADER LEFT – REFERENCE BOX (vollständiger Block)
+   ========================================================= */
+
+.reference-box {
+  padding: 4px 12px 8px 12px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  font-size: 14px;
+  align-self: flex-start;
+  width: max-content;
+  min-width: 280px;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  column-gap: 20px;
+  row-gap: 4px;
+}
+
+/* Titelzeile */
+.ref-header {
+  grid-column: span 4;
+  margin: 0;
+  padding: 0;
+}
+
+.reference-box h2 {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.05;
+  font-size: 1.15em;
+}
+
+/* Firmenname */
+.company-name {
+  grid-column: span 4;
+  margin: 0 0 6px 0;
+  padding: 0;
+  color: #666;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* Datenzeilen */
+.ref-row {
+  display: contents;
+}
+
+.ref-row div:nth-child(4n+1) {
+  grid-column-start: 1;
+}
+
+.ref-row div {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  line-height: 1.1;
+}
+
+.ref-row strong {
+  color: #333;
+  margin-right: 6px;
+}
+
+/* Score Tooltip */
+.score-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    cursor: help;
+}
+
+.score-details-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #d3d3d3;
+    color: #000;
+    border: 1px solid #777;
+    padding: 8px;
+    border-radius: 2px;
+    z-index: 10000;
+    width: 280px;
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.detail-line {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #bbb;
+    padding: 2px 0;
+}
+
+.score-container:hover .score-details-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* ---------------------------------------------------------
+   Breadcrumbs
+--------------------------------------------------------- */
+.breadcrumbs-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+#breadcrumbs {
+  font-size: 14px;
+  color: #666;
+  padding: 10px 0;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.breadcrumbs {
+  padding: 6px 10px;
+  background: #f2f2f2;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.breadcrumb-link {
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 2px 6px;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+  background-color: #eee;
+  color: #000;
+  text-decoration: underline;
+}
+
+#breadcrumbs span:last-child {
+  font-weight: bold;
+  color: #333;
+  cursor: default;
+}
+
+#reset-btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: fit-content;
+}
+
+#reset-btn:hover {
+  background: #ddd;
+}
+
+.page-title-small {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 6px;
+  color: #444;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   Strategie / Index / Suche
+--------------------------------------------------------- */
+.control-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.strategy-row,
+.index-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.strategy-row label,
+.index-row label {
+  font-weight: 600;
+  color: #333;
+}
+
+.strategy-row select,
+.index-row select {
+  padding: 6px 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  min-width: 180px;
+}
+
+.strategy-row select:hover,
+.index-row select:hover {
+  border-color: #666;
+}
+
+#ticker-search-container {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+#ticker-search {
+  padding: 6px 10px;
+  border: 2px solid orange;
+  border-radius: 4px;
+  width: 160px;
+}
+
+#delete-btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background: orange;
+  border: 1px solid #cc7a00;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.suggestions {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 160px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+}
+
+/* =========================================================
+   SECTORS & INDUSTRIES HEADER (Layout)
+   ========================================================= */
+
+.sectors-header,
+.industries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 34px;
+  padding: 0 0 8px 0;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+.sectors-header-title,
+.industries-header-title {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.sectors-header-diffs,
+.industries-header-diffs {
+  display: grid;
+  grid-template-columns: 56px 32px 32px 32px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* =========================================================
+   STOCKS & TABS HEADER (Layout)
+   ========================================================= */
+
+.column-header {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    padding: 0 0 8px 0;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.column-header h2 {
+    font-size: 1.1em !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: none !important;
+    line-height: 1.3;
+    flex: 0 0 auto;
+}
+
+.tab-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* ---------------------------------------------------------
+   Export Buttons
+--------------------------------------------------------- */
+.export-buttons {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.export-btn {
+  width: 26px;
+  height: 26px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  padding: 0;
+}
+
+.export-btn:hover {
+  background-color: #e8e8e8;
+  border-color: #bbb;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  fill: #333;
+}
+
+/* ---------------------------------------------------------
+   Scroll Button to Top
+--------------------------------------------------------- */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #ddd;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 2000;
+  transition: background-color 0.2s ease;
+}
+
+#scrollTopBtn:hover {
+  background: #ccc;
+}
+
+/* ---------------------------------------------------------
+   Notification
+--------------------------------------------------------- */
+#notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 9999;
+}
+
+#notification.success {
+  background-color: #4caf50 !important;
+}
+
+#notification.error {
+  background-color: #f44336 !important;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel Cockpit</title>
+
+    
+    <link rel="stylesheet" href="/apps/excel/css/tables.css">
+    <link rel="stylesheet" href="/apps/excel/css/matrix.css">
+    <link rel="stylesheet" href="/shared/css/tabs.css">
+
+</head>
+
+<body style="background:#121212; margin: 0; padding: 0;">
+
+    <div id="excel-main-container">
+
+        <div class="tab-bar">
+            <div class="tab" data-tab="sectors-performance">🏠 Perf. %</div>
+            <div class="tab" data-tab="sectors-ranking">🏠 Rank</div>
+
+            <div class="tab" data-tab="industries-performance">🛠️ Perf. %</div>
+            <div class="tab" data-tab="industries-ranking">🛠️ Rank</div>
+            <div class="tab" data-tab="industries-top20">🛠️ Top20%</div>
+
+            <div class="tab active" data-tab="sectors-overview">
+                <span class="tab-icon-export">🧮</span>
+                <span class="tab-label">Overview</span>
+            </div>
+
+        </div>
+
+
+        <div id="tab-sectors-performance" class="tab-content" style="display: none;"></div>
+        <div id="tab-sectors-ranking" class="tab-content" style="display:none;"></div>
+        <div id="tab-industries-performance" class="tab-content" style="display:none;"></div>
+        <div id="tab-industries-ranking" class="tab-content" style="display:none;"></div>
+        <div id="tab-industries-top20" class="tab-content" style="display:none;"></div>
+        <div id="tab-sectors-overview" class="tab-content" ></div>
+
+    </div>
+
+    <script type="module" src="/apps/excel/excel.js"></script>
+
+</body>
+</html>

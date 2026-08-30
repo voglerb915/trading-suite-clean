@@ -1,0 +1,132 @@
+/* ======================================================
+   EXCEL-COCKPIT – Original-Design & Struktur
+   ====================================================== */
+
+#excel-main-container {
+    padding: 20px;
+    background: #f2f2f2;
+    color: #000;
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+}
+
+#excel-main-container .excel-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+}
+
+/* 1) TABELLENSTRUKTUR */
+#excel-main-container .excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+#excel-main-container .excel-table thead th {
+    padding: 6px 4px;
+    border-bottom: 1px solid #bbb;
+    background: #e6e6e6;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+}
+
+#excel-main-container .excel-table tbody td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    color: #000;
+}
+
+#excel-main-container .excel-table tbody tr:hover {
+    background: #f7f7f7;
+}
+
+#excel-main-container .excel-table tr:last-child td {
+    border-bottom: 1px solid #ccc !important;
+}
+
+/* 2) SEKTOR & WERTE-CELLS */
+#excel-main-container .excel-sector {
+    font-weight: 600;
+    text-align: left !important;
+    border-right: 1px solid #ccc;
+    color: #000;
+    padding-left: 6px;
+}
+
+#excel-main-container .excel-table td.excel-pos { color: #008000 !important; }
+#excel-main-container .excel-table td.excel-neg { color: #cc0000 !important; }
+
+/* 3) SPARKLINE & RESPONSIVE */
+#excel-main-container .excel-spark {
+    width: 130px;
+    padding: 0;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    #excel-main-container .excel-table { font-size: 12px; }
+}
+@media (max-width: 900px) {
+    #excel-main-container .excel-table thead th,
+    #excel-main-container .excel-table tbody td { padding: 4px 2px; }
+}
+
+/* 4) RANKING-SYSTEM */
+#excel-main-container .excel-rank { text-align: center !important; font-weight: 600; padding: 4px 6px; }
+
+.rank-1  { background:#b30000 !important; color:#fff !important; }
+.rank-2  { background:#cc0000 !important; color:#fff !important; }
+.rank-3  { background:#e60000 !important; color:#fff !important; }
+.rank-4  { background:#ff1a1a !important; color:#fff !important; }
+.rank-5  { background:#ff4d4d !important; color:#000 !important; }
+.rank-6  { background:#ff944d !important; color:#000 !important; }
+.rank-7  { background:#ffd24d !important; color:#000 !important; }
+.rank-8  { background:#e6ff4d !important; color:#000 !important; }
+.rank-9  { background:#b3ff66 !important; color:#000 !important; }
+.rank-10 { background:#80ff80 !important; color:#000 !important; }
+.rank-11 { background:#33cc33 !important; color:#fff !important; }
+
+/* 5) TOP20 & PILLS */
+#excel-main-container .top20-row {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+#excel-main-container .top20-col { flex: 1; min-width: 300px; }
+#excel-main-container .top20-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+
+#excel-main-container .pill {
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    user-select: none;
+}
+#excel-main-container .pill.active { background: #0a84ff; }
+
+/* 6) RANK-DELTA */
+#excel-main-container td.rank-col { text-align: center !important; font-size: 15px; font-weight: 700; }
+#excel-main-container .rank-delta { text-align: center !important; font-size: 15px; font-weight: 700; white-space: nowrap; }
+#excel-main-container .rank-delta-arrow { 
+    font-size: 20px; 
+    font-weight: 900; 
+    margin-left: 4px; 
+    -webkit-text-stroke: 0.6px currentColor; 
+}
+
+.delta-up { color: #008000; }
+.delta-down { color: #990000; }
+.delta-neutral { color: #ff8800; }
+
+/* 7) TOGGLE-FUNKTION */
+#excel-main-container .toggle-pill { display: flex; gap: 8px; margin-bottom: 10px; }

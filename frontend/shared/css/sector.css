@@ -1,0 +1,118 @@
+/* ---------------------------------------------------------
+   Sector Colors – zentrale Farblogik für alle Renderer
+   ---------------------------------------------------------
+   Diese Datei definiert ausschließlich die Farben für
+   Sektoren. Sie wird von allen Renderern (Stocks, Sectors,
+   Industries) genutzt und kann 1:1 in Excel übernommen werden.
+--------------------------------------------------------- */
+
+/* Technology */
+.sector-tech {
+  border-left: 6px solid #4A90E2;
+}
+
+/* Healthcare */
+.sector-healthcare {
+  border-left: 6px solid #D0021B;
+}
+
+/* Financial */
+.sector-financial {
+  border-left: 6px solid #7ED321;
+}
+
+/* Industrials */
+.sector-industrials {
+  border-left: 6px solid #F5A623;
+}
+
+/* Consumer Cyclical */
+.sector-consumer-cyclical {
+  border-left: 6px solid #9013FE;
+}
+
+/* Consumer Defensive */
+.sector-consumer-defensive {
+  border-left: 6px solid #F8E71C;
+}
+
+/* Energy */
+.sector-energy {
+  border-left: 6px solid #8B572A;
+}
+
+/* Basic Materials */
+.sector-basic-materials {
+  border-left: 6px solid #50E3C2;
+}
+
+/* Utilities */
+.sector-utilities {
+  border-left: 6px solid #9B9B9B;
+}
+
+/* Real Estate */
+.sector-real-estate {
+  border-left: 6px solid #FF6F61;
+}
+
+/* Communication Services */
+.sector-communication {
+  border-left: 6px solid #B565A7;
+}
+
+/* Header einfärben */
+.tile-header.sector-tech {
+  background-color: #4A90E2;
+  color: #fff;
+}
+
+.tile-header.sector-healthcare {
+  background-color: #D0021B;
+  color: #fff;
+}
+
+.tile-header.sector-financial {
+  background-color: #7ED321;
+  color: #000;
+}
+
+.tile-header.sector-industrials {
+  background-color: #F5A623;
+  color: #000;
+}
+
+.tile-header.sector-consumer-cyclical {
+  background-color: #9013FE;
+  color: #fff;
+}
+
+.tile-header.sector-consumer-defensive {
+  background-color: #F8E71C;
+  color: #000;
+}
+
+.tile-header.sector-energy {
+  background-color: #8B572A;
+  color: #fff;
+}
+
+.tile-header.sector-basic-materials {
+  background-color: #50E3C2;
+  color: #000;
+}
+
+.tile-header.sector-utilities {
+  background-color: #9B9B9B;
+  color: #000;
+}
+
+.tile-header.sector-real-estate {
+  background-color: #FF6F61;
+  color: #fff;
+}
+
+.tile-header.sector-communication {
+  background-color: #B565A7;
+  color: #fff;
+}

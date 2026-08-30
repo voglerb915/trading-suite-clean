@@ -1,0 +1,5 @@
+breadth/
+  ├─ breadthConfig.js
+  ├─ breadthRaw.js        // Rohdaten aus DB
+  ├─ breadthIndicators.js // Zweig, McClellan, MA-Breadth etc.
+  └─ breadthSignals.js    // Top-/Bottom-Signale

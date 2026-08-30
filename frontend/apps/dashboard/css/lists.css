@@ -1,0 +1,17 @@
+/* =========================================================
+   LISTEN-STYLES MAIN (Sammeldatei via Imports)
+   Ordnerstruktur: /css/lists/ (oder /styles/lists/)
+   ========================================================= */
+
+/* 1. Basis-Styles & gemeinsame Elemente (Resets, Highlights, Pills, Dots) */
+@import './lists/_base.css';
+
+/* 2. Tab-Spezifische Komponenten-Styles */
+@import './lists/_stocks.css';      /* Stocks List */
+@import './lists/_etfs.css';        /* Tab 5: ETFs List */
+@import './lists/_sectors.css';     /* Sectors Grid */
+@import './lists/_industries.css';  /* Industries Grid */
+@import './lists/_signals.css';     /* Tab 1: Signals List & Phasen-Badges */
+@import './lists/_watchlist.css';   /* Tab 2: Watchlist Table */
+@import './lists/_openOrders.css';  /* Tab 3: Orders Table */
+@import './lists/_activeOrders.css';  /* Tab 3: Orders Table */

@@ -1,0 +1,254 @@
+
+===========================
+Export: 18:12:45
+Strategy: stage3topping
+Sector: All
+Industry: All
+Index: All
+Count: 43
+---------------------------
+APLM
+AUGO
+ATNI
+ALM
+ARIS
+ARQQ
+BKSY
+AUPH
+AR
+BALY
+APLD
+BKH
+BHF
+BG
+BEAM
+AMX
+ALCO
+AVO
+BKV
+ARL
+ALB
+ARR
+ATO
+ATMU
+BIRK
+AGO
+AVA
+AMRN
+AERO
+AZN
+AFYA
+ANIP
+ARE
+AXR
+AD
+AMRZ
+AGCO
+ARX
+ADNT
+ASTE
+AAON
+APP
+AMSC
+===========================
+
+===========================
+Export: 18:12:46
+Strategy: stage3topping
+Sector: -
+Industry: -
+Index: -
+Count: 43
+---------------------------
+APP
+BIRK
+APLD
+AMRZ
+AFYA
+ARL
+ATNI
+AMX
+AD
+ARR
+BKH
+ATO
+ATMU
+ADNT
+BALY
+AVA
+BKSY
+AAON
+AGO
+ANIP
+BG
+ALCO
+AXR
+ALB
+ARE
+AMSC
+ARX
+AERO
+AUGO
+ARIS
+AGCO
+ASTE
+AVO
+AR
+BKV
+BHF
+ALM
+AMRN
+AZN
+ARQQ
+APLM
+AUPH
+BEAM
+===========================
+
+===========================
+Export: 18:15:38
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: -
+Count: 64
+---------------------------
+PRAX
+SAN
+CUBI
+USFD
+AIT
+SXT
+HSIC
+ETN
+SYRE
+RGA
+CROX
+CSWC
+ROKU
+MBX
+ADAM
+RAPP
+AIR
+BBVA
+IFF
+ALNT
+ELVN
+ACRS
+TILE
+HNST
+APPS
+PAY
+SN
+CCO
+SSB
+APGE
+HRTG
+CON
+GGB
+ICUI
+IOVA
+ASH
+DGII
+XMAX
+FNKO
+EAT
+NOVT
+ZBRA
+UHAL-B
+BZH
+AVNT
+PLSE
+CORT
+MTW
+TFX
+SWK
+GCT
+ESNT
+OPRT
+ITGR
+ZD
+LILA
+CAH
+UHAL
+STAK
+RHI
+SABR
+YJ
+WFF
+CPHI
+===========================
+
+===========================
+Export: 18:15:38
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: All
+Count: 64
+---------------------------
+APPS
+SYRE
+PRAX
+MBX
+PLSE
+IOVA
+APGE
+CORT
+STAK
+XMAX
+ELVN
+ALNT
+ACRS
+CPHI
+RAPP
+DGII
+YJ
+HNST
+SN
+LILA
+FNKO
+ZBRA
+MTW
+EAT
+BZH
+CROX
+GCT
+RHI
+PAY
+ROKU
+CON
+ICUI
+HRTG
+ITGR
+ZD
+UHAL
+OPRT
+AIR
+ASH
+UHAL-B
+CCO
+BBVA
+SWK
+AVNT
+TILE
+USFD
+SAN
+CAH
+NOVT
+AIT
+GGB
+SABR
+ADAM
+HSIC
+SXT
+ETN
+RGA
+IFF
+CUBI
+WFF
+SSB
+CSWC
+ESNT
+TFX
+===========================

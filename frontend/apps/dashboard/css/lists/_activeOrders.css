@@ -1,0 +1,129 @@
+/* =========================================================
+   Active Orders Table - Clean Icon Buttons
+   ========================================================= */
+
+.active-orders-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+
+
+
+/* ID Spalte klein halten */
+.active-orders-table th:nth-child(1), .active-orders-table td:nth-child(1) { width: 60px; text-align: center;}
+/* Ticker */
+.active-orders-table th:nth-child(2), .active-orders-table td:nth-child(2) { width: 70px; text-align: left;}
+/* Warenkorb (OC) als Platzhalter */
+.active-orders-table th:nth-child(3), .active-orders-table td:nth-child(3) { width: 50px; text-align: center; }
+/* Status - bekommt hier deutlich mehr Platz (analog zur Strategy) */
+.active-orders-table th:nth-child(4), .active-orders-table td:nth-child(4) { width: auto; min-width: 220px;text-align: center; }
+/* Execution Time Datum */
+.active-orders-table th:nth-child(5), .active-orders-table td:nth-child(5) { width: 90px; text-align: center;}
+/* Delete Mülleimer */
+.active-orders-table th:nth-child(6), .active-orders-table td:nth-child(6) { width: 40px; text-align: center; }
+
+/* Abstand unter dem Tabellenkopf erzeugen */
+.active-orders-table thead th {
+    padding-bottom: 12px;
+}
+
+/* Abstand zwischen den einzelnen Tabellenzeilen */
+.active-orders-table tbody tr {
+    border-top: 8px solid transparent;
+}
+
+/* Gemeinsames Basis-Styling für Cart- und Delete-Buttons (Rahmen und Hintergrund entfernt) */
+.active-orders-table .cart-btn,
+.active-orders-table .delete-btn {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Standard-Icon-Farbe und Größe für beide Buttons */
+.active-orders-table .cart-btn i,
+.active-orders-table .delete-btn i {
+    color: #6c757d;
+    font-size: 1.0rem;
+    vertical-align: middle;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Hover-Zustand Cart-Button (Platzhalter) */
+.active-orders-table .cart-btn:hover {
+    background: transparent !important;
+    border: none !important;
+}
+
+.active-orders-table .cart-btn:hover i {
+    transform: scale(1.2);
+    color: #1e7e34 !important;
+}
+
+/* Hover-Zustand Delete-Button: Nur Icon skaliert und wird rot */
+.active-orders-table .delete-btn:hover {
+    background: transparent !important;
+    border: none !important;
+}
+
+.active-orders-table .delete-btn:hover i {
+    transform: scale(1.2);
+    color: #dc3545 !important;
+}
+
+/* Hand-Zeiger für interaktive Elemente */
+.active-orders-table .cart-btn,
+.active-orders-table .delete-btn {
+    cursor: pointer;
+}
+
+/* Standard-Pillen (Neutral / Inaktiv) */
+.pill.pill-submitted,
+.pill.pill-executed,
+.pill.pill-canceled {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+
+/* Hover-Effekt (Nutzt die dezenten Farbvarianten) */
+.pill.pill-submitted:hover {
+    background-color: #fff3e0;
+    border-color: #ffb74d;
+}
+
+.pill.pill-executed:hover {
+    background-color: #e8f5e9;
+    border-color: #81c784;
+}
+
+.pill.pill-canceled:hover {
+    background-color: #ffebee;
+    border-color: #e57373;
+}
+
+/* Aktive / Geklickte Pillen (Kräftiger Hintergrund, weißer Text & deutlicher Rahmen) */
+.pill.pill-submitted.active {
+    background-color: #f57c00;
+    color: #ffffff;
+    border-color: #e65100;
+    font-weight: 700;
+}
+
+.pill.pill-executed.active {
+    background-color: #388e3c;
+    color: #ffffff;
+    border-color: #1b5e20;
+    font-weight: 700;
+}
+
+.pill.pill-canceled.active {
+    background-color: #fa4b4b;
+    color: #ffffff;
+    border-color: #b71c1c;
+    font-weight: 700;
+}

@@ -1,0 +1,431 @@
+/* ======================================================
+   CONTROL-CENTER CSS – Cockpit-konform & optimiert
+   Enthält NUR das, was das Control-Center benötigt
+====================================================== */
+
+
+/* ----------------------------------------------
+   1) BASIS & TYPOGRAFIE
+---------------------------------------------- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+/* ----------------------------------------------
+   2) TILE-GRID
+---------------------------------------------- */
+#control-center-root {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+
+/* ----------------------------------------------
+   3) TILE-GRUNDSTRUKTUR
+---------------------------------------------- */
+.control-tile {
+    background: #1b1b1b;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 18px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-sizing: border-box;
+}
+
+.control-tile:hover {
+    background: #222;
+    border-color: #555;
+}
+
+.tile-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tile-icon {
+    font-size: 2rem;
+}
+
+.tile-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.tile-status {
+    font-size: 0.9rem;
+    margin-top: 6px;
+    opacity: 0.8;
+}
+
+
+
+
+/* ----------------------------------------------
+   4) PROGRESS-BAR
+---------------------------------------------- */
+.tile-progress {
+    width: 100%;
+    height: 6px;
+    background: #333;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.tile-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #3498db;
+    transition: width 0.2s ease;
+}
+
+
+/* ----------------------------------------------
+   5) META-INFOS
+---------------------------------------------- */
+.tile-meta {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+
+
+/* ----------------------------------------------
+   6) TILE-STATUS-FARBEN
+---------------------------------------------- */
+.control-tile.running { border-color: #3498db; }
+.control-tile.success { border-color: #2ecc71; }
+.control-tile.warning { border-color: #f1c40f; }
+.control-tile.error   { border-color: #e74c3c; }
+
+
+/* ----------------------------------------------
+   7) MODAL
+---------------------------------------------- */
+.log-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+.log-modal.hidden {
+    display: none;
+}
+
+.log-modal-content {
+    background: #1b1b1b;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 1px solid #333;
+}
+
+#log-body {
+    white-space: pre-wrap;
+    font-size: 0.9rem;
+    background: #111;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
+
+#log-close {
+    margin-top: 15px;
+    padding: 8px 14px;
+    background: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+
+/* ----------------------------------------------
+   8) CALCULATIONS – STEPS
+---------------------------------------------- */
+.tile-steps {
+    margin-top: 10px;
+}
+
+.tile-step {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    padding: 4px 0;
+    border-bottom: 1px solid #222;
+}
+
+.step-status {
+    opacity: 0.8;
+}
+
+
+/* ----------------------------------------------
+   9) DOWNLOADS – TABELLE
+---------------------------------------------- */
+/* ----------------------------------------------
+   DOWNLOADS & CALCULATIONS – EINHEITLICHE SPALTENBREITEN
+   28% | 13% | 31% | 13% | 15%
+---------------------------------------------- */
+
+.downloads-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Wichtig für stabile Spalten */
+}
+
+/* 1. Spalte: Label */
+.downloads-table th:nth-child(1),
+.downloads-table td:nth-child(1) {
+    width: 28%;
+    text-align: left;
+}
+
+/* 2. Spalte: Status */
+.downloads-table th:nth-child(2),
+.downloads-table td:nth-child(2) {
+    width: 13%;
+    text-align: center;
+}
+
+/* 3. Spalte: Letzter Lauf */
+.downloads-table th:nth-child(3),
+.downloads-table td:nth-child(3) {
+    width: 31%;
+    text-align: center;
+}
+
+/* 4. Spalte: Dauer */
+.downloads-table th:nth-child(4),
+.downloads-table td:nth-child(4) {
+    width: 13%;
+    text-align: center;
+}
+
+/* 5. Spalte: Aktion */
+.downloads-table th:nth-child(5),
+.downloads-table td:nth-child(5) {
+    width: 15%;
+    text-align: center;
+}
+
+
+.tile-results {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    max-height: 70vh;
+    overflow-y: auto;
+
+    /* NEU: horizontales Scrollen erlauben */
+    overflow-x: auto;
+
+    /* Scrollbar-Puffer */
+    padding-right: 14px;
+    box-sizing: border-box;
+}
+
+/* Gemeinsamer Hover-Effekt für Downloads & Calculations */
+.download-action,
+.calc-action {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+.download-action:hover,
+.calc-action:hover {
+    opacity: 1;
+    transform: scale(1.35);
+}
+
+
+/* ----------------------------------------------
+   10) CHECKS – SECTIONS & TABELLE
+---------------------------------------------- */
+.check-section {
+    margin-bottom: 20px;
+}
+
+.check-section-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+
+.check-section-box {
+    border: 1px solid #333;
+    background: #181818;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.check-section-box.success { border-color: #2ecc71; }
+.check-section-box.error   { border-color: #e74c3c; }
+
+.check-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 0.85rem;
+}
+
+.check-table th,
+.check-table td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #222;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.check-table th:nth-child(1),
+.check-table td:nth-child(1) { width: 33%; }
+
+.check-table th:nth-child(2),
+.check-table td:nth-child(2) { width: 15%; text-align: center; }
+
+.check-table th:nth-child(3),
+.check-table td:nth-child(3) { width: 38%; }
+
+.check-table th:nth-child(4),
+.check-table td:nth-child(4) { width: 14%; text-align: right; }
+
+/* ----------------------------------------------
+   10.1) SYSTEM-STATUS (aus LAB migriert)
+---------------------------------------------- */
+
+/* Linien */
+.sql-status-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.sql-status-label {
+    opacity: 0.8;
+}
+
+.sql-status-value {
+    font-weight: 700;
+}
+
+.sql-ok      { color: #2ecc71; }
+.sql-error   { color: #e74c3c; }
+.sql-warning { color: #f1c40f; }
+
+/* Header wie Prüfungen */
+.system-status-header {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.system-status-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.system-status-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ----------------------------------------------
+   11) MINI-HEATMAP
+---------------------------------------------- */
+.mini-heatmap {
+    display: flex;
+    gap: 4px;
+}
+
+.hm {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.hm-success { background: #2ecc71; }
+.hm-warning { background: #f1c40f; }
+.hm-error   { background: #e74c3c; }
+
+
+/* ----------------------------------------------
+   12) BADGES
+---------------------------------------------- */
+#status-checks {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.badge-green  { background: #2ecc71; }
+.badge-yellow { background: #f1c40f; color: #000; }
+.badge-red    { background: #e74c3c; }
+
+/* ----------------------------------------------
+   GEAR-ICON – Aktiv/Inactive
+---------------------------------------------- */
+
+.calc-action {
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* Aktiv: Writer läuft */
+/* Zahnrad aktiv: Rotation */
+.calc-action.running i {
+    color: orange !important;
+    transform: scale(1.15) rotate(0deg);
+    animation: gear-spin 1.2s linear infinite;
+}
+
+@keyframes gear-spin {
+    from { transform: scale(1.15) rotate(0deg); }
+    to   { transform: scale(1.15) rotate(360deg); }
+}
+
+
+/* Hover darf running NICHT überschreiben */
+.calc-action.running:hover {
+    color: orange !important;
+    transform: scale(1.15) !important;
+    opacity: 1 !important;
+}

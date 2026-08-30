@@ -1,0 +1,89 @@
+/* ===========================
+   GLOBAL TAB STYLE (UNIFIED)
+   =========================== */
+
+/* Zentrale Tab-Leiste - ERZWINGE horizontales Flex-Layout */
+.tab-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px;
+    padding: 10px;
+    background: #1e1e1e;
+    align-items: center;
+}
+
+/* Tab-Button - ZENTRIERUNG */
+.tab {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: #302f2f;
+    border-radius: 4px;
+    white-space: nowrap; /* WICHTIG: Text nicht umbrechen */
+    color: #ccc;
+    font-weight: 500;
+}
+
+.tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+/* Hover */
+.tab:hover {
+    background: #524f4f;
+    color: #fff;
+}
+
+/* Aktiver Tab - Hier erzwingen wir den Unterstrich */
+.tab.active {
+    background: #2a2a2a !important;
+    color: #ffa500 !important;
+    font-weight: 600 !important;
+    border-bottom: 2px solid #ffa500 !important; /* !important ist hier notwendig, um das 'none' zu schlagen */
+}
+
+/* Optional: Tabs leicht größer auf kleinen Screens */
+@media (max-width: 900px) {
+    .tab {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Wir isolieren den Container komplett */
+#lab-main-container {
+    display: block;
+    width: 100%;
+}
+
+/* Wir erzwingen die Zeile für die Bar */
+#lab-main-container .tab-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    background: #111;
+    border-bottom: 1px solid #333;
+}
+
+.tab {
+    font-size: 18px !important; /* Sehr auffällig zum Testen */
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+/* Highlight Symbol as Export when hove */
+.tab.export-overview {
+    transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.tab.export-overview:hover {
+    color: #ffd54f;          /* warmes Gold-Gelb, gut sichtbar auf dunklem Hintergrund */
+    transform: scale(1.15);  /* leichtes Vergrößern */
+    cursor: pointer;
+}

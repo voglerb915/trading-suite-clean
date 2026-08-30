@@ -1,0 +1,875 @@
+
+===========================
+Export: 00:16:32
+Strategy: none
+Sector: Basic Materials
+Industry: Steel
+Index: all
+Count: 20
+---------------------------
+NWPX
+FRD
+HLP
+MT
+STLD
+NUE
+GGB
+TX
+RS
+CLF
+MTUS
+WS
+SIM
+ASTL
+PKX
+SID
+MSB
+LUD
+ZKIN
+HUDI
+===========================
+
+===========================
+Export: 00:18:04
+Strategy: none
+Sector: Basic Materials
+Industry: Copper
+Index: all
+Count: 8
+---------------------------
+TGB
+HBM
+TECK
+SCCO
+ERO
+FCX
+IE
+COPR
+===========================
+
+===========================
+Export: 00:26:46
+Strategy: high52w
+Sector: All
+Industry: All
+Index: all
+Count: 97
+---------------------------
+FBRX
+ENTX
+SAIH
+RNG
+OPHC
+ANDG
+USCB
+KRT
+RACC
+BWFG
+AMTB
+IMMR
+RBCAA
+HBT
+DYN
+CHCO
+ACU
+PAMT
+SMBK
+ENVA
+NWFL
+STRW
+OSBC
+GEF
+AMLX
+RTX
+TOWN
+JAKK
+KFY
+CPAY
+SLN
+SJM
+CZFS
+BBY
+PRU
+CLDT
+FRBA
+CBL
+MSBI
+HST
+RHP
+SPNT
+LH
+DBD
+JPM
+DAO
+CNA
+BBVA
+IPCX
+EG
+UNF
+JOYY
+SLF
+MPB
+LTGRU
+MFC
+AAPL
+ACNB
+AFL
+FNKO
+BCS
+MMM
+TXRH
+FAF
+PEBO
+MET
+AIT
+ANSC
+TRV
+UHAL-B
+CDP
+SOCA
+GD
+AMACU
+ALL
+ROST
+FRT
+JAN
+FISI
+YICC
+SON
+MUFG
+ING
+MTG
+ARCI
+VNME
+JABRU
+MCAH
+AXS
+SVCC
+ALDF
+SNDA
+AFBI
+SPG
+HSBC
+STBA
+UHAL
+===========================
+
+===========================
+Export: 00:37:53
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 00:37:53
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 00:39:53
+Strategy: high52w
+Sector: All
+Industry: All
+Index: all
+Count: 97
+---------------------------
+FBRX
+ENTX
+SAIH
+RNG
+OPHC
+ANDG
+USCB
+KRT
+RACC
+BWFG
+AMTB
+IMMR
+RBCAA
+HBT
+DYN
+CHCO
+ACU
+PAMT
+SMBK
+ENVA
+NWFL
+STRW
+OSBC
+GEF
+AMLX
+RTX
+TOWN
+JAKK
+KFY
+CPAY
+SLN
+SJM
+CZFS
+BBY
+PRU
+CLDT
+FRBA
+CBL
+MSBI
+HST
+RHP
+SPNT
+LH
+DBD
+JPM
+DAO
+CNA
+BBVA
+IPCX
+EG
+UNF
+JOYY
+SLF
+MPB
+LTGRU
+MFC
+AAPL
+ACNB
+AFL
+FNKO
+BCS
+MMM
+TXRH
+FAF
+PEBO
+MET
+AIT
+ANSC
+TRV
+UHAL-B
+CDP
+SOCA
+GD
+AMACU
+ALL
+ROST
+FRT
+JAN
+FISI
+YICC
+SON
+MUFG
+ING
+MTG
+ARCI
+VNME
+JABRU
+MCAH
+AXS
+SVCC
+ALDF
+SNDA
+AFBI
+SPG
+HSBC
+STBA
+UHAL
+===========================
+
+===========================
+Export: 00:39:53
+Strategy: high52w
+Sector: -
+Industry: -
+Index: all
+Count: 97
+---------------------------
+FBRX
+ENTX
+SAIH
+RNG
+OPHC
+ANDG
+USCB
+KRT
+RACC
+BWFG
+AMTB
+IMMR
+RBCAA
+HBT
+DYN
+CHCO
+ACU
+PAMT
+SMBK
+ENVA
+NWFL
+STRW
+OSBC
+GEF
+AMLX
+RTX
+TOWN
+JAKK
+KFY
+CPAY
+SLN
+SJM
+CZFS
+BBY
+PRU
+CLDT
+FRBA
+CBL
+MSBI
+HST
+RHP
+SPNT
+LH
+DBD
+JPM
+DAO
+CNA
+BBVA
+IPCX
+EG
+UNF
+JOYY
+SLF
+MPB
+LTGRU
+MFC
+AAPL
+ACNB
+AFL
+FNKO
+BCS
+MMM
+TXRH
+FAF
+PEBO
+MET
+AIT
+ANSC
+TRV
+UHAL-B
+CDP
+SOCA
+GD
+AMACU
+ALL
+ROST
+FRT
+JAN
+FISI
+YICC
+SON
+MUFG
+ING
+MTG
+ARCI
+VNME
+JABRU
+MCAH
+AXS
+SVCC
+ALDF
+SNDA
+AFBI
+SPG
+HSBC
+STBA
+UHAL
+===========================
+
+===========================
+Export: 00:39:58
+Strategy: high52w
+Sector: All
+Industry: All
+Index: all
+Count: 97
+---------------------------
+FBRX
+ENTX
+SAIH
+RNG
+OPHC
+ANDG
+USCB
+KRT
+RACC
+BWFG
+AMTB
+IMMR
+RBCAA
+HBT
+DYN
+CHCO
+ACU
+PAMT
+SMBK
+ENVA
+NWFL
+STRW
+OSBC
+GEF
+AMLX
+RTX
+TOWN
+JAKK
+KFY
+CPAY
+SLN
+SJM
+CZFS
+BBY
+PRU
+CLDT
+FRBA
+CBL
+MSBI
+HST
+RHP
+SPNT
+LH
+DBD
+JPM
+DAO
+CNA
+BBVA
+IPCX
+EG
+UNF
+JOYY
+SLF
+MPB
+LTGRU
+MFC
+AAPL
+ACNB
+AFL
+FNKO
+BCS
+MMM
+TXRH
+FAF
+PEBO
+MET
+AIT
+ANSC
+TRV
+UHAL-B
+CDP
+SOCA
+GD
+AMACU
+ALL
+ROST
+FRT
+JAN
+FISI
+YICC
+SON
+MUFG
+ING
+MTG
+ARCI
+VNME
+JABRU
+MCAH
+AXS
+SVCC
+ALDF
+SNDA
+AFBI
+SPG
+HSBC
+STBA
+UHAL
+===========================
+
+===========================
+Export: 00:39:58
+Strategy: high52w
+Sector: -
+Industry: -
+Index: all
+Count: 97
+---------------------------
+FBRX
+ENTX
+SAIH
+RNG
+OPHC
+ANDG
+USCB
+KRT
+RACC
+BWFG
+AMTB
+IMMR
+RBCAA
+HBT
+DYN
+CHCO
+ACU
+PAMT
+SMBK
+ENVA
+NWFL
+STRW
+OSBC
+GEF
+AMLX
+RTX
+TOWN
+JAKK
+KFY
+CPAY
+SLN
+SJM
+CZFS
+BBY
+PRU
+CLDT
+FRBA
+CBL
+MSBI
+HST
+RHP
+SPNT
+LH
+DBD
+JPM
+DAO
+CNA
+BBVA
+IPCX
+EG
+UNF
+JOYY
+SLF
+MPB
+LTGRU
+MFC
+AAPL
+ACNB
+AFL
+FNKO
+BCS
+MMM
+TXRH
+FAF
+PEBO
+MET
+AIT
+ANSC
+TRV
+UHAL-B
+CDP
+SOCA
+GD
+AMACU
+ALL
+ROST
+FRT
+JAN
+FISI
+YICC
+SON
+MUFG
+ING
+MTG
+ARCI
+VNME
+JABRU
+MCAH
+AXS
+SVCC
+ALDF
+SNDA
+AFBI
+SPG
+HSBC
+STBA
+UHAL
+===========================
+
+===========================
+Export: 00:40:06
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 00:40:06
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 00:47:01
+Strategy: none
+Sector: Healthcare
+Industry: Medical Care Facilities
+Index: all
+Count: 2
+---------------------------
+AGL
+LFST
+===========================
+
+===========================
+Export: 00:47:01
+Strategy: none
+Sector: Healthcare
+Industry: Medical Care Facilities
+Index: all
+Count: 2
+---------------------------
+AGL
+LFST
+===========================
+
+===========================
+Export: 12:18:29
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 12:18:29
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: all
+Count: 11
+---------------------------
+IMAX
+CON
+WELL
+SBRA
+DBRG
+DGX
+CBAN
+CARE
+URI
+STAK
+CPHI
+===========================
+
+===========================
+Export: 12:24:02
+Strategy: high52w
+Sector: Technology
+Industry: -
+Index: all
+Count: 6
+---------------------------
+SAIH
+RNG
+IMMR
+CPAY
+DBD
+AAPL
+===========================
+
+===========================
+Export: 12:24:02
+Strategy: high52w
+Sector: Technology
+Industry: All
+Index: all
+Count: 6
+---------------------------
+SAIH
+RNG
+IMMR
+CPAY
+DBD
+AAPL
+===========================
+
+===========================
+Export: 12:28:06
+Strategy: high52w
+Sector: Healthcare
+Industry: -
+Index: all
+Count: 7
+---------------------------
+FBRX
+ENTX
+DYN
+AMLX
+SLN
+LH
+SNDA
+===========================
+
+===========================
+Export: 12:28:06
+Strategy: high52w
+Sector: Healthcare
+Industry: All
+Index: all
+Count: 7
+---------------------------
+FBRX
+ENTX
+DYN
+AMLX
+SLN
+LH
+SNDA
+===========================
+
+===========================
+Export: 12:29:34
+Strategy: high52w
+Sector: Consumer Cyclical
+Industry: -
+Index: all
+Count: 9
+---------------------------
+ANDG
+KRT
+GEF
+JAKK
+BBY
+FNKO
+TXRH
+ROST
+SON
+===========================
+
+===========================
+Export: 12:29:34
+Strategy: high52w
+Sector: Consumer Cyclical
+Industry: All
+Index: all
+Count: 9
+---------------------------
+ANDG
+KRT
+GEF
+JAKK
+BBY
+FNKO
+TXRH
+ROST
+SON
+===========================
+
+===========================
+Export: 12:33:09
+Strategy: high52w
+Sector: Industrials
+Industry: -
+Index: all
+Count: 9
+---------------------------
+PAMT
+RTX
+KFY
+UNF
+MMM
+AIT
+UHAL-B
+GD
+UHAL
+===========================
+
+===========================
+Export: 12:33:09
+Strategy: high52w
+Sector: Industrials
+Industry: All
+Index: all
+Count: 9
+---------------------------
+PAMT
+RTX
+KFY
+UNF
+MMM
+AIT
+UHAL-B
+GD
+UHAL
+===========================

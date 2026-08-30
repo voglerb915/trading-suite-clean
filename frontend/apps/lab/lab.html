@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+
+    <link rel="stylesheet" href="/apps/lab/css/lab.css">    
+    <!-- <link rel="stylesheet" href="/apps/lab/css/indexes.css"> -->
+    <link rel="stylesheet" href="/shared/css/tabs.css">
+    <link rel="stylesheet" href="/shared/css/volume.css">
+
+    <!-- 🟢 Chart.js CDN einbinden -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style="background:#121212; margin: 0; padding: 0;">
+
+    <div id="lab-main-container">
+
+        <div class="tab-bar">
+            <div class="tab active" data-tab="lists">📄 Lists</div>
+            <div class="tab" data-tab="charts">📈 Charts</div>
+            <div class="tab" data-tab="strategies">🧠 Strategies</div>
+            <div class="tab" data-tab="overviews">🗂️ Overviews</div>
+        </div>
+
+        <div id="tab-lists" class="tab-content">
+            <div id="lab-container">
+                <div id="col-1"></div>
+                <div id="col-2"></div>
+                <div id="col-3"></div>
+            </div>
+        </div>
+
+<div id="tab-charts" class="tab-content" style="display:none;">
+    <div style="padding: 20px;">
+        <h2 style="color: #fff; font-size: 1.2rem; margin-bottom: 15px;">Market Rotation (Sectors, Industries & Stocks)</h2>
+        
+        <!-- Filter-Leisten -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; margin-bottom: 20px; flex-wrap: wrap;">
+            <div>
+                <div style="font-size: 0.75rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Sectors</div>
+                <div id="sector-filter-bar"></div>
+            </div>
+            <div>
+                <div style="font-size: 0.75rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Quadrants</div>
+                <div id="quadrant-filter-bar"></div>
+            </div>
+            <div>
+                <div style="font-size: 0.75rem; color: #888; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Index</div>
+                <div id="index-filter-bar" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+            </div>
+        </div>
+        
+        <!-- 3er Split Container für die Charts -->
+        <div class="lab-split-container">
+            <!-- 1. Sectors Chart -->
+            <div class="lab-panel">
+                <h3 style="color: #fff; font-size: 1rem; margin-top: 0; margin-bottom: 10px;">Sectors RRG Momentum</h3>
+                <div class="chart-wrapper">
+                    <canvas id="sectorQuadrantChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- 2. Industries Chart -->
+            <div class="lab-panel">
+                <h3 style="color: #fff; font-size: 1rem; margin-top: 0; margin-bottom: 10px;">Industries RRG Momentum</h3>
+                <div class="chart-wrapper">
+                    <canvas id="industryQuadrantChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 3. Stocks Chart -->
+            <div class="lab-panel">
+                <h3 style="color: #fff; font-size: 1rem; margin-top: 0; margin-bottom: 10px;">Stocks RRG Momentum</h3>
+                <div class="chart-wrapper">
+                    <canvas id="stockQuadrantChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        <div id="tab-strategies" class="tab-content" style="display:none;">...</div>
+
+        <div id="tab-overviews" class="tab-content" style="display:none;">
+            <div id="col-3-overviews">
+                <div id="sql-status-root"></div>
+                <div id="lab-content"></div>
+                <div id="lab-index-base"></div>
+            </div>
+        </div>
+
+    </div> 
+
+    <script type="module" src="/apps/lab/lab.js"></script>
+</body>
+</html>

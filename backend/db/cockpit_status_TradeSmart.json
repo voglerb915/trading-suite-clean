@@ -1,0 +1,392 @@
+{
+  "checks": {
+    "status": "yellow",
+    "lastRun": "2026-08-21T23:07:24.986Z",
+    "duration": "3.81s",
+    "sections": {
+      "finviz": {
+        "title": "Finviz-Daten",
+        "status": "success",
+        "items": [
+          {
+            "name": "finviz",
+            "status": "success",
+            "lastDateStr": "2026-08-21 22:20:59",
+            "countAtLastDate": 11624,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "finviz_groups",
+            "status": "success",
+            "lastDateStr": "2026-08-21 22:20:49",
+            "countAtLastDate": 154,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "Sectors JSON",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:20:07",
+            "countAtLastDate": 11,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "Industries JSON",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:04",
+            "countAtLastDate": 143,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "Stocks JSON",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:09",
+            "countAtLastDate": 5625,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "ETFs JSON",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:09",
+            "countAtLastDate": 5988,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (sector)",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:20:07",
+            "countAtLastDate": 11,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (industry)",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:04",
+            "countAtLastDate": 143,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (etf)",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:09",
+            "countAtLastDate": 5988,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (stock)",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:09",
+            "countAtLastDate": 5625,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (sparkSignals)",
+            "status": "success",
+            "lastDateStr": "2026-08-20 22:21:09",
+            "countAtLastDate": 384,
+            "isValidation": false,
+            "details": null
+          }
+        ]
+      },
+      "yahoo": {
+        "title": "Yahoo-Daten + Berechnungen",
+        "status": "success",
+        "items": [
+          {
+            "name": "Indexes",
+            "status": "success",
+            "lastDateStr": "2026-08-21",
+            "countAtLastDate": 15,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "DailyHistory",
+            "status": "success",
+            "lastDateStr": "2026-08-21",
+            "countAtLastDate": 11039,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "DailySignals",
+            "status": "success",
+            "lastDateStr": "2026-08-20",
+            "countAtLastDate": 4517,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "StockMetrics",
+            "status": "success",
+            "lastDateStr": "2026-08-20",
+            "countAtLastDate": 11059,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "Strategy: S1_STAGE3_TOPPING",
+            "status": "success",
+            "lastDateStr": "2026-08-20",
+            "countAtLastDate": 894,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "Strategy: InsideDay52W",
+            "status": "success",
+            "lastDateStr": "2026-08-20",
+            "countAtLastDate": 97,
+            "isValidation": false,
+            "details": null
+          }
+        ]
+      },
+      "journal": {
+        "title": "Trading-Journal",
+        "status": "success",
+        "items": [
+          {
+            "name": "ExecutedOrders",
+            "status": "success",
+            "lastDateStr": "2026-04-01 17:11:05",
+            "countAtLastDate": 7,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "MarketContext",
+            "status": "success",
+            "lastDateStr": "2026-03-01 23:00:30",
+            "countAtLastDate": 10,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "OrderCreation",
+            "status": "success",
+            "lastDateStr": "2026-04-01 15:28:06",
+            "countAtLastDate": 4,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "watchlist",
+            "status": "success",
+            "lastDateStr": "2026-03-31",
+            "countAtLastDate": 4,
+            "isValidation": false,
+            "details": null
+          }
+        ]
+      }
+    }
+  },
+  "downloads": {
+    "IndexHistory": {
+      "ok": true,
+      "lastRun": "2026-08-21T22:18:17.522Z",
+      "duration": "2s",
+      "info": "5 Fehler übersprungen"
+    },
+    "DailyHistory": {
+      "ok": true,
+      "lastRun": "2026-08-21T22:25:08.181Z",
+      "duration": "407s",
+      "error": "errorCount is not defined",
+      "info": "Erfolgreich"
+    }
+  },
+  "calculations": {
+    "RS_Sectors": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:08:37.132Z",
+      "duration": "0.5s",
+      "error": "runSectorPipeline is not a function"
+    },
+    "RS_Industries": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:08:41.757Z",
+      "duration": "2.6s"
+    },
+    "RS_Stocks": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:12:51.127Z",
+      "duration": "27.4s",
+      "error": null
+    },
+    "RS_ETFs": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:13:45.267Z",
+      "duration": "29.4s"
+    },
+    "Signals": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:15:37.287Z",
+      "duration": "61.8s"
+    },
+    "Stage3Topping": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:20:27.537Z",
+      "duration": "62.8s"
+    },
+    "Metrics": {
+      "status": "success",
+      "lastRun": "2026-08-20T21:57:25.900Z",
+      "duration": "4.4s"
+    },
+    "InsideDay52W": {
+      "status": "success",
+      "lastRun": "2026-08-20T21:57:29.861Z",
+      "duration": "1.0s"
+    },
+    "SparkSignals": {
+      "status": "success",
+      "lastRun": "2026-08-21T23:18:31.853Z",
+      "duration": "124.1s"
+    }
+  },
+  "RS_Sectors": {
+    "status": {
+      "0": "s",
+      "1": "u",
+      "2": "c",
+      "3": "c",
+      "4": "e",
+      "5": "s",
+      "6": "s"
+    },
+    "lastRun": {
+      "0": "2",
+      "1": "0",
+      "2": "2",
+      "3": "6",
+      "4": "-",
+      "5": "0",
+      "6": "8",
+      "7": "-",
+      "8": "2",
+      "9": "1",
+      "10": "T",
+      "11": "2",
+      "12": "3",
+      "13": ":",
+      "14": "0",
+      "15": "8",
+      "16": ":",
+      "17": "3",
+      "18": "7",
+      "19": ".",
+      "20": "1",
+      "21": "1",
+      "22": "8",
+      "23": "Z"
+    },
+    "duration": {
+      "0": "0",
+      "1": ".",
+      "2": "2",
+      "3": "1",
+      "4": "s"
+    }
+  },
+  "RS_Industries": {
+    "status": {
+      "0": "s",
+      "1": "u",
+      "2": "c",
+      "3": "c",
+      "4": "e",
+      "5": "s",
+      "6": "s"
+    },
+    "lastRun": {
+      "0": "2",
+      "1": "0",
+      "2": "2",
+      "3": "6",
+      "4": "-",
+      "5": "0",
+      "6": "8",
+      "7": "-",
+      "8": "2",
+      "9": "1",
+      "10": "T",
+      "11": "2",
+      "12": "3",
+      "13": ":",
+      "14": "0",
+      "15": "8",
+      "16": ":",
+      "17": "4",
+      "18": "1",
+      "19": ".",
+      "20": "7",
+      "21": "3",
+      "22": "7",
+      "23": "Z"
+    },
+    "duration": {
+      "0": "2",
+      "1": ".",
+      "2": "6",
+      "3": "0",
+      "4": "s"
+    }
+  },
+  "RS_ETFs": {
+    "status": {
+      "0": "s",
+      "1": "u",
+      "2": "c",
+      "3": "c",
+      "4": "e",
+      "5": "s",
+      "6": "s"
+    },
+    "lastRun": {
+      "0": "2",
+      "1": "0",
+      "2": "2",
+      "3": "6",
+      "4": "-",
+      "5": "0",
+      "6": "8",
+      "7": "-",
+      "8": "2",
+      "9": "1",
+      "10": "T",
+      "11": "2",
+      "12": "3",
+      "13": ":",
+      "14": "1",
+      "15": "3",
+      "16": ":",
+      "17": "4",
+      "18": "5",
+      "19": ".",
+      "20": "2",
+      "21": "4",
+      "22": "9",
+      "23": "Z"
+    },
+    "duration": {
+      "0": "2",
+      "1": "9",
+      "2": ".",
+      "3": "0",
+      "4": "9",
+      "5": "s"
+    }
+  }
+}

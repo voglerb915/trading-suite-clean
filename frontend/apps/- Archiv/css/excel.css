@@ -1,0 +1,408 @@
+/* ================================
+   Excel Matrix – Grundlayout
+   ================================ */
+
+.excel-container {
+    padding: 10px;
+    background: #f2f2f2;       /* Heller Hintergrund */
+    color: #000;               /* Schwarzer Text */
+    font-family: "Segoe UI", Arial, sans-serif;
+    border-radius: 6px;
+}
+
+/* Titel */
+.excel-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 12px;
+}
+/* ================================
+   Tabellenstruktur
+   ================================ */
+
+.excel-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;          /* Weiße Tabelle */
+    color: #000;               /* Schwarzer Text */
+    border: 1px solid #ccc;
+}
+
+.excel-table thead th {
+    padding: 6px 4px;
+    border-bottom: 1px solid #bbb;
+    background: #e6e6e6;       /* Hellgrau */
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+}
+
+.excel-table tbody td {
+    padding: 6px 4px;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    color: #000;               /* Standard: Schwarz */
+}
+
+.excel-table tbody tr:hover {
+    background: #f7f7f7;
+}
+.excel-table tr:last-child td {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.excel-container {
+    padding-bottom: 30px;
+}
+
+/* ================================
+   Sektor‑Spalte
+   ================================ */
+
+.excel-sector {
+    font-weight: 600;
+    text-align: left !important;
+    border-right: 1px solid #ccc;
+    color: #000;
+    padding-left: 6px;
+}
+
+/* ================================
+   Werte‑Zellen (positiv/negativ)
+   ================================ */
+
+.excel-table td.excel-pos {
+    color: #008000 !important;   /* Dunkelgrün */
+}
+
+.excel-table td.excel-neg {
+    color: #cc0000 !important;   /* Dunkelrot */
+}
+
+/* ================================
+   Responsive Verhalten
+   ================================ */
+
+@media (max-width: 1200px) {
+    .excel-table {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .excel-table thead th,
+    .excel-table tbody td {
+        padding: 4px 2px;
+    }
+}
+
+/* ================================
+   Sparkline
+   ================================ */
+
+.excel-spark {
+    width: 130px;
+    padding: 0;
+    text-align: center;
+}
+
+/* ================================
+   Tab-Logik
+   ================================ */
+
+.excel-tabs {
+    display: flex;
+    gap: 5px;
+    margin: 0px 0;
+}
+
+.tab-btn {
+    padding: 8px 16px;
+    background: #eee;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tab-btn.active {
+    background: #fff;
+    border-bottom: 2px solid #0078d4;
+    font-weight: bold;
+}
+
+.tab-content {
+    margin-top: 0px;
+}
+
+/* Ranking-Farben 1–11 */
+.excel-rank {
+    text-align: right;
+    font-weight: 600;
+    padding: 4px 6px;
+}
+
+/* 1 = dunkelrot */
+.rank-1  { background-color: #b30000 !important; color: #fff !important; }
+/* 2 */
+.rank-2  { background-color: #cc0000 !important; color: #fff !important; }
+/* 3 */
+.rank-3  { background-color: #e60000 !important; color: #fff !important; }
+/* 4 */
+.rank-4  { background-color: #ff1a1a !important; color: #fff !important; }
+
+/* 5 */
+.rank-5  { background-color: #ff4d4d !important; color: #000 !important; }
+/* 6 */
+.rank-6  { background-color: #ff944d !important; color: #000 !important; }
+/* 7 */
+.rank-7  { background-color: #ffd24d !important; color: #000 !important; }
+/* 8 */
+.rank-8  { background-color: #e6ff4d !important; color: #000 !important; }
+/* 9 */
+.rank-9  { background-color: #b3ff66 !important; color: #000 !important; }
+/* 10 */
+.rank-10 { background-color: #80ff80 !important; color: #000 !important; }
+/* 11 = dunkelgrün */
+.rank-11 { background-color: #33cc33 !important; color: #fff !important; }
+
+/* Ranking-Zellen vollständig zentrieren */
+.excel-rank {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+
+/* ==========================================================================
+   DAS DASHBOARD-RASTER (Garantiert 4 Spalten, 3 Zeilen)
+   ========================================================================== */
+.sectors-tile-grid {
+    display: grid;
+    /* 4 absolut gleich große Spalten, die sich nicht vom Inhalt dehnen lassen */
+    grid-template-columns: repeat(4, minmax(0, 1fr)); 
+    gap: 15px;
+    padding: 15px;
+    background-color: #f2f2f2;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Die einzelne Kachel */
+.sector-tile {
+    background: #ffffff;
+    border: 1px solid #c8ced3;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%; /* Passt sich exakt der Grid-Spalte an */
+}
+
+/* Header */
+.tile-header {
+    background-color: #4682B4;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 1px solid #c8ced3;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Die HTML-Tabelle (Matrix) – Kompakt fixiert auf ca. 1/3 der Kachel */
+.matrix-table {
+    border-collapse: collapse;
+    margin: 10px;
+    /* 24px (Skala) + 15 * 14px (Spalten) + Linien = ca. 236px */
+    width: 240px; 
+    table-layout: fixed; /* Erzwingt die unten definierten Pixel-Breiten eisenhart */
+}
+
+/* Die HTML-Tabelle (Matrix) – Gesamtbreite leicht erhöht */
+.matrix-table {
+    border-collapse: collapse;
+    margin: 10px;
+    /* 24px (Skala) + 15 * 18px (Spalten) + Linien = ca. 296px */
+    width: 296px !important; 
+    min-width: 296px !important;
+    table-layout: fixed;
+}
+
+/* Speziell für die "Rank" Überschrift ganz links */
+.th-matrix-rank {
+    width: 28px;
+    border-right: 2px solid #000000 !important;
+}
+
+/* Die Rang-Spalte ganz links */
+.scale-cell-num {
+    width: 28px;
+    height: 15px !important;      /* Etwas flacher */
+    line-height: 15px !important; /* Exakt zentriert */
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #e0e0e0;
+    border-right: 2px solid #000000; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Die 15 Daten-Zellen – Jetzt breiter und flacher */
+.matrix-td {
+    width: 18px !important;
+    min-width: 18px !important;
+    height: 15px !important;
+    min-height: 15px !important;
+    font-size: 8px !important;
+    line-height: 13px !important;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid #eaeaea;
+    border-right: 1px solid #eaeaea;
+    box-sizing: border-box;
+}
+
+/* Die fetten vertikalen Trennlinien nach Spalte 5 und 10 */
+.matrix-td.border-break {
+    border-right: 2px solid #000000 !important;
+}
+
+/* Der bunte Punkt (Bleibt sauber zentriert) */
+.tile-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.25);
+    vertical-align: middle;
+}
+
+/* Die fetten vertikalen Trennlinien nach Spalte 5 und 10 */
+.matrix-td.border-break {
+    border-right: 2px solid #000000 !important;
+    box-sizing: border-box;
+}
+
+/* Der bunte Punkt */
+.tile-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.25);
+    vertical-align: middle;
+}
+
+/* Die leere 12. Kachel als reiner Struktur-Halter */
+.sector-tile.placeholder {
+    border: 1px dashed #ccc;
+    background: transparent;
+    box-shadow: none;
+    visibility: hidden; /* Unsichtbar, blockiert aber die Position unten rechts */
+}
+
+/* ==========================================================================
+   BRANDMAUER: Erzwingt das 4-Spalten-Layout (Gegen Tab-Blockaden)
+   ========================================================================== */
+.matrix-dashboard-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important; /* 4 Spalten */
+    gap: 15px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ==========================================================================
+   STYLING FÜR DIE INNEREN SPALTENÜBERSCHRIFTEN
+   ========================================================================== */
+
+/* Allgemeine Header-Zellen der Matrix-Tabelle */
+.matrix-table thead th {
+    font-size: 12px !important;
+    font-weight: bold !important;
+    padding: 2px 0 !important;
+    background: #ffffff !important; /* Weißer Hintergrund für sauberen Look */
+    color: #333333 !important;
+    border: none !important;
+    text-align: center !important;
+}
+
+/* Speziell für die "Rank" Überschrift ganz links */
+.th-matrix-rank {
+    width: 28px;
+    border-right: 2px solid #000000 !important; /* Fluchtet mit der fetten Linie */
+}
+
+/* Für die Gruppen Week, Month, Quarter */
+.th-matrix-group {
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Die fetten Trennlinien im Tabellenkopf nach Week und Month */
+.th-matrix-group.header-break {
+    border-right: 2px solid #000000 !important;
+}
+
+/* Tisch-Breite leicht anpassen für die Überschriften-Zellen */
+.matrix-table {
+    border-collapse: collapse;
+    margin: 10px;
+    width: 310px !important;
+    min-width: 310px !important;
+    table-layout: fixed;
+}
+
+/* Horizontale Trennlinie zwischen Header und Datenzeilen */
+.matrix-table thead tr {
+    border-bottom: 2px solid #000000 !important;
+}
+
+/* Entfernt die linke Linie der ersten Datenzelle → verhindert Doppelstrich */
+.matrix-td:first-of-type {
+    border-left: none !important;
+}
+/* ================================
+   FIX: Rank–Week Trennlinie sichtbar machen
+   ================================ */
+
+/* Tabelle korrekt breit für 18 Spalten */
+.matrix-table {
+    width: 369px !important;
+    min-width: 369px !important;
+    table-layout: fixed !important;
+}
+
+/* Rank-Spalte: echte 28px + sichtbare Linie */
+.th-matrix-rank,
+.scale-cell-num {
+    width: 28px !important;
+    min-width: 28px !important;
+    border-right: 2px solid #000 !important;
+    box-sizing: border-box !important;
+}
+
+/* Verhindert Doppelstrich rechts von Rank */
+.matrix-td:first-of-type {
+    border-left: none !important;
+}
+
+/* Datenzellen */
+.matrix-td {
+    width: 18px !important;
+    min-width: 18px !important;
+    border-right: 1px solid #eaeaea !important;
+    box-sizing: border-box !important;
+}
+
+/* Fette Trennlinien nach Week (6) und Month (12) */
+.matrix-td.border-break {
+    border-right: 2px solid #000 !important;
+}

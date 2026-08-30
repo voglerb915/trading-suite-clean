@@ -1,0 +1,441 @@
+
+===========================
+Export: 15:05:46
+Strategy: none
+Sector: Real Estate
+Industry: REIT - Retail
+Index: All
+Count: 26
+---------------------------
+CBL
+MAC
+SKT
+SPG
+CURB
+FRT
+PINE
+ALX
+KIM
+KRG
+PECO
+NNN
+BRX
+IVT
+NTST
+GTY
+UE
+AKR
+REG
+O
+ADC
+FCPT
+EPRT
+BFS
+SITC
+WHLR
+===========================
+
+===========================
+Export: 15:05:46
+Strategy: none
+Sector: Real Estate
+Industry: REIT - Retail
+Index: -
+Count: 26
+---------------------------
+CBL
+MAC
+SKT
+SPG
+CURB
+FRT
+PINE
+ALX
+KIM
+KRG
+PECO
+NNN
+BRX
+IVT
+NTST
+GTY
+UE
+AKR
+REG
+O
+ADC
+FCPT
+EPRT
+BFS
+SITC
+WHLR
+===========================
+
+===========================
+Export: 15:13:35
+Strategy: none
+Sector: Real Estate
+Industry: REIT - Industrial
+Index: All
+Count: 16
+---------------------------
+ILPT
+LXP
+PSA
+TRNO
+FR
+PLD
+EXR
+CUBE
+EGP
+LINE
+SMA
+MDV
+IIPR
+COLD
+REXR
+STAG
+===========================
+
+===========================
+Export: 15:13:35
+Strategy: none
+Sector: Real Estate
+Industry: REIT - Industrial
+Index: -
+Count: 16
+---------------------------
+ILPT
+LXP
+PSA
+TRNO
+FR
+PLD
+EXR
+CUBE
+EGP
+LINE
+SMA
+MDV
+IIPR
+COLD
+REXR
+STAG
+===========================
+
+===========================
+Export: 15:22:30
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Regulated Gas
+Index: -
+Count: 16
+---------------------------
+CPK
+OPAL
+NJR
+SWX
+NWN
+BKH
+BIPC
+ATO
+OGS
+UGI
+MDU
+SR
+RGCO
+SPH
+NI
+CTRI
+===========================
+
+===========================
+Export: 15:22:30
+Strategy: none
+Sector: Utilities
+Industry: Utilities - Regulated Gas
+Index: All
+Count: 16
+---------------------------
+CPK
+OPAL
+NJR
+SWX
+NWN
+BKH
+BIPC
+ATO
+OGS
+UGI
+MDU
+SR
+RGCO
+SPH
+NI
+CTRI
+===========================
+
+===========================
+Export: 15:28:58
+Strategy: none
+Sector: Technology
+Industry: Software - Infrastructure
+Index: All
+Count: 175
+---------------------------
+RXT
+NUAI
+BLZE
+NBIS
+BAND
+PANW
+TGHL
+AIBZ
+FATN
+AGPU
+BB
+CRWD
+FTNT
+DOCN
+NTAP
+OKTA
+QLYS
+PAYS
+ZETA
+CCSI
+USIO
+TENB
+PAY
+FLYW
+GCT
+DBX
+ATEN
+NTCT
+S
+NET
+MDB
+FIVN
+RBRK
+VRNS
+ACIW
+BRUN
+BNAI
+RELY
+NTNX
+OSPN
+RAMP
+AIB
+MOVE
+GGRP
+VIVO
+AEVA
+CPAY
+IOT
+TWLO
+WEX
+PAYO
+FFIV
+SAIL
+HQ
+PATH
+AKAM
+GEN
+APPN
+GPN
+XYZ
+PGY
+BTQ
+PRGS
+BOX
+GTLB
+SABR
+DLO
+TLS
+NTSK
+RPD
+CORZ
+YEXT
+MSFT
+PRTH
+NYAX
+AVPT
+VHC
+TOST
+ARQQ
+BLIN
+VRSN
+CLBT
+KSPI
+AIOT
+PLTR
+QNC
+RDWR
+EVTC
+SWMR
+FOUR
+RPAY
+PICS
+RZLV
+MBGL
+GYGY
+QMLS
+PAGS
+EEFT
+CGNT
+LSAK
+IIIV
+XNDU
+STNE
+ZS
+ALLT
+TDC
+RKTO
+GDDY
+MQ
+OWLS
+PSFE
+OBAI
+XNET
+AI
+INFQ
+IMXI
+PDYN
+PAYP
+NN
+SANG
+CHKP
+MLGO
+TCX
+XBP
+EXYN
+CHOW
+WIX
+CRWV
+CINT
+KPLT
+DTSS
+INTZ
+CALX
+DOX
+SNPS
+ORCL
+AZIO
+GRRR
+TUYA
+BKKT
+BLSH
+CISO
+REKR
+AISP
+SUPX
+SKYA
+LIDR
+DAVA
+EXOD
+AIFA
+ZENA
+ORIO
+VERI
+DVLT
+OLB
+KDK
+AIXC
+GOAI
+LHSW
+BIRD
+AUID
+SLMT
+TAOP
+ATGL
+AIFC
+AVX
+CYAB
+CETX
+HPAI
+ZSQR
+ALAR
+CSAI
+HUBC
+WETO
+YYAI
+===========================
+
+===========================
+Export: 15:28:58
+Strategy: none
+Sector: Technology
+Industry: Software - Infrastructure
+Index: -
+Count: 19
+---------------------------
+RXT
+BLZE
+AIBZ
+FATN
+FTNT
+PAY
+NET
+MDB
+BRUN
+MOVE
+HQ
+PLTR
+QMLS
+TDC
+AI
+PAYP
+KDK
+TAOP
+CYAB
+===========================
+
+===========================
+Export: 15:34:12
+Strategy: none
+Sector: Technology
+Industry: Solar
+Index: All
+Count: 22
+---------------------------
+SUNE
+SHLS
+FSLR
+ENPH
+NXT
+TURB
+CSIQ
+SPRU
+ASTI
+SEDG
+PN
+RUN
+ARRY
+JKS
+DQ
+TOYO
+BEEM
+FTCI
+SMXT
+ZEO
+TYGO
+SPWR
+===========================
+
+===========================
+Export: 15:34:12
+Strategy: none
+Sector: Technology
+Industry: Solar
+Index: -
+Count: 9
+---------------------------
+FSLR
+ENPH
+CSIQ
+ASTI
+SEDG
+RUN
+ARRY
+TOYO
+TYGO
+===========================

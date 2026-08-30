@@ -1,0 +1,117 @@
+/*----------------------------------
+Ebene 1: Fundament – strukturelle Optik
+----------------------------------*/
+
+/* Body darf nicht alles abschneiden */
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto; /* FIX: iFrames dürfen scrollen */
+}
+
+/*----------------------------------
+2. NAVIGATION (TOPBAR)
+----------------------------------*/
+#topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1a1a1a;
+    padding: 0 30px;
+    height: 70px;
+    border-bottom: 1px solid #333;
+}
+
+.logo {
+    font-weight: 800;
+    color: #ffffff;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#main-nav {
+    display: flex;
+    align-items: center;
+}
+
+#main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+#main-nav a:hover {
+    opacity: 1;
+    color: #ffa500;
+}
+
+#main-nav a.active {
+    opacity: 1;
+    color: #ffa500;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+}
+
+
+#device-status-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    opacity: 0.8;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#header-system-badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.header-badge-green  { background: #2ecc71; color: #000; }
+.header-badge-yellow { background: #f1c40f; color: #000; }
+.header-badge-red    { background: #e74c3c; color: #fff; }
+
+
+/*----------------------------------
+3. TOOL-MANAGEMENT
+----------------------------------*/
+
+/* iFrames standardmäßig unsichtbar */
+.tool-view,
+.tool-iframe {
+    display: none;
+    width: 100%;
+    height: calc(100vh - 70px);
+    border: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 1;
+}
+
+/* aktives iFrame sichtbar + oben */
+.tool-iframe.active {
+    display: block !important;
+    z-index: 100;
+}
+
+
+
+
+

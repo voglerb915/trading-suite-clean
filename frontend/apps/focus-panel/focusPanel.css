@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: #fff;
+    padding: 20px;
+}
+
+#tile-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 gleich große Spalten */
+    gap: 15px;
+    padding: 15px;
+    align-items: start; /* Verhindert, dass ungleich hohe Spalten gestreckt werden */
+}
+
+/* Basis-Tile Layouts */
+.cockpit-tile {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.tile-small {
+    width: 260px;
+}
+
+.tile-large {
+    width: 340px;
+}
+
+.tile-title {
+    margin-top: 0;
+    font-size: 0.95rem;
+    color: #fbbf24; /* Dein gewohntes Orange */
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.tile-section + .tile-section {
+    margin-top: 15px;
+}
+
+.section-label {
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}

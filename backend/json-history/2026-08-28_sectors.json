@@ -1,0 +1,233 @@
+[
+  {
+    "name": "Energy",
+    "score": 13.384,
+    "rankWonDb": 1,
+    "diffD": 1,
+    "diffW": 2,
+    "diffM": 0,
+    "diffQ": 1,
+    "perf_week": -2.12,
+    "perf_month": 2.95,
+    "perf_quart": 7.77,
+    "perf_half": 10.56,
+    "perf_year": 37.87,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": 0.05
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Technology",
+    "score": 12.674000000000001,
+    "rankWonDb": 2,
+    "diffD": -1,
+    "diffW": 2,
+    "diffM": 2,
+    "diffQ": -1,
+    "perf_week": 1.22,
+    "perf_month": 5.67,
+    "perf_quart": -1.11,
+    "perf_half": 27.71,
+    "perf_year": 32.21,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -1.41
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Healthcare",
+    "score": 11.672,
+    "rankWonDb": 3,
+    "diffD": 1,
+    "diffW": -2,
+    "diffM": -1,
+    "diffQ": 6,
+    "perf_week": -2.18,
+    "perf_month": 3.58,
+    "perf_quart": 12.35,
+    "perf_half": 6.31,
+    "perf_year": 23.77,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -0.76
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Basic Materials",
+    "score": 10.05,
+    "rankWonDb": 4,
+    "diffD": -1,
+    "diffW": -2,
+    "diffM": 2,
+    "diffQ": -1,
+    "perf_week": -1.24,
+    "perf_month": 10.93,
+    "perf_quart": 3.23,
+    "perf_half": -3.95,
+    "perf_year": 36.81,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -1.52
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Financial",
+    "score": 9.81,
+    "rankWonDb": 5,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": -2,
+    "diffQ": 2,
+    "perf_week": 0.95,
+    "perf_month": 1.18,
+    "perf_quart": 11.25,
+    "perf_half": 12.17,
+    "perf_year": 13.2,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": 0.26
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Real Estate",
+    "score": 1.4500000000000002,
+    "rankWonDb": 6,
+    "diffD": 1,
+    "diffW": 1,
+    "diffM": -1,
+    "diffQ": 2,
+    "perf_week": -1.33,
+    "perf_month": -2.21,
+    "perf_quart": 1.68,
+    "perf_half": 1.44,
+    "perf_year": 4.66,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -0.43
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Industrials",
+    "score": 1.056,
+    "rankWonDb": 7,
+    "diffD": -1,
+    "diffW": -1,
+    "diffM": 1,
+    "diffQ": -2,
+    "perf_week": -1.49,
+    "perf_month": 1.16,
+    "perf_quart": -3.28,
+    "perf_half": -3.23,
+    "perf_year": 13.91,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -1.01
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Communication Services",
+    "score": 0.2840000000000005,
+    "rankWonDb": 8,
+    "diffD": 2,
+    "diffW": 1,
+    "diffM": 2,
+    "diffQ": -4,
+    "perf_week": 1.26,
+    "perf_month": 4.01,
+    "perf_quart": -7.18,
+    "perf_half": 0.45,
+    "perf_year": 11.32,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": 1.43
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Consumer Cyclical",
+    "score": -0.11599999999999994,
+    "rankWonDb": 9,
+    "diffD": -1,
+    "diffW": -1,
+    "diffM": 2,
+    "diffQ": -3,
+    "perf_week": -0.62,
+    "perf_month": 4.96,
+    "perf_quart": -2.98,
+    "perf_half": 0.81,
+    "perf_year": -0.39,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": 1.35
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Consumer Defensive",
+    "score": -0.30600000000000027,
+    "rankWonDb": 10,
+    "diffD": -1,
+    "diffW": 0,
+    "diffM": -3,
+    "diffQ": 0,
+    "perf_week": -0.33,
+    "perf_month": -1.72,
+    "perf_quart": 1.18,
+    "perf_half": -7.28,
+    "perf_year": 5.11,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": 0.57
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  },
+  {
+    "name": "Utilities",
+    "score": -4.9879999999999995,
+    "rankWonDb": 11,
+    "diffD": 0,
+    "diffW": 0,
+    "diffM": -2,
+    "diffQ": 0,
+    "perf_week": -0.27,
+    "perf_month": -4.6,
+    "perf_quart": -5.18,
+    "perf_half": -11.02,
+    "perf_year": 1.04,
+    "data": [
+      {
+        "date": "2026-08-28",
+        "change": -1.12
+      }
+    ],
+    "anl_datum": "2026-08-28T22:20:06.913Z"
+  }
+]

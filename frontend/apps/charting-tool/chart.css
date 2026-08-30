@@ -1,0 +1,16 @@
+/* --- MASTER STYLESHEET (chart.css) --- */
+@import url('./css/_base.css');
+@import url('./css/_pills.css');
+
+/* Hier drunter stehen nur noch spezifische Chart-Layouts / Wrapper falls nötig */
+.chart-wrapper {
+    position: relative;
+    width: 100%;
+    flex-grow: 1;
+}
+
+.sub-chart-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+}

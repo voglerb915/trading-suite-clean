@@ -1,0 +1,57 @@
+/* ======================================================
+   TILE SYSTEM – Standard-Kacheln für das Cockpit
+====================================================== */
+
+/* Grid-Layout */
+#cockpit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Basis-Kachel */
+.cockpit-tile {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+/* Titel */
+.tile-title {
+    margin: 0 0 12px 0;
+    font-size: 1.1rem;
+    color: #ffa500;
+}
+
+/* Body */
+.tile-body {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Large Tile (2 Spalten breit) */
+.tile-large {
+    grid-column: span 2;
+}
+
+/* Sections für Large Tiles */
+.tile-section {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #333;
+}
+
+.section-label {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 4px;
+}
+
+.section-content {
+    font-size: 0.95rem;
+}

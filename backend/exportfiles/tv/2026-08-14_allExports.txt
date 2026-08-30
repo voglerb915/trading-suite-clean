@@ -1,0 +1,96 @@
+
+===========================
+Export: 14:51:22
+Strategy: insideday52w
+Sector: -
+Industry: -
+Index: -
+Count: 38
+---------------------------
+WES
+ZETA
+URGN
+BDSX
+ZTG
+RAPP
+TILE
+HNST
+PAY
+MTA
+ZBRA
+ALMR
+GEO
+VREX
+HZO
+HRTG
+GLBE
+BWEN
+GFR
+FNKO
+UHAL-B
+BZH
+MASS
+USFD
+BFLY
+CORT
+TFX
+GCT
+OPRT
+ITGR
+EOLS
+FENC
+UHAL
+STAK
+YJ
+BIVI
+CPHI
+PLAG
+===========================
+
+===========================
+Export: 14:51:22
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: All
+Count: 38
+---------------------------
+ZTG
+BFLY
+BDSX
+CORT
+URGN
+VREX
+ZETA
+HZO
+RAPP
+BWEN
+HNST
+PAY
+FENC
+STAK
+GCT
+ZBRA
+HRTG
+GEO
+FNKO
+MASS
+OPRT
+MTA
+EOLS
+UHAL
+GLBE
+ITGR
+UHAL-B
+TILE
+BZH
+USFD
+GFR
+ALMR
+YJ
+CPHI
+WES
+TFX
+BIVI
+PLAG
+===========================

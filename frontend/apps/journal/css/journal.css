@@ -1,0 +1,95 @@
+/* STYLE.CSS - Focus: 40vw Single Column Journal
+   Dieses Stylesheet setzt das strukturelle Fundament für die Anzeige der Executed Trades.
+*/
+
+/* --- 1. BASIS & TYPOGRAFIE --- */
+body {
+    margin: 0;
+    padding: 0;
+    background: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    overflow: hidden; /* Verhindert das Scrollen des gesamten Fensters */
+}
+
+/* --- 2. GRID-LAYOUT (40vw Spalte) --- */
+#lab-grid {
+    display: grid;
+    /* Eine Spalte mit 40% der Viewport-Breite, der Rest bleibt frei */
+    grid-template-columns: 40vw; 
+    width: 40vw; 
+    height: 100vh;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+}
+
+/* --- 3. SPALTEN-CONTAINER --- */
+#col-2 {
+    overflow-y: auto; /* Ermöglicht das Scrollen innerhalb der Spalte */
+    height: 100vh;
+    /* padding-top ist 0, da der Abstand im JS-Sticky-Wrapper (20px) geregelt wird */
+    padding: 0px 20px 20px 20px; 
+    border-right: 1px solid #252525;
+    box-sizing: border-box;
+    background: #121212;
+}
+
+/* --- 4. ÜBERSCHRIFTEN (OPTIONAL) --- */
+/* Falls h2 außerhalb des JS-Renderers genutzt wird */
+h2 {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+/* --- 5. TABELLEN-GRUNDOPTIK (JOURNAL) --- */
+/* Diese Klassen dienen als Fallback, falls inline-styles im JS ergänzt werden */
+.journal-header {
+    background: #1a1a1a;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+}
+
+.journal-row {
+    border-bottom: 1px solid #222;
+    transition: background 0.2s;
+}
+
+.journal-row:hover {
+    background: #1a1a1a; /* Dezenter Hover-Effekt für die Zeilen */
+}
+
+#journal-root {
+    width: 40vw;
+    margin: 0; /* auto; /* zentriert */
+}
+
+
+/* --- 6. SCROLLBARS (Custom Dark Look) --- */
+/* Damit die Scrollbar zum dunklen Cockpit-Design passt */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+/* --- 7. UTILITIES --- */
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+.status-fill { color: #00ff00; }
+.status-cancel { color: #666666; }
+.status-working { color: #ffa500; }

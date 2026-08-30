@@ -1,0 +1,68 @@
+
+===========================
+Export: 13:42:03
+Strategy: none
+Sector: Financial
+Industry: Credit Services
+Index: all
+Count: 12
+---------------------------
+ENVA
+ECPG
+GDOT
+V
+MA
+MFIN
+NNI
+ALLY
+COF
+OPRT
+PRAA
+UPST
+===========================
+
+===========================
+Export: 13:47:30
+Strategy: none
+Sector: Consumer Cyclical
+Industry: Auto & Truck Dealerships
+Index: all
+Count: 6
+---------------------------
+OPLN
+RUSHA
+VVV
+DRVN
+CARG
+CVNA
+===========================
+
+===========================
+Export: 13:49:45
+Strategy: insideday52w
+Sector: All
+Industry: All
+Index: all
+Count: 20
+---------------------------
+EIX
+CTVA
+FTRE
+FBRX
+LBRX
+LTC
+SBRA
+DGX
+SLN
+SEIC
+CRL
+HXL
+MSM
+NSC
+TFIN
+URI
+FTK
+MEDP
+DHX
+CPHI
+===========================

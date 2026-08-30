@@ -1,0 +1,9 @@
+/* =========================================================
+   SECTOR MOMENTUM TAB / CONTAINER
+   ========================================================= */
+.sectorMomentum {
+    /*width: 100%; */
+    width: 1000px;
+    height: 700px; /* Verdoppelte Höhe für den Quadranten-Chart */
+    position: relative;
+}

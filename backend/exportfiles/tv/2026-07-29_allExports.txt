@@ -1,0 +1,479 @@
+
+===========================
+Export: 17:14:06
+Strategy: none
+Sector: Basic Materials
+Industry: -
+Index: all
+Count: 49
+---------------------------
+AYA
+CSTM
+MNTK
+CGAU
+TECK
+MTUS
+CLF
+IAG
+EGO
+RIO
+B
+AUGO
+VALE
+SVM
+SSMR
+AU
+OGC
+CDE
+DC
+NEM
+HMY
+ASTL
+FSM
+SLSR
+KGC
+BTG
+WPM
+RGLD
+DRD
+IDR
+SMID
+AREC
+EQX
+AEM
+PKX
+CITR
+OR
+AGI
+SOLS
+CMCL
+TMCR
+PPTA
+SBSW
+ORLA
+LUD
+IE
+LZM
+FEAM
+BGL
+===========================
+
+===========================
+Export: 17:14:07
+Strategy: none
+Sector: Basic Materials
+Industry: All
+Index: all
+Count: 49
+---------------------------
+AYA
+CSTM
+MNTK
+CGAU
+TECK
+MTUS
+CLF
+IAG
+EGO
+RIO
+B
+AUGO
+VALE
+SVM
+SSMR
+AU
+OGC
+CDE
+DC
+NEM
+HMY
+ASTL
+FSM
+SLSR
+KGC
+BTG
+WPM
+RGLD
+DRD
+IDR
+SMID
+AREC
+EQX
+AEM
+PKX
+CITR
+OR
+AGI
+SOLS
+CMCL
+TMCR
+PPTA
+SBSW
+ORLA
+LUD
+IE
+LZM
+FEAM
+BGL
+===========================
+
+===========================
+Export: 20:38:09
+Strategy: -
+Sector: -
+Industry: -
+Index: -
+Count: 24
+---------------------------
+APD
+SUN
+PSX
+SUN
+PSX
+PARR
+AGX
+STRL
+CRS
+MEC
+GP
+CAT
+TXRH
+RSI
+GOOGL
+MAR
+SNX
+ENTG
+ATOM
+FORM
+AMKR
+VECO
+COHU
+AEHR
+===========================
+
+===========================
+Export: 20:47:33
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 0
+---------------------------
+
+===========================
+
+===========================
+Export: 20:47:47
+Strategy: -
+Sector: -
+Industry: -
+Index: -
+Count: 40
+---------------------------
+IMMR
+CBAN
+GENI
+HLN
+ENTX
+CON
+SNDA
+LFST
+CENX
+CVNA
+TRIP
+ABNB
+ECPG
+ESNT
+FAF
+FITB
+MTB
+CFG
+EBC
+FFBC
+NDAQ
+CME
+TXRH
+RSI
+GOOGL
+MAR
+SNX
+ENTG
+ATOM
+FORM
+AMKR
+VECO
+COHU
+AEHR
+TE
+GCTS
+SACH
+NEXA
+BW
+RYDE
+===========================
+
+===========================
+Export: 20:47:59
+Strategy: -
+Sector: -
+Industry: -
+Index: -
+Count: 1
+---------------------------
+ECPG
+===========================
+
+===========================
+Export: 20:48:07
+Strategy: -
+Sector: -
+Industry: -
+Index: -
+Count: 24
+---------------------------
+APD
+SUN
+PSX
+SUN
+PSX
+PARR
+AGX
+STRL
+CRS
+MEC
+GP
+CAT
+TXRH
+RSI
+GOOGL
+MAR
+SNX
+ENTG
+ATOM
+FORM
+AMKR
+VECO
+COHU
+AEHR
+===========================
+
+===========================
+Export: 20:48:21
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 0
+---------------------------
+
+===========================
+
+===========================
+Export: 20:54:30
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 200
+---------------------------
+SNDK
+ANL
+WDC
+PN
+STX
+EQ
+ARWR
+MXL
+VPG
+FATN
+WYY
+ARTV
+SIMO
+RNG
+SILC
+IRWD
+ALTO
+FSLY
+NVEC
+AVR
+UCTT
+FEIM
+IMMX
+SHIP
+QMCO
+VVX
+AIRS
+CLBK
+ALAB
+NUE
+MKSI
+PTRN
+DGII
+CSCO
+DSGN
+IMAX
+BWAY
+COCO
+PODC
+LRCX
+FRO
+CCCC
+UVE
+GRC
+OTLY
+ASRV
+ROST
+CVE
+IBRX
+AVT
+FET
+CMTV
+BLTE
+LINC
+LOBO
+ELSE
+MRCY
+CGNX
+DAC
+STM
+NVCR
+GM
+HLIO
+WAB
+CURR
+CRDO
+EQNR
+SBLK
+SAFX
+LEA
+RSVR
+CNK
+ESCA
+TX
+SONO
+HQI
+DHT
+SFL
+OUST
+ATLO
+SU
+BZFD
+ADV
+OVV
+GCO
+CVEO
+SCLX
+NWFL
+RBKB
+EGBN
+PEBK
+ONTO
+VOD
+TXN
+F
+REAL
+CEVA
+PALI
+NRT
+PHIN
+CMP
+IMO
+DRS
+NKSH
+TGB
+LMT
+DE
+MGRX
+INTG
+MTA
+XPO
+IHG
+UTI
+SBRA
+SM
+NTIP
+GCT
+MBIN
+BUD
+XOM
+PLD
+WDS
+TPC
+BGC
+PR
+DLX
+TPR
+IMKTA
+KYIV
+WYFI
+NDSN
+ITRI
+SIG
+SPCB
+MTUS
+HTH
+UIS
+PTHS
+VLGEA
+WSBK
+MCRI
+AME
+MDV
+FTV
+C
+ELV
+DBRG
+APYX
+FANG
+AROC
+XPRO
+FGBI
+EPD
+OABI
+ALGM
+ENB
+SHEL
+GEV
+MPLX
+SLNG
+NWE
+BATRK
+CVX
+MTW
+CMT
+WF
+ETR
+MGYR
+ABUS
+ADAM
+HGV
+HON
+JD
+AKR
+WPC
+IFF
+CQP
+MATW
+AFBI
+CUBE
+AGCO
+MDB
+MGLD
+SCOR
+GRMN
+NWN
+SONY
+HWH
+PROV
+BKH
+CNP
+TNC
+TTC
+HOFT
+BRK-A
+ENSG
+NOEM
+SSNC
+GILD
+EXR
+===========================

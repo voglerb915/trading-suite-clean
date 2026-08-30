@@ -1,0 +1,58 @@
+/* Globale Listen-Resets für Container */
+#tools-tab-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* HIGHLIGHTS */
+.highlight-ticker, 
+.highlight-industry, 
+.highlight-sector { 
+  background-color: #f2f2f2 !important; 
+  font-weight: bold; 
+  border-radius: 4px;
+  outline: 1px solid #e8e8e8;
+}
+
+.highlight-sector .grid-cell,
+.highlight-industry .grid-cell-industry {
+    background-color: #f2f2f2 !important;
+}
+
+.highlight-ticker td {
+    background-color: transparent !important;
+}
+
+/* Signal Dots & Rank Pills */
+.sig-dot {
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    margin-left:6px;
+    vertical-align:middle;
+}
+.sig-dot.entry { background:#00c853; }
+.sig-dot.exit  { background:#d50000; }
+
+.rank-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 18px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1;
+    margin-right: 6px;
+}
+.rank-empty {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ddd;
+}
+.rank-entry { background-color: #2ecc71; color: #fff; }
+.rank-exit  { background-color: #e74c3c; color: #fff; }
+.rank-neutral { background-color: #7f8c8d; }

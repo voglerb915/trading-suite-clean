@@ -1,0 +1,541 @@
+/* =========================================================
+   LISTEN-STYLES (Stocks, Industries, Sectors, ETFs, Signals)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   STOCK ITEM (alte einfache Liste)
+--------------------------------------------------------- */
+.stock-item {
+  padding: 4px 8px;
+  margin: 4px 0;
+  background-color: #ffffff;
+  border-radius: 4px;
+  list-style: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.stock-item:hover {
+  background-color: #f9f9f9;
+}
+#stocks-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+#stocks-list li {
+    list-style-type: none !important;
+}
+
+.stock-position {
+    font-size: 0.95rem;   /* exakt wie Sectors/Industries */
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+/* ---------------------------------------------------------
+   HIGHLIGHTS (Ticker, Industry, Sector)
+--------------------------------------------------------- */
+.highlight-ticker, 
+.highlight-industry, 
+.highlight-sector { 
+  background-color: #f2f2f2 !important; 
+  font-weight: bold; 
+  border-radius: 4px;
+  outline: 1px solid #e8e8e8;
+}
+
+.highlight-sector .grid-cell,
+.highlight-industry .grid-cell-industry {
+    background-color: #f2f2f2 !important;
+}
+
+.highlight-ticker td {
+    background-color: transparent !important;
+}
+
+/* ---------------------------------------------------------
+   Signal Dot / Rank Circle (Stocks, Industry, Sector)
+--------------------------------------------------------- */
+.sig-dot {
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    margin-left:6px;
+    vertical-align:middle;
+}
+.sig-dot.entry { background:#00c853; }
+.sig-dot.exit  { background:#d50000; }
+
+
+/* Einheitliche Basis für alle Ranks */
+.rank-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    height: 18px;
+    border-radius: 999px;
+    font-size: 15px;      /* Hier ist die einheitliche Größe */
+    font-weight: 600;
+    line-height: 1;
+    margin-right: 6px;
+}
+
+/* Der leere Zustand (ohne Signal) */
+.rank-empty {
+    background-color: transparent;
+    color: #333;          /* Dunkler Text statt weiß */
+    border: 1px solid #ddd; /* Optional: ein dezenter Rand */
+}
+
+/* Deine bestehenden Farben */
+.rank-entry { background-color: #2ecc71; color: #fff; }
+.rank-exit  { background-color: #e74c3c; color: #fff; }
+.rank-neutral {
+    background-color: #7f8c8d;
+}
+
+/* =========================================================
+   SECTORS LIST
+   ========================================================= */
+
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr 56px 32px 32px 32px;
+  row-gap: 2px;
+}
+
+.grid-row-sector {
+  display: contents;
+  font-size: 0.95em;
+}
+
+.grid-cell {
+  padding: 8px 0;
+}
+
+.grid-cell:first-child {
+  padding-left: 10px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-cell:nth-child(n+2) {
+  text-align: right;
+  font-weight: bold;
+}
+
+.grid-cell.count-cell {
+  font-weight: normal;
+  color: #000;
+  opacity: 1;
+  padding-right: 6px;
+}
+
+/* =========================================================
+   INDUSTRIES LIST
+   ========================================================= */
+
+.grid-table-industries {
+    display: grid;
+    grid-template-columns: 1fr 56px 32px 32px 32px;
+    row-gap: 2px;
+}
+
+.grid-row-industry {
+    display: contents;
+    font-size: 0.95em;
+}
+
+.grid-cell-industry {
+    padding: 6px 0;
+}
+
+.grid-cell-industry:first-child {
+    padding-left: 10px;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.grid-cell-industry:nth-child(n+2) {
+    text-align: right;
+    font-weight: bold;
+}
+
+.grid-cell-industry.count-cell {
+    font-weight: normal !important;
+    color: #000;
+    opacity: 1;
+    padding-right: 6px;
+}
+
+/* =========================================================
+   STOCKS LIST – Linker Abstand wie Sectors/Industries
+   ========================================================= */
+#stocks-list {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.stock-row-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100%;
+}
+
+/* Schriftgröße für Ticker in der Stocks-Liste */
+.stock-left strong {
+    font-size: 0.9rem;   /* oder 0.9rem, 0.85rem – wie du willst */
+    font-weight: 700;
+}
+.stock-ticker {
+    font-size: 0.95rem;   /* oder 1rem, wie du willst */
+    font-weight: 700;     /* fett */
+    color: #000;          /* optional */
+    line-height: 1.1;
+}
+
+.stock-right {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+.stock-sub {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.strategy-value-strong {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+.score-value {
+    font-size: 1.05rem;   /* gleiche Größe wie strategy-value-strong */
+    font-weight: 700;     /* fett */
+    color: #444;          /* optional, gleiche Farbe wie rechts */
+    line-height: 1;
+}
+
+/* =========================================================
+   SIGNALS LIST (Tab 1)
+   ========================================================= */
+/* Setze das Standard-Styling für Listen in diesem Container zurück */
+#tools-tab-content ul {
+    list-style-type: none; /* Entfernt die Punkte */
+    margin: 0;             /* Entfernt den Außenabstand oben/unten */
+    padding: 0;            /* Entfernt den Innenabstand links */
+}
+.signal-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.signal-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.ticker-line {
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.origin-label {
+    font-size: 11px;
+    color: #888;
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.details-line {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.btn-delete-active {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.btn-delete-active:hover {
+    transform: scale(1.2);
+}
+
+.btn-delete-disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.signal-visual-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.phase-badge {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 11px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.phase-badge.active-phase {
+    background-color: #1976d2 !important;
+    color: white !important;
+    border-color: #0d47a1 !important;
+}
+
+.signal-visual {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    min-width: 30px;
+    justify-content: flex-end;
+}
+
+.bar {
+    width: 4px;
+    background-color: #e0e0e0;
+}
+
+.bar-1 { height: 18px; }
+.bar-2 { height: 14px; }
+.bar-3 { height: 11px; }
+.bar-4 { height: 8px; }
+.bar-5 { height: 5px; }
+
+.bg-green  { background-color: #28a745 !important; }
+.bg-red    { background-color: #dc3545 !important; }
+.bg-orange { background-color: #fd7e14 !important; }
+.bg-yellow { background-color: #ffc107 !important; color: #000 !important; }
+
+.note-btn {
+    margin-left: 8px;
+    font-size: 0.85rem;
+    transition: transform 0.2s;
+}
+
+.note-btn:hover {
+    transform: scale(1.2);
+}
+
+.note-active {
+    color: #f39c12 !important;
+}
+
+.note-empty {
+    color: #ccc !important;
+}
+
+/* =========================================================
+   Watch LIST (Tab 2) 
+   ========================================================= */
+
+/* Beispiel für die Watchlist-Tabellen-Ausrichtung */
+.watchlist-table {
+    width: 100%;
+    table-layout: fixed; /* Sorgt dafür, dass sich die Spaltenbreiten strikt an Vorgaben halten */
+}
+
+/* ID Spalte klein halten */
+.watchlist-table th:nth-child(1), .watchlist-table td:nth-child(1) { width: 40px; }
+/* Ticker */
+.watchlist-table th:nth-child(2), .watchlist-table td:nth-child(2) { width: 80px; }
+/* Warenkorb (OC) */
+.watchlist-table th:nth-child(3), .watchlist-table td:nth-child(3) { width: 40px; text-align: center; }
+/* Strategy - bekommt hier deutlich mehr Platz */
+.watchlist-table th:nth-child(4), .watchlist-table td:nth-child(4) { width: auto; min-width: 220px; }
+/* Created Datum */
+.watchlist-table th:nth-child(5), .watchlist-table td:nth-child(5) { width: 90px; }
+/* Delete Mülleimer */
+.watchlist-table th:nth-child(6), .watchlist-table td:nth-child(6) { width: 40px; text-align: center; }
+
+/* Abstand unter dem Tabellenkopf erzeugen */
+.watchlist-table thead th {
+    padding-bottom: 12px;
+}
+
+/* Optional: Etwas Abstand zwischen den einzelnen Tabellenzeilen für eine bessere Lesbarkeit */
+.watchlist-table tbody tr {
+    border-top: 8px solid transparent; /* Erzeugt einen sauberen Abstand zwischen den Zeilen */
+}
+
+/* Basis-Styling der Icon-Buttons anpassen (falls nötig) */
+.watchlist-table .cart-btn,
+.watchlist-table .delete-btn {
+    /* Falls der Rahmen stöft, kannst du border: 1px solid #ccc; o.ä. setzen */
+    background-color: #f8f9fa; /* oder dein bisheriger Hintergrund */
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+/* Standardfarbe für die Icons (dezentes, gut lesbares Grau) */
+.watchlist-table .cart-btn i,
+.watchlist-table .delete-btn i {
+    color: #6c757d; /* Dunkles Grau für guten Kontrast im Normalzustand */
+    font-size: 1.1rem; /* Falls du die Größe von eben direkt mit anpassen möchtest */
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* Warenkorb Hover: Hintergrund wird weiß, Rahmen kann angepasst werden, Icon dunkleres Grün & größer */
+.watchlist-table .cart-btn:hover {
+    background-color: #ffffff !important;
+    border-color: #28a745 !important; /* Optional: Rahmen bekommt die Hover-Farbe */
+}
+
+.watchlist-table .cart-btn:hover i {
+    transform: scale(1.15);
+    color: #1e7e34 !important; /* Ein satteres, dunkleres Grün */
+}
+
+/* Mülleimer Hover: Hintergrund wird weiß, Icon Rot & größer */
+.watchlist-table .delete-btn:hover {
+    background-color: #ffffff !important;
+    border-color: #dc3545 !important; /* Optional: Rahmen bekommt die Hover-Farbe */
+}
+
+.watchlist-table .delete-btn:hover i {
+    transform: scale(1.15);
+    color: #bd2130 !important; /* Ein etwas dunkleres, kräftigeres Rot */
+}
+
+/* Schriftgröße der Icons gezielt anheben */
+.watchlist-table .cart-btn i,
+.watchlist-table .delete-btn i {
+    font-size: 1.0rem; /* Bzw. 16px oder 18px – je nachdem, wie präsent sie sein sollen */
+    vertical-align: middle;
+}
+
+/* Hand-Zeiger für die neuen klickbaren Elemente */
+.watchlist-table .note-icon,
+.watchlist-table .strategy-text {
+    cursor: pointer;
+}
+
+.watchlist-table .strategy-text:hover {
+    color: #007bff; /* Dezenter blauer Akzent beim Hover über die Strategie (optional) */
+}
+
+/* Hand-Zeiger für alle interaktiven Elemente und Buttons in der Watchlist */
+.watchlist-table .note-icon,
+.watchlist-table .strategy-text,
+.watchlist-table .cart-btn,
+.watchlist-table .delete-btn {
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   ETFS LIST (Tab 5) -  analog zur Stocklist-Optik
+   ========================================================= */
+
+#tools-tab-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================================
+   ETFs LIST (Tab 5) – 1:1 Angleichung an die Stocklist
+   ========================================================= */
+
+.etf-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+.etf-item {
+    padding: 4px 8px;
+    margin: 4px 0;
+    background-color: #ffffff;
+    border-radius: 4px;
+    list-style: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.etf-item:hover {
+    background-color: #f9f9f9;
+}
+
+.etf-row-inner {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100%;
+}
+
+.etf-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow: hidden;
+}
+.etf-left strong {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.etf-info-col {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.etf-ticker {
+    font-size: 0.95rem;  /* Auf 0.95rem oder 1rem anheben, analog zur Stocklist */
+    font-weight: 750;    /* Optional etwas kräftiger, falls gewünscht */
+    color: #000;         /* Exaktes Schwarz wie bei Stocks */
+    line-height: 1.1;
+}
+
+
+.etf-sub {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.etf-right {
+    text-align: right;
+    font-size: 0.85rem;
+    color: #444;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.etf-score-value {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #444;
+    line-height: 1;
+}
+
+.etf-rank-label {
+    font-size: 0.85rem;
+    color: #444;
+}

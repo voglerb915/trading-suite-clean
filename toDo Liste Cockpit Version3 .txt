@@ -1,0 +1,4 @@
+Themen für die Umstellung auf Version 3 
+
+1. pur functions Strategien evtl. komplett ins backend verlagern - high52, nearhigh
+2. Cockpit Controller stellt alle daten bereit - dashboard handelt dann alles selbst - kein rückfluss  

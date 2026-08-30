@@ -1,0 +1,34 @@
+.grid-table {
+  display: grid;
+  grid-template-columns: 1fr 56px 32px 32px 32px;
+  row-gap: 2px;
+}
+
+.grid-row-sector {
+  display: contents;
+  font-size: 0.95em;
+}
+
+.grid-cell {
+  padding: 8px 0;
+}
+
+.grid-cell:first-child {
+  padding-left: 10px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.grid-cell:nth-child(n+2) {
+  text-align: right;
+  font-weight: bold;
+}
+
+.grid-cell.count-cell {
+  font-weight: normal;
+  color: #000;
+  opacity: 1;
+  padding-right: 6px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Trading Cockpit – Host</title>
+
+    <!-- Host lädt NUR die Host-CSS -->
+    <link rel="stylesheet" href="/apps/cockpit/css/cockpit.css">
+</head>
+
+<body>
+
+<!-- HOST HEADER (einmalig, global) -->
+<header id="topbar">
+    <div class="logo">Trading Cockpit</div>
+
+    <nav id="main-nav">
+        <a href="#" data-tool="focuspanel">Focus-Panel</a>
+        <a href="#" data-tool="cockpit">Cockpit</a>
+        <a href="#" data-tool="lab">Lab</a>
+        <a href="#" data-tool="dashboard">Dashboard</a>
+        <a href="#" data-tool="new-dashboard">New Dashboard</a>
+        <a href="#" data-tool="journal">Journal</a>
+        <a href="#" data-tool="charting">Charting</a>
+        <a href="#" data-tool="excel">Excel</a>
+        <a href="#" data-tool="control">Control-Center</a>
+    </nav>
+    
+</header>
+
+
+<!-- HOST CONTENT: ALLE IFRAMES -->
+<main id="content">
+
+    <!-- Cockpit UI (läuft im iFrame) -->
+
+
+<iframe id="iframe-cockpit"
+        src="/apps/cockpit.html"
+        class="tool-iframe"></iframe>
+
+     <iframe id="iframe-focuspanel"
+        src="/apps/focuspanel/index.html"
+        class="tool-iframe"></iframe>
+
+    <!-- Lab -->
+    <iframe id="iframe-lab"
+            src="/apps/lab/index.html"
+            class="tool-iframe"></iframe>
+
+    <!-- Dashboard alt -->
+    <iframe id="iframe-dashboard"
+            src="http://localhost:3000"
+            class="tool-iframe"></iframe>
+
+    <!-- Dashboard neu -->
+    <iframe id="iframe-new-dashboard"
+            src="/apps/dashboard/index.html"
+            class="tool-iframe"></iframe>
+
+    <!-- Journal -->
+    <iframe id="iframe-journal"
+            src="/apps/journal/index.html"
+            class="tool-iframe"></iframe>
+
+    <!-- Charting -->
+    <iframe id="iframe-charting"
+            src="/apps/charting-tool/index.html"
+            class="tool-iframe"></iframe>
+
+    <!-- Excel -->
+    <iframe id="iframe-excel"
+            src="/apps/excel/index.html"
+            class="tool-iframe"></iframe>
+
+    <!-- Control Center -->
+    <iframe id="iframe-control"
+            src="/apps/control-center/index.html"
+            class="tool-iframe"></iframe>
+
+</main>
+
+
+<!-- Host-Controller -->
+<!-- <script type="module" src="/message-router.js"></script> -->
+<!-- <script type="module" src="/cockpit.js"></script> -->
+
+<script type="module" src="/message-router.js"></script>             
+<script type="module" src="/cockpit.js"></script>   
+
+
+</body>
+</html>

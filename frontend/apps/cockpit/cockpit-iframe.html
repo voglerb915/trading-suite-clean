@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Cockpit UI</title>
+
+    <!-- Cockpit-spezifisches CSS -->
+    <link rel="stylesheet" href="/apps/cockpit/css/cockpit.css">
+    <link rel="stylesheet" href="/shared/css/volume.css">
+
+</head>
+
+<body>
+
+<!-- Cockpit Grid -->
+<div id="cockpit-grid">
+
+    <!-- 1. Header -->
+    <div id="cockpit-header"></div>
+
+    <!-- 2. Top 20 -->
+    <div id="cockpit-top20"></div>
+
+    <!-- 3. Index Performance -->
+    <div id="cockpit-index-performance"></div>
+
+    <!-- 4. Sector Overview -->
+    <div id="cockpit-sectors"></div>
+
+</div>
+
+<!-- Renderer läuft IM iFrame -->
+<script type="module" src="/apps/cockpit/js/renderCockpit.js"></script>
+
+</body>
+</html>
