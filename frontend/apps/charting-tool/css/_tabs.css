@@ -1,0 +1,51 @@
+/* === VERTIKALE TAB-LEISTE LINKS === */
+#charting-tabs {
+    width: 60px;
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8px;
+    gap: 10px;
+    border-right: 1px solid #2d2d2d;
+    flex-shrink: 0;
+    height: 100vh;
+}
+
+/* === TAB BUTTONS === */
+.charting-tab {
+    width: 40px;
+    height: 40px;
+    background-color: #2a2a2a;
+    color: #888;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.charting-tab:hover {
+    background-color: #3a3a3a;
+    color: #fff;
+}
+
+.charting-tab.active {
+    background-color: #3b82f6;
+    color: #fff;
+    border-color: #60a5fa;
+}
+
+/* === PANELS (rechts) === */
+.chart-panel {
+    width: 100%;
+    height: 100%;
+    display: none; /* wird durch JS aktiviert */
+}
+
+.chart-panel[data-panel="1"] {
+    display: block; /* Panel 1 ist default sichtbar */
+}

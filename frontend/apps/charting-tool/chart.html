@@ -3,56 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Industry RS & Performance Dashboard</title>
+    <title>Charting Tool</title>
+
+    <!-- Chart-spezifische Layouts -->
     <link rel="stylesheet" href="./chart.css">
+
+    <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <div class="dashboard-container">
-        <!-- LINKE SEITE: Master Kombi-Chart (RS Score & Performance) -->
-        <div class="pane left-pane">
-            <h2>Industry RS Score & Performance (3M)</h2>
-            
-<!-- Sektor-Filter & Globale Metrik-Toggles nebeneinander -->
-<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
-    <div id="sector-filter-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 6px;"></div>
+    <!-- ROOT: Tabs links, Content rechts -->
+    <div class="charting-root">
+
+        <!-- VERTIKALE TABS -->
+        <div id="charting-tabs">
+            <button class="charting-tab active" data-tab="1">RS</button>
+            <button class="charting-tab" data-tab="2">RRG</button>
+            <button class="charting-tab" data-tab="3">View</button>
+            <button class="charting-tab" data-tab="4">4</button>
+            <button class="charting-tab" data-tab="5">5</button>
+        </div>
+
+        <!-- CONTENT-BEREICH -->
+        <div class="charting-content">
+
+            <!-- TAB 1: RS -->
+            <div class="chart-panel chart-panel-rs" data-panel="1">
+                <div class="chart-panel-rs-left">
+                    Chart RS – Links (Master)
+                </div>
+
+                <div class="chart-panel-rs-right">
+                    <div class="chart-panel-rs-sub">
+                        Chart RS – Rechts oben
+                    </div>
+                    <div class="chart-panel-rs-sub">
+                        Chart RS – Rechts unten
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 2: RRG -->
+            <div class="chart-panel chart-panel-rrg" data-panel="2">
+                <div class="chart-panel-rrg-top">
+                    RRG – Filter / Controls
+                </div>
+
+                <div class="chart-panel-rrg-charts">
+                    <div class="chart-panel-rrg-chart">
+                        RRG Chart 1
+                    </div>
+                    <div class="chart-panel-rrg-chart">
+                        RRG Chart 2
+                    </div>
+                    <div class="chart-panel-rrg-chart">
+                        RRG Chart 3
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: Alte Struktur (Vollständig integriert) -->
+            <div class="chart-panel chart-panel-view" data-panel="3">
+                <div class="dashboard-container" style="display: flex; width: 100%; height: 100%; gap: 16px; box-sizing: border-box;">
+                    <!-- LINKE SEITE: Master Kombi-Chart (RS Score & Performance) -->
+                    <div class="pane left-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+                        <h2>Industry RS Score & Performance (3M)</h2>
+                        
+                        <!-- Sektor-Filter & Globale Metrik-Toggles nebeneinander -->
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+                            <div id="sector-filter-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 6px;"></div>
+                            
+                            <!-- Globale Metrik-Pillen (Score & Perf) -->
+                            <div class="global-metric-toggles" style="display: flex; gap: 6px; flex-shrink: 0;">
+                                <button id="btn-toggle-score" class="sector-pill active" data-metric="score">Score</button>
+                                <button id="btn-toggle-perf" class="sector-pill" data-metric="perf">Perf</button>
+                            </div>
+                        </div>
+
+                        <div class="chart-wrapper" style="position: relative; flex-grow: 1; width: 100%;">
+                            <canvas id="combinedIndustryChart"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- RECHTE SEITE: 2 horizontal geteilte Panes für Historie -->
+                    <div class="pane right-pane-container" style="flex: 1; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
+                        
+                        <!-- Oben: Ausgewählter Sektor (Historie) -->
+                        <div class="sub-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <h3 id="sector-history-title" style="margin: 0; font-size: 1.1rem;">Sektor Verlauf (3M)</h3>
+                            </div>
+                            <div class="sub-chart-wrapper" style="position: relative; flex-grow: 1; width: 100%;">
+                                <canvas id="sectorHistoryChart"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Unten: Ausgewählte Industrie (Historie) -->
+                        <div class="sub-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
+                            <h3 id="industry-history-title" style="margin-bottom: 8px; font-size: 1.1rem;">Industrie Verlauf (3M) - Bitte wählen</h3>
+                            <div class="sub-chart-wrapper" style="position: relative; flex-grow: 1; width: 100%;">
+                                <canvas id="industryHistoryChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4 -->
+            <div class="chart-panel chart-panel-4" data-panel="4">
+                Platzhalter Tab 4
+            </div>
+
+            <!-- TAB 5 -->
+            <div class="chart-panel chart-panel-5" data-panel="5">
+                Platzhalter Tab 5
+            </div>
+
+        </div>
+
+    </div>
+
     
-    <!-- Globale Metrik-Pillen (Score & Perf) -->
-    <div class="global-metric-toggles" style="display: flex; gap: 6px; flex-shrink: 0;">
-        <button id="btn-toggle-score" class="sector-pill active" data-metric="score">Score</button>
-        <button id="btn-toggle-perf" class="sector-pill" data-metric="perf">Perf</button>
-    </div>
-</div>
+    <!-- Chart-Rendering -->
+    <script type="module" src="./oldStructure/renderChart.js"></script>
+    <!-- Tab-Logik -->
+    <script type="module" src="./js/tabs.js"></script>
 
-            <div class="chart-wrapper">
-                <canvas id="combinedIndustryChart"></canvas>
-            </div>
-        </div>
-
-        <!-- RECHTE SEITE: 2 horizontal geteilte Panes für Historie -->
-        <div class="pane right-pane-container">
-            
-            <!-- Oben: Ausgewählter Sektor (Historie) mit erzwungener Flexbox-Zeile -->
-            <div class="sub-pane">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                    <h3 id="sector-history-title" style="margin: 0; font-size: 1.1rem;">Sektor Verlauf (3M)</h3>
-                </div>
-                <div class="sub-chart-wrapper">
-                    <canvas id="sectorHistoryChart"></canvas>
-                </div>
-            </div>
-
-            <!-- Unten: Ausgewählte Industrie (Historie) -->
-            <div class="sub-pane">
-                <h3 id="industry-history-title" style="margin-bottom: 8px; font-size: 1.1rem;">Industrie Verlauf (3M) - Bitte wählen</h3>
-                <div class="sub-chart-wrapper">
-                    <canvas id="industryHistoryChart"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script type="module" src="./renderChart.js"></script>
 </body>
 </html>

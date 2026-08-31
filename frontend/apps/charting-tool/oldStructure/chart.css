@@ -1,8 +1,7 @@
 /* --- MASTER STYLESHEET (chart.css) --- */
-@import url('./css/_base_charting.css');
+@import url('./css/_base.css');
 @import url('./css/_pills.css');
 @import url('./css/_tabs.css');
-@import url('./oldStructure/_base.css');
 
 /* Hier drunter stehen nur noch spezifische Chart-Layouts / Wrapper falls nötig */
 .chart-wrapper {
