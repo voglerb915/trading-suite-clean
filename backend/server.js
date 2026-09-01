@@ -69,6 +69,7 @@ app.use("/api/strategy", require("./routes/strategy/stage3toppingWriter"));
 app.use("/api/strategy", require("./routes/strategy/stage3toppingReader"));
 app.use("/api/strategy", require("./routes/strategy/insideDay52wWriter"));
 app.use("/api/strategy", require("./routes/strategy/insideDay52wReader"));
+app.use("/api/strategy", require("./routes/strategy/falseBreakOut52week")); // <--- NEU: False Breakout 52W Route eingebunden
 
 // SIGNALS ENGINE (NEU)
 app.use("/api/signals", require("./routes/strategy/signalsRoute")); //midSignals
@@ -110,7 +111,7 @@ app.use('/dashboard', express.static(path.join(FRONTEND_ROOT, 'apps/dashboard'))
 app.use('/journal', express.static(path.join(FRONTEND_ROOT, 'apps/journal')));
 app.use('/charting-tool', express.static(path.join(FRONTEND_ROOT, 'apps/charting-tool')));
 app.use('/control-center', express.static(path.join(FRONTEND_ROOT, 'apps/control-center')));
-app.use('/shared', express.static(path.join(FRONTEND_ROOT, 'shared')));
+app.use('/shared', express.static(path.join(FRONTEND_root = path.join(FRONTEND_ROOT, 'shared')))); // (falls relevant)
 
 // ---------------------------------------------
 // 4. Fallback & Error Handling

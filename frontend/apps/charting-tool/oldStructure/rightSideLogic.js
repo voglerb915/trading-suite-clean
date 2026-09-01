@@ -261,7 +261,7 @@ export function updateRightCharts(sectorScoreData, sectorPerfData, industryScore
         });
     }
 
-    sectorHistoryInstance = new Chart(sectorCtx, {
+sectorHistoryInstance = new Chart(sectorCtx, {
         type: 'line',
         data: {
             labels: sectorScoreData.map(d => d.anl_datum),
@@ -270,7 +270,14 @@ export function updateRightCharts(sectorScoreData, sectorPerfData, industryScore
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            // 👉 HIER DEN LAYOUT-BLOCK ERGÄNZEN:
+            layout: {
+                padding: {
+                    bottom: 10 // Gibt der X-Achse (Datum) zusätzlichen Puffer nach unten
+                }
+            },
             scales: {
+              
                 x: { ticks: { color: '#888', font: { size: 10 } }, grid: { color: '#222' } },
                 y: { 
                     type: 'linear', display: metrics.score, position: 'left',
@@ -331,7 +338,7 @@ export function updateRightCharts(sectorScoreData, sectorPerfData, industryScore
         });
     }
 
-    industryHistoryInstance = new Chart(industryCtx, {
+industryHistoryInstance = new Chart(industryCtx, {
         type: 'line',
         data: {
             labels: industryScoreData.map(d => d.anl_datum),
@@ -340,7 +347,14 @@ export function updateRightCharts(sectorScoreData, sectorPerfData, industryScore
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            // 👉 HIER EBENFALLS DEN LAYOUT-BLOCK ERGÄNZEN:
+            layout: {
+                padding: {
+                    bottom: 16
+                }
+            },
             scales: {
+              
                 x: { ticks: { color: '#888', font: { size: 10 } }, grid: { color: '#222' } },
                 y: { 
                     type: 'linear', display: metrics.score, position: 'left',

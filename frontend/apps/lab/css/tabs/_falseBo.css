@@ -1,0 +1,22 @@
+/* Spezifische Spaltensteuerung für die False Breakout Tabelle */
+.false-bo-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+.false-bo-table th, 
+.false-bo-table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Feste Spaltenbreiten nach Wunsch */
+.col-index { width: 70px; }
+.col-sector { width: 130px; }
+.col-ticker { width: 80px; }
+.col-name { width: 160px; }
+.col-price { width: 90px; text-align: right; }
+.col-change { width: 90px; text-align: right; }
+.col-gap-date { width: 100px; }
+.col-gap-close { width: 90px; text-align: right; }

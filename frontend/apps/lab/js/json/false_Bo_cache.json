@@ -1,0 +1,22 @@
+[
+  {
+    "ticker": "RVTY",
+    "name": "Revvity Inc",
+    "sector": "Healthcare",
+    "industry": "Diagnostics & Research",
+    "price": 128.67,
+    "change": -0.1,
+    "volume": "1617489",
+    "52w_high": -1.08,
+    "finviz_index": "S&P 500",
+    "high_date": "2026-08-21T00:00:00.000Z",
+    "gap_down_date": "2026-08-24T00:00:00.000Z",
+    "gap_down_close": 123,
+    "latest_date": "2026-08-31T00:00:00.000Z",
+    "latest_open": 127.34,
+    "latest_close": 128.67,
+    "index": [
+      "SP500"
+    ]
+  }
+]

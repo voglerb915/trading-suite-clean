@@ -1,7 +1,16 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: #121212; /* oder dein Hintergrund */
+}
+
 .charting-root {
     display: grid;
-    grid-template-columns: auto 1fr; /* <<< links minimal, rechts flexibel */
-    height: 100vh;
+    grid-template-columns: auto 1fr;
+    height: 100%; /* <<< von 100vh auf 100% geändert */
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 .charting-content {
@@ -58,22 +67,27 @@
     box-sizing: border-box;
 }
 
-.chart-panel-rs-right {
+/* Klassen für Tab 1 und Tab 3 gemeinsam nutzen */
+.chart-panel-rs-right,
+.chart-panel-view .chart-panel-right {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    gap: 0px;
     height: 100%;
+    min-height: 0;
 }
 
-.chart-panel-rs-sub {
+.chart-panel-rs-sub,
+.chart-panel-view .chart-panel-sub {
     background-color: #1e1e1e;
     border: 1px solid #2d2d2d;
     border-radius: 8px;
-    padding: 16px;
+    padding: 8px 16px 4px 16px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: visible; /* Wichtig, damit das Datum nicht abgeschnitten wird */
     height: 100%;
+    min-height: 0;
     box-sizing: border-box;
 }
 
@@ -112,7 +126,7 @@
     flex-direction: column;
 }
 
-/* View Panel (Tab 3) */
+/* View Panel (Tab 3) - Muss wie ein flexibler Container agieren */
 .chart-panel.chart-panel-view.active {
     display: flex;
     flex-direction: column;
@@ -120,6 +134,15 @@
     background: transparent;
     border: none;
     padding: 0;
+    height: 100%;
+    min-height: 0; /* Wichtig, damit das Panel nicht überlappt */
+    overflow: hidden;
+}
+
+/* Falls innerhalb von Tab 3 wiederum Sub-Container (wie die RS-Charts oder Raster) liegen: */
+.chart-panel-view .chart-panel-rs-right,
+.chart-panel-view .chart-panel-rs-sub {
+    min-height: 0;
 }
 
 /* Platzhalter Tabs (Tab 4 & 5) */

@@ -9,6 +9,7 @@ import { renderStockQuadrant } from './render/renderStockMomentum.js';
 import { renderSectorFilterBar } from './render/renderSectorFilter.js';
 import { renderQuadrantFilterBar } from './render/renderQuadrantFilter.js';
 import { renderIndexFilterBar } from './render/renderIndexFilter.js'; 
+import { initFalseBo } from './js/mainFalseBo.js'; // 🚀 Neuer Orchestrator Import
 
 async function loadIndexHistory() {
     const res = await fetch("http://localhost:4000/api/data/indexhistory");
@@ -27,6 +28,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const indexData = await loadIndexHistory();
     renderIndexes("lab-index-base", indexData);
+
+    // 🚀 1.5) False Breakout Strategie initialisieren
+    initFalseBo('col-3');
 
     // 2) Filter-Leisten initialisieren
     renderSectorFilterBar("sector-filter-bar", () => {
