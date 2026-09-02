@@ -45,24 +45,41 @@
                 </div>
             </div>
 
-            <!-- TAB 2: RRG -->
-            <div class="chart-panel chart-panel-rrg" data-panel="2">
-                <div class="chart-panel-rrg-top">
-                    RRG – Filter / Controls
-                </div>
+<!-- TAB 2: RRG -->
+<div class="chart-panel chart-panel-rrg" data-panel="2">
 
-                <div class="chart-panel-rrg-charts">
-                    <div class="chart-panel-rrg-chart">
-                        RRG Chart 1
-                    </div>
-                    <div class="chart-panel-rrg-chart">
-                        RRG Chart 2
-                    </div>
-                    <div class="chart-panel-rrg-chart">
-                        RRG Chart 3
-                    </div>
-                </div>
-            </div>
+<div class="chart-panel-rrg-top">
+   
+
+    <div class="rrg-filter-row">
+        <div id="sector-filter-container"></div>
+        <div id="quadrant-filter-container"></div>
+        <div id="index-filter-container"></div>
+    </div>
+</div>
+
+
+
+    <div class="chart-panel-rrg-charts">
+
+        <!-- SECTORS -->
+        <div class="chart-panel-rrg-chart">
+            <canvas id="rrgCanvasSectors"></canvas>
+        </div>
+
+        <!-- INDUSTRIES -->
+        <div class="chart-panel-rrg-chart">
+            <canvas id="rrgCanvasIndustries"></canvas>
+        </div>
+
+        <!-- STOCKS -->
+        <div class="chart-panel-rrg-chart">
+            <canvas id="rrgCanvasStocks"></canvas>
+        </div>
+
+    </div>
+</div>
+
 
             <!-- TAB 3: Alte Struktur (Vollständig integriert) -->
             <div class="chart-panel chart-panel-view" data-panel="3">
@@ -128,6 +145,9 @@
     
     <!-- Chart-Rendering -->
     <script type="module" src="./oldStructure/renderChart.js"></script>
+    <!-- RRG Modul-Orchestrator -->
+    <script type="module" src="./js/rrgMain.js"></script>
+
     <!-- Tab-Logik -->
     <script type="module" src="./js/tabs.js"></script>
 

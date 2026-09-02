@@ -1,0 +1,18 @@
+.chart-panel-rrg-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap; /* optional, falls Fenster schmal wird */
+}
+.rrg-filter-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+
+    /* <<< DER ENTSCHEIDENDE FIX >>> */
+    justify-content: space-between;
+}
+

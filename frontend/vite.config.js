@@ -1,7 +1,14 @@
 import { defineConfig } from 'vite';
+import path from 'path'; // Wichtig für Pfad-Auflösung
 
 export default defineConfig({
     root: '.',
+    resolve: {
+        alias: {
+            // Mappt @shared auf dein zentrales Shared-Verzeichnis
+            '@shared': path.resolve(__dirname, 'shared') 
+        }
+    },
     server: {
         proxy: {
             '/api': {
@@ -13,7 +20,6 @@ export default defineConfig({
         },
         hmr: { overlay: false },
         watch: {
-            // Aktiviert Polling, damit Windows Dateiänderungen zuverlässig erkennt
             usePolling: true,
             interval: 100,
             ignored: [
@@ -23,6 +29,6 @@ export default defineConfig({
     },
     appType: 'mpa',
     optimizeDeps: {
-        force: false // Auf false gesetzt, da force:true bei jedem Start unnötig alles neu kompiliert
+        force: false
     }
 });

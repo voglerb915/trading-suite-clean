@@ -132,10 +132,10 @@ export function handleIndustrySelection(industryName, isUserAction = false) {
 
     // --- TITEL AKTUALISIEREN ---
     const sectorTitleEl = document.getElementById('sector-history-title');
-    if (sectorTitleEl) sectorTitleEl.innerText = `Sektor-Verlauf: ${sectorName} (RS Score & Performance)`;
+    if (sectorTitleEl) sectorTitleEl.innerText = `Sektor 3M: ${sectorName} (RS Score & Performance)`;
 
     const industryTitleEl = document.getElementById('industry-history-title');
-    if (industryTitleEl) industryTitleEl.innerText = `Industrie-Verlauf: ${targetIndustry} (RS Score & Performance)`;
+    if (industryTitleEl) industryTitleEl.innerText = `Industrie 3M: ${targetIndustry} (RS Score & Performance)`;
 
     updateRightCharts(
         exactSectorHistory, 

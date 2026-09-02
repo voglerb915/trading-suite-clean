@@ -2,21 +2,21 @@
   "downloads": {
     "IndexHistory": {
       "ok": true,
-      "lastRun": "2026-09-01T21:15:58.372Z",
-      "duration": "2s",
+      "lastRun": "2026-09-02T21:18:00.119Z",
+      "duration": "1s",
       "info": "7 Fehler übersprungen"
     },
     "DailyHistory": {
       "ok": true,
-      "lastRun": "2026-09-01T21:21:20.565Z",
-      "duration": "320s",
+      "lastRun": "2026-09-02T21:23:10.253Z",
+      "duration": "308s",
       "info": "Erfolgreich"
     }
   },
   "checks": {
     "status": "green",
-    "lastRun": "2026-09-01T21:31:12.738Z",
-    "duration": "5.02s",
+    "lastRun": "2026-09-02T21:41:59.470Z",
+    "duration": "3.55s",
     "sections": {
       "finviz": {
         "title": "Finviz-Daten",
@@ -25,15 +25,15 @@
           {
             "name": "finviz",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 11636,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 11641,
             "isValidation": false,
             "details": null
           },
           {
             "name": "finviz_groups",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:01",
+            "lastDateStr": "2026-09-02 22:30:56",
             "countAtLastDate": 155,
             "isValidation": false,
             "details": null
@@ -41,7 +41,7 @@
           {
             "name": "Sectors JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:30:48",
+            "lastDateStr": "2026-09-02 22:30:48",
             "countAtLastDate": 11,
             "isValidation": false,
             "details": null
@@ -49,7 +49,7 @@
           {
             "name": "Industries JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:01",
+            "lastDateStr": "2026-09-02 22:30:56",
             "countAtLastDate": 144,
             "isValidation": false,
             "details": null
@@ -57,23 +57,23 @@
           {
             "name": "Stocks JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 5628,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 5629,
             "isValidation": false,
             "details": null
           },
           {
             "name": "ETFs JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 6008,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 6012,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (sector)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:30:48",
+            "lastDateStr": "2026-09-02 22:30:48",
             "countAtLastDate": 11,
             "isValidation": false,
             "details": null
@@ -81,7 +81,7 @@
           {
             "name": "marketScores (industry)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:01",
+            "lastDateStr": "2026-09-02 22:30:56",
             "countAtLastDate": 144,
             "isValidation": false,
             "details": null
@@ -89,24 +89,24 @@
           {
             "name": "marketScores (etf)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 6008,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 6012,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (stock)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 5628,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 5629,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (sparkSignals)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 314,
+            "lastDateStr": "2026-09-02 22:31:08",
+            "countAtLastDate": 709,
             "isValidation": false,
             "details": null
           }
@@ -119,7 +119,7 @@
           {
             "name": "Indexes",
             "status": "success",
-            "lastDateStr": "2026-09-01",
+            "lastDateStr": "2026-09-02",
             "countAtLastDate": 31,
             "isValidation": false,
             "details": null
@@ -127,40 +127,40 @@
           {
             "name": "DailyHistory",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 11063,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 11029,
             "isValidation": false,
             "details": null
           },
           {
             "name": "DailySignals",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 5533,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 5535,
             "isValidation": false,
             "details": null
           },
           {
             "name": "StockMetrics",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 11063,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 11029,
             "isValidation": false,
             "details": null
           },
           {
             "name": "Strategy: S1_STAGE3_TOPPING",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 1660,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 1706,
             "isValidation": false,
             "details": null
           },
           {
             "name": "Strategy: InsideDay52W",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 20,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 25,
             "isValidation": false,
             "details": null
           }
@@ -173,8 +173,8 @@
           {
             "name": "ExecutedOrders",
             "status": "success",
-            "lastDateStr": "2026-09-01 17:45:17",
-            "countAtLastDate": 51,
+            "lastDateStr": "2026-09-02 15:55:44",
+            "countAtLastDate": 31,
             "isValidation": false,
             "details": null
           },
@@ -189,16 +189,16 @@
           {
             "name": "OrderCreation",
             "status": "success",
-            "lastDateStr": "2026-09-01 15:15:23",
-            "countAtLastDate": 4,
+            "lastDateStr": "2026-09-02 15:11:16",
+            "countAtLastDate": 3,
             "isValidation": false,
             "details": null
           },
           {
             "name": "watchlist",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 4,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 3,
             "isValidation": false,
             "details": null
           }
@@ -226,51 +226,51 @@
       "6": "9",
       "7": "-",
       "8": "0",
-      "9": "1",
+      "9": "2",
       "10": "T",
       "11": "2",
       "12": "1",
       "13": ":",
-      "14": "2",
-      "15": "7",
+      "14": "3",
+      "15": "8",
       "16": ":",
-      "17": "3",
-      "18": "8",
+      "17": "5",
+      "18": "6",
       "19": ".",
-      "20": "9",
+      "20": "3",
       "21": "4",
-      "22": "1",
+      "22": "5",
       "23": "Z"
     },
     "duration": {
       "0": "0",
       "1": ".",
-      "2": "1",
-      "3": "5",
+      "2": "2",
+      "3": "6",
       "4": "s"
     }
   },
   "calculations": {
     "RS_Sectors": {
       "status": "success",
-      "lastRun": "2026-09-01T21:27:38.960Z",
-      "duration": "0.2s"
+      "lastRun": "2026-09-02T21:38:56.350Z",
+      "duration": "0.6s"
     },
     "RS_Industries": {
       "status": "success",
-      "lastRun": "2026-09-01T21:27:41.898Z",
-      "duration": "1.0s"
+      "lastRun": "2026-09-02T21:38:59.229Z",
+      "duration": "1.4s"
     },
     "RS_Stocks": {
       "status": "success",
-      "lastRun": "2026-09-01T21:27:56.276Z",
-      "duration": "12.4s",
+      "lastRun": "2026-09-02T21:39:13.786Z",
+      "duration": "12.6s",
       "error": null
     },
     "RS_ETFs": {
       "status": "success",
-      "lastRun": "2026-09-01T21:28:18.570Z",
-      "duration": "11.1s"
+      "lastRun": "2026-09-02T21:39:25.845Z",
+      "duration": "11.2s"
     },
     "RS_Indices": {
       "status": "error",
@@ -278,28 +278,28 @@
     },
     "Signals": {
       "status": "success",
-      "lastRun": "2026-09-01T21:28:50.029Z",
-      "duration": "18.0s"
+      "lastRun": "2026-09-02T21:39:46.190Z",
+      "duration": "18.5s"
     },
     "SparkSignals": {
       "status": "success",
-      "lastRun": "2026-09-01T21:29:40.862Z",
-      "duration": "46.7s"
+      "lastRun": "2026-09-02T21:40:40.739Z",
+      "duration": "46.3s"
     },
     "Stage3Topping": {
       "status": "success",
-      "lastRun": "2026-09-01T21:30:09.287Z",
-      "duration": "25.1s"
+      "lastRun": "2026-09-02T21:41:13.334Z",
+      "duration": "24.3s"
     },
     "InsideDay52W": {
       "status": "success",
-      "lastRun": "2026-09-01T21:30:24.158Z",
-      "duration": "1.1s"
+      "lastRun": "2026-09-02T21:41:35.911Z",
+      "duration": "0.8s"
     },
     "Metrics": {
       "status": "success",
-      "lastRun": "2026-09-01T21:30:20.382Z",
-      "duration": "5.7s"
+      "lastRun": "2026-09-02T21:41:30.121Z",
+      "duration": "5.2s"
     }
   },
   "RS_Industries": {
@@ -322,27 +322,27 @@
       "6": "9",
       "7": "-",
       "8": "0",
-      "9": "1",
+      "9": "2",
       "10": "T",
       "11": "2",
       "12": "1",
       "13": ":",
-      "14": "2",
-      "15": "7",
+      "14": "3",
+      "15": "8",
       "16": ":",
-      "17": "4",
-      "18": "1",
+      "17": "5",
+      "18": "9",
       "19": ".",
-      "20": "8",
-      "21": "9",
-      "22": "2",
+      "20": "2",
+      "21": "2",
+      "22": "1",
       "23": "Z"
     },
     "duration": {
       "0": "1",
       "1": ".",
-      "2": "0",
-      "3": "0",
+      "2": "3",
+      "3": "8",
       "4": "s"
     }
   },
@@ -366,28 +366,28 @@
       "6": "9",
       "7": "-",
       "8": "0",
-      "9": "1",
+      "9": "2",
       "10": "T",
       "11": "2",
       "12": "1",
       "13": ":",
-      "14": "2",
-      "15": "8",
+      "14": "3",
+      "15": "9",
       "16": ":",
-      "17": "1",
-      "18": "8",
+      "17": "2",
+      "18": "5",
       "19": ".",
-      "20": "5",
-      "21": "6",
-      "22": "1",
+      "20": "8",
+      "21": "3",
+      "22": "8",
       "23": "Z"
     },
     "duration": {
       "0": "1",
-      "1": "0",
+      "1": "1",
       "2": ".",
-      "3": "7",
-      "4": "8",
+      "3": "1",
+      "4": "4",
       "5": "s"
     }
   }

@@ -158,3 +158,11 @@ html, body {
     border: 1px solid #2d2d2d;
     padding: 16px;
 }
+
+#industry-history-title,
+#sector-history-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
+}

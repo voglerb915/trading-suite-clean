@@ -298,10 +298,10 @@ sectorHistoryInstance = new Chart(sectorCtx, {
 
     // --- INDUSTRIE-CHART ---
     let industryDatasets = [];
-    if (metrics.score) {
-        industryDatasets.push({
-            label: `RS Score (${targetIndustry})`,
-            data: industryScoreData.map(d => d.score),
+if (metrics.score) {
+    industryDatasets.push({
+        label: 'RS Score', // Ohne (${targetIndustry})
+        data: industryScoreData.map(d => d.score),
             borderColor: '#3b82f6',
             backgroundColor: 'rgba(59, 130, 246, 0.1)',
             borderWidth: 2,
@@ -311,10 +311,10 @@ sectorHistoryInstance = new Chart(sectorCtx, {
         });
 
         // SMA21 in dunklem Lila als zusätzliche gestrichelte Linie
-        if (industrySmaData && industrySmaData.length > 0) {
-            industryDatasets.push({
-                label: `SMA 21 (${targetIndustry})`,
-                data: industrySmaData.map(d => d.sma21),
+if (industrySmaData && industrySmaData.length > 0) {
+        industryDatasets.push({
+            label: 'SMA 21', // Ohne (${targetIndustry})
+            data: industrySmaData.map(d => d.sma21),
                 borderColor: '#9333ea', // Dunkles Lila
                 backgroundColor: 'transparent',
                 borderWidth: 1.5,
@@ -325,10 +325,10 @@ sectorHistoryInstance = new Chart(sectorCtx, {
             });
         }
     }
-    if (metrics.perf) {
-        industryDatasets.push({
-            label: `Performance 3M (%) (${targetIndustry})`,
-            data: industryPerfData.map(d => d.performance),
+if (metrics.perf) {
+    industryDatasets.push({
+        label: 'Performance 3M (%)', // Ohne (${targetIndustry})
+        data: industryPerfData.map(d => d.performance),
             borderColor: '#ec4899',
             backgroundColor: 'rgba(236, 72, 153, 0.05)',
             borderWidth: 2,
