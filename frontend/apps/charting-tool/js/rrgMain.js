@@ -6,6 +6,9 @@ import { renderQuadrantFilterBar } from './filters/quadrantFilterRenderer.js'; /
 import { renderSectorChart } from './renderer/rrgSectorRenderer.js';
 import { renderIndustryChart } from './renderer/rrgIndustryRenderer.js';
 import { renderStockChart } from './renderer/rrgStockRenderer.js';
+import { sectorTickers } from "../../../shared/logic/sectorMapping.js";
+
+
 import GlobalState from "@shared/state/globalState.js";
 
 export async function initRrgModule() {
@@ -14,9 +17,9 @@ export async function initRrgModule() {
 
         // 1. Initialisiere Filter-Leisten in den jeweiligen DOM-Containern
         // (Passe die Container-IDs an deine HTML-Struktur an)
-        renderIndexFilterBar("index-filter-container", () => reloadCurrentChart());
-        renderSectorFilterBar("sector-filter-container", () => reloadCurrentChart());
-        renderQuadrantFilterBar("quadrant-filter-container", () => reloadCurrentChart());
+        renderIndexFilterBar("index-filter-container-rrg", () => reloadCurrentChart());
+        renderSectorFilterBar("sector-filter-container-rrg", () => reloadCurrentChart());
+        renderQuadrantFilterBar("quadrant-filter-container-rrg", () => reloadCurrentChart());
 
         // 2. Erster initialer Datenabruf und Chart-Draw (z.B. Sektoren als Standard)
         await loadAndRenderSectors();

@@ -1,4 +1,6 @@
 import GlobalState from "../../../../shared/state/globalState.js";
+import { stylePill } from "../renderer/rrgPillsRenderer.js";
+
 
 const QUADRANTS = [
     { key: "leading", name: "Leading" },
@@ -58,16 +60,5 @@ export function renderQuadrantFilterBar(containerId, onFilterChange) {
     });
 }
 
-function stylePill(btn, active) {
-    btn.style.cssText = `
-        background: ${active ? "#f59e0b" : "#2d2d2d"};
-        color: #ffffff;
-        border: 1px solid ${active ? "#d97706" : "#444"};
-        padding: 6px 12px;
-        border-radius: 16px;
-        cursor: pointer;
-        font-size: 0.85rem;
-        font-weight: 500;
-        transition: all 0.2s ease;
-    `;
-}
+
+

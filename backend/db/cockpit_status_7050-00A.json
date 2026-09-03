@@ -2,21 +2,21 @@
   "downloads": {
     "IndexHistory": {
       "ok": true,
-      "lastRun": "2026-09-02T21:18:00.119Z",
-      "duration": "1s",
+      "lastRun": "2026-09-03T21:09:21.708Z",
+      "duration": "2s",
       "info": "7 Fehler übersprungen"
     },
     "DailyHistory": {
       "ok": true,
-      "lastRun": "2026-09-02T21:23:10.253Z",
-      "duration": "308s",
+      "lastRun": "2026-09-03T21:14:51.118Z",
+      "duration": "322s",
       "info": "Erfolgreich"
     }
   },
   "checks": {
-    "status": "green",
-    "lastRun": "2026-09-02T21:41:59.470Z",
-    "duration": "3.55s",
+    "status": "yellow",
+    "lastRun": "2026-09-03T21:09:13.628Z",
+    "duration": "4.16s",
     "sections": {
       "finviz": {
         "title": "Finviz-Daten",
@@ -25,15 +25,15 @@
           {
             "name": "finviz",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:31:08",
-            "countAtLastDate": 11641,
+            "lastDateStr": "2026-09-03 22:31:03",
+            "countAtLastDate": 11644,
             "isValidation": false,
             "details": null
           },
           {
             "name": "finviz_groups",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:30:56",
+            "lastDateStr": "2026-09-03 22:31:00",
             "countAtLastDate": 155,
             "isValidation": false,
             "details": null
@@ -41,7 +41,7 @@
           {
             "name": "Sectors JSON",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:30:48",
+            "lastDateStr": "2026-09-02 22:20:05",
             "countAtLastDate": 11,
             "isValidation": false,
             "details": null
@@ -49,7 +49,7 @@
           {
             "name": "Industries JSON",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:30:56",
+            "lastDateStr": "2026-09-02 22:20:35",
             "countAtLastDate": 144,
             "isValidation": false,
             "details": null
@@ -57,7 +57,7 @@
           {
             "name": "Stocks JSON",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:31:08",
+            "lastDateStr": "2026-09-02 22:20:43",
             "countAtLastDate": 5629,
             "isValidation": false,
             "details": null
@@ -65,7 +65,7 @@
           {
             "name": "ETFs JSON",
             "status": "success",
-            "lastDateStr": "2026-09-02 22:31:08",
+            "lastDateStr": "2026-09-02 22:20:43",
             "countAtLastDate": 6012,
             "isValidation": false,
             "details": null

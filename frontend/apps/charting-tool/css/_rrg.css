@@ -1,18 +1,70 @@
+/* ---------------------------------------------------------
+   GLOBAL FONT (Lab Style)
+--------------------------------------------------------- */
+body,
+.chart-panel-rrg-top,
+.rrg-title,
+.rrg-filter-title,
+.rrg-filter-block,
+#sector-filter-container,
+#quadrant-filter-container,
+#index-filter-container,
+.filter-pill,
+.pill {
+    font-family: "Inter", "Segoe UI", "Roboto", "Arial", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ---------------------------------------------------------
+   TOP AREA (Title + Filter Row)
+--------------------------------------------------------- */
 .chart-panel-rrg-top {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 16px;
-    flex-wrap: wrap; /* optional, falls Fenster schmal wird */
+    flex-direction: column;      /* Titel oben, Filter darunter */
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    padding-bottom: 10px;
 }
+
+/* ---------------------------------------------------------
+   FILTER ROW (3 Blocks nebeneinander)
+--------------------------------------------------------- */
 .rrg-filter-row {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-between;  /* gleichmäßige Verteilung */
+    align-items: flex-start;
     width: 100%;
-    gap: 12px;
-
-    /* <<< DER ENTSCHEIDENDE FIX >>> */
-    justify-content: space-between;
+    gap: 16px;
 }
+
+/* ---------------------------------------------------------
+   FILTER BLOCK (Title + Pills)
+--------------------------------------------------------- */
+.rrg-filter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;                       /* alle 3 Blöcke gleich breit */
+}
+
+/* ---------------------------------------------------------
+   TITLES
+--------------------------------------------------------- */
+.rrg-title {
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.rrg-filter-title {
+    color: #aaa;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
 

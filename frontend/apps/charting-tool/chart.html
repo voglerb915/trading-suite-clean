@@ -31,6 +31,12 @@
 
             <!-- TAB 1: RS -->
             <div class="chart-panel chart-panel-rs" data-panel="1">
+
+                <!-- SECTOR FILTER LEISTE -->
+                <div id="sector-filter-container-rs"
+                    style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
+                </div>
+
                 <div class="chart-panel-rs-left">
                     Chart RS – Links (Master)
                 </div>
@@ -45,57 +51,68 @@
                 </div>
             </div>
 
-<!-- TAB 2: RRG -->
-<div class="chart-panel chart-panel-rrg" data-panel="2">
+            <!-- TAB 2: RRG -->
+            <div class="chart-panel chart-panel-rrg" data-panel="2">
 
-<div class="chart-panel-rrg-top">
-   
+                <div class="chart-panel-rrg-top">
 
-    <div class="rrg-filter-row">
-        <div id="sector-filter-container"></div>
-        <div id="quadrant-filter-container"></div>
-        <div id="index-filter-container"></div>
-    </div>
-</div>
+                    <h2 class="rrg-title">Market Rotation (Sectors, Industries & Stocks)</h2>
 
+                    <div class="rrg-filter-row">
+                        <div class="rrg-filter-block">
+                            <div class="rrg-filter-title">SECTORS</div>
+                            <div id="sector-filter-container-rrg"></div>
+                        </div>
 
+                        <div class="rrg-filter-block">
+                            <div class="rrg-filter-title">QUADRANTS</div>
+                            <div id="quadrant-filter-container-rrg"></div>
+                        </div>
 
-    <div class="chart-panel-rrg-charts">
+                        <div class="rrg-filter-block">
+                            <div class="rrg-filter-title">INDEX</div>
+                            <div id="index-filter-container-rrg"></div>
+                        </div>
+                    </div>
 
-        <!-- SECTORS -->
-        <div class="chart-panel-rrg-chart">
-            <canvas id="rrgCanvasSectors"></canvas>
-        </div>
+                </div>
 
-        <!-- INDUSTRIES -->
-        <div class="chart-panel-rrg-chart">
-            <canvas id="rrgCanvasIndustries"></canvas>
-        </div>
+                <div class="chart-panel-rrg-charts">
 
-        <!-- STOCKS -->
-        <div class="chart-panel-rrg-chart">
-            <canvas id="rrgCanvasStocks"></canvas>
-        </div>
+                    <!-- SECTORS -->
+                    <div class="chart-panel-rrg-chart">
+                        <canvas id="rrgCanvasSectors"></canvas>
+                    </div>
 
-    </div>
-</div>
+                    <!-- INDUSTRIES -->
+                    <div class="chart-panel-rrg-chart">
+                        <canvas id="rrgCanvasIndustries"></canvas>
+                    </div>
 
+                    <!-- STOCKS -->
+                    <div class="chart-panel-rrg-chart">
+                        <canvas id="rrgCanvasStocks"></canvas>
+                    </div>
 
-            <!-- TAB 3: Alte Struktur (Vollständig integriert) -->
+                </div>
+            </div>
+
+            <!-- TAB 3: VIEW -->
             <div class="chart-panel chart-panel-view" data-panel="3">
                 <div class="dashboard-container" style="display: flex; width: 100%; height: 100%; gap: 16px; box-sizing: border-box;">
-                    <!-- LINKE SEITE: Master Kombi-Chart (RS Score & Performance) -->
+
+                    <!-- LINKE SEITE -->
                     <div class="pane left-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
                         <h2>Industry RS Score & Performance (3M)</h2>
-                        
-                        <!-- Sektor-Filter & Globale Metrik-Toggles nebeneinander -->
+
+                        <!-- Sektor-Filter & Globale Metrik-Toggles -->
                         <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
-                            <div id="sector-filter-container" style="flex: 1; display: flex; flex-wrap: wrap; gap: 6px;"></div>
-                            
-                            <!-- Globale Metrik-Pillen (Score & Perf) -->
-                            <div class="global-metric-toggles" style="display: flex; gap: 6px; flex-shrink: 0;">
-                                <button id="btn-toggle-score" class="sector-pill active" data-metric="score">Score</button>
-                                <button id="btn-toggle-perf" class="sector-pill" data-metric="perf">Perf</button>
+                            <div id="sector-filter-container-view" style="flex: 1; display: flex; flex-wrap: wrap; gap: 6px;"></div>
+
+                            <!-- Globale Metrik-Pillen -->
+                            <div class="global-metric-toggles" style="display: flex; gap: 6px; flex-shrink: 0; align-items: center;">
+                                <button id="btn-toggle-score" class="pill active" data-metric="score" style="background: #f59e0b; color: #000000; border: 1px solid #f59e0b; padding: 6px 14px; height: 26px; line-height: 1.0; font-size: 12px; font-weight: 500; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">Score</button>
+                                <button id="btn-toggle-perf" class="pill" data-metric="perf" style="background: #2a2a2a; color: #ffffff; border: 1px solid #444; padding: 6px 14px; height: 26px; line-height: 1.0; font-size: 12px; font-weight: 500; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">Perf</button>
                             </div>
                         </div>
 
@@ -104,10 +121,10 @@
                         </div>
                     </div>
 
-                    <!-- RECHTE SEITE: 2 horizontal geteilte Panes für Historie -->
+                    <!-- RECHTE SEITE -->
                     <div class="pane right-pane-container" style="flex: 1; display: flex; flex-direction: column; gap: 16px; overflow: hidden;">
-                        
-                        <!-- Oben: Ausgewählter Sektor (Historie) -->
+
+                        <!-- Oben -->
                         <div class="sub-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
                                 <h3 id="sector-history-title" style="margin: 0; font-size: 1.1rem;">Sektor Verlauf (3M)</h3>
@@ -117,13 +134,14 @@
                             </div>
                         </div>
 
-                        <!-- Unten: Ausgewählte Industrie (Historie) -->
+                        <!-- Unten -->
                         <div class="sub-pane" style="flex: 1; display: flex; flex-direction: column; overflow: hidden;">
                             <h3 id="industry-history-title" style="margin-bottom: 8px; font-size: 1.1rem;">Industrie Verlauf (3M) - Bitte wählen</h3>
                             <div class="sub-chart-wrapper" style="position: relative; flex-grow: 1; width: 100%;">
                                 <canvas id="industryHistoryChart"></canvas>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -142,9 +160,9 @@
 
     </div>
 
-    
     <!-- Chart-Rendering -->
     <script type="module" src="./oldStructure/renderChart.js"></script>
+
     <!-- RRG Modul-Orchestrator -->
     <script type="module" src="./js/rrgMain.js"></script>
 

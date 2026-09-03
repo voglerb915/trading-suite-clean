@@ -1,34 +1,111 @@
-/* --- PILLS STYLING (pills.css) --- */
-.sector-pill, 
-#btn-toggle-score, 
-#btn-toggle-perf {
-    background-color: #2a2a2a;
-    color: #fff;
-    border: 1px solid #444;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    outline: none;
+/* ============================================================
+   GLOBAL BASIS (für alle Tabs)
+   ============================================================ */
+
+.pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease-in-out;
+    outline: none;
 }
 
-.sector-pill:hover, 
-#btn-toggle-score:hover, 
-#btn-toggle-perf:hover {
+
+/* ============================================================
+   TAB 1 — RS
+   ============================================================ */
+
+.chart-panel-rs .pill {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.chart-panel-rs .pill:hover {
     background-color: #383838;
     border-color: #666;
 }
 
-/* Aktiver Zustand (gleicher orangener Ton wie deine Sektor-Pillen) */
-.sector-pill.active, 
-#btn-toggle-score.active, 
-#btn-toggle-perf.active {
+.chart-panel-rs .pill.active {
     background-color: #f59e0b;
     color: #000;
-    font-weight: 600;
     border-color: #f59e0b;
+}
+
+
+/* ============================================================
+   TAB 2 — RRG
+   ============================================================ */
+
+.chart-panel-rrg .pill {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.chart-panel-rrg .pill:hover {
+    background-color: #383838;
+    border-color: #666;
+}
+
+.chart-panel-rrg .pill.active {
+    background-color: #f59e0b;
+    color: #000;
+    border-color: #f59e0b;
+}
+
+
+/* ============================================================
+   TAB 3 — VIEW
+   ============================================================ */
+
+.chart-panel-view .pill {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+.chart-panel-view .pill:hover {
+    background-color: #383838;
+    border-color: #666;
+}
+
+.chart-panel-view .pill.active {
+    background-color: #f59e0b;
+    color: #000;
+    border-color: #f59e0b;
+}
+
+
+/* ============================================================
+   TAB 4
+   ============================================================ */
+
+.chart-panel-4 .pill {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    opacity: 0.7;
+}
+
+.chart-panel-4 .pill:hover {
+    opacity: 1.0;
+}
+
+
+/* ============================================================
+   TAB 5
+   ============================================================ */
+
+.chart-panel-5 .pill {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    opacity: 0.5;
+}
+
+.chart-panel-5 .pill:hover {
+    opacity: 0.8;
 }

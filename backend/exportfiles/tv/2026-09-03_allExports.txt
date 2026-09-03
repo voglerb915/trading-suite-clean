@@ -1,0 +1,28 @@
+
+===========================
+Export: 12:10:29
+Strategy: none
+Sector: -
+Industry: -
+Index: -
+Count: 18
+---------------------------
+NUE
+CTVA
+AAUC
+RYAM
+PKX
+MOS
+SLSR
+GEVO
+AMTX
+FMC
+METC
+UFPI
+ALOY
+HUDI
+TMC
+NEXM
+XPL
+LGO
+===========================

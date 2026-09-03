@@ -1,8 +1,8 @@
 {
   "checks": {
-    "status": "yellow",
-    "lastRun": "2026-09-02T21:18:38.054Z",
-    "duration": "4.63s",
+    "status": "green",
+    "lastRun": "2026-09-02T22:09:05.294Z",
+    "duration": "4.57s",
     "sections": {
       "finviz": {
         "title": "Finviz-Daten",
@@ -27,7 +27,7 @@
           {
             "name": "Sectors JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:30:48",
+            "lastDateStr": "2026-09-02 22:20:05",
             "countAtLastDate": 11,
             "isValidation": false,
             "details": null
@@ -35,7 +35,7 @@
           {
             "name": "Industries JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:01",
+            "lastDateStr": "2026-09-02 22:20:35",
             "countAtLastDate": 144,
             "isValidation": false,
             "details": null
@@ -43,56 +43,56 @@
           {
             "name": "Stocks JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 5628,
+            "lastDateStr": "2026-09-02 22:20:43",
+            "countAtLastDate": 5629,
             "isValidation": false,
             "details": null
           },
           {
             "name": "ETFs JSON",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:31:07",
-            "countAtLastDate": 6008,
-            "isValidation": false,
-            "details": null
-          },
-          {
-            "name": "marketScores (etf)",
-            "status": "success",
-            "lastDateStr": "2026-09-01 22:20:44",
-            "countAtLastDate": 6008,
-            "isValidation": false,
-            "details": null
-          },
-          {
-            "name": "marketScores (sector)",
-            "status": "success",
-            "lastDateStr": "2026-09-01 22:20:06",
-            "countAtLastDate": 11,
+            "lastDateStr": "2026-09-02 22:20:43",
+            "countAtLastDate": 6012,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (industry)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:20:35",
+            "lastDateStr": "2026-09-02 22:20:35",
             "countAtLastDate": 144,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (sector)",
+            "status": "success",
+            "lastDateStr": "2026-09-02 22:20:05",
+            "countAtLastDate": 11,
+            "isValidation": false,
+            "details": null
+          },
+          {
+            "name": "marketScores (etf)",
+            "status": "success",
+            "lastDateStr": "2026-09-02 22:20:43",
+            "countAtLastDate": 6012,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (stock)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:20:44",
-            "countAtLastDate": 5628,
+            "lastDateStr": "2026-09-02 22:20:43",
+            "countAtLastDate": 5629,
             "isValidation": false,
             "details": null
           },
           {
             "name": "marketScores (sparkSignals)",
             "status": "success",
-            "lastDateStr": "2026-09-01 22:20:44",
-            "countAtLastDate": 310,
+            "lastDateStr": "2026-09-02 22:20:43",
+            "countAtLastDate": 698,
             "isValidation": false,
             "details": null
           }
@@ -105,48 +105,48 @@
           {
             "name": "Indexes",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 28,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 27,
             "isValidation": false,
             "details": null
           },
           {
             "name": "DailyHistory",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 11060,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 11025,
             "isValidation": false,
             "details": null
           },
           {
             "name": "DailySignals",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 4506,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 4514,
             "isValidation": false,
             "details": null
           },
           {
             "name": "StockMetrics",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 11060,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 11025,
             "isValidation": false,
             "details": null
           },
           {
             "name": "Strategy: S1_STAGE3_TOPPING",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 1421,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 1466,
             "isValidation": false,
             "details": null
           },
           {
             "name": "Strategy: InsideDay52W",
             "status": "success",
-            "lastDateStr": "2026-09-01",
-            "countAtLastDate": 14,
+            "lastDateStr": "2026-09-02",
+            "countAtLastDate": 19,
             "isValidation": false,
             "details": null
           }
