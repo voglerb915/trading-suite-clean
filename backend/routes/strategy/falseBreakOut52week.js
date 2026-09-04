@@ -40,45 +40,50 @@ async function generateAndSaveJsonCache() {
 
     // Dein schwerer SQL-Query
     const query = `
-        WITH StockUniverse AS (
-            SELECT DISTINCT ms.name AS ticker
-            FROM marketScores ms WITH (NOLOCK)
-            WHERE ms.type = 'stock' AND ms.anl_datum = @targetDate
-        ),
-        NumberedDays AS (
-            SELECT 
-                d.ticker, d.name, d.date, d.[open], d.[close], d.high, d.low, d.high52w,
-                LAG(d.[close], 1) OVER (PARTITION BY d.ticker ORDER BY d.date) AS prev_close,
-                LAG(d.[open], 1) OVER (PARTITION BY d.ticker ORDER BY d.date) AS prev_open,
-                ROW_NUMBER() OVER (PARTITION BY d.ticker ORDER BY d.date) AS rn_asc
-            FROM yahoo.dbo.DailyHistory d
-            INNER JOIN StockUniverse su ON su.ticker = d.ticker
-        ),
-        HighDays AS (
-            SELECT ticker, date AS high_date, rn_asc AS high_rn
-            FROM NumberedDays
-            WHERE high = high52w AND [close] > [open]
-        ),
-        ValidSetups AS (
-            SELECT DISTINCT
-                d_latest.ticker, d_latest.name, h.high_date,
-                d_after.date AS gap_down_date, d_after.[close] AS gap_down_close,
-                d_latest.date AS latest_date, d_latest.[open] AS latest_open, d_latest.[close] AS latest_close
-            FROM HighDays h
-            JOIN NumberedDays d_after ON d_after.ticker = h.ticker AND d_after.rn_asc = h.high_rn + 1
-            JOIN NumberedDays d_latest ON d_latest.ticker = h.ticker AND d_latest.rn_asc = (SELECT MAX(rn_asc) FROM NumberedDays WHERE ticker = h.ticker)
-            WHERE (d_latest.rn_asc - h.high_rn) > 5
-              AND d_after.[open] < d_after.prev_close
-              AND d_after.[open] <= d_after.prev_open
-              AND d_after.[close] < d_after.[open]
-        )
+WITH StockUniverse AS (
+        SELECT DISTINCT ms.name AS ticker
+        FROM marketScores ms WITH (NOLOCK)
+        WHERE ms.type = 'stock' AND ms.anl_datum = @targetDate
+    ),
+    NumberedDays AS (
         SELECT 
-            v.ticker, COALESCE(f.company, v.name) AS name, f.sector, f.industry,
-            f.price, f.change, f.volume, f.[_52w_high] AS [52w_high], f.[index] AS finviz_index,
-            v.high_date, v.gap_down_date, v.gap_down_close
-        FROM ValidSetups v
-        LEFT JOIN finviz f WITH (NOLOCK) ON f.ticker = v.ticker AND f.anl_datum = @targetDate
-        ORDER BY v.gap_down_date DESC;
+            d.ticker, d.name, d.date, d.[open], d.[close], d.high, d.low, d.high52w,
+            LAG(d.[close], 1) OVER (PARTITION BY d.ticker ORDER BY d.date) AS prev_close,
+            LAG(d.[open], 1) OVER (PARTITION BY d.ticker ORDER BY d.date) AS prev_open,
+            ROW_NUMBER() OVER (PARTITION BY d.ticker ORDER BY d.date) AS rn_asc
+        FROM yahoo.dbo.DailyHistory d
+        INNER JOIN StockUniverse su ON su.ticker = d.ticker
+        WHERE d.date >= DATEADD(day, -365, @targetDate) -- Auf die letzten 365 Tage beschränken
+    ),
+    HighDays AS (
+        SELECT 
+            ticker, date AS high_date, rn_asc AS high_rn,
+            LAG(rn_asc) OVER (PARTITION BY ticker ORDER BY rn_asc) AS prev_high_rn
+        FROM NumberedDays
+        WHERE high = high52w AND [close] > [open]
+    ),
+    ValidSetups AS (
+        SELECT DISTINCT
+            d_latest.ticker, d_latest.name, h.high_date,
+            d_after.date AS gap_down_date, d_after.[close] AS gap_down_close,
+            d_latest.date AS latest_date, d_latest.[open] AS latest_open, d_latest.[close] AS latest_close
+        FROM HighDays h
+        JOIN NumberedDays d_after ON d_after.ticker = h.ticker AND d_after.rn_asc = h.high_rn + 1
+        JOIN NumberedDays d_latest ON d_latest.ticker = h.ticker AND d_latest.rn_asc = (SELECT MAX(rn_asc) FROM NumberedDays WHERE ticker = h.ticker)
+        WHERE 
+            (h.prev_high_rn IS NULL OR (h.high_rn - h.prev_high_rn) >= 5)
+            AND d_after.[open] < d_after.prev_close
+            AND d_after.[open] <= d_after.prev_open
+            AND d_after.[close] < d_after.[open]
+    )
+SELECT 
+        v.ticker, COALESCE(f.company, v.name) AS name, f.sector, f.industry,
+        f.price, f.change, f.volume, f.[_52w_high] AS [52w_high], f.[index] AS finviz_index,
+        v.high_date, v.gap_down_date, v.gap_down_close
+    FROM ValidSetups v
+    INNER JOIN finviz f WITH (NOLOCK) ON f.ticker = v.ticker AND f.anl_datum = @targetDate
+    WHERE f.industry <> 'Shell Companies'
+    ORDER BY v.gap_down_date DESC;
     `;
 
     const result = await request.query(query);

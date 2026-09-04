@@ -1,5 +1,7 @@
 import { handleIndustrySelection } from './rightSideLogic.js';
 
+
+
 let combinedChartInstance = null;
 
 export function renderCombinedChart(scoreData, perfValues, metrics = { score: true, perf: false }) {

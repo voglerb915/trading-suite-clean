@@ -1,7 +1,8 @@
 import { renderSectorFilterBar } from '../../lab/render/renderSectorFilter.js';
 import { initCharts, renderActiveCharts } from './chartLogic.js';
 import GlobalState from '../../../shared/state/globalState.js';
-import { stylePill } from '../js/renderer/rrgPillsRenderer.js';
+import { renderCombinedChart } from '../oldStructure/chartRenderer.js';
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -17,35 +18,52 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     await initCharts();
 
-// --- Score & Perf Pillen: Exakte Zustandssynchronisation ---
+    // --- Score & Perf Pillen ---
     const btnScore = document.getElementById('btn-toggle-score');
     const btnPerf = document.getElementById('btn-toggle-perf');
 
     function setButtonState(btn, active) {
-        if (active) {
-            btn.classList.add('active');
-        } else {
-            btn.classList.remove('active');
-        }
-        // stylePill erhält hier direkt den gewünschten Ziel-Zustand (true/false)
-        stylePill(btn, active);
+        btn.classList.toggle('active', active);
     }
 
     if (btnScore && btnPerf) {
-        // Standard-Zustand beim Start erzwingen: Score AN, Perf AUS
+
+        // Standard-Zustand beim Start
         setButtonState(btnScore, true);
         setButtonState(btnPerf, false);
 
-        btnScore.addEventListener('click', () => {
-            const willBeActive = !btnScore.classList.contains('active');
-            setButtonState(btnScore, willBeActive);
-            renderActiveCharts();
-        });
+btnScore.addEventListener('click', () => {
+    const willBeActive = !btnScore.classList.contains('active');
+    setButtonState(btnScore, willBeActive);
 
-        btnPerf.addEventListener('click', () => {
-            const willBeActive = !btnPerf.classList.contains('active');
-            setButtonState(btnPerf, willBeActive);
-            renderActiveCharts();
-        });
+    const metrics = {
+        score: btnScore.classList.contains('active'),
+        perf: btnPerf.classList.contains('active')
+    };
+
+    const scoreData = GlobalState.get("rawScores");
+    const perfValues = GlobalState.get("industryPerf");
+
+    renderCombinedChart(scoreData, perfValues, metrics);
+});
+
+
+
+btnPerf.addEventListener('click', () => {
+    const willBeActive = !btnPerf.classList.contains('active');
+    setButtonState(btnPerf, willBeActive);
+
+    const metrics = {
+        score: btnScore.classList.contains('active'),
+        perf: btnPerf.classList.contains('active')
+    };
+
+    const scoreData = GlobalState.get("rawScores");
+    const perfValues = GlobalState.get("industryPerf");
+
+    renderCombinedChart(scoreData, perfValues, metrics);
+});
+
+
     }
 });
