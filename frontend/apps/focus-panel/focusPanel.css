@@ -51,3 +51,11 @@ body {
     margin-bottom: 6px;
     letter-spacing: 0.5px;
 }
+.sector-bar {
+    display: inline-block;
+    height: 12px;
+    flex-shrink: 0;
+    vertical-align: middle;
+    margin-right: 6px;
+    /* Wichtig: KEINE width-Angabe hier, da der border-left die Breite übernimmt */
+}

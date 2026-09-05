@@ -2,6 +2,8 @@
 import { SectorOverviewTile } from './tiles/instances/sectorOverviewTile.js';
 import { IndustryOverviewTile } from './tiles/instances/industryOverviewTile.js';
 import { StockOverviewTile } from './tiles/instances/stockOverviewTile.js';
+import "@shared/css/sector.css";
+
 
 async function initFocusPanel() {
     const container = document.getElementById('tile-container');

@@ -1,5 +1,7 @@
 // apps/focus-panel/tiles/instances/industryOverviewTile.js
 import { LargeTile } from "../templates/largeTile.js";
+import { renderColorBar } from "@shared/logic/renderNameWithBar.js"; // renderColorBar kommt aus derselben Datei
+import { sectorClasses } from "@shared/logic/sectorClasses.js";
 
 export async function IndustryOverviewTile() {
     let top10Content = "<div>Lade Daten...</div>";
@@ -21,20 +23,43 @@ export async function IndustryOverviewTile() {
         const top10 = sorted.slice(0, 10);
         const loser10 = sorted.slice(-10); // .reverse() entfernt für einheitliche Sortierung
 
-        const renderRows = (items) => items.map(item => {
-            const name = item.industry || item.name;
-            const mom = item.history ? item.history[item.history.length - 1].y : (item.momentum || 0);
-            const color = mom >= 0 ? '#4caf50' : '#f44336';
-            
-            return `
-                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                    <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;" title="${name}">${name}</span>
-                    <span style="color:${color}; font-weight: 500;">
-                        ${mom >= 0 ? "+" : ""}${mom.toFixed(1)}
-                    </span>
-                </div>
-            `;
-        }).join("");
+
+
+const renderRows = (items) => items.map(item => {
+    const industryName = item.industry || item.name;
+    const sectorName = item.sector;   // ⭐ Farbe kommt vom Sektor
+    const mom = item.history ? item.history[item.history.length - 1].y : (item.momentum || 0);
+    const momColor = mom >= 0 ? "#10b981" : "#ef4444";
+
+    return `
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            font-size:0.8rem;
+            padding:3px 0;
+            border-bottom:1px solid rgba(255,255,255,0.05);
+        ">
+            <span style="
+                display:flex;
+                align-items:center;
+                gap:6px;
+                white-space:nowrap;
+                overflow:hidden;
+                text-overflow:ellipsis;
+                max-width:200px;
+            ">
+                ${renderColorBar(sectorName)}   <!-- ⭐ Nur Balken -->
+                <span>${industryName}</span>    <!-- ⭐ Industry-Name -->
+            </span>
+
+            <span style="color:${momColor}; font-weight:600;">
+                ${mom >= 0 ? "+" : ""}${mom.toFixed(1)}
+            </span>
+        </div>
+    `;
+}).join("");
+
 
         top10Content = renderRows(top10);
         loser10Content = renderRows(loser10);
