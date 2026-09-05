@@ -1,0 +1,42 @@
+.rs-filter-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Zentriert alles absolut exakt auf einer Linie */
+    gap: 16px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+#rs-sector-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 0 !important; /* Überschreibt das inline margin, falls es vom JS gesetzt wird */
+}
+
+.rs-metric-toggles {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.rs-title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.rs-history-title {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.rs-title,
+.rs-history-title {
+    color: #fff;
+}
+
+

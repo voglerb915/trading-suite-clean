@@ -2,33 +2,36 @@ html, body {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    background-color: #121212; /* oder dein Hintergrund */
+    background-color: #121212;
 }
 
+/* ROOT */
 .charting-root {
     display: grid;
     grid-template-columns: auto 1fr;
-    height: 100%; /* <<< von 100vh auf 100% geändert */
+    height: 100%;
     max-height: 100vh;
     overflow: hidden;
 }
 
+/* CONTENT */
 .charting-content {
     height: 100%;
     flex-grow: 1;
     overflow: hidden;
-    padding: 0 16px 16px 16px; /* oben 0, rechts/unten/links wie gehabt */
+    padding: 0 16px 16px 16px;
     display: flex;
     flex-direction: column;
 }
 
-
-/* Panels wirklich verstecken */
+/* Tabs verstecken – Chart.js kompatibel */
 .chart-panel:not(.active) {
-    display: none !important;
+    visibility: hidden;
+    position: absolute;
+    pointer-events: none;
 }
 
-/* Panels - Basis */
+/* Panel Basis */
 .chart-panel {
     background-color: #1e1e1e;
     border: 1px solid #2d2d2d;
@@ -37,61 +40,104 @@ html, body {
     flex-grow: 1;
     height: auto;
     box-sizing: border-box;
+    color: #fff; /* <<< DIESE EINE ZEILE FIXT ALLES */
 }
 
-/* Aktives Panel (Allgemeiner Fall) */
+
+/* Aktives Panel */
 .chart-panel.active {
     display: flex;
     flex-direction: column;
 }
 
-/* RS Panel (Tab 1) */
+/* --------------------------------------------- */
+/* TAB 1 – RS */
+/* --------------------------------------------- */
+
 .chart-panel.chart-panel-rs.active {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     background: transparent;
     border: none;
     padding: 0;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
 }
 
-.chart-panel-rs-left {
+.rs-layout {
+    display: flex;
+    gap: 16px;
+    height: 100%;
+}
+
+.rs-master {
+    flex: 1;
     background-color: #1e1e1e;
     border: 1px solid #2d2d2d;
     border-radius: 8px;
-    padding: 16px;
+    padding: 0 16px 16px 16px; /* oben 0 */
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    height: 100%;
-    box-sizing: border-box;
 }
 
-/* Klassen für Tab 1 und Tab 3 gemeinsam nutzen */
-.chart-panel-rs-right,
-.chart-panel-view .chart-panel-right {
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px;
-    height: 100%;
+.rs-history {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     min-height: 0;
 }
 
-.chart-panel-rs-sub,
-.chart-panel-view .chart-panel-sub {
+.rs-history-sector,
+.rs-history-industry {
+    flex: 1;
     background-color: #1e1e1e;
     border: 1px solid #2d2d2d;
     border-radius: 8px;
-    padding: 8px 16px 4px 16px;
+    padding: 0 16px 16px 16px; /* oben 0 */
     display: flex;
     flex-direction: column;
-    overflow: visible; /* Wichtig, damit das Datum nicht abgeschnitten wird */
-    height: 100%;
-    min-height: 0;
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
-/* RRG Panel (Tab 2) */
+/* TAB 1: Filter-Zeile nebeneinander anordnen */
+.rs-filter-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+}
+
+#rs-sector-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.rs-metric-toggles {
+    display: flex;
+    gap: 6px;
+    flex-shrink: 0;
+    align-items: center; /* Zwingt die Pillen intern auf eine Linie */
+}
+
+/* Erzwingt identische vertikale Ausrichtung für alle Pillen in dieser Zeile */
+.rs-filter-row button {
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+/* --------------------------------------------- */
+/* TAB 2 – RRG */
+/* --------------------------------------------- */
+
 .chart-panel.chart-panel-rrg.active {
     display: flex;
     flex-direction: column;
@@ -126,7 +172,10 @@ html, body {
     flex-direction: column;
 }
 
-/* View Panel (Tab 3) - Muss wie ein flexibler Container agieren */
+/* --------------------------------------------- */
+/* TAB 3 – VIEW */
+/* --------------------------------------------- */
+
 .chart-panel.chart-panel-view.active {
     display: flex;
     flex-direction: column;
@@ -135,17 +184,23 @@ html, body {
     border: none;
     padding: 0;
     height: 100%;
-    min-height: 0; /* Wichtig, damit das Panel nicht überlappt */
+    min-height: 0;
     overflow: hidden;
 }
 
-/* Falls innerhalb von Tab 3 wiederum Sub-Container (wie die RS-Charts oder Raster) liegen: */
-.chart-panel-view .chart-panel-rs-right,
-.chart-panel-view .chart-panel-rs-sub {
-    min-height: 0;
+/* View Titles */
+#industry-history-title,
+#sector-history-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 8px;
 }
 
-/* Platzhalter Tabs (Tab 4 & 5) */
+/* --------------------------------------------- */
+/* TAB 4 & 5 */
+/* --------------------------------------------- */
+
 .chart-panel.chart-panel-4.active,
 .chart-panel.chart-panel-5.active {
     display: flex;
@@ -157,12 +212,4 @@ html, body {
     background-color: #1e1e1e;
     border: 1px solid #2d2d2d;
     padding: 16px;
-}
-
-#industry-history-title,
-#sector-history-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 8px;
 }

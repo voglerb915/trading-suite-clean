@@ -29,27 +29,46 @@
         <!-- CONTENT-BEREICH -->
         <div class="charting-content">
 
-            <!-- TAB 1: RS -->
-            <div class="chart-panel chart-panel-rs" data-panel="1">
+<!-- TAB 1: RS -->
+<div id="chart-panel-rs" class="chart-panel chart-panel-rs" data-panel="1">
 
-                <!-- SECTOR FILTER LEISTE -->
-                <div id="sector-filter-container-rs"
-                    style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px;">
-                </div>
+    <!-- SECTOR FILTER (RS-spezifisch) -->
+    <div class="rs-filter-row">
 
-                <div class="chart-panel-rs-left">
-                    Chart RS – Links (Master)
-                </div>
+        <div id="rs-sector-filter"></div>
 
-                <div class="chart-panel-rs-right">
-                    <div class="chart-panel-rs-sub">
-                        Chart RS – Rechts oben
-                    </div>
-                    <div class="chart-panel-rs-sub">
-                        Chart RS – Rechts unten
-                    </div>
-                </div>
+        <div class="rs-metric-toggles">
+            <button id="rs-toggle-score" class="metric-pill active" data-metric="score">Score</button>
+            <button id="rs-toggle-perf" class="metric-pill" data-metric="perf">Perf</button>
+        </div>
+
+    </div>
+
+    <!-- RS Layout Container -->
+    <div class="rs-layout">
+
+        <!-- RS Masterchart -->
+        <div class="rs-master">
+            <canvas id="rsMasterChart"></canvas>
+        </div>
+
+        <!-- RS History Charts -->
+        <div class="rs-history">
+
+            <div class="rs-history-sector">
+                <canvas id="rsSectorHistory"></canvas>
             </div>
+
+            <div class="rs-history-industry">
+                <canvas id="rsIndustryHistory"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
 
             <!-- TAB 2: RRG -->
             <div class="chart-panel chart-panel-rrg" data-panel="2">
@@ -162,14 +181,18 @@
 
     </div>
 
-    <!-- Chart-Rendering -->
-    <script type="module" src="./oldStructure/renderChart.js"></script>
+<!-- Chart-Rendering (alte Struktur, optional) -->
+<script type="module" src="./oldStructure/renderChart.js"></script>
 
-    <!-- RRG Modul-Orchestrator -->
-    <script type="module" src="./js/rrgMain.js"></script>
+<!-- RRG Modul-Orchestrator -->
+<script type="module" src="./js/rrgMain.js"></script>
 
-    <!-- Tab-Logik -->
-    <script type="module" src="./js/tabs.js"></script>
+<!-- RS Modul-Orchestrator -->
+<script type="module" src="./js/rsMain.js"></script>
+
+<!-- Tab-Logik -->
+<script type="module" src="./js/tabs.js"></script>
+
 
 </body>
 </html>

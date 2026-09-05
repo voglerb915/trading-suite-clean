@@ -1,15 +1,40 @@
 /* ============================================================
-   GLOBAL BASIS (für alle Tabs)
+   GLOBAL BASIS (für alle Tabs & Pillen)
    ============================================================ */
 
-.pill {
+/* ============================================================
+   GLOBAL BASIS & PILLEN STYLING (für Sektoren & Metrics)
+   ============================================================ */
+
+.pill, .metric-pill {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    height: 26px;
+    padding: 0 14px;
+    line-height: 1.0;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 20px;
     cursor: pointer;
     user-select: none;
     transition: all 0.2s ease-in-out;
     outline: none;
+    box-sizing: border-box;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.pill:hover, .metric-pill:hover {
+    background-color: #383838;
+    border-color: #666;
+}
+
+.pill.active, .metric-pill.active {
+    background-color: #f59e0b;
+    color: #000000;
+    border-color: #f59e0b;
 }
 
 
@@ -17,23 +42,32 @@
    TAB 1 — RS
    ============================================================ */
 
-.chart-panel-rs .pill {
+.chart-panel-rs .pill,
+.chart-panel-rs .metric-pill {
     background-color: #2a2a2a;
     color: #fff;
     border: 1px solid #444;
 }
 
-.chart-panel-rs .pill:hover {
+.chart-panel-rs .pill:hover,
+.chart-panel-rs .metric-pill:hover {
     background-color: #383838;
     border-color: #666;
 }
 
-.chart-panel-rs .pill.active {
+.chart-panel-rs .pill.active,
+.chart-panel-rs .metric-pill.active {
     background-color: #f59e0b;
     color: #000;
     border-color: #f59e0b;
 }
 
+#rs-sector-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center; /* Zwingt die Sektor-Pillen auf die Linie */
+}
 
 /* ============================================================
    TAB 2 — RRG

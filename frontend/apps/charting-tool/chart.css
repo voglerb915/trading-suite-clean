@@ -3,6 +3,7 @@
 @import url('./css/_pills.css');
 @import url('./css/_tabs.css');
 @import url('./css/_rrg.css');
+@Import url('./css/_rs.css');
 /*@import url('./oldStructure/_base.css'); */
 
 /* Hier drunter stehen nur noch spezifische Chart-Layouts / Wrapper falls nötig */
