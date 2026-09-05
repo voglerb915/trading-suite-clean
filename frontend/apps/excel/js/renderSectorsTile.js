@@ -3,7 +3,7 @@ import {
     getSectorColor,
     getTextColor
 } from "../../../shared/logic/rankSectorColors.js";
-import { sectorClasses } from "../../../shared/logic/sectorColors.js";
+import { sectorClasses } from "../../../shared/logic/sectorClasses.js";
 
 
 export function renderSectorTile(sectorName, data) {

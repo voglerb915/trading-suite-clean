@@ -1,5 +1,5 @@
 // renderSignalsItem.js
-import { sectorClasses } from "/shared/logic/sectorColors.js";
+import { sectorClasses } from "/shared/logic/sectorClasses.js";
 import { renderRankCircle, renderTrendBars } from "../../../helpers/renderHelpers.js";
 
 export function renderSignalsItem(item, idx, state) {

@@ -1,4 +1,4 @@
-import { sectorClasses } from "/shared/logic/sectorColors.js";
+import { sectorClasses } from "@shared/logic/sectorClasses.js";
 import { renderRankCircle } from "../../../helpers/renderHelpers.js";
 
 

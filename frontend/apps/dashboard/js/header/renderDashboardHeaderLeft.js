@@ -1,4 +1,4 @@
-import { sectorClasses } from "../../../../shared/logic/sectorColors.js";
+import { sectorClasses } from "../../../../shared/logic/sectorClasses.js";
 
 export function renderDashboardHeaderLeft(state) {
     const box = document.getElementById("dashboard-header-left");

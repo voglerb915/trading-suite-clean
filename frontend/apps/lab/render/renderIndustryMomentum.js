@@ -1,5 +1,5 @@
 import GlobalState from "../../../shared/state/globalState.js";
-import { sectorClasses } from '../../../shared/logic/sectorColors.js';
+import { sectorClasses } from '../../../shared/logic/sectorClasses.js';
 
 export async function renderIndustryQuadrant(days = 5) {
     const ctx = document.getElementById('industryQuadrantChart');

@@ -1,6 +1,6 @@
 // frontend/apps/dashboard/js/helpers/renderHelpers.js
 
-import { sectorClasses } from "../../../../shared/logic/sectorColors.js";
+import { sectorClasses } from "../../../../shared/logic/sectorClasses.js";
 
 import {
   handleSectorSelection,

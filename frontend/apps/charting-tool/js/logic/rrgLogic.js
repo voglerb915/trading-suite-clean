@@ -1,4 +1,4 @@
-import { sectorClasses } from "../../../../shared/logic/sectorColors.js";
+import { sectorClasses } from "../../../../shared/logic/sectorClasses.js";
 import { sectorTickers } from "../../../../shared/logic/sectorMapping.js";
 import GlobalState from "../../../../shared/state/globalState.js";
 
