@@ -1,58 +1,70 @@
-// apps/focus-panel/focusPanel.js
-import { SectorOverviewTile } from './tiles/instances/sectorOverviewTile.js';
-import { IndustryOverviewTile } from './tiles/instances/industryOverviewTile.js';
-import { StockOverviewTile } from './tiles/instances/stockOverviewTile.js';
+import { setSector, setIndustry } from "./filters/filterActions.js";
+import { filterState } from "./filters/filterState.js";
+import { loadTiles } from "./logic/tileLoader.js";
 import "@shared/css/sector.css";
 
+// ----------------------------------------------------
+// Neu-Render-Logik
+// ----------------------------------------------------
+export async function rerenderFocusPanel() {
 
-async function initFocusPanel() {
-    const container = document.getElementById('tile-container');
-    if (!container) return;
+    const [
+        sectorTile, industryTile, spTile, ndxTile, djiTile, rutTile, noneTile
+    ] = await loadTiles(filterState);
 
-    container.innerHTML = `<div style="color: #888; font-size: 0.9rem;">Lade Focus Panel...</div>`;
-
-    try {
-        const [
-            sectorTile, industryTile, spTile, ndxTile, djiTile, rutTile, noneTile
-        ] = await Promise.all([
-            SectorOverviewTile(),
-            IndustryOverviewTile(),
-            StockOverviewTile('SP500', 'S&P 500'),
-            StockOverviewTile('NDX', 'Nasdaq 100'),
-            StockOverviewTile('DJI', 'Dow Jones'),
-            StockOverviewTile('RUT', 'Russell 2000'),
-            StockOverviewTile('NONE', 'Other Stocks')
-        ]);
-
-        container.innerHTML = `
-            <!-- Spalte 1: Sektor & Industries -->
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                ${sectorTile}
-                ${industryTile}
-            </div>
-            <!-- Spalte 2: S&P 500 -->
-            <div>
-                ${spTile}
-            </div>
-            <!-- Spalte 3: Nasdaq & Dow -->
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                ${ndxTile}
-                ${djiTile}
-            </div>
-            <!-- Spalte 4: Russell 2000 -->
-            <div>
-                ${rutTile}
-            </div>
-            <!-- Spalte 5: Other Stocks -->
-            <div>
-                ${noneTile}
-            </div>
-        `;
-
-    } catch (err) {
-        console.error("Fehler beim Initialisieren des Focus Panels:", err);
-        container.innerHTML = `<div style="color: #f44336;">Fehler beim Laden.</div>`;
-    }
+    document.getElementById('col-sector-industry').innerHTML = sectorTile + industryTile;
+    document.getElementById('col-sp500').innerHTML = spTile;
+    document.getElementById('col-ndx-dow').innerHTML = ndxTile + djiTile;
+    document.getElementById('col-russell').innerHTML = rutTile;
+    document.getElementById('col-other').innerHTML = noneTile;
 }
 
-document.addEventListener("DOMContentLoaded", initFocusPanel);
+// ----------------------------------------------------
+// Broadcast der Filter
+// ----------------------------------------------------
+function broadcastFilter(filter) {
+    const frames = document.querySelectorAll("iframe");
+    frames.forEach(frame => {
+        if (!frame.contentWindow) return;
+        frame.contentWindow.postMessage(
+            { type: "FOCUS_FILTER_UPDATE", filter },
+            "*"
+        );
+    });
+}
+
+// ----------------------------------------------------
+// Public API für Tiles
+// ----------------------------------------------------
+window.focusPanelSelectSector = function (sector) {
+    setSector(sector);
+    broadcastFilter({ sector });
+    rerenderFocusPanel();
+};
+
+window.focusPanelSelectIndustry = function (industry) {
+    setIndustry(industry);
+    broadcastFilter({ industry });
+    rerenderFocusPanel();
+};
+
+// ----------------------------------------------------
+// Empfang externer Filter-Updates
+// ----------------------------------------------------
+window.addEventListener("message", (event) => {
+    if (event.data?.type === "FOCUS_FILTER_UPDATE") {
+        const { sector, industry } = event.data.filter || {};
+
+        if (sector !== undefined) setSector(sector);
+        if (industry !== undefined) setIndustry(industry);
+
+        rerenderFocusPanel();
+    }
+});
+
+// ----------------------------------------------------
+// Initialisierung
+// ----------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+    rerenderFocusPanel();
+});

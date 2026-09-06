@@ -6,11 +6,27 @@
     <link rel="stylesheet" href="focusPanel.css">
 </head>
 <body>
-    <div id="tile-container">
-        <!-- Der Orchestrator lädt hier dynamisch die Tiles rein -->
+
+    <div id="tile-container" style="display: flex; gap: 20px; align-items: flex-start;">
+
+        <!-- Spalte 1: Sector + Industry -->
+        <div class="tile-column" id="col-sector-industry" style="display:flex; flex-direction:column; gap:15px;"></div>
+
+        <!-- Spalte 2: S&P 500 -->
+        <div class="tile-column" id="col-sp500"></div>
+
+        <!-- Spalte 3: Nasdaq + Dow -->
+        <div class="tile-column" id="col-ndx-dow" style="display:flex; flex-direction:column; gap:15px;"></div>
+
+        <!-- Spalte 4: Russell -->
+        <div class="tile-column" id="col-russell"></div>
+
+        <!-- Spalte 5: Other -->
+        <div class="tile-column" id="col-other"></div>
+
     </div>
 
-    <!-- Zentraler Orchestrator als ES-Modul -->
     <script type="module" src="focusPanel.js"></script>
+
 </body>
 </html>

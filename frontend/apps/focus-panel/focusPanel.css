@@ -7,21 +7,20 @@ body {
 }
 
 #tile-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* 5 gleich große Spalten */
-    gap: 15px;
-    padding: 15px;
-    align-items: start; /* Verhindert, dass ungleich hohe Spalten gestreckt werden */
+    display: flex;
+    flex-wrap: nowrap;     /* 5 Spalten nebeneinander */
+    gap: 20px;
+    align-items: flex-start;
 }
 
-/* Basis-Tile Layouts */
-.cockpit-tile {
-    background: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 15px;
-    box-sizing: border-box;
+/* Falls du mit Spalten-Containern im HTML arbeitest: */
+.tile-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
+
+
 
 .tile-small {
     width: 260px;
@@ -31,26 +30,13 @@ body {
     width: 340px;
 }
 
-.tile-title {
-    margin-top: 0;
-    font-size: 0.95rem;
-    color: #fbbf24; /* Dein gewohntes Orange */
-    border-bottom: 1px solid #333;
-    padding-bottom: 8px;
-    margin-bottom: 12px;
-}
+
 
 .tile-section + .tile-section {
     margin-top: 15px;
 }
 
-.section-label {
-    font-size: 0.75rem;
-    color: #888;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-    letter-spacing: 0.5px;
-}
+
 .sector-bar {
     display: inline-block;
     height: 12px;
@@ -58,4 +44,47 @@ body {
     vertical-align: middle;
     margin-right: 6px;
     /* Wichtig: KEINE width-Angabe hier, da der border-left die Breite übernimmt */
+}
+
+/* Basis-Tile Layouts */
+.cockpit-tile {
+    background: #242424;            /* heller als vorher (#1e1e1e) */
+    border: 1px solid #3a3a3a;      /* etwas heller */
+    border-radius: 10px;            /* minimal moderner */
+    padding: 15px;
+    box-sizing: border-box;
+
+    /* leichte Tiefe */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.35);
+
+    /* sanfte Übergänge */
+    transition: background 0.2s ease, 
+                box-shadow 0.2s ease,
+                transform 0.15s ease;
+}
+
+/* Hover-Effekt: subtil, nicht übertrieben */
+.cockpit-tile:hover {
+    background: #2a2a2a;            /* leicht heller beim Hover */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.45);
+    transform: translateY(-2px);    /* minimaler Lift */
+}
+
+/* Titel etwas klarer */
+.tile-title {
+    margin-top: 0;
+    font-size: 0.95rem;
+    color: #fbbf24;
+    border-bottom: 1px solid #444;  /* etwas heller */
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+/* Section-Label etwas heller */
+.section-label {
+    font-size: 0.75rem;
+    color: #aaa;                    /* vorher #888 */
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
 }

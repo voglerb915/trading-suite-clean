@@ -1,5 +1,5 @@
 import { LargeTile } from "../templates/largeTile.js";
-import { renderColorBar } from "@shared/logic/renderNameWithBar.js";
+import { renderColorBar } from "@shared/logic/renderNameWithBar.js"; // nur Balken
 
 // ⭐ Sortierung komplett absteigend (DESC)
 const sortByMomentumDesc = (a, b) => {
@@ -20,7 +20,8 @@ export async function StockOverviewTile(universeKey, titleName) {
         
         const data = await response.json(); // { top: [...], losers: [...] }
 
-        const sortedTop    = [...data.top].sort(sortByMomentumDesc);
+        // ⭐ Sortierung einbauen
+        const sortedTop = [...data.top].sort(sortByMomentumDesc);
         const sortedLosers = [...data.losers].sort(sortByMomentumDesc);
 
         const renderRows = (items) => {
@@ -29,11 +30,11 @@ export async function StockOverviewTile(universeKey, titleName) {
             }
 
             return items.map(item => {
-                const ticker  = item.ticker;
+                const ticker = item.ticker;
                 const company = item.company || ticker;
-                const price   = item.price ? `$${item.price.toFixed(2)}` : "-";
-                const sector  = item.sector;   // ⭐ Farbe kommt vom Sektor
-                const mom     = item.momentum || 0;
+                const price = item.price ? `$${item.price.toFixed(2)}` : "-";
+                const sector = item.sector;   // ⭐ Farbe kommt vom Sektor
+                const mom = item.momentum || 0;
                 const momColor = mom >= 0 ? "#10b981" : "#ef4444";
 
                 return `
@@ -53,7 +54,7 @@ export async function StockOverviewTile(universeKey, titleName) {
                             text-overflow:ellipsis;
                             max-width:200px;
                         ">
-                            ${renderColorBar(sector)}
+                            ${renderColorBar(sector)}   <!-- ⭐ Nur Balken -->
                             <span style="display:flex; flex-direction:column;">
                                 <strong>${ticker}</strong>
                                 <span style="font-size:0.7rem; color:#aaa; white-space:nowrap;">
@@ -70,18 +71,18 @@ export async function StockOverviewTile(universeKey, titleName) {
             }).join("");
         };
 
-        topContent   = renderRows(sortedTop);
+        topContent = renderRows(sortedTop);
         loserContent = renderRows(sortedLosers);
 
     } catch (err) {
-        topContent   = `<div style="color:#f44336; font-size:0.8rem;">Fehler beim Laden</div>`;
-        loserContent = `<div style="color:#f44336; font-size:0.8rem;">Fehler beim Laden</div>`;
+        topContent = `<div style="color: #f44336; font-size: 0.8rem;">Fehler beim Laden</div>`;
+        loserContent = `<div style="color: #f44336; font-size: 0.8rem;">Fehler beim Laden</div>`;
     }
 
     return LargeTile({
         title: `${titleName} (Top / Loser)`,
         sections: [
-            { label: "Top Momentum",     content: topContent },
+            { label: "Top Momentum", content: topContent },
             { label: "Weakest Momentum", content: loserContent }
         ]
     });
