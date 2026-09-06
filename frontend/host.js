@@ -137,5 +137,5 @@ document.addEventListener("click", (e) => {
 // --- INITIALISIERUNG ---
 window.addEventListener("DOMContentLoaded", () => {
     window.postMessage({ type: "REQUEST", action: "INIT" }, "*");
-    showTool("lab");
+    showTool("focuspanel");
 });

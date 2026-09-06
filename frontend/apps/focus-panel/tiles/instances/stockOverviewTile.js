@@ -1,16 +1,28 @@
-// apps/focus-panel/tiles/instances/stockOverviewTile.js
 import { LargeTile } from "../templates/largeTile.js";
+import { renderColorBar } from "@shared/logic/renderNameWithBar.js"; // nur Balken
+
+// ⭐ Sortierung komplett absteigend (DESC)
+const sortByMomentumDesc = (a, b) => {
+    const momA = a.history ? a.history[a.history.length - 1].y : (a.momentum || 0);
+    const momB = b.history ? b.history[b.history.length - 1].y : (b.momentum || 0);
+    return momB - momA; // DESC
+};
 
 export async function StockOverviewTile(universeKey, titleName) {
     let topContent = "<div>Lade Daten...</div>";
     let loserContent = "<div>Lade Daten...</div>";
 
     try {
-        // Wir holen direkt den gefilterten Endpoint für den jeweiligen Index ab
-        const response = await fetch(`http://localhost:4000/api/market/stocks/momentum?days=5&universe=${universeKey}`);
+        const response = await fetch(
+            `http://localhost:4000/api/market/stocks/momentum?days=5&universe=${universeKey}`
+        );
         if (!response.ok) throw new Error("Netzwerkfehler");
         
-        const data = await response.json(); // Liefert { top: [...], losers: [...] } für diesen Index
+        const data = await response.json(); // { top: [...], losers: [...] }
+
+        // ⭐ Sortierung einbauen
+        const sortedTop = [...data.top].sort(sortByMomentumDesc);
+        const sortedLosers = [...data.losers].sort(sortByMomentumDesc);
 
         const renderRows = (items) => {
             if (!items || items.length === 0) {
@@ -18,16 +30,40 @@ export async function StockOverviewTile(universeKey, titleName) {
             }
 
             return items.map(item => {
-                const name = item.ticker;
+                const ticker = item.ticker;
+                const company = item.company || ticker;
+                const price = item.price ? `$${item.price.toFixed(2)}` : "-";
+                const sector = item.sector;   // ⭐ Farbe kommt vom Sektor
                 const mom = item.momentum || 0;
-                const color = mom >= 0 ? '#4caf50' : '#f44336';
-                
+                const momColor = mom >= 0 ? "#10b981" : "#ef4444";
+
                 return `
-                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; padding: 2px 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;" title="${item.company || name}">
-                            <strong>${name}</strong> <span style="font-size: 0.7rem; color: #aaa;">(${item.price ? '$' + item.price.toFixed(2) : '-'})</span>
+                    <div style="
+                        display:flex;
+                        justify-content:space-between;
+                        align-items:center;
+                        font-size:0.8rem;
+                        padding:3px 0;
+                        border-bottom:1px solid rgba(255,255,255,0.05);
+                    ">
+                        <span style="
+                            display:flex;
+                            align-items:center;
+                            gap:6px;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                            max-width:200px;
+                        ">
+                            ${renderColorBar(sector)}   <!-- ⭐ Nur Balken -->
+                            <span style="display:flex; flex-direction:column;">
+                                <strong>${ticker}</strong>
+                                <span style="font-size:0.7rem; color:#aaa; white-space:nowrap;">
+                                    ${company} — ${price}
+                                </span>
+                            </span>
                         </span>
-                        <span style="color:${color}; font-weight: 500;">
+
+                        <span style="color:${momColor}; font-weight:600;">
                             ${mom >= 0 ? "+" : ""}${mom.toFixed(1)}
                         </span>
                     </div>
@@ -35,8 +71,8 @@ export async function StockOverviewTile(universeKey, titleName) {
             }).join("");
         };
 
-        topContent = renderRows(data.top);
-        loserContent = renderRows(data.losers);
+        topContent = renderRows(sortedTop);
+        loserContent = renderRows(sortedLosers);
 
     } catch (err) {
         topContent = `<div style="color: #f44336; font-size: 0.8rem;">Fehler beim Laden</div>`;
