@@ -220,22 +220,26 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
             }
 
 case "SET_INDUSTRY":
-            case "SELECT_INDUSTRY": {
-                const industryName = msg.payload?.industryName;
-                console.log("🎯 Dashboard hat Industrie-Signal erhalten für:", industryName);
+case "SELECT_INDUSTRY": {
+    const industryName = msg.payload?.industryName;
+    const sectorName = msg.payload?.sectorName; // Sektor direkt aus dem Payload abgreifen
+    console.log("🎯 Dashboard hat Industrie-Signal erhalten für:", industryName, "im Sektor:", sectorName);
 
-                if (!industryName) break;
+    if (!industryName) break;
 
-                // 1. Im Dashboard-State speichern
-                dashboardState.industry = industryName;
+    // 1. Industrie und Sektor gemeinsam im Dashboard-State speichern
+    dashboardState.industry = industryName;
+    if (sectorName) {
+        dashboardState.sector = sectorName;
+    }
 
-                // 2. UI im Dashboard neu zeichnen lassen
-                if (typeof renderAll === "function") {
-                    renderAll();
-                }
+    // 2. UI im Dashboard neu zeichnen lassen
+    if (typeof renderAll === "function") {
+        renderAll();
+    }
 
-                break;
-            }
+    break;
+}
 
             default:
                 console.warn("Dashboard: Unbekannte Action ignoriert:", msg.action);

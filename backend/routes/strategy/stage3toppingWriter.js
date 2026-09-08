@@ -3,6 +3,14 @@ const router = express.Router();
 
 const { yahooPool, tradingPool } = require("../../db/connection");
 
+// Hilfsfunktion für das lineare Scoring des 52W-High-Abstands
+function calculateHighDistScore(dist) {
+    if (dist >= -10) return 12;
+    let excessDrop = Math.abs(dist) - 10;
+    let penalty = Math.floor(excessDrop / 5);
+    return Math.max(0, 12 - penalty);
+}
+
 // ------------------------------------------------------
 // Stage3 Topping Writer – neue Struktur
 // ------------------------------------------------------
@@ -53,7 +61,7 @@ router.get("/write-stage3-topping", async (req, res) => {
         );
 
         // ------------------------------------------------------
-        // 2) Finviz-Daten laden
+        // 2) Finviz-Daten laden (inkl. _52w_high)
         // ------------------------------------------------------
         const result = await tradingPool.request().query(`
             SELECT 
@@ -61,6 +69,7 @@ router.get("/write-stage3-topping", async (req, res) => {
                 price,
                 sma200,
                 industry,
+                _52w_high,
                 anl_datum
             FROM trading.dbo.finviz
         `);
@@ -119,27 +128,40 @@ router.get("/write-stage3-topping", async (req, res) => {
                 trigger_date = latest.anl_datum;
             }
 
+            // --- S1 (State Active) ---
             const s1 = state_active ? 40 : 0;
-            let s2 = 0;
-            let displayAge = 0;
 
+            // --- S2 (Age) ---
+            let s2 = 0;
             if (state_active && trigger_date) {
                 const diffDays = Math.floor(
                     (latest.anl_datum - new Date(trigger_date)) / 86400000
                 );
-                displayAge = diffDays + 1;
                 s2 = Math.max(0, 20 - (diffDays * 2));
             }
 
-            let smaSlopePercent = 0;
+            // --- S3 (Slope) ---
+            const daysBack = Math.min(10, history.length - 1);
+            const pastRow = history[history.length - 1 - daysBack];
+            const pastSmaPrice = pastRow.price / (1 + (pastRow.sma200 / 100));
+            const smaSlopePercent = ((currentSmaPrice - pastSmaPrice) / pastSmaPrice) * 100;
+            
             const s3 = Math.max(0, 30 * (1 - Math.pow(smaSlopePercent / 5, 2)));
 
+            // --- S4 (Industry Rank) ---
             const indRank = industryMap.get(latest.industry) ?? 999;
             const s4 = indRank <= 15 ? 0 : Math.min(25, (indRank / 200) * 25);
 
-            const s5 = Math.max(0, 10 - Math.abs(latest.sma200));
+            // --- S5 (SMA Distance) ---
+            const smaDist = latest.sma200 ?? 0;
+            const s5 = Math.max(0, 10 - Math.abs(smaDist));
 
-            const totalScore = parseFloat((s1 + s2 + s3 + s4 + s5).toFixed(2));
+            // --- Neuer Faktor: 52W High Distance & Lineares Scoring ---
+            const highDistVal = latest._52w_high ?? 0;
+            const s6 = calculateHighDistScore(highDistVal);
+
+            // Hinweis: Falls totalScore auf allen 6 Faktoren basiert, hier entsprechend anpassen
+            const totalScore = parseFloat((s1 + s2 + s3 + s4 + s5 + s6).toFixed(2));
 
             return {
                 ticker: latest.ticker,
@@ -151,8 +173,17 @@ router.get("/write-stage3-topping", async (req, res) => {
                 indRank,
                 price: latest.price,
                 totalScore,
-                smaDistVal: latest.sma200, // oder deine korrekte Berechnung dafür
-                detailsJson: JSON.stringify({ s5_score: s5, sma200: latest.sma200, indRank }) // Beispiel für Details
+                smaSlopePercent,
+                smaDist,
+                highDistVal,
+                detailsJson: JSON.stringify({
+                    score_stateActive: s1,
+                    score_age: s2,
+                    score_slope: s3,
+                    score_indRank: s4,
+                    score_smaDist: s5,
+                    score_highDist: s6
+                })
             };
         });
 
@@ -194,19 +225,20 @@ router.get("/write-stage3-topping", async (req, res) => {
                         [date], [ticker], [strategy_name],
                         [s1_total_score], [s1_state_active], [s1_trigger_date],
                         [s1_days_above], [s1_slope_val], [s1_ind_rank],
-                        [s1_sma_dist], [s1_details_json]
+                        [s1_sma_dist], [s1_high_dist], [s1_details_json]
                     )
                     VALUES (
                         '${item.anl_datum.toISOString().split('T')[0]}',
                         '${item.ticker}',
                         'S1_STAGE3_TOPPING',
-                        ${item.totalScore},
-                        ${item.state_active},
-                        ${triggerDateStr},
-                        ${item.currentDaysAbove},
-                        ${item.latest.sma200},
-                        ${item.indRank},
-                        ${item.smaDistVal},
+                            ${item.totalScore},
+                            ${item.state_active},
+                            ${triggerDateStr},
+                            ${item.currentDaysAbove},
+                            ${item.smaSlopePercent},
+                            ${item.indRank},
+                            ${item.smaDist},
+                            ${item.highDistVal},
                         '${item.detailsJson}'
                     )
                 `);

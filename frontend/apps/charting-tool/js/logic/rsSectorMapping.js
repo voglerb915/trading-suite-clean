@@ -1,8 +1,5 @@
 // js/rs/logic/rsSectorMapping.js
 
-/**
- * Mapping: Ticker → Sektorname
- */
 const tickerToSector = {
     "XLK": "Technology",
     "XLF": "Financial",
@@ -17,22 +14,16 @@ const tickerToSector = {
     "XLC": "Communication Services"
 };
 
-/**
- * Mapping: Sektorname → Ticker
- */
 const sectorToTicker = {
     "Technology": "XLK",
     "Financial": "XLF",
-    "Financial Services": "XLF",
     "Energy": "XLE",
     "Utilities": "XLU",
     "Industrials": "XLI",
     "Consumer Cyclical": "XLY",
     "Consumer Defensive": "XLP",
     "Healthcare": "XLV",
-    "Health Care": "XLV",
     "Basic Materials": "XLB",
-    "Materials": "XLB",
     "Real Estate": "XLRE",
     "Communication Services": "XLC"
 };
@@ -47,13 +38,24 @@ export function getSectorNameFromTicker(ticker) {
 /**
  * Sektorname → Ticker
  */
-export function getTickerFromSectorName(sectorName) {
-    if (!sectorName) return null;
-    return sectorToTicker[sectorName.trim()] || null;
+/**
+ * Sektorname oder Ticker → Ticker (robust gegen beide Eingaben)
+ */
+export function getTickerFromSectorName(input) {
+    if (!input) return null;
+    const trimmed = input.trim();
+    
+    // Falls es bereits ein bekannter Ticker ist (z.B. "XLU"), direkt zurückgeben
+    if (tickerToSector[trimmed]) {
+        return trimmed;
+    }
+    
+    // Ansonsten den Klartext-Namen in den Ticker übersetzen
+    return sectorToTicker[trimmed] || null;
 }
 
 /**
- * Prüft, ob ein Sektor aktiv ist (Set enthält Ticker)
+ * Prüft, ob ein Sektor aktiv ist
  */
 export function isSectorActive(sectorName, activeSet) {
     if (!sectorName || !activeSet) return false;

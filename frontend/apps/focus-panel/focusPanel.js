@@ -7,30 +7,57 @@ import "@shared/css/sector.css";
 // Neu-Render-Logik
 // ----------------------------------------------------
 export async function rerenderFocusPanel() {
-
     const [
         sectorTile, industryTile, spTile, ndxTile, djiTile, rutTile, noneTile
     ] = await loadTiles(filterState);
 
-    document.getElementById('col-sector-industry').innerHTML = sectorTile + industryTile;
-    document.getElementById('col-sp500').innerHTML = spTile;
-    document.getElementById('col-ndx-dow').innerHTML = ndxTile + djiTile;
-    document.getElementById('col-russell').innerHTML = rutTile;
-    document.getElementById('col-other').innerHTML = noneTile;
+    // ⭐ DOM einfügen, nicht innerHTML
+    const col1 = document.getElementById("col-sector-industry");
+    const col2 = document.getElementById("col-sp500");
+    const col3 = document.getElementById("col-ndx-dow");
+    const col4 = document.getElementById("col-russell");
+    const col5 = document.getElementById("col-other");
+
+    col1.innerHTML = "";
+    col1.appendChild(sectorTile);
+    col1.appendChild(industryTile);
+
+    col2.innerHTML = "";
+    col2.appendChild(spTile);
+
+    col3.innerHTML = "";
+    col3.appendChild(ndxTile);
+    col3.appendChild(djiTile);
+
+    col4.innerHTML = "";
+    col4.appendChild(rutTile);
+
+    col5.innerHTML = "";
+    col5.appendChild(noneTile);
 }
 
 // ----------------------------------------------------
 // Broadcast der Filter
 // ----------------------------------------------------
 function broadcastFilter(filter) {
-    const frames = document.querySelectorAll("iframe");
-    frames.forEach(frame => {
-        if (!frame.contentWindow) return;
-        frame.contentWindow.postMessage(
-            { type: "FOCUS_FILTER_UPDATE", filter },
-            "*"
-        );
-    });
+    if (filter.sector !== undefined) {
+        window.parent.postMessage({
+            type: "REQUEST",
+            action: "SELECT_SECTOR",
+            payload: { sectorName: filter.sector }
+        }, "*");
+    }
+    
+    if (filter.industry !== undefined) {
+        window.parent.postMessage({
+            type: "REQUEST",
+            action: "SELECT_INDUSTRY",
+            payload: { 
+                sectorName: filter.sector, // <-- Sektor hier mitgeben!
+                industryName: filter.industry 
+            }
+        }, "*");
+    }
 }
 
 // ----------------------------------------------------
@@ -45,6 +72,13 @@ window.focusPanelSelectSector = function (sector) {
 window.focusPanelSelectIndustry = function (industry) {
     setIndustry(industry);
     broadcastFilter({ industry });
+    rerenderFocusPanel();
+};
+
+window.focusPanelResetFilter = function () {
+    setSector(null);
+    setIndustry(null);
+    broadcastFilter({ sector: null, industry: null });
     rerenderFocusPanel();
 };
 

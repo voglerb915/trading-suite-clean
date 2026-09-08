@@ -42,52 +42,89 @@ export function initMessageRouter(filterStocksHandler, filterSignalsHandler, sto
                 break;
 
 case "SELECT_SECTOR": {
-            const sectorName = msg.payload?.sectorName;
-            console.log("CONTROLLER ROUTER: Sektor-Signal erhalten für:", sectorName);
+    const sectorName = msg.payload?.sectorName;
+    console.log("CONTROLLER ROUTER: Sektor-Signal erhalten für:", sectorName);
 
-            // 1. An Dashboard weiterleiten
-            const dashboardIframe = document.getElementById('iframe-dashboard');
-            if (dashboardIframe && dashboardIframe.contentWindow) {
-                dashboardIframe.contentWindow.postMessage({
-                    type: "RESPONSE",
-                    action: "SET_SECTOR",
-                    payload: { sectorName }
-                }, "*");
-                console.log("✅ Sektor-Signal erfolgreich an iframe-dashboard gesendet.");
-            } else {
-                console.warn("⚠️ iframe-dashboard nicht gefunden!");
-            }
+    // 1. An Dashboard weiterleiten
+    const dashboardIframe = document.getElementById('iframe-dashboard');
+    if (dashboardIframe && dashboardIframe.contentWindow) {
+        dashboardIframe.contentWindow.postMessage({
+            type: "RESPONSE",
+            action: "SET_SECTOR",
+            payload: { sectorName }
+        }, "*");
+    }
 
-            // 2. An Lab weiterleiten
-            const labIframe = document.getElementById('iframe-lab');
-            if (labIframe && labIframe.contentWindow) {
-                labIframe.contentWindow.postMessage({
-                    type: "RESPONSE",
-                    action: "SET_SECTOR",
-                    payload: { sectorName }
-                }, "*");
-                console.log("✅ Sektor-Signal erfolgreich an iframe-lab gesendet.");
-            } else {
-                console.warn("⚠️ iframe-lab nicht gefunden (oder aktuell nicht aktiv).");
-            }
+    // 2. An Lab weiterleiten
+    const labIframe = document.getElementById('iframe-lab');
+    if (labIframe && labIframe.contentWindow) {
+        labIframe.contentWindow.postMessage({
+            type: "RESPONSE",
+            action: "SET_SECTOR",
+            payload: { sectorName }
+        }, "*");
+    }
 
-            break;
-        }
+    // 3. An Charting weiterleiten
+    const chartingIframe = document.getElementById('iframe-charting');
+    if (chartingIframe && chartingIframe.contentWindow) {
+        chartingIframe.contentWindow.postMessage({
+            type: "RESPONSE",
+            action: "SET_SECTOR",
+            payload: { sectorName }
+        }, "*");
+        console.log("✅ Sektor-Signal erfolgreich an iframe-charting gesendet.");
+    }
+
+    break;
+}
 
 case "SELECT_INDUSTRY": {
-    const currentPayload = typeof payload !== 'undefined' ? payload : msg.payload;
-    
+    const currentPayload = msg.payload;
+    const { sectorName, industryName } = currentPayload || {};
+    console.log("CONTROLLER ROUTER: Industrie-Signal erhalten für:", industryName, "im Sektor:", sectorName);
+
+    // 1. An Dashboard weiterleiten
     const dashboardIframe = document.getElementById('iframe-dashboard'); 
     if (dashboardIframe && dashboardIframe.contentWindow) {
         dashboardIframe.contentWindow.postMessage({
             type: "RESPONSE",
             action: "SET_INDUSTRY",
             payload: { 
-                sectorName: currentPayload?.sectorName,
-                industryName: currentPayload?.industryName 
+                sectorName: sectorName,
+                industryName: industryName 
+            }
+        }, "*");
+        console.log("✅ Industrie-Signal erfolgreich an iframe-dashboard gesendet.");
+    }
+
+    // 2. An Lab weiterleiten (falls das Lab auch darauf lauschen soll)
+    const labIframe = document.getElementById('iframe-lab');
+    if (labIframe && labIframe.contentWindow) {
+        labIframe.contentWindow.postMessage({
+            type: "RESPONSE",
+            action: "SET_INDUSTRY",
+            payload: { 
+                sectorName: sectorName,
+                industryName: industryName 
             }
         }, "*");
     }
+
+    // 3. An Charting weiterleiten
+    const chartingIframe = document.getElementById('iframe-charting');
+    if (chartingIframe && chartingIframe.contentWindow) {
+        chartingIframe.contentWindow.postMessage({
+            type: "RESPONSE",
+            action: "SET_INDUSTRY",
+            payload: { 
+                sectorName: sectorName,
+                industryName: industryName 
+            }
+        }, "*");
+        console.log("✅ Industrie-Signal erfolgreich an iframe-charting gesendet.");
+    }
+
     break;
 }
 

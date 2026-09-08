@@ -1,3 +1,5 @@
+// templates/largeTile.js
+
 export function LargeTile({ title, sections, badges = [] }) {
     const wrapper = document.createElement("div");
     wrapper.className = "cockpit-tile tile-large";
@@ -21,12 +23,12 @@ export function LargeTile({ title, sections, badges = [] }) {
 
         const contentEl = document.createElement("div");
         contentEl.className = "section-content";
-        contentEl.innerHTML = sec.content;   // ⭐ WICHTIG: HTML, nicht Text
+        contentEl.innerHTML = sec.content;
 
         sectionEl.appendChild(labelEl);
         sectionEl.appendChild(contentEl);
         wrapper.appendChild(sectionEl);
     });
 
-    return wrapper.outerHTML;
+    return wrapper;   // ⭐ DOM, nicht HTML
 }

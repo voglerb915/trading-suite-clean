@@ -1,23 +1,36 @@
-// focus-panel/logic/tileLoader.js
-
+import { getSectorData, getIndustryData, getStockData } from "../api/dataCache.js";
 import { SectorOverviewTile } from "../tiles/instances/sectorOverviewTile.js";
 import { IndustryOverviewTile } from "../tiles/instances/industryOverviewTile.js";
 import { StockOverviewTile } from "../tiles/instances/stockOverviewTile.js";
 
-// filterState wird NICHT mehr übergeben, weil deine Tiles es nicht nutzen.
-// applyFilters zieht sich filterState selbst.
-
 export async function loadTiles() {
-    const tiles = [];
+    const [
+        sectorsData,
+        industriesData,
+        sp500Data,
+        ndxData,
+        djiData,
+        rutData,
+        noneData
+    ] = await Promise.all([
+        getSectorData(),
+        getIndustryData(),
+        getStockData("SP500"),
+        getStockData("NDX"),
+        getStockData("DJI"),
+        getStockData("RUT"),
+        getStockData("NONE")
+    ]);
 
-    tiles.push(await SectorOverviewTile());
-    tiles.push(await IndustryOverviewTile());
-    tiles.push(await StockOverviewTile("SP500", "S&P 500"));
-    tiles.push(await StockOverviewTile("NDX", "Nasdaq 100"));
-    tiles.push(await StockOverviewTile("DJI", "Dow Jones"));
-    tiles.push(await StockOverviewTile("RUT", "Russell 2000"));
-    tiles.push(await StockOverviewTile("NONE", "Other Stocks"));
+    const tiles = [
+        SectorOverviewTile(sectorsData),
+        IndustryOverviewTile(industriesData),
+        StockOverviewTile("SP500", "S&P 500", sp500Data),
+        StockOverviewTile("NDX", "Nasdaq 100", ndxData),
+        StockOverviewTile("DJI", "Dow Jones", djiData),
+        StockOverviewTile("RUT", "Russell 2000", rutData),
+        StockOverviewTile("NONE", "Other Stocks", noneData)
+    ];
 
     return tiles;
 }
-

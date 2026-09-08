@@ -3,7 +3,7 @@
 import GlobalState from "@shared/state/globalState.js";
 import { fetchAllRsData } from "../api/rsApi.js";
 import { getSectorNameFromTicker, isSectorActive } from "./rsSectorMapping.js";
-import { initRightChartsData, handleSectorSelection, refreshRightSide } from "./rsRightSideLogic.js";
+import { initRightChartsData, handleSectorSelection, handleIndustrySelection, refreshRightSide } from "./rsRightSideLogic.js";
 import { renderCombinedChart } from "../renderer/rsMasterRenderer.js";
 import { onIndustryClick } from "./rsMasterClickHandler.js";
 
@@ -194,7 +194,7 @@ export function renderActiveCharts() {
         return parseFloat(perfItem.performance) || parseFloat(perfItem.perf_quart) || 0;
     });
 
-    // --- CombinedChart rendern ---
+// --- CombinedChart rendern ---
     renderCombinedChart(
         latestScores,
         synchronizedPerf,
@@ -203,9 +203,18 @@ export function renderActiveCharts() {
         sectorName
     );
 
-    // --- Falls genau 1 Sektor aktiv ist → Industrie auswählen ---
+    // --- Sektor- oder Industrie-Auswahl an Right-Side (Slave-Chart) übergeben ---
     if (sectorName) {
-        handleSectorSelection(sectorName, rawScoresData);
+        const activeIndustry = GlobalState.get("activeIndustry");
+        
+        if (activeIndustry) {
+            // Wenn eine Industrie aktiv ist, diese an die Right-Side übergeben statt nur den Sektor
+            console.log("📌 Setze Industrie-Fokus im Slave-Chart:", activeIndustry);
+            handleIndustrySelection(activeIndustry, false); // false, damit kein Event-Loop zurückgesendet wird
+        } else {
+            // Ansonsten normaler Sektor-Fallback
+            handleSectorSelection(sectorName, rawScoresData);
+        }
     }
 }
 

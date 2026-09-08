@@ -14,12 +14,12 @@ export function renderStockTooltip(mergedItem, strategy) {
                     <div class="score-row">
                         <span class="score-label">S2 Age</span>
                         <span class="score-value">${fmt(mergedItem.score_age)}</span>
-                        <span class="score-raw">${mergedItem.daysAbove}</span>
+                        <span class="score-raw">${mergedItem.signalAgeDays ?? mergedItem.daysAbove ?? 0}</span>
                     </div>
                     <div class="score-row">
                         <span class="score-label">S3 Slope</span>
                         <span class="score-value">${fmt(mergedItem.score_slope)}</span>
-                        <span class="score-raw">${mergedItem.slopeVal}</span>
+                        <span class="score-raw">${typeof mergedItem.slopeVal === 'number' ? mergedItem.slopeVal.toFixed(2) : mergedItem.slopeVal}</span>
                     </div>
                     <div class="score-row">
                         <span class="score-label">S4 IndRank</span>
@@ -29,7 +29,12 @@ export function renderStockTooltip(mergedItem, strategy) {
                     <div class="score-row">
                         <span class="score-label">S5 SMA Dist</span>
                         <span class="score-value">${fmt(mergedItem.score_smaDist)}</span>
-                        <span class="score-raw">${mergedItem.smaDist}</span>
+                        <span class="score-raw">${fmt(mergedItem.smaDist)}</span>
+                    </div>
+                    <div class="score-row">
+                        <span class="score-label">S6 High Dist</span>
+                        <span class="score-value">${fmt(mergedItem.score_highDist)}</span>
+                        <span class="score-raw">${typeof mergedItem.highDist === 'number' ? mergedItem.highDist.toFixed(2) : (mergedItem.highDist ?? "—")}</span>
                     </div>
                     <div class="score-total">
                         <span class="score-label">Total</span>
