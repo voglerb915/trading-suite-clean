@@ -75,35 +75,20 @@ async function controllerInit() {
 
         await new Promise(resolve => setTimeout(resolve, 100));
 
+// ==========================================================
+        // 3) Strategy-Daten einmalig laden & anreichern
         // ==========================================================
-        // 3) Strategy-Daten laden & anreichern (Original-Logik)
-        // ==========================================================
-        const strategyNames = ["stage3topping", "insideday52w"];
         const strategyItemsMap = {};
 
-        for (const name of strategyNames) {
-            try {
-                // Falls du eine Hilfsfunktion loadStrategyStocks hast, nutze sie. 
-                // Alternativ direkt der Fetch wie im alten Code:
-                const res = await fetch(`/api/strategy/${name}`);
-                const json = await res.json();
-                strategyItemsMap[name] = json.signals || json.data || [];
-            } catch (err) {
-                console.warn("Strategy Load Error:", name, err);
-                strategyItemsMap[name] = [];
-            }
-        }
-
-        controllerState.strategyItems = strategyItemsMap;
-
-        // Reader-Daten holen
         let stage3ReaderData = [];
         try {
             const res = await fetch("/api/strategy/stage3topping");
             const json = await res.json();
             stage3ReaderData = json.signals || json.data || [];
+            strategyItemsMap["stage3topping"] = stage3ReaderData;
         } catch (err) {
             console.warn("Stage3 Reader Fetch Error:", err);
+            strategyItemsMap["stage3topping"] = [];
         }
 
         let insideDayReaderData = [];
@@ -111,9 +96,13 @@ async function controllerInit() {
             const res = await fetch("/api/strategy/insideday52w");
             const json = await res.json();
             insideDayReaderData = json.data || json.signals || [];
+            strategyItemsMap["insideday52w"] = insideDayReaderData;
         } catch (err) {
             console.warn("InsideDay Reader Fetch Error:", err);
+            strategyItemsMap["insideday52w"] = [];
         }
+
+        controllerState.strategyItems = strategyItemsMap;
 
         // Stage 3 anreichern
         try {
@@ -152,10 +141,7 @@ async function controllerInit() {
 
         // InsideDay52w anreichern
         try {
-            const baseItems = controllerState.strategyItems["insideday52w"]?.length > 0 
-                ? controllerState.strategyItems["insideday52w"] 
-                : insideDayReaderData;
-
+            const baseItems = controllerState.strategyItems["insideday52w"] || [];
             const enriched = baseItems.map(stock => {
                 const base = 
                     controllerState.baseStocks.find(s => s.ticker === stock.ticker) ||
@@ -186,7 +172,7 @@ async function controllerInit() {
             console.warn("InsideDay Reader Merge Error:", err);
         }
 
-        // Prozessor-Anreicherung mit den direkt geladenen Daten aufrufen
+        // Prozessor-Anreicherung aufrufen
         processor.enrichStrategyData(stage3ReaderData, insideDayReaderData);
 
         // ==========================================================
