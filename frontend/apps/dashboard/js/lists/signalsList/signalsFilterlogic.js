@@ -25,6 +25,17 @@ export function filterSignals(signals, state) {
             if (sparkSellActive && sparkType !== "exit")  return false;
         }
 
+        // ⭐ SEARCH FILTER (Ticker + Name)
+if (state.search !== null && state.search !== undefined) {
+    const q = state.search.trim().toLowerCase();
+    if (q.length > 0) {
+        if (!sig.ticker?.toLowerCase().includes(q) &&
+            !sig.name?.toLowerCase().includes(q)) {
+            return false;
+        }
+    }
+}
+
         //
         // ⭐ 2. STRATEGY FILTER (MUSS VOR MID!)
         //

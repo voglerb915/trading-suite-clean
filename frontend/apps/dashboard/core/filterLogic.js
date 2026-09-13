@@ -11,7 +11,9 @@ import { fetchStrategyData } from "./api.js"; // <--- Hinzufügen
 // 1. Lokale Filterlogik
 // ------------------------------------------------------
 export function filterStocksUI() {
-    let filtered = [...dashboardState.stocks];
+    // IMMER von der Original-Liste starten
+    const base = dashboardState.stocksOriginal || dashboardState.allStocks || [];
+    let filtered = [...base];
 
     if (dashboardState.sector && dashboardState.sector !== "all") {
         filtered = filtered.filter(s =>
@@ -35,12 +37,14 @@ export function filterStocksUI() {
         });
     }
 
-    if (dashboardState.search && dashboardState.search.length > 0) {
-        const q = dashboardState.search.toLowerCase();
-        filtered = filtered.filter(s =>
-            s.ticker?.toLowerCase().includes(q) ||
-            s.name?.toLowerCase().includes(q)
-        );
+    if (dashboardState.search !== null && dashboardState.search !== undefined) {
+        const q = dashboardState.search.trim().toLowerCase();
+        if (q.length > 0) {
+            filtered = filtered.filter(s =>
+                s.ticker?.toLowerCase().includes(q) ||
+                s.name?.toLowerCase().includes(q)
+            );
+        }
     }
 
     dashboardState.stocks = filtered;
@@ -50,6 +54,7 @@ export function filterStocksUI() {
         renderAll();
     }
 }
+
 
 window.filterStocksUI = filterStocksUI;
 
