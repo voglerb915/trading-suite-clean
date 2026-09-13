@@ -29,15 +29,17 @@ router.get('/:strategyName', async (req, res) => {
     try {
         const strategyName = req.params.strategyName;
         const finvizRows = await loadFinviz();
-        const result = runStrategy(strategyName, finvizRows);
+        
+        // HIER FEHLTE DAS AWAIT:
+        const result = await runStrategy(strategyName, finvizRows); 
+
         res.json({
-        count: result.length,
-        data: result
-});
-
-
+            count: result.length,
+            data: result
+        });
     } catch (err) {
-        res.status(500).json({ error: "Strategy konnte nicht ausgeführt werden" });
+        console.error("Strategy Engine Fehler:", err);
+        res.status(500).json({ error: "Strategie konnte nicht ausgeführt werden" });
     }
 });
 

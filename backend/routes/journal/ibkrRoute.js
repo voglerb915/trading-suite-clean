@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const ibkrService = require('../../services/ibkr-service');
 const ibkrEvents = require('../../services/ibkrEvents');
+const { journalPool } = require('../../db/connection'); // <-- Wichtig: Entsprechend deinem DB-Pfad anpassen
 
 // 1. Lokales Array für die verbundenen Frontend-Clients
 let sseClients = [];

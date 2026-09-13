@@ -88,7 +88,6 @@ export class OrderEditorModal {
         this.onSaveCallback = callback;
 
         document.getElementById("modal-ticker-label").textContent = item.ticker;
-        document.getElementById("modal-id-label").textContent = `ID: ${item.id} (${item.direction || 'long'})`;
         
         const rawStrategy = item.strategy_name || item.strategy || "none";
         const strategy = rawStrategy.toLowerCase().trim();
@@ -98,11 +97,23 @@ export class OrderEditorModal {
         }
 
         const directionSelect = document.getElementById("order-direction-select");
-        const direction = item.direction || OrderCalculator.getStrategyDefaults(strategy).effectiveDirection;
+        
+        // 🟢 Richtung explizit für Stage 3 Topping auf short erzwingen, falls nicht gesetzt
+        let direction = item.direction;
+        if (!direction) {
+            if (strategy === "stage3topping") {
+                direction = "short";
+            } else {
+                direction = OrderCalculator.getStrategyDefaults(strategy).effectiveDirection || "long";
+            }
+        }
+
         if (directionSelect) {
             directionSelect.value = direction;
         }
 
+        document.getElementById("modal-id-label").textContent = `ID: ${item.id} (${direction})`;
+        
         let defaultRiskNum = 1.0;
         if (item.risk_percent !== undefined && item.risk_percent !== null && !isNaN(item.risk_percent)) {
             defaultRiskNum = parseFloat(item.risk_percent);
@@ -185,10 +196,16 @@ export class OrderEditorModal {
     }
 
     getValues() {
+        const directionVal = document.getElementById("order-direction-select")?.value || 'long';
+        
+        // Mapping von Direction auf Broker-Action (Short -> SELL, Long -> BUY)
+        const actionVal = (directionVal.toLowerCase() === 'short') ? 'SELL' : 'BUY';
+
         return {
             id: this.currentData?.id || null,
             ticker: this.currentData?.ticker || document.getElementById("modal-ticker-label")?.textContent || '',
-            direction: document.getElementById("order-direction-select")?.value || 'long',
+            direction: directionVal,
+            action: actionVal, // 🟢 Wichtig für das Backend / IBKR
             trade_type: this.currentData?.trade_type || 'SWING', 
             order_type: this.currentData?.order_type || 'LIMIT',
             strategy: document.getElementById("order-strategy-select").value,

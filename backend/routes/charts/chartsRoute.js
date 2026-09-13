@@ -8,36 +8,37 @@ router.get("/industry-scores", async (req, res) => {
     try {
         const pool = await tradingConnect;
         const query = `
-            WITH IndustrySectorMapping AS (
-                SELECT DISTINCT f.industry, f.sector
-                FROM finviz f WITH (NOLOCK)
-                WHERE f.industry IS NOT NULL AND f.sector IS NOT NULL
-            ),
-            RawData AS (
-                SELECT 
-                    ms.anl_datum,
-                    ms.name AS industry,
-                    ISNULL(ism.sector, 'Unknown') AS sector,
-                    ms.score,
-                    ms.rank_db
-                FROM marketScores ms WITH (NOLOCK)
-                LEFT JOIN IndustrySectorMapping ism ON ism.industry = ms.name
-                WHERE ms.type = 'industry'
-                  AND ms.anl_datum >= DATEADD(month, -3, GETDATE())
-            )
-            SELECT 
-                anl_datum,
-                industry,
-                sector,
-                score,
-                rank_db,
-                AVG(CAST(score AS FLOAT)) OVER (
-                    PARTITION BY industry 
-                    ORDER BY anl_datum 
-                    ROWS BETWEEN 20 PRECEDING AND CURRENT ROW
-                ) AS sma21
-            FROM RawData
-            ORDER BY anl_datum ASC, industry ASC;
+WITH IndustrySectorMapping AS (
+    SELECT industry, MAX(sector) AS sector
+    FROM finviz WITH (NOLOCK)
+    WHERE industry IS NOT NULL AND sector IS NOT NULL
+    GROUP BY industry
+),
+RawData AS (
+    SELECT 
+        ms.anl_datum,
+        ms.name AS industry,
+        ISNULL(ism.sector, 'Unknown') AS sector,
+        ms.score,
+        ms.rank_db
+    FROM marketScores ms WITH (NOLOCK)
+    LEFT JOIN IndustrySectorMapping ism ON ism.industry = ms.name
+    WHERE ms.type = 'industry'
+      AND ms.anl_datum >= DATEADD(month, -3, GETDATE())
+)
+SELECT 
+    anl_datum,
+    industry,
+    sector,
+    score,
+    rank_db,
+    AVG(TRY_CAST(score AS FLOAT)) OVER (
+        PARTITION BY industry 
+        ORDER BY anl_datum 
+        ROWS BETWEEN 20 PRECEDING AND CURRENT ROW
+    ) AS sma21
+FROM RawData
+ORDER BY anl_datum ASC, industry ASC;
         `;
 
         const result = await pool.request().query(query);

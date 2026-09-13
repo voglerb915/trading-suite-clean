@@ -29,10 +29,9 @@ export function renderSignalsItem(item, idx, state) {
 
     // Passendes Signal für den Ticker aus midSignals holen
     const midSignalItem = window.dataStore?.midSignals?.data?.find(s => s.ticker === item.ticker);
-const marketPhase = item.phase_stock ?? null;
-const phaseColor = item.phase_color ?? "gray";
-const daysInTrend = item.days_in_trend ?? 1;
-
+    const marketPhase = midSignalItem?.phase_stock ?? null;
+    const phaseColor = midSignalItem?.phase_color ?? "gray";
+    const daysInTrend = midSignalItem?.days_in_trend ?? 1;
 
     let phasePille = "";
     if (marketPhase != null) {

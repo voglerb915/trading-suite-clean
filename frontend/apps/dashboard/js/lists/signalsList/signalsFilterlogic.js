@@ -1,65 +1,65 @@
-import { passesSignalFilter } from "../../helpers/filterHelpersStocks.js";
+export function filterSignals(signals, state) {
+    if (!Array.isArray(signals)) return [];
 
-export function filterSignals(stocks, state) {
-    if (!stocks) return [];
+    const mid = state.mid;
 
-    let filtered = [...stocks];
+    const sparkBuyActive  = state.filterBuySignals === true;
+    const sparkSellActive = state.filterSellSignals === true;
 
-    // 1. Signal-Filter mit dem korrekten .stocks Pfad
-    filtered = filtered.filter(stock => {
-        const signalObj = window.dataStore?.sparkSignals?.stocks?.[stock.ticker] || stock;
-        return passesSignalFilter(
-            signalObj,
-            state.filterBuySignals,
-            state.filterSellSignals
-        );
-    });
+    const daysActive = state.daysInTrend !== "" && state.daysInTrend != null;
+    const minDays = Number(state.daysInTrend);
 
-    // 2. ⭐ GLOBALER DAYS_IN_TREND FILTER (Hier ergänzt, damit die Pille greift)
-    if (state.daysInTrend !== null && state.daysInTrend !== undefined && state.daysInTrend !== "") {
-        const minDays = Number(state.daysInTrend);
-        filtered = filtered.filter(stock => {
-            const val = stock.daysInTrend !== undefined ? stock.daysInTrend : stock.days_in_trend;
-            return val !== null && val !== undefined && Number(val) >= minDays;
-        });
-    }
+    const strategyActive = state.strategy && state.strategy !== "all" && state.strategy !== "none";
 
-    if (!state.phaseLong) state.phaseLong = "all";
-    if (!state.phaseExit) state.phaseExit = "all";
+    return signals.filter(sig => {
 
-    const longVal = state.phaseLong;
-    const exitVal = state.phaseExit;
+        const type      = sig.signal_type;        // LONG / EXIT
+        const phase     = String(sig.phase_stock);
+        const sparkType = sig.spark?.signal;      // entry / exit
 
-    const longActive = longVal !== "all";
-    const exitActive = exitVal !== "all";
-
-    // 3. Phasen- und Typ-Filterung
-    return filtered.filter(stock => {
-        const isLong = stock.signal_type === 'LONG';
-        const isExit = stock.signal_type === 'EXIT';
-
-        // Gegenseitiges Unterdrücken
-        if (longActive && isExit) return false;
-        if (exitActive && isLong) return false;
-
-        // Long Filterung
-        if (isLong) {
-            if (longVal === "all_long") return true;
-            if (longVal !== "all") {
-                return String(stock.phase_stock) === String(longVal);
-            }
-            return true;
+        //
+        // ⭐ 1. SPARK FILTER
+        //
+        if (sparkBuyActive || sparkSellActive) {
+            if (sparkBuyActive && sparkType !== "entry") return false;
+            if (sparkSellActive && sparkType !== "exit")  return false;
         }
 
-        // Exit Filterung
-        if (isExit) {
-            if (exitVal === "all_exit") return true;
-            if (exitVal !== "all") {
-                return String(stock.phase_stock) === String(exitVal);
-            }
-            return true;
+        //
+        // ⭐ 2. STRATEGY FILTER (MUSS VOR MID!)
+        //
+        if (strategyActive) {
+            const val = sig.strategyValue ?? sig.value ?? null;
+            if (val == null) return false;
         }
 
-        return false;
+        //
+        // ⭐ 3. DAYS FILTER
+        //
+// ⭐ 3. DAYS FILTER
+if (daysActive) {
+    const d = Number(sig.days_in_trend);
+    if (isNaN(d) || d < minDays) return false;
+}
+
+        //
+        // ⭐ 4. MID FILTER (JETZT ERST!)
+        //
+        if (mid.long.active) {
+            if (type !== "LONG") return false;
+            if (mid.long.mode === "all") return true;
+            return phase === mid.long.mode;
+        }
+
+        if (mid.exit.active) {
+            if (type !== "EXIT") return false;
+            if (mid.exit.mode === "all") return true;
+            return phase === mid.exit.mode;
+        }
+
+        //
+        // ⭐ 5. Default
+        //
+        return true;
     });
 }

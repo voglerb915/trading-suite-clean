@@ -4,9 +4,6 @@ import { renderWatchlist } from "../lists/watchList/renderWatchList.js";
 import { renderOpenOrders } from "../lists/openOrdersList/renderOpenOrders.js";
 import { renderActiveOrders } from "../lists/activeOrdersList/renderActiveOrders.js";
 import { renderEtfsList } from "../lists/etfsList/renderEtfsList.js";
-import { filterSignals } from "../lists/signalsList/signalsFilterLogic.js";
-
-
 
 export function renderDashboardTools(state) {
     const tabHeaders = document.querySelectorAll(".tab-header .tab-item");
@@ -94,64 +91,45 @@ export function renderActiveTab(tabName, state, content) {
 
 // ⭐⭐⭐ SIGNALS TAB ⭐⭐⭐
 case "signals": {
+    const activeStrategy = state.strategy && state.strategy !== "none" ? state.strategy : null;
+    
+    // 1. Hole die rohen Signal-Items für die aktive Strategie
+    const rawSignals = (activeStrategy && state.strategyItems?.[activeStrategy]) 
+        ? state.strategyItems[activeStrategy] 
+        : (state.midSignals?.data || window.dataStore?.midSignals?.data || []);
 
-    // 1. MID-Signale holen (Hauptquelle)
-    const mid = window.dataStore?.midSignals?.data || [];
+    // Erstelle ein Set aller Ticker, die nach den *globalen* Filtern (Index, DaysInTrend, Sektor etc.) 
+    // aktuell in der stocksList übrig sind!
+    const activeStockTickers = new Set((state.stocks || []).map(s => s.ticker));
+    const baseStocksMap = new Map((state.stocksOriginal || []).map(s => [s.ticker, s]));
 
-    // 2. SPARK-Signale holen (Buy/Sell-Impulse)
-    const sparkMap = window.dataStore?.sparkSignals?.stocks || {};
-
-    // 3. MID-Signale mit STOCK-Daten anreichern
-    const enrichedSignals = mid.map(sig => {
-        const stock = state.stocksOriginal?.find(s => s.ticker === sig.ticker) || {};
-        return { ...stock, ...sig };
+    // 2. Mappe die Signale und filtere DIREKT gegen die global gefilterten state.stocks
+    let stocksWithSignals = rawSignals.map(sig => {
+        const ticker = typeof sig === "string" ? sig : (sig.ticker || sig.symbol);
+        const baseStock = baseStocksMap.get(ticker) || {};
+        
+        return {
+            ...baseStock,
+            ...(typeof sig === "object" ? sig : {}),
+            strategy: activeStrategy || sig.strategy
+        };
     });
 
-    // 4. SPARK-Signal injizieren
-    const mergedSignals = enrichedSignals.map(sig => {
-        const sparkSig = sparkMap[sig.ticker] || null;
-        return { ...sig, spark: sparkSig };
-    });
+    // 3. Wende nur noch die Signal-spezifische Vorauswahl an UND schränke auf das ein, 
+    // was durch die globale Filterkette (state.stocks) gegangen ist!
+    stocksWithSignals = stocksWithSignals.filter(s => {
+        if (!activeStockTickers.has(s.ticker)) return false; // Hält sich an alle globalen Filter (Index, DaysInTrend etc.)
 
-    // 5. STRATEGY-ITEMS injizieren (wie in stocksList)
-    const mergedSignalsWithStrategy = mergedSignals.map(sig => {
-        let out = sig;
-
-        if (state.strategy === "stage3topping") {
-            const arr = state.strategyItems?.stage3topping || [];
-            const strat = arr.find(s => s.ticker === sig.ticker);
-            if (strat) out = { ...sig, ...strat };
+        if (activeStrategy) {
+            const strat = s.strategy;
+            return Array.isArray(strat) ? strat.includes(activeStrategy) : strat === activeStrategy;
         }
-
-        if (state.strategy === "insideday52w") {
-            const arr = state.strategyItems?.insideday52w || [];
-            const strat = arr.find(s => s.ticker === sig.ticker);
-            if (strat) out = { ...sig, ...strat };
-        }
-
-        return out;
+        return true;
     });
 
-    // 6. FILTER anwenden
-    const filteredSignals = filterSignals(mergedSignalsWithStrategy, state);
-
-    // 7. STRATEGY-SORTIERUNG (wie in stocksList)
-    const sortedSignals = filteredSignals.sort((a, b) => {
-        if (state.strategy && state.strategy !== "none" && state.strategy !== "all") {
-            const valA = a.strategyValue ?? a.value ?? 0;
-            const valB = b.strategyValue ?? b.value ?? 0;
-            return valB - valA;
-        }
-        return 0;
-    });
-
-    // 8. Liste rendern
-    renderSignalsList(sortedSignals, state, content);
+    renderSignalsList(stocksWithSignals, state, content);
     break;
 }
-
-
-
 
         case "watchlist":
             renderWatchlist(state, content);

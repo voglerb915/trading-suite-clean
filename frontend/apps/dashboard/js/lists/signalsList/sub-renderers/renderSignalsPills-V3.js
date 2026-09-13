@@ -17,34 +17,21 @@ export function renderSignalsPills(count, state) {
         <span class="pill pill-buy ${state.filterBuySignals ? 'active' : ''}" data-type="filterBuySignals">B</span>
         <span class="pill pill-sell ${state.filterSellSignals ? 'active' : ''}" data-type="filterSellSignals">S</span>
         
-        <!-- LONG -->
+        <!-- Long Pille -->
         <div class="pill-dropdown-wrapper" style="position: relative; display: inline-block;">
-       <span class="pill pill-long ${longActive ? 'active' : ''}" data-type="mid-long">
-    L <span class="dropdown-arrow">▼</span>
-</span>
-
-
-            <div class="pill-dropdown-menu" id="long-phase-dropdown" style="display:none;">
-                
-                <!-- AUS -->
-                <div class="dropdown-item ${!longActive ? 'selected' : ''}"
-                     data-mid-type="long"
-                     data-mid-active="false"
-                     data-mid-mode="null">
+            <span class="pill pill-long ${longActive ? 'active' : ''}">
+                L <span class="dropdown-arrow">▼</span>
+            </span>
+            <div class="pill-dropdown-menu" id="long-phase-dropdown" style="display: none;">
+                <div class="dropdown-item ${!longActive ? 'selected' : ''}" 
+                     data-mid-type="long" data-mid-active="false" data-mid-mode="null">
                     Aus
                 </div>
-
-                <!-- ALLE LONGS -->
-                <div class="dropdown-item ${(longActive && longMode === 'all') ? 'selected' : ''}"
-                     data-mid-type="long"
-                     data-mid-active="true"
-                     data-mid-mode="all">
+                <div class="dropdown-item ${(longActive && longMode === 'all') ? 'selected' : ''}" 
+                     data-mid-type="long" data-mid-active="true" data-mid-mode="all">
                     Alle Longs
                 </div>
-
                 <div class="dropdown-divider"></div>
-
-                <!-- PHASEN -->
                 ${[1,2,3,4,5,6].map(p => `
                     <div class="dropdown-item ${(longActive && longMode === String(p)) ? 'selected' : ''}"
                          data-mid-type="long"
@@ -56,34 +43,21 @@ export function renderSignalsPills(count, state) {
             </div>
         </div>
 
-        <!-- EXIT -->
+        <!-- Exit Pille -->
         <div class="pill-dropdown-wrapper" style="position: relative; display: inline-block;">
-<span class="pill pill-exit ${exitActive ? 'active' : ''}" data-type="mid-exit">
-    E <span class="dropdown-arrow">▼</span>
-</span>
-
-
-            <div class="pill-dropdown-menu" id="exit-phase-dropdown" style="display:none;">
-                
-                <!-- AUS -->
-                <div class="dropdown-item ${!exitActive ? 'selected' : ''}"
-                     data-mid-type="exit"
-                     data-mid-active="false"
-                     data-mid-mode="null">
+            <span class="pill pill-exit ${exitActive ? 'active' : ''}">
+                E <span class="dropdown-arrow">▼</span>
+            </span>
+            <div class="pill-dropdown-menu" id="exit-phase-dropdown" style="display: none;">
+                <div class="dropdown-item ${!exitActive ? 'selected' : ''}" 
+                     data-mid-type="exit" data-mid-active="false" data-mid-mode="null">
                     Aus
                 </div>
-
-                <!-- ALLE EXITS -->
-                <div class="dropdown-item ${(exitActive && exitMode === 'all') ? 'selected' : ''}"
-                     data-mid-type="exit"
-                     data-mid-active="true"
-                     data-mid-mode="all">
+                <div class="dropdown-item ${(exitActive && exitMode === 'all') ? 'selected' : ''}" 
+                     data-mid-type="exit" data-mid-active="true" data-mid-mode="all">
                     Alle Exits
                 </div>
-
                 <div class="dropdown-divider"></div>
-
-                <!-- PHASEN -->
                 ${[1,2,3,4,5,6].map(p => `
                     <div class="dropdown-item ${(exitActive && exitMode === String(p)) ? 'selected' : ''}"
                          data-mid-type="exit"
@@ -95,22 +69,17 @@ export function renderSignalsPills(count, state) {
             </div>
         </div>
 
-        <!-- DAYS -->
+        <!-- Days -->
         <div class="pill-dropdown-wrapper" style="position: relative; display: inline-block; margin-left: 2px;">
-            <span class="pill pill-days ${daysActive ? 'active' : ''}" data-type="daysInTrend">
-
+            <span class="pill pill-days ${daysActive ? 'active' : ''}">
                 D <span class="dropdown-arrow">▼</span>
             </span>
-
-            <div class="pill-dropdown-menu" id="days-phase-dropdown" style="display:none;">
-                <div class="dropdown-item ${!currentDays ? 'selected' : ''}"
-                     data-days-type="days"
-                     data-days-value="">
+            <div class="pill-dropdown-menu" id="days-phase-dropdown" style="display: none;">
+                <div class="dropdown-item ${!currentDays ? 'selected' : ''}" 
+                     data-days-type="days" data-days-value="">
                     Alle
                 </div>
-
                 <div class="dropdown-divider"></div>
-
                 ${[1,2,3,4,5].map(d => `
                     <div class="dropdown-item ${String(currentDays) === String(d) ? 'selected' : ''}"
                          data-days-type="days"

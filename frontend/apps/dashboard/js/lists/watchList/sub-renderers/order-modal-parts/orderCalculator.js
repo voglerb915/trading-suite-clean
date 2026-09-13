@@ -8,11 +8,11 @@ export class OrderCalculator {
                 defaultRisk = 1.0; 
                 break;
             case "investment": 
-                defaultRisk = 0.5; 
+                defaultRisk = 2.0; 
                 effectiveDirection = "long"; 
                 break;
             case "high52": 
-                defaultRisk = 1.5; 
+                defaultRisk = 0.5; 
                 break;
             case "insideday52w": 
                 defaultRisk = 1.0; 
@@ -23,11 +23,11 @@ export class OrderCalculator {
                 effectiveDirection = "short"; 
                 break;
             case "sparksignals": 
-                defaultRisk = 1.2; 
+                defaultRisk = 1.; 
                 break;
             case "none": 
             default: 
-                defaultRisk = 2.0; 
+                defaultRisk = 1.0; 
                 effectiveDirection = "long"; 
                 break;
         }

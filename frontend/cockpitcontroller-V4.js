@@ -76,24 +76,104 @@ async function controllerInit() {
         await new Promise(resolve => setTimeout(resolve, 100));
 
 // ==========================================================
-// 3) Strategy-Daten zentral über die strategyEngine laden
-// ==========================================================
-const strategyItemsMap = {};
-const strategyNames = ["high52w", "insideday52w", "nearhigh52", "stage3topping"];
+        // 3) Strategy-Daten einmalig laden & anreichern
+        // ==========================================================
+        const strategyItemsMap = {};
 
-for (const name of strategyNames) {
-    try {
-        const res = await fetch(`/api/strategy/${name}`);
-        const json = await res.json();
-        // Die zentrale Engine liefert ein einheitliches Format: { count, data }
-        strategyItemsMap[name] = json.data || [];
-    } catch (err) {
-        console.warn(`Strategy Fetch Error (${name}):`, err);
-        strategyItemsMap[name] = [];
-    }
-}
+        let stage3ReaderData = [];
+        try {
+            const res = await fetch("/api/strategy/stage3topping");
+            const json = await res.json();
+            stage3ReaderData = json.signals || json.data || [];
+            strategyItemsMap["stage3topping"] = stage3ReaderData;
+        } catch (err) {
+            console.warn("Stage3 Reader Fetch Error:", err);
+            strategyItemsMap["stage3topping"] = [];
+        }
 
-controllerState.strategyItems = strategyItemsMap;
+        let insideDayReaderData = [];
+        try {
+            const res = await fetch("/api/strategy/insideday52w");
+            const json = await res.json();
+            insideDayReaderData = json.data || json.signals || [];
+            strategyItemsMap["insideday52w"] = insideDayReaderData;
+        } catch (err) {
+            console.warn("InsideDay Reader Fetch Error:", err);
+            strategyItemsMap["insideday52w"] = [];
+        }
+
+        controllerState.strategyItems = strategyItemsMap;
+
+        // Stage 3 anreichern
+        try {
+            const baseItems = controllerState.strategyItems["stage3topping"] || [];
+            const enriched = baseItems.map(stock => {
+                const base = 
+                    controllerState.baseStocks.find(s => s.ticker === stock.ticker) ||
+                    controllerState.etfs.find(e => e.ticker === stock.ticker) ||
+                    {};
+                const r = stage3ReaderData.find(x => x.ticker === stock.ticker);
+                if (!r) return { ...base, ...stock };
+
+                return {
+                    ...base,
+                    ...stock,
+                    stateActive: r.stateActive,
+                    daysAbove: r.daysAbove,
+                    slopeVal: r.slopeVal,
+                    indRank: r.indRank,
+                    smaDist: r.smaDist,
+                    triggerDate: r.triggerDate,
+                    totalScore: r.totalScore,
+                    score_stateActive: r.score_stateActive ?? 0,
+                    score_age: r.score_age ?? 0,
+                    score_slope: r.score_slope ?? 0,
+                    score_indRank: r.score_indRank ?? 0,
+                    score_smaDist: r.score_smaDist ?? 0,
+                    sector: base.sector || stock.sector || "—",
+                    industry: base.industry || stock.industry || "—"
+                };
+            });
+            controllerState.strategyItems["stage3topping"] = enriched;
+        } catch (err) {
+            console.warn("Stage3 Reader Merge Error:", err);
+        }
+
+        // InsideDay52w anreichern
+        try {
+            const baseItems = controllerState.strategyItems["insideday52w"] || [];
+            const enriched = baseItems.map(stock => {
+                const base = 
+                    controllerState.baseStocks.find(s => s.ticker === stock.ticker) ||
+                    controllerState.etfs.find(e => e.ticker === stock.ticker) ||
+                    {};
+                const r = insideDayReaderData.find(x => x.ticker === stock.ticker);
+                if (!r) return { ...base, ...stock };
+
+                return {
+                    ...base,
+                    ...stock,
+                    tightness: r.s2_tightness,
+                    volRatio: r.s2_vol_ratio,
+                    isGreenInt: r.s2_is_green_int,
+                    highVortag: r.s2_high_vortag,
+                    lowVortag: r.s2_low_vortag,
+                    setupStatus: r.s2_setup_status,
+                    anchorHigh: r.s2_anchor_high,
+                    anchorLow: r.s2_anchor_low,
+                    strategyValue: r.s2_tightness,
+                    value: r.s2_tightness,
+                    sector: base.sector || stock.sector || "—",
+                    industry: base.industry || stock.industry || "—"
+                };
+            });
+            controllerState.strategyItems["insideday52w"] = enriched;
+        } catch (err) {
+            console.warn("InsideDay Reader Merge Error:", err);
+        }
+
+        // Prozessor-Anreicherung aufrufen
+        processor.enrichStrategyData(stage3ReaderData, insideDayReaderData);
 
         // ==========================================================
         // 4. Volume Extract & Finalisierung

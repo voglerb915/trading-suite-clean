@@ -5,18 +5,10 @@ const sql = require('mssql');
 const orderEvents = require('./ibkrEvents');
 
 class IBKRService {
-    constructor() {
+constructor() {
         this.nextIBOrderId = null;
         this.orderMapping = new Map();
-        this.ib = null;
-        this.isConnected = false;
-    }
 
-    // 🟢 Lazy Connection: Verhindert den sofortigen Verbindungsaufruf beim Serverstart
-    connect() {
-        if (this.ib && this.isConnected) return;
-
-        console.log("🔌 Initialisiere IBKR-Client Verbindung...");
         this.ib = new IBSDK.IB({
             port: 7496,
             host: '127.0.0.1',
@@ -25,6 +17,8 @@ class IBKRService {
 
         this.initListeners();
         this.ib.connect();
+
+        // ❌ Der automatische setTimeout für syncMissedExecutions() ist hier komplett entfernt!
     }
 
     initListeners() {
@@ -34,11 +28,11 @@ class IBKRService {
         });
 
         this.ib.on('connected', () => {
-            this.isConnected = true;
-            console.log("✅ IBKR Service: Verbindung zur TWS steht.");
+            console.log("✅ IBKR Service: Verbindung steht. Warte auf Cockpit-Init für Sync...");
         });
 
         this.ib.on('error', (err) => {
+            // Optional: Unkritische TWS-Statusmeldungen abfangen, damit die Konsole sauber bleibt
             if (err.message?.includes('Datenzentrum ist unterbrochen') || err.message?.includes('Datenzentrum ist OK')) {
                 console.warn(`ℹ️ TWS Info: ${err.message}`);
             } else {
@@ -56,7 +50,6 @@ class IBKRService {
     }
 
     async syncMissedExecutions() {
-        this.connect(); // Verbindung erst beim echten Sync-Aufruf starten
         return new Promise((resolve) => {
             console.log("🔄 Starte erweiterten Abgleich verpasster Executions (reqExecutions)...");
             
@@ -82,41 +75,34 @@ class IBKRService {
             };
 
             const cleanup = () => {
-                if (this.ib) {
-                    this.ib.removeListener('execDetails', executionListener);
-                    this.ib.removeListener('execDetailsEnd', endListener);
-                }
+                this.ib.removeListener('execDetails', executionListener);
+                this.ib.removeListener('execDetailsEnd', endListener);
                 console.log(`✅ Abgleich beendet. ${syncedCount} historische/verpasste Ausführungen erfolgreich verarbeitet.`);
                 resolve(syncedCount);
             };
 
-            if (this.ib) {
-                this.ib.on('execDetails', executionListener);
-                if (typeof this.ib.on === 'function') {
-                    this.ib.on('execDetailsEnd', endListener);
-                }
-
-                setTimeout(() => {
-                    try {
-                        const filter = {}; 
-                        this.ib.reqExecutions(tempReqId, filter);
-                        console.log("📤 reqExecutions erfolgreich an IBKR gesendet.");
-                    } catch (e) {
-                        console.error("❌ Konnte reqExecutions nicht senden:", e.message);
-                    }
-                }, 1000);
-
-                setTimeout(() => {
-                    cleanup();
-                }, 6000);
-            } else {
-                resolve(0);
+            this.ib.on('execDetails', executionListener);
+            if (typeof this.ib.on === 'function') {
+                this.ib.on('execDetailsEnd', endListener);
             }
+
+            setTimeout(() => {
+                try {
+                    const filter = {}; 
+                    this.ib.reqExecutions(tempReqId, filter);
+                    console.log("📤 reqExecutions erfolgreich an IBKR gesendet.");
+                } catch (e) {
+                    console.error("❌ Konnte reqExecutions nicht senden:", e.message);
+                }
+            }, 1000);
+
+            setTimeout(() => {
+                cleanup();
+            }, 6000);
         });
     }
 
     async placeBracketOrder(pendingId) {
-        this.connect(); // Verbindung erst beim Order-Versand sicherstellen
         if (!this.nextIBOrderId) {
             throw new Error("Keine gültige IB Order-ID verfügbar (Verbindung steht evtl. noch nicht).");
         }
@@ -152,6 +138,7 @@ class IBKRService {
             currency: "USD" 
         };
 
+        // 🟢 Robustes Mapping für Short/Long (Groß-/Kleinschreibung ignorieren)
         const isShort = d.direction && d.direction.toLowerCase() === 'short';
 
         const parent = {
@@ -217,9 +204,7 @@ class IBKRService {
     }
 
     async handleExecDetails(contract, execution) {
-        // Typ-Sicherer Lookup per Number, um Map-Fehler zu vermeiden
-        const numericOrderId = Number(execution.orderId);
-        let mapping = this.orderMapping.get(numericOrderId);
+        let mapping = this.orderMapping.get(execution.orderId);
         let dbPendingId;
         let role = 'EXIT';
 
@@ -268,8 +253,8 @@ class IBKRService {
             
             if (isExit) {
                 await axios.patch(`http://localhost:4000/api/orders/update-status/${dbPendingId}`, { is_active: 0 });
-                console.log(`✅ [ID: ${dbPendingId}] [${contract.symbol}] Exit gefüllt. (Inaktiviert)`);
-                this.orderMapping.delete(numericOrderId);
+                console.log(`✅ [ID: ${dbPendingId}] [${contract.symbol}] Exit gefüllt (auch via Sync). (Inaktiviert)`);
+                this.orderMapping.delete(execution.orderId);
             } else {
                 await axios.patch(`http://localhost:4000/api/orders/update-status/${dbPendingId}`, { is_active: 1 });
                 console.log(`🎯 [ID: ${dbPendingId}] [${contract.symbol}] Entry gefüllt. (Bleibt aktiv)`);
@@ -284,15 +269,14 @@ class IBKRService {
 
     async handleOrderStatus(orderId, status) {
         if (status === 'Cancelled' || status === 'Inactive') {
-            const numericOrderId = Number(orderId);
-            const mapping = this.orderMapping.get(numericOrderId);
+            const mapping = this.orderMapping.get(orderId);
             if (!mapping) return;
 
             const dbPendingId = mapping.dbId;
 
             if (mapping.role === 'EXIT') {
                 console.log(`ℹ️ [ID: ${dbPendingId}] Exit-Order (TP/SL) von TWS entfernt. Kein DB-Eintrag nötig.`);
-                this.orderMapping.delete(numericOrderId);
+                this.orderMapping.delete(orderId);
                 return; 
             }
 
@@ -309,7 +293,7 @@ class IBKRService {
                 });
 
                 await axios.patch(`http://localhost:4000/api/orders/update-status/${dbPendingId}`, { is_active: 0 });
-                this.orderMapping.delete(numericOrderId);
+                this.orderMapping.delete(orderId);
                 console.log(`✅ Stornierung für DB-ID ${dbPendingId} sauber protokolliert.`);
 
                 orderEvents.emit('refreshOrders', { type: 'REFRESH_ORDERS' });

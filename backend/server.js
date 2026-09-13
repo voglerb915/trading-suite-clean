@@ -2,8 +2,12 @@ const express = require('express');
 const compression = require('compression');
 const path = require('path');
 const cors = require('cors');
-const os = require('os'); // <--- NEU: Für die Geräte-Erkennung
+const os = require('os'); 
 const logger = require('./utils/logger');
+
+// Event-Listener-Limit global anheben, um die Warnung zu unterdrücken
+require('events').EventEmitter.defaultMaxListeners = 25;
+
 const { getTradingDate } = require('./utils/dateHelper');
 const systemStatusRoutes = require('./routes/system/systemStatusRoutes.js')
 const { loadIndustrySectorMap } = require('./utils/industrySectorMap');
@@ -64,11 +68,12 @@ app.use("/api/data/excel", require("./routes/data/excelRawData"));
 app.use('/api/data/metrics/run', require('./routes/data/readWriteMetrics'));
 
 // STRATEGY
-//app.use("/api/strategy", require("./routes/strategy/strategies")); für high52 + nearHigh52 die aber aktuell im frontend laufen
+app.use("/api/strategy", require("./routes/strategy/strategies")); //zentraler Einstiegspunkt für alle Strategie-Routen (falls relevant)
+
 app.use("/api/strategy", require("./routes/strategy/stage3toppingWriter"));
-app.use("/api/strategy", require("./routes/strategy/stage3toppingReader"));
+//app.use("/api/strategy", require("./routes/strategy/stage3toppingReader")); - alte route - jetzt ersetzt durch strategies
 app.use("/api/strategy", require("./routes/strategy/insideDay52wWriter"));
-app.use("/api/strategy", require("./routes/strategy/insideDay52wReader"));
+//app.use("/api/strategy", require("./routes/strategy/insideDay52wReader")); - alte route - jetzt ersetzt durch strategies
 app.use("/api/strategy", require("./routes/strategy/falseBreakOut52week")); // <--- NEU: False Breakout 52W Route eingebunden
 
 // SIGNALS ENGINE (NEU)

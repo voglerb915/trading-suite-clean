@@ -21,6 +21,20 @@ export function buildIndustryMap(industries) {
 }
 
 // ------------------------------------------------------
+// 1. Hilfsfunktion: Backend-Strategien aufrufen mit Hilfsfunktion
+// ------------------------------------------------------
+export async function fetchStrategyData(strategyName) {
+    try {
+        const response = await fetch(`/api/strategy/${strategyName}`);
+        const result = await response.json();
+        return result.data || [];
+    } catch (err) {
+        console.error(`Fehler beim Laden der Strategie ${strategyName}:`, err);
+        return [];
+    }
+}
+
+// ------------------------------------------------------
 // 2. REQUEST SENDER
 // ------------------------------------------------------
 let initSent = false;
@@ -60,33 +74,26 @@ export function initResponseListener() {
 
             case "INIT": {
                 console.log("INIT empfangen:", msg.payload);
-                console.log("DASHBOARD INIT → STOCKS ORIGINAL LENGTH:", dashboardState.stocksOriginal.length);
-                
-                console.log("DASHBOARD INIT → STRATEGY ITEMS LENGTH:", dashboardState.strategyItems?.stage3topping?.length);
 
-dashboardState.stocksOriginal = (msg.payload.stocks || []).map(s => {
-    const trendVal = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
-    return {
-        ...s,
-        daysInTrend: trendVal,
-        days_in_trend: trendVal
-    };
-});
+                dashboardState.stocksOriginal = (msg.payload.stocks || []).map(s => {
+                    const trendVal = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
+                    return {
+                        ...s,
+                        daysInTrend: trendVal,
+                        days_in_trend: trendVal
+                    };
+                });
 
-// 🔍 LOG 1: Direkt nach dem Empfang prüfen
-console.log("🔍 [LOG 1 - API] StocksOriginal geladen. Länge:", dashboardState.stocksOriginal.length);
-console.log("🔍 [LOG 1 - API] Beispiel-Aktie (erste):", dashboardState.stocksOriginal[0]?.ticker, "-> daysInTrend:", dashboardState.stocksOriginal[0]?.daysInTrend);
-                // Nach dieser Zeile in INIT und COCKPIT_DATA einfügen:
-dashboardState.stocks = dashboardState.stocksOriginal;
+                dashboardState.stocks = dashboardState.stocksOriginal;
 
-// --- AB HIER NEU: Globalen daysInTrend-Filter direkt beim Datenempfang anwenden ---
-if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefined && dashboardState.daysInTrend !== "") {
-    const minDays = Number(dashboardState.daysInTrend);
-    dashboardState.stocks = dashboardState.stocks.filter(s => {
-        const val = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
-        return val !== null && val !== undefined && Number(val) >= minDays;
-    });
-}
+                // --- daysInTrend Filter ---
+                if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefined && dashboardState.daysInTrend !== "") {
+                    const minDays = Number(dashboardState.daysInTrend);
+                    dashboardState.stocks = dashboardState.stocks.filter(s => {
+                        const val = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
+                        return val !== null && val !== undefined && Number(val) >= minDays;
+                    });
+                }
 
                 const fn = strategyEngine[dashboardState.strategy];
                 if (fn) {
@@ -103,6 +110,7 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
 
                 dashboardState.strategyItems = msg.payload.strategyItems || {};
 
+                // --- MID SIGNALS ---
                 const rawMid = msg.payload.midSignals || {};
                 dashboardState.midSignals = {
                     latestDate: rawMid.latestDate || null,
@@ -111,6 +119,7 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
                     data: Array.isArray(rawMid.data) ? rawMid.data : []
                 };
 
+                // --- SPARK SIGNALS ---
                 const rawSpark = msg.payload.sparkSignals || {};
                 dashboardState.sparkSignals = {
                     stocks: rawSpark.stocks || {},
@@ -122,20 +131,15 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
                 window.dataStore.sparkSignals = dashboardState.sparkSignals;
                 window.dataStore.midSignals = dashboardState.midSignals;
 
-                console.log(
-                    "DEBUG: SparkSignals im Dashboard:",
-                    Object.keys(dashboardState.sparkSignals.stocks).length,
-                    "Stocks"
-                );
+                // ⭐⭐⭐ WICHTIG: SignalsList initialisieren ⭐⭐⭐
+                dashboardState.signalsOriginal = dashboardState.midSignals.data || [];
+                dashboardState.signals = dashboardState.signalsOriginal;
+
                 renderAll();
                 break;
             }
 
             case "COCKPIT_DATA": {
-                console.log("Dashboard: COCKPIT_DATA empfangen:", msg.payload);
-                console.log("DASHBOARD COCKPIT_DATA → STOCKS ORIGINAL LENGTH:", dashboardState.stocksOriginal.length);
-                console.log("DASHBOARD COCKPIT_DATA → STRATEGY ITEMS LENGTH:", dashboardState.strategyItems?.stage3topping?.length);
-
                 dashboardState.stocksOriginal = (msg.payload.stocks || []).map(s => {
                     const trendVal = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
                     return {
@@ -144,18 +148,16 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
                         days_in_trend: trendVal
                     };
                 });
-                // Nach dieser Zeile in INIT und COCKPIT_DATA einfügen:
-dashboardState.stocks = dashboardState.stocksOriginal;
 
-// --- AB HIER NEU: Globalen daysInTrend-Filter direkt beim Datenempfang anwenden ---
-if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefined && dashboardState.daysInTrend !== "") {
-    const minDays = Number(dashboardState.daysInTrend);
-    dashboardState.stocks = dashboardState.stocks.filter(s => {
-        const val = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
-        return val !== null && val !== undefined && Number(val) >= minDays;
-    });
-}
+                dashboardState.stocks = dashboardState.stocksOriginal;
 
+                if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefined && dashboardState.daysInTrend !== "") {
+                    const minDays = Number(dashboardState.daysInTrend);
+                    dashboardState.stocks = dashboardState.stocks.filter(s => {
+                        const val = s.daysInTrend !== undefined ? s.daysInTrend : s.days_in_trend;
+                        return val !== null && val !== undefined && Number(val) >= minDays;
+                    });
+                }
 
                 dashboardState.sectors = msg.payload.sectors || [];
                 dashboardState.industries = msg.payload.industries || [];
@@ -183,6 +185,10 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
                 window.dataStore = window.dataStore || {};
                 window.dataStore.midSignals = dashboardState.midSignals;
 
+                // ⭐⭐⭐ WICHTIG: SignalsList initialisieren ⭐⭐⭐
+                dashboardState.signalsOriginal = dashboardState.midSignals.data || [];
+                dashboardState.signals = dashboardState.signalsOriginal;
+
                 renderAll();
                 break;
             }
@@ -196,50 +202,36 @@ if (dashboardState.daysInTrend !== null && dashboardState.daysInTrend !== undefi
                 window.dataStore = window.dataStore || {};
                 window.dataStore.referenceStock = msg.payload.stock;
 
-                console.log("STOCK_DETAILS STATE REF:", dashboardState.referenceStock);
                 renderDashboard(dashboardState);
-
                 break;
             }
 
             case "SET_SECTOR": {
                 const sectorName = msg.payload?.sectorName;
-                console.log("🎯 Dashboard hat Sektor-Signal erhalten:", sectorName);
-
                 if (!sectorName) break;
 
-                // 1. Sektor im Dashboard-State speichern
                 dashboardState.sector = sectorName;
-                dashboardState.industry = ""; // Industrie zurücksetzen, damit kein alter Filter querchießt
+                dashboardState.industry = "";
 
-                // 2. UI neu zeichnen lassen
-                if (typeof renderAll === "function") {
-                    renderAll();
-                }
+                renderAll();
                 break;
             }
 
-case "SET_INDUSTRY":
-case "SELECT_INDUSTRY": {
-    const industryName = msg.payload?.industryName;
-    const sectorName = msg.payload?.sectorName; // Sektor direkt aus dem Payload abgreifen
-    console.log("🎯 Dashboard hat Industrie-Signal erhalten für:", industryName, "im Sektor:", sectorName);
+            case "SET_INDUSTRY":
+            case "SELECT_INDUSTRY": {
+                const industryName = msg.payload?.industryName;
+                const sectorName = msg.payload?.sectorName;
 
-    if (!industryName) break;
+                if (!industryName) break;
 
-    // 1. Industrie und Sektor gemeinsam im Dashboard-State speichern
-    dashboardState.industry = industryName;
-    if (sectorName) {
-        dashboardState.sector = sectorName;
-    }
+                dashboardState.industry = industryName;
+                if (sectorName) {
+                    dashboardState.sector = sectorName;
+                }
 
-    // 2. UI im Dashboard neu zeichnen lassen
-    if (typeof renderAll === "function") {
-        renderAll();
-    }
-
-    break;
-}
+                renderAll();
+                break;
+            }
 
             default:
                 console.warn("Dashboard: Unbekannte Action ignoriert:", msg.action);
@@ -247,55 +239,3 @@ case "SELECT_INDUSTRY": {
         }
     });
 }
-
-
-// --- ANTI-POWERSAVE / KEEP-ALIVE MECHANISMUS ---
-function initKeepAliveAudio() {
-    let audioCtx = null;
-
-    function playSilentBeep() {
-        try {
-            // AudioContext erst bei User-Interaktion oder beim Start initialisieren
-            if (!audioCtx) {
-                const AudioContext = window.AudioContext || window.webkitAudioContext;
-                if (!AudioContext) return;
-                audioCtx = new AudioContext();
-            }
-
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-
-            // Einen unhörbaren Oszillator (z.B. 20 Hz - außerhalb des menschlichen Hörbereichs) erzeugen
-            const oscillator = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-
-            oscillator.type = 'sine';
-            oscillator.frequency.value = 20; // 20 Hz (unhörbar)
-            
-            // Lautstärke auf absolut 0 setzen zur Sicherheit
-            gainNode.gain.value = 0.0001; 
-
-            oscillator.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-
-            oscillator.start();
-            setTimeout(() => {
-                oscillator.stop();
-                oscillator.disconnect();
-            }, 100); // Läuft nur 100 Millisekunden
-
-            console.log("Keep-Alive: Silent Audio Takt ausgeführt.");
-        } catch (e) {
-            console.warn("Keep-Alive Audio konnte nicht ausgeführt werden:", e);
-        }
-    }
-
-    // Alle 45 Sekunden einen kurzen Takt senden, um den Tab wach zu halten
-    setInterval(playSilentBeep, 45000);
-}
-
-// Direkt beim Laden des Dashboards aufrufen
-document.addEventListener("DOMContentLoaded", () => {
-    initKeepAliveAudio();
-});

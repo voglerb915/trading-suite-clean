@@ -5,56 +5,26 @@
 import { dashboardState } from "./state.js";
 import { strategyEngine } from "../js/strategies/strategyEngine.js";
 import { mergeStrategies, renderAll } from "./renderer.js";
+import { fetchStrategyData } from "./api.js"; // <--- Hinzufügen
 
 // ------------------------------------------------------
 // 1. Lokale Filterlogik
 // ------------------------------------------------------
 export function filterStocksUI() {
-    let filtered = [...dashboardState.stocksOriginal];
+    let filtered = [...dashboardState.stocks];
 
-    console.log("DEBUG: Filter startet. Strategie:", dashboardState.strategy, "Index:", dashboardState.indexFilter);
-
-    // 1) Strategy-Filter
-    if (dashboardState.strategy && dashboardState.strategy !== "none") {
-
-        // A) FRONTEND-Strategien
-        const frontendFn = strategyEngine[dashboardState.strategy];
-        if (frontendFn) {
-            filtered = frontendFn(filtered);
-        }
-
-// B) BACKEND-Strategien
-        else {
-            // Wir müssen hier zwingend das Merging auf die Basisdaten anwenden, 
-            // damit stock.strategy als Array befüllt wird!
-            filtered = mergeStrategies(
-                filtered,
-                dashboardState.strategyItems,
-                [dashboardState.strategy]
-            );
-
-            filtered = filtered.filter(s => {
-                const strategySource = s.strategy || [];
-                return Array.isArray(strategySource) && strategySource.includes(dashboardState.strategy);
-            });
-        }
-    }
-
-    // 2) Sector
     if (dashboardState.sector && dashboardState.sector !== "all") {
         filtered = filtered.filter(s =>
             (s.sector || s.sector_name) === dashboardState.sector
         );
     }
 
-    // 3) Industry
     if (dashboardState.industry) {
         filtered = filtered.filter(s =>
             (s.industry || s.industry_name) === dashboardState.industry
         );
     }
 
-    // 4) Index (Sicherer Abgleich für Arrays und Strings)
     if (dashboardState.indexFilter && dashboardState.indexFilter !== "all") {
         filtered = filtered.filter(s => {
             const idxVal = s.index || s.finviz_index;
@@ -65,7 +35,6 @@ export function filterStocksUI() {
         });
     }
 
-    // 5) Search
     if (dashboardState.search && dashboardState.search.length > 0) {
         const q = dashboardState.search.toLowerCase();
         filtered = filtered.filter(s =>
@@ -74,7 +43,6 @@ export function filterStocksUI() {
         );
     }
 
-    // Ergebnis im globalen State speichern
     dashboardState.stocks = filtered;
     console.log("DEBUG Filter - Finales Ergebnis:", filtered.length);
 
@@ -88,58 +56,104 @@ window.filterStocksUI = filterStocksUI;
 // ------------------------------------------------------
 // 2. StrategyChange Handler
 // ------------------------------------------------------
-export function handleStrategyChange(e) {
+// In handleStrategyChange (core/filterLogic.js) anpassen:
+
+export async function handleStrategyChange(e) {
     const selectedStrategy = e.detail;
     dashboardState.strategy = selectedStrategy;
 
     console.log("📌 StrategyChange:", selectedStrategy);
 
-    let filtered = [...dashboardState.stocksOriginal];
-
-    // 1) NONE → alles zurücksetzen
+    // Wenn "none", einfach Original wiederherstellen
     if (selectedStrategy === "none") {
-        dashboardState.stocks = filtered;
+        dashboardState.stocks = [...dashboardState.stocksOriginal];
         filterStocksUI();
-        renderAll();
         return;
     }
 
-    // 2) FRONTEND-Strategien (UI-Filter)
-    const frontendFn = strategyEngine[selectedStrategy];
-    if (frontendFn) {
-        console.log("Frontend-Strategie aktiv:", selectedStrategy);
+    try {
+        // Strategie-Daten laden
+        const backendItems =
+            await fetchStrategyData(selectedStrategy) ||
+            dashboardState.strategyItems?.[selectedStrategy] ||
+            [];
 
-        filtered = frontendFn(filtered);
-        dashboardState.stocks = filtered;
+        console.log("🟦 DEBUG 1 → backendItems LENGTH:", backendItems.length);
+        console.log("🟦 DEBUG 1a → backendItems SAMPLE:", backendItems[0]);
 
+        if (backendItems.length === 0) {
+            console.warn("⚠️ Keine Backend-Items für Strategie:", selectedStrategy);
+            dashboardState.stocks = [];
+            filterStocksUI();
+            return;
+        }
+
+        // Backend-Map bauen
+        const backendMap = new Map();
+        backendItems.forEach(item => {
+            if (item.ticker) {
+                backendMap.set(item.ticker.trim().toUpperCase(), item);
+            }
+        });
+
+        // Stocks gegen Backend matchen
+        dashboardState.stocks = dashboardState.stocksOriginal
+            .map(s => {
+                const key = s.ticker ? s.ticker.trim().toUpperCase() : "";
+                if (backendMap.has(key)) {
+                    const backendItem = backendMap.get(key);
+                    return {
+                        ...s,
+                        ...backendItem,
+                        score:
+                            backendItem._52w_high !== undefined
+                                ? backendItem._52w_high
+                                : (backendItem.score !== undefined
+                                    ? backendItem.score
+                                    : s.score)
+                    };
+                }
+                return null;
+            })
+            .filter(Boolean);
+
+        console.log("🟩 DEBUG 2 → stocks LENGTH nach Strategy:", dashboardState.stocks.length);
+        console.log("🟩 DEBUG 2a → stocks SAMPLE:", dashboardState.stocks[0]);
+
+        // ⭐⭐⭐ SignalsList über BACKEND-ITEMS filtern ⭐⭐⭐
+        console.log("🟧 DEBUG 3 → signalsOriginal LENGTH:", dashboardState.signalsOriginal?.length);
+        console.log("🟧 DEBUG 3a → signalsOriginal SAMPLE:", dashboardState.signalsOriginal?.[0]);
+
+        if (dashboardState.signalsOriginal) {
+
+            const allowedTickers = new Set(
+                backendItems.map(b => b.ticker.trim().toUpperCase())
+            );
+
+            console.log("🟪 DEBUG 4 → allowedTickers SIZE:", allowedTickers.size);
+            console.log("🟪 DEBUG 4a → allowedTickers SAMPLE:", [...allowedTickers][0]);
+
+            dashboardState.signals = dashboardState.signalsOriginal.filter(sig =>
+                allowedTickers.has(sig.ticker.trim().toUpperCase())
+            );
+
+            console.log("🟥 DEBUG 5 → signals LENGTH nach Filter:", dashboardState.signals.length);
+            console.log("🟥 DEBUG 5a → signals SAMPLE:", dashboardState.signals[0]);
+
+        } else {
+            console.log("❌ DEBUG → signalsOriginal ist NULL/undefined");
+            dashboardState.signals = [];
+        }
+
+        // Stocks filtern + rendern
         filterStocksUI();
-        renderAll();
-        return;
+
+    } catch (err) {
+        console.error("Fehler beim Laden der Strategie:", err);
     }
-
-    // 3) BACKEND-Strategien (kommen aus CockpitController)
-    console.log("Backend-Strategie aktiv:", selectedStrategy);
-
-    const backendItems = dashboardState.strategyItems[selectedStrategy];
-
-    if (!backendItems) {
-        console.warn("⚠ Backend-Strategie hat keine Daten:", selectedStrategy);
-        dashboardState.stocks = [];
-        filterStocksUI();
-        renderAll();
-        return;
-    }
-
-    const merged = mergeStrategies(
-        dashboardState.stocksOriginal,
-        dashboardState.strategyItems,
-        [selectedStrategy]
-    );
-
-    dashboardState.stocks = merged;
-
-    filterStocksUI();
-    renderAll();
 }
+
+
+
 
 document.addEventListener("dashboard:strategyChange", handleStrategyChange);

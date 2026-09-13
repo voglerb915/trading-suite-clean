@@ -1,11 +1,11 @@
-// backend/routes/strategies/insideDay52wWriter.js
 const express = require('express');
 const router = express.Router();
 const sql = require('mssql');
 const { config } = require('../../db/connection');
-const insideDay52WLogic = require('../../analysis/strategies/insideDay52W');
+const logger = require('../../utils/logger');
 
 router.get('/insideDay52wWriter', async (req, res) => {
+    console.trace("🚨 ERMITTLUNG: Wer ruft den Writer auf?");
     try {
         const pool = await sql.connect(config);
 
@@ -13,14 +13,10 @@ router.get('/insideDay52wWriter', async (req, res) => {
         const lastDateResult = await pool.request().query(`
             SELECT MAX(date) AS lastDate FROM yahoo.dbo.DailyHistory
         `);
-
-        const lastDateRaw = lastDateResult.recordset[0].lastDate;
-
+        const lastDateRaw = lastDateResult.recordset[0]?.lastDate;
         if (!lastDateRaw) {
             return res.status(500).json({ error: "Kein lastDate in DailyHistory gefunden." });
         }
-
-        // SQL-kompatibles Format erzeugen
         const lastDate = lastDateRaw.toISOString().split('T')[0];
 
         // 2) Vortag holen
@@ -29,24 +25,74 @@ router.get('/insideDay52wWriter', async (req, res) => {
             FROM yahoo.dbo.DailyHistory 
             WHERE date < '${lastDate}'
         `);
-
-        const prevDateRaw = prevDateResult.recordset[0].prevDate;
-
+        const prevDateRaw = prevDateResult.recordset[0]?.prevDate;
         if (!prevDateRaw) {
             return res.status(500).json({ error: "Kein prevDate in DailyHistory gefunden." });
         }
-
         const prevDate = prevDateRaw.toISOString().split('T')[0];
 
-        // 3) maintenance → TRIGGERED / FAILED setzen
-        await insideDay52WLogic.maintenance(pool, lastDate);
+        // 3) Maintenance direkt ausführen (TRIGGERED / FAILED setzen)
+        await pool.request().input('lastDate', sql.Date, lastDate).query(`
+            UPDATE s SET s.s2_setup_status = 'TRIGGERED'
+            FROM [yahoo].[dbo].[strategies] s
+            JOIN [yahoo].[dbo].[DailyHistory] h ON s.ticker = h.ticker
+            WHERE s.s2_setup_status = 'ACTIVE' AND s.strategy_name = 'INSIDEDAY52W'
+              AND h.[date] = @lastDate
+              AND h.high > s.s2_high_vortag;
 
-        // 4) neue Signale erzeugen
-        await insideDay52WLogic.scanForNewSignals(pool, lastDate, prevDate);
+            UPDATE s SET s.s2_setup_status = 'FAILED'
+            FROM [yahoo].[dbo].[strategies] s
+            JOIN [yahoo].[dbo].[DailyHistory] h ON s.ticker = h.ticker
+            WHERE s.s2_setup_status = 'ACTIVE' AND s.strategy_name = 'INSIDEDAY52W'
+              AND h.[date] = @lastDate
+              AND h.low < s.s2_anchor_low;
+        `);
 
-        res.json({ status: "InsideDay52W Writer OK", lastDate, prevDate });
+        // 4) Neue Signale scannen und einfügen
+        await pool.request()
+            .input('lastDate', sql.Date, lastDate)
+            .input('prevDate', sql.Date, prevDate)
+            .query(`
+                INSERT INTO [yahoo].[dbo].[strategies] 
+                (ticker, strategy_name, s2_setup_status, s2_anchor_high, s2_anchor_low, 
+                 s2_high_vortag, s2_low_vortag, s2_tightness, [date]) 
+                SELECT 
+                    h1.ticker, 'INSIDEDAY52W', 'ACTIVE', 
+                    h2.high, h2.low, h1.high, h1.low,
+                    ROUND(((h1.high - h1.low) / NULLIF(h2.high - h2.low, 0)) * 100, 2),
+                    h1.[date]
+                FROM [yahoo].[dbo].[DailyHistory] h1
+                JOIN [yahoo].[dbo].[DailyHistory] h2 
+                    ON h1.ticker = h2.ticker 
+                   AND h2.[date] = @prevDate
+                INNER JOIN [yahoo].[dbo].[StockMetrics] sm
+                    ON h1.ticker = sm.ticker
+                CROSS APPLY (
+                    SELECT TOP 1 industry
+                    FROM [trading].[dbo].[finviz] f
+                    WHERE f.ticker = h1.ticker
+                    ORDER BY f.anl_datum DESC
+                ) f
+                WHERE h1.[date] = @lastDate
+                  AND sm.vma_20 >= 250000 
+                  AND f.industry NOT IN ('Exchange Traded Fund', 'Shell Companies')
+                  AND h2.high >= h2.high52w
+                  AND h1.high < h2.high
+                  AND h1.low > h2.low
+                  AND NOT EXISTS (
+                      SELECT 1 FROM [yahoo].[dbo].[strategies] s
+                      WHERE s.ticker = h1.ticker 
+                        AND s.strategy_name = 'INSIDEDAY52W'
+                        AND s.s2_setup_status = 'ACTIVE'
+                  );
+            `);
+
+  
+
+res.json({ status: "InsideDay52W Writer OK", lastDate, prevDate });
 
     } catch (err) {
+        logger.error('S2_WRITER', `Fehler: ${err.message}`);
         res.status(500).json({ error: err.message });
     }
 });

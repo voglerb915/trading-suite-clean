@@ -1,3 +1,7 @@
+// ======================================================
+// CORE STATE - Zentraler Dashboard-Zustand
+// ======================================================
+
 export const dashboardState = {
     stocks: [],
     stocksOriginal: [],
@@ -17,18 +21,6 @@ export const dashboardState = {
 
     daysInTrend: null,
 
-    // ⭐ MID-State-Maschine
-    mid: {
-        long: {
-            active: false,
-            mode: null
-        },
-        exit: {
-            active: false,
-            mode: null
-        }
-    },
-
     filterBuyStocks: false,
     filterSellStocks: false,
     filterBuyIndustries: false,
@@ -36,8 +28,8 @@ export const dashboardState = {
     filterBuySectors: false,
     filterSellSectors: false,
 
-    phaseLong: "all",   // ← diese beiden werden später entfernt
-    phaseExit: "all",   // ← sobald UI umgestellt ist
+    phaseLong: "all",
+    phaseExit: "all",
     
     activeTypes: {
         long: true,
@@ -55,6 +47,7 @@ export const dashboardState = {
 
     referenceStock: null,
 
+    // ⭐ Zentrale Reset-Funktion
     reset() {
         this.sector = null;
         this.industry = null;
@@ -63,20 +56,12 @@ export const dashboardState = {
         this.indexFilter = "all";
         this.daysInTrend = null;
         this.strategy = "none";
-
-        // MID zurücksetzen
-        this.mid.long.active = false;
-        this.mid.long.mode = null;
-        this.mid.exit.active = false;
-        this.mid.exit.mode = null;
-
         this.filterBuyStocks = false;
         this.filterSellStocks = false;
         this.filterBuyIndustries = false;
         this.filterSellIndustries = false;
         this.filterBuySectors = false;
         this.filterSellSectors = false;
-
         this.phaseLong = "all";
         this.phaseExit = "all";
         

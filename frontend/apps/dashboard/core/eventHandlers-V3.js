@@ -62,16 +62,43 @@ document.addEventListener("dashboard:reset", () => {
 // ------------------------------------------------------
 document.addEventListener("click", (e) => {
 
-    // ------------------------------------------------------
-    // 1) DROPDOWN ÖFFNEN/SCHLIESSEN (MUSS GANZ OBEN SEIN)
-    // ------------------------------------------------------
+    // 1) MID-SIGNALS: LONG / EXIT / PHASE
+    const midItem = e.target.closest('.dropdown-item[data-phase-value]');
+    if (midItem) {
+        const type  = midItem.getAttribute('data-phase-type');
+        const value = midItem.getAttribute('data-phase-value');
+
+        if (!dashboardState.activeTypes) {
+            dashboardState.activeTypes = { long: true, exit: true };
+        }
+
+        if (type === "long") {
+            dashboardState.phaseLong = value;
+            dashboardState.activeTypes.long = true; 
+        }
+
+        if (type === "exit") {
+            dashboardState.phaseExit = value;
+            dashboardState.activeTypes.exit = true;
+        }
+
+        document.querySelectorAll('.pill-dropdown-menu').forEach(m => {
+            m.style.display = 'none';
+            m.classList.remove('show');
+        });
+
+        const toolsTabContent = document.getElementById("tools-tab-content");
+        renderActiveTab("signals", dashboardState, toolsTabContent);
+        return;
+    }
+
+    // 2) DROPDOWN ÖFFNEN/SCHLIESSEN
     const pillWithDropdown = e.target.closest('.pill-dropdown-wrapper');
     if (pillWithDropdown) {
         const isTrigger = e.target.closest('.pill');
         if (isTrigger) {
             const menu = pillWithDropdown.querySelector('.pill-dropdown-menu');
             if (menu) {
-
                 document.querySelectorAll('.pill-dropdown-menu').forEach(m => {
                     if (m !== menu) {
                         m.style.display = 'none';
@@ -92,59 +119,7 @@ document.addEventListener("click", (e) => {
         }
     }
 
-    // ------------------------------------------------------
-    // 2) MID-SIGNALS: LONG / EXIT / PHASE (NEU)
-    // ------------------------------------------------------
-    const midItem = e.target.closest('.dropdown-item[data-mid-type]');
-    if (midItem) {
-
-        const type   = midItem.dataset.midType;
-        const active = midItem.dataset.midActive === "true";
-        const mode   = midItem.dataset.midMode;
-
-        if (type === "long") {
-            dashboardState.mid.long.active = active;
-            dashboardState.mid.long.mode   = (mode === "null" ? null : mode);
-        }
-
-        if (type === "exit") {
-            dashboardState.mid.exit.active = active;
-            dashboardState.mid.exit.mode   = (mode === "null" ? null : mode);
-        }
-
-        document.querySelectorAll('.pill-dropdown-menu').forEach(m => {
-            m.style.display = 'none';
-            m.classList.remove('show');
-        });
-
-        const toolsTabContent = document.getElementById("tools-tab-content");
-        renderActiveTab("signals", dashboardState, toolsTabContent);
-        return;
-    }
-
-    // ------------------------------------------------------
-// 2b) DAYS-IN-TREND DROPDOWN
-// ------------------------------------------------------
-const daysItem = e.target.closest('.dropdown-item[data-days-type]');
-if (daysItem) {
-    const value = daysItem.dataset.daysValue;
-
-    handleDaysFilterChange(value);
-
-    document.querySelectorAll('.pill-dropdown-menu').forEach(m => {
-        m.style.display = 'none';
-        m.classList.remove('show');
-    });
-
-    const toolsTabContent = document.getElementById("tools-tab-content");
-    renderActiveTab("signals", dashboardState, toolsTabContent);
-    return;
-}
-
-
-    // ------------------------------------------------------
     // 3) NORMALE PILLEN (Buy/Sell etc.)
-    // ------------------------------------------------------
     const pill = e.target.closest(".pill");
     if (pill && !pill.closest('.pill-dropdown-wrapper')) {
         const type = pill.dataset.type;
@@ -157,17 +132,13 @@ if (daysItem) {
         return;
     }
 
-    // ------------------------------------------------------
     // 4) KLICK AUSSERHALB SCHLIESST DROPDOWNS
-    // ------------------------------------------------------
     if (!e.target.closest('.pill-dropdown-wrapper')) {
         document.querySelectorAll('.pill-dropdown-menu').forEach(m => {
             m.style.display = 'none';
             m.classList.remove('show');
         });
     }
-
-
 
     // 5) STOCK CLICK
     const stockRow = e.target.closest("[data-stock]");
