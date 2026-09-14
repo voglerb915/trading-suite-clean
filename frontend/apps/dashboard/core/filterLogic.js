@@ -72,7 +72,8 @@ export async function handleStrategyChange(e) {
     // Wenn "none", einfach Original wiederherstellen
     if (selectedStrategy === "none") {
         dashboardState.stocks = [...dashboardState.stocksOriginal];
-        filterStocksUI();
+        dashboardState.signals = [...dashboardState.signalsOriginal];
+        renderAll();
         return;
     }
 
@@ -84,12 +85,12 @@ export async function handleStrategyChange(e) {
             [];
 
         console.log("🟦 DEBUG 1 → backendItems LENGTH:", backendItems.length);
-        console.log("🟦 DEBUG 1a → backendItems SAMPLE:", backendItems[0]);
 
         if (backendItems.length === 0) {
             console.warn("⚠️ Keine Backend-Items für Strategie:", selectedStrategy);
             dashboardState.stocks = [];
-            filterStocksUI();
+            dashboardState.signals = [];
+            renderAll();
             return;
         }
 
@@ -123,41 +124,31 @@ export async function handleStrategyChange(e) {
             .filter(Boolean);
 
         console.log("🟩 DEBUG 2 → stocks LENGTH nach Strategy:", dashboardState.stocks.length);
-        console.log("🟩 DEBUG 2a → stocks SAMPLE:", dashboardState.stocks[0]);
 
-        // ⭐⭐⭐ SignalsList über BACKEND-ITEMS filtern ⭐⭐⭐
-        console.log("🟧 DEBUG 3 → signalsOriginal LENGTH:", dashboardState.signalsOriginal?.length);
-        console.log("🟧 DEBUG 3a → signalsOriginal SAMPLE:", dashboardState.signalsOriginal?.[0]);
-
+        // Signals gegen Backend matchen
         if (dashboardState.signalsOriginal) {
 
             const allowedTickers = new Set(
                 backendItems.map(b => b.ticker.trim().toUpperCase())
             );
 
-            console.log("🟪 DEBUG 4 → allowedTickers SIZE:", allowedTickers.size);
-            console.log("🟪 DEBUG 4a → allowedTickers SAMPLE:", [...allowedTickers][0]);
-
             dashboardState.signals = dashboardState.signalsOriginal.filter(sig =>
                 allowedTickers.has(sig.ticker.trim().toUpperCase())
             );
 
             console.log("🟥 DEBUG 5 → signals LENGTH nach Filter:", dashboardState.signals.length);
-            console.log("🟥 DEBUG 5a → signals SAMPLE:", dashboardState.signals[0]);
 
         } else {
-            console.log("❌ DEBUG → signalsOriginal ist NULL/undefined");
             dashboardState.signals = [];
         }
 
-        // Stocks filtern + rendern
-        filterStocksUI();
+        // ⭐ KEIN filterStocksUI() MEHR — das killt Strategy-Scores
+        renderAll();
 
     } catch (err) {
         console.error("Fehler beim Laden der Strategie:", err);
     }
 }
-
 
 
 

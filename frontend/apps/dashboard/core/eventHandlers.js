@@ -187,9 +187,13 @@ if (daysItem) {
             dashboardState.referenceStock = item;
         }
 
-        filterStocksUI();
-        renderAll();
-        return;
+if (dashboardState.strategy === "none") {
+    filterStocksUI();
+} else {
+    renderAll();
+}
+return;
+
     }
 
     // 6) SECTOR CLICK
@@ -201,9 +205,13 @@ if (daysItem) {
         dashboardState.industry = null;
         dashboardState.ticker   = null;
 
-        filterStocksUI();
-        renderAll();
-        return;
+if (dashboardState.strategy === "none") {
+    filterStocksUI();
+} else {
+    renderAll();
+}
+return;
+
     }
 
     // 7) INDUSTRY CLICK
@@ -224,9 +232,13 @@ if (daysItem) {
 
         dashboardState.ticker = null;
 
-        filterStocksUI();
-        renderAll();
-        return;
+if (dashboardState.strategy === "none") {
+    filterStocksUI();
+} else {
+    renderAll();
+}
+return;
+
     }
 
     // 8) EXPORT TRADINGVIEW

@@ -8,6 +8,8 @@ import { filterSignals } from "../lists/signalsList/signalsFilterLogic.js";
 
 
 
+
+
 export function renderDashboardTools(state) {
     const tabHeaders = document.querySelectorAll(".tab-header .tab-item");
     const tabContent = document.getElementById("tools-tab-content");
@@ -132,6 +134,7 @@ case "signals": {
         return out;
     });
 
+
     // 6. FILTER anwenden
     const filteredSignals = filterSignals(mergedSignalsWithStrategy, state);
 
@@ -149,6 +152,7 @@ case "signals": {
     renderSignalsList(sortedSignals, state, content);
     break;
 }
+
 
 
 

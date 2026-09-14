@@ -68,13 +68,14 @@ app.use("/api/data/excel", require("./routes/data/excelRawData"));
 app.use('/api/data/metrics/run', require('./routes/data/readWriteMetrics'));
 
 // STRATEGY
-app.use("/api/strategy", require("./routes/strategy/strategies")); //zentraler Einstiegspunkt für alle Strategie-Routen (falls relevant)
+
 
 app.use("/api/strategy", require("./routes/strategy/stage3toppingWriter"));
 //app.use("/api/strategy", require("./routes/strategy/stage3toppingReader")); - alte route - jetzt ersetzt durch strategies
 app.use("/api/strategy", require("./routes/strategy/insideDay52wWriter"));
 //app.use("/api/strategy", require("./routes/strategy/insideDay52wReader")); - alte route - jetzt ersetzt durch strategies
 app.use("/api/strategy", require("./routes/strategy/falseBreakOut52week")); // <--- NEU: False Breakout 52W Route eingebunden
+app.use("/api/strategy", require("./routes/strategy/strategies")); //zentraler Einstiegspunkt für alle Strategie-Routen (falls relevant)
 
 // SIGNALS ENGINE (NEU)
 app.use("/api/signals", require("./routes/strategy/signalsRoute")); //midSignals
