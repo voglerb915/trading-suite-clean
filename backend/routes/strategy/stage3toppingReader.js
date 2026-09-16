@@ -32,8 +32,16 @@ async function getStage3Data() {
             s1_details_json
         FROM yahoo.dbo.strategies
         WHERE [date] = '${lastDateStr}'
-          AND strategy_name = 'S1_STAGE3_TOPPING'
+        AND strategy_name = 'S1_STAGE3_TOPPING'
+
+        -- ⭐ NEU: S5 Score > 0
+        AND s1_sma_dist > -10
+
+        -- ⭐ NEU: S6 Score > 0
+        AND s1_high_dist > -70
+
         ORDER BY s1_total_score DESC
+
     `);
 
     // 3) Sauber mappen

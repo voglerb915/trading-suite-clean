@@ -88,6 +88,10 @@ router.get("/write-stage3-topping", async (req, res) => {
         // ------------------------------------------------------
         const processedRaw = Object.values(grouped).map(history => {
 
+            // 0) Mindestens 200 Tage Historie für gültigen SMA200
+            if (history.length < 200) return null;
+
+            // 1) Mindestens 21 Tage für Slope-Berechnung
             if (history.length < 21) return null;
 
             const latest         = history.at(-1);
@@ -156,11 +160,10 @@ router.get("/write-stage3-topping", async (req, res) => {
             const smaDist = latest.sma200 ?? 0;
             const s5 = Math.max(0, 10 - Math.abs(smaDist));
 
-            // --- Neuer Faktor: 52W High Distance & Lineares Scoring ---
+            // --- S6 (52W High Distance) ---
             const highDistVal = latest._52w_high ?? 0;
             const s6 = calculateHighDistScore(highDistVal);
 
-            // Hinweis: Falls totalScore auf allen 6 Faktoren basiert, hier entsprechend anpassen
             const totalScore = parseFloat((s1 + s2 + s3 + s4 + s5 + s6).toFixed(2));
 
             return {
@@ -186,6 +189,7 @@ router.get("/write-stage3-topping", async (req, res) => {
                 })
             };
         });
+
 
         // ------------------------------------------------------
         // 4) Finaler Filter
