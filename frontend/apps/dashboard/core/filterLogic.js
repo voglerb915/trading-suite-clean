@@ -12,7 +12,10 @@ import { fetchStrategyData } from "./api.js"; // <--- Hinzufügen
 // ------------------------------------------------------
 export function filterStocksUI() {
     // IMMER von der Original-Liste starten
-    const base = dashboardState.stocksOriginal || dashboardState.allStocks || [];
+const base =
+    dashboardState.strategy !== "none"
+        ? (dashboardState.strategyStocks || [])
+        : (dashboardState.stocksOriginal || dashboardState.allStocks || []);
     let filtered = [...base];
 
     if (dashboardState.sector && dashboardState.sector !== "all") {
@@ -122,6 +125,8 @@ export async function handleStrategyChange(e) {
                 return null;
             })
             .filter(Boolean);
+
+        dashboardState.strategyStocks = [...dashboardState.stocks];    
 
         console.log("🟩 DEBUG 2 → stocks LENGTH nach Strategy:", dashboardState.stocks.length);
 

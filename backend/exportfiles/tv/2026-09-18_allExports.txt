@@ -1,9 +1,12 @@
-# Strategy: stage3topping
-# Sector: -
-# Industry: -
-# Index: -
-# Generated: 2026-09-18 18:40:06
 
+===========================
+Export: 18:40:06
+Strategy: stage3topping
+Sector: -
+Industry: -
+Index: -
+Count: 48
+---------------------------
 ACNT
 SQM
 DLTR
@@ -52,3 +55,4 @@ TRUP
 BAM
 MXE
 MIY
+===========================

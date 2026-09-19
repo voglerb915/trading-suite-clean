@@ -16,32 +16,43 @@ async function getStage3Data() {
     }
 
     const lastDateStr = new Date(lastDateRaw).toISOString().split("T")[0];
+    const MIN_VMA20 = 250000;
 
     // 2) Fertige Datensätze direkt aus der Datenbank abfragen
     const signalsResult = await yahooPool.request().query(`
-        SELECT 
-            ticker,
-            s1_total_score,
-            s1_state_active,
-            s1_trigger_date,
-            s1_days_above,
-            s1_slope_val,
-            s1_ind_rank,
-            s1_sma_dist,
-            s1_high_dist,
-            s1_details_json
-        FROM yahoo.dbo.strategies
-        WHERE [date] = '${lastDateStr}'
-        AND strategy_name = 'S1_STAGE3_TOPPING'
+    SELECT
+        s.ticker,
+        s.s1_total_score,
+        s.s1_state_active,
+        s.s1_trigger_date,
+        s.s1_days_above,
+        s.s1_slope_val,
+        s.s1_ind_rank,
+        s.s1_sma_dist,
+        s.s1_high_dist,
+        s.s1_details_json,
+        m.vma_20
+    FROM yahoo.dbo.strategies s
+    INNER JOIN yahoo.dbo.StockMetrics m
+        ON s.ticker = m.ticker
+        AND CAST(m.[date] AS DATE) = (
+            SELECT MAX(CAST([date] AS DATE))
+            FROM yahoo.dbo.StockMetrics
+        )
 
-        -- ⭐ NEU: S5 Score > 0
-        AND s1_sma_dist > -10
+    WHERE s.[date] = '${lastDateStr}'
+    AND s.strategy_name = 'S1_STAGE3_TOPPING'
 
-        -- ⭐ NEU: S6 Score > 0
-        AND s1_high_dist > -70
+    -- S5 Score > 0
+    AND s.s1_sma_dist > -10
 
-        ORDER BY s1_total_score DESC
+    -- S6 Score > 0
+    AND s.s1_high_dist > -70
 
+    -- Liquiditätsfilter
+    AND m.vma_20 >= ${MIN_VMA20}
+
+    ORDER BY s.s1_total_score DESC
     `);
 
     // 3) Sauber mappen
@@ -87,7 +98,8 @@ async function getStage3Data() {
             score_highDist: details.score_highDist ?? fallbackHighDistScore,
             signalAgeDays: signalAgeDays,
             display_slope: r.s1_slope_val !== null ? r.s1_slope_val.toFixed(2) : "0.00",
-            display_highDist: r.s1_high_dist !== null ? r.s1_high_dist.toFixed(2) : "0.00"
+            display_highDist: r.s1_high_dist !== null ? r.s1_high_dist.toFixed(2) : "0.00",
+            vma20: r.vma_20
         };
     });
 }

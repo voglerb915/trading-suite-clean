@@ -65,7 +65,10 @@ app.use("/api/data/downloads", require("./routes/data/download_stream_indexes"))
 app.use("/api/data/downloads", require("./routes/data/download_stream_stocks"));
 app.use("/api/data/downloads", require("./routes/data/loadYahooStocks"));
 app.use("/api/data/excel", require("./routes/data/excelRawData"));
-app.use('/api/data/metrics/run', require('./routes/data/readWriteMetrics'));
+app.use('/api/data/metrics/run', require('./routes/data/metrics-writer')); // <--- HIER EINBINDEN
+app.use('/api/data/metrics', require('./routes/data/metrics-reader'));
+//app.use('/api/data/metrics', require('./routes/data/readWriteMetrics')); // alte route - jetzt ersetzt durch reader und writer ersetzt
+
 
 // STRATEGY
 
