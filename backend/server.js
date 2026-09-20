@@ -78,6 +78,7 @@ app.use("/api/strategy", require("./routes/strategy/stage3toppingWriter"));
 app.use("/api/strategy", require("./routes/strategy/insideDay52wWriter"));
 //app.use("/api/strategy", require("./routes/strategy/insideDay52wReader")); - alte route - jetzt ersetzt durch strategies
 app.use("/api/strategy", require("./routes/strategy/falseBreakOut52week")); // <--- NEU: False Breakout 52W Route eingebunden
+app.use("/api/strategy", require("./routes/strategy/stage3Rebound")); // <--- NEU: Stage 3 Rebound Route eingebunden
 app.use("/api/strategy", require("./routes/strategy/strategies")); //zentraler Einstiegspunkt für alle Strategie-Routen (falls relevant)
 
 // SIGNALS ENGINE (NEU)

@@ -1,0 +1,793 @@
+[
+  {
+    "ticker": "DEO",
+    "company": "Diageo plc ADR",
+    "sector": "Consumer Defensive",
+    "industry": "Beverages - Wineries & Distilleries",
+    "price": 85.59,
+    "sma200": 0.02,
+    "_52w_high": -16.69,
+    "_50d_low": 7.81,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 992159.8,
+    "index": []
+  },
+  {
+    "ticker": "CRDO",
+    "company": "Credo Technology Group Holding Ltd",
+    "sector": "Technology",
+    "industry": "Semiconductors",
+    "price": 175.89,
+    "sma200": 0.03,
+    "_52w_high": -43.02,
+    "_50d_low": 17.94,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 8197574.8,
+    "index": []
+  },
+  {
+    "ticker": "HIMS",
+    "company": "Hims & Hers Health Inc",
+    "sector": "Healthcare",
+    "industry": "Drug Manufacturers - Specialty & Generic",
+    "price": 27.99,
+    "sma200": 0.03,
+    "_52w_high": -57.14,
+    "_50d_low": 15.47,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 9607786.55,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "LW",
+    "company": "Lamb Weston Holdings Inc",
+    "sector": "Consumer Defensive",
+    "industry": "Packaged Foods",
+    "price": 46.67,
+    "sma200": 0.07,
+    "_52w_high": -30.42,
+    "_50d_low": 4.41,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1368301.5,
+    "index": []
+  },
+  {
+    "ticker": "KYIV",
+    "company": "Kyivstar Group Ltd",
+    "sector": "Communication Services",
+    "industry": "Telecom Services",
+    "price": 13.03,
+    "sma200": 0.24,
+    "_52w_high": -21.24,
+    "_50d_low": 3,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 382131.65,
+    "index": []
+  },
+  {
+    "ticker": "NICE",
+    "company": "NICE Ltd ADR",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "price": 104.97,
+    "sma200": 0.41,
+    "_52w_high": -31.7,
+    "_50d_low": 22.04,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 395408.15,
+    "index": []
+  },
+  {
+    "ticker": "SMA",
+    "company": "Smartstop Self Storage REIT Inc",
+    "sector": "Real Estate",
+    "industry": "REIT - Industrial",
+    "price": 32.57,
+    "sma200": 0.58,
+    "_52w_high": -16.47,
+    "_50d_low": 3.1,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 779792.35,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "LOGI",
+    "company": "Logitech International SA",
+    "sector": "Technology",
+    "industry": "Computer Hardware",
+    "price": 101.2,
+    "sma200": 0.94,
+    "_52w_high": -21.95,
+    "_50d_low": 6.77,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 710053.3,
+    "index": []
+  },
+  {
+    "ticker": "EL",
+    "company": "Estee Lauder Cos. Inc",
+    "sector": "Consumer Defensive",
+    "industry": "Household & Personal Products",
+    "price": 93.43,
+    "sma200": 0.97,
+    "_52w_high": -23.19,
+    "_50d_low": 18.78,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 3194647.7,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "SPOT",
+    "company": "Spotify Technology SA",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "price": 509.45,
+    "sma200": 1,
+    "_52w_high": -31.62,
+    "_50d_low": 11.72,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1415476.45,
+    "index": []
+  },
+  {
+    "ticker": "ALLE",
+    "company": "Allegion plc",
+    "sector": "Industrials",
+    "industry": "Security & Protection Services",
+    "price": 152.28,
+    "sma200": 1.08,
+    "_52w_high": -16.84,
+    "_50d_low": 14.63,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1403628.75,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "JCAP",
+    "company": "Jefferson Capital Inc",
+    "sector": "Financial",
+    "industry": "Credit Services",
+    "price": 20.54,
+    "sma200": 1.14,
+    "_52w_high": -15.96,
+    "_50d_low": 17.37,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 258680,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "CLS",
+    "company": "Celestica Inc",
+    "sector": "Technology",
+    "industry": "Electronic Components",
+    "price": 332.63,
+    "sma200": 1.19,
+    "_52w_high": -29.83,
+    "_50d_low": 21.49,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1981898.3,
+    "index": []
+  },
+  {
+    "ticker": "SONO",
+    "company": "Sonos Inc",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "price": 15.53,
+    "sma200": 1.23,
+    "_52w_high": -21.64,
+    "_50d_low": 13.73,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1764618.65,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "OMF",
+    "company": "OneMain Holdings Inc",
+    "sector": "Financial",
+    "industry": "Credit Services",
+    "price": 60.81,
+    "sma200": 1.29,
+    "_52w_high": -15.46,
+    "_50d_low": 5.76,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 853747.65,
+    "index": []
+  },
+  {
+    "ticker": "FOX",
+    "company": "Fox Corp",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "price": 57.74,
+    "sma200": 1.34,
+    "_52w_high": -15.31,
+    "_50d_low": 21.53,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1261724.9,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "TBCH",
+    "company": "Turtle Beach Corp",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "price": 12.68,
+    "sma200": 1.43,
+    "_52w_high": -27.07,
+    "_50d_low": 7.73,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 375716.75,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "KLAC",
+    "company": "KLA Corp",
+    "sector": "Technology",
+    "industry": "Semiconductor Equipment & Materials",
+    "price": 176.99,
+    "sma200": 1.55,
+    "_52w_high": -42.42,
+    "_50d_low": 6.69,
+    "finviz_index": "NDX, S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 9318918.55,
+    "index": [
+      "NDX",
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "FOXA",
+    "company": "Fox Corp",
+    "sector": "Communication Services",
+    "industry": "Entertainment",
+    "price": 64.45,
+    "sma200": 1.56,
+    "_52w_high": -15.63,
+    "_50d_low": 22.02,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 5154792.55,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "M",
+    "company": "Macy's Inc",
+    "sector": "Consumer Cyclical",
+    "industry": "Department Stores",
+    "price": 21.94,
+    "sma200": 1.57,
+    "_52w_high": -17.47,
+    "_50d_low": 10.98,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 6889322.55,
+    "index": []
+  },
+  {
+    "ticker": "QGEN",
+    "company": "Qiagen NV",
+    "sector": "Healthcare",
+    "industry": "Diagnostics & Research",
+    "price": 43.33,
+    "sma200": 1.84,
+    "_52w_high": -25.05,
+    "_50d_low": 13.92,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 2163210.4,
+    "index": []
+  },
+  {
+    "ticker": "GCO",
+    "company": "Genesco Inc",
+    "sector": "Consumer Cyclical",
+    "industry": "Apparel Retail",
+    "price": 32.76,
+    "sma200": 1.87,
+    "_52w_high": -24.86,
+    "_50d_low": 1.55,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 260724.3,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "GME",
+    "company": "Gamestop Corp",
+    "sector": "Consumer Cyclical",
+    "industry": "Specialty Retail",
+    "price": 22.64,
+    "sma200": 2.03,
+    "_52w_high": -19.43,
+    "_50d_low": 27.26,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 7754217.55,
+    "index": []
+  },
+  {
+    "ticker": "RCUS",
+    "company": "Arcus Biosciences Inc",
+    "sector": "Healthcare",
+    "industry": "Biotechnology",
+    "price": 25.24,
+    "sma200": 2.06,
+    "_52w_high": -20.47,
+    "_50d_low": 8.28,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1564406.1,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "SHOO",
+    "company": "Steven Madden Ltd",
+    "sector": "Consumer Cyclical",
+    "industry": "Footwear & Accessories",
+    "price": 42.11,
+    "sma200": 2.14,
+    "_52w_high": -15.27,
+    "_50d_low": 7.95,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1031013.85,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "EXPO",
+    "company": "Exponent Inc",
+    "sector": "Industrials",
+    "industry": "Engineering & Construction",
+    "price": 68.3,
+    "sma200": 2.17,
+    "_52w_high": -16.66,
+    "_50d_low": 15.16,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 423027.85,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "FPI",
+    "company": "Farmland Partners Inc",
+    "sector": "Real Estate",
+    "industry": "REIT - Specialty",
+    "price": 10.87,
+    "sma200": 2.25,
+    "_52w_high": -17.81,
+    "_50d_low": 18.02,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 604525.75,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "CARS",
+    "company": "Cars.com",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "price": 11.14,
+    "sma200": 2.3,
+    "_52w_high": -19.39,
+    "_50d_low": 5.19,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 540879.5,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "DASH",
+    "company": "DoorDash Inc",
+    "sector": "Consumer Cyclical",
+    "industry": "Internet Retail",
+    "price": 192.94,
+    "sma200": 2.33,
+    "_52w_high": -32.42,
+    "_50d_low": 15.82,
+    "finviz_index": "NDX, S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 3667060.6,
+    "index": [
+      "NDX",
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "AJG",
+    "company": "Arthur J. Gallagher & Co",
+    "sector": "Financial",
+    "industry": "Insurance Brokers",
+    "price": 239.48,
+    "sma200": 2.46,
+    "_52w_high": -23.62,
+    "_50d_low": -0.25,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1354669.55,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "IREN",
+    "company": "IREN Ltd",
+    "sector": "Financial",
+    "industry": "Capital Markets",
+    "price": 46.68,
+    "sma200": 2.5,
+    "_52w_high": -39.27,
+    "_50d_low": 61.35,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 40230810.55,
+    "index": []
+  },
+  {
+    "ticker": "TREX",
+    "company": "TREX Co Inc",
+    "sector": "Industrials",
+    "industry": "Building Products & Equipment",
+    "price": 42.69,
+    "sma200": 2.52,
+    "_52w_high": -22.21,
+    "_50d_low": 2.37,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1424241.55,
+    "index": []
+  },
+  {
+    "ticker": "COIN",
+    "company": "Coinbase Global Inc",
+    "sector": "Financial",
+    "industry": "Financial Data & Stock Exchanges",
+    "price": 194.25,
+    "sma200": 2.66,
+    "_52w_high": -51.7,
+    "_50d_low": 39.64,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 10948653.8,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "GDDY",
+    "company": "Godaddy Inc",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "price": 97.46,
+    "sma200": 2.68,
+    "_52w_high": -34.23,
+    "_50d_low": 33.32,
+    "finviz_index": "S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1960254.3,
+    "index": [
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "DSGX",
+    "company": "Descartes Systems Group Inc",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "price": 77.3,
+    "sma200": 2.7,
+    "_52w_high": -25.98,
+    "_50d_low": 17.71,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 746611.8,
+    "index": []
+  },
+  {
+    "ticker": "SLM",
+    "company": "SLM Corp",
+    "sector": "Financial",
+    "industry": "Credit Services",
+    "price": 25.1,
+    "sma200": 2.8,
+    "_52w_high": -19.19,
+    "_50d_low": 9.13,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1860098.25,
+    "index": []
+  },
+  {
+    "ticker": "ATHM",
+    "company": "Autohome Inc ADR",
+    "sector": "Communication Services",
+    "industry": "Internet Content & Information",
+    "price": 20.98,
+    "sma200": 2.84,
+    "_52w_high": -29.38,
+    "_50d_low": 8.4,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 761362.75,
+    "index": []
+  },
+  {
+    "ticker": "CLPT",
+    "company": "ClearPoint Neuro Inc",
+    "sector": "Healthcare",
+    "industry": "Medical Devices",
+    "price": 13.83,
+    "sma200": 3.24,
+    "_52w_high": -54.05,
+    "_50d_low": 12.71,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 582343.85,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "PYPL",
+    "company": "PayPal Holdings Inc",
+    "sector": "Financial",
+    "industry": "Credit Services",
+    "price": 52.41,
+    "sma200": 3.43,
+    "_52w_high": -33.84,
+    "_50d_low": 19.6,
+    "finviz_index": "NDX, S&P 500",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 13093177.05,
+    "index": [
+      "NDX",
+      "SP500"
+    ]
+  },
+  {
+    "ticker": "FOXF",
+    "company": "Fox Factory Holding Corp",
+    "sector": "Consumer Cyclical",
+    "industry": "Auto Parts",
+    "price": 18.77,
+    "sma200": 3.46,
+    "_52w_high": -29.36,
+    "_50d_low": 15.58,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 398512.1,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "WAY",
+    "company": "Waystar Holding Corp",
+    "sector": "Healthcare",
+    "industry": "Health Information Services",
+    "price": 25.66,
+    "sma200": 3.57,
+    "_52w_high": -36.41,
+    "_50d_low": 27.4,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 2442093.15,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "PATH",
+    "company": "UiPath Inc",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "price": 13.39,
+    "sma200": 3.73,
+    "_52w_high": -32.51,
+    "_50d_low": 31.79,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 60822077.65,
+    "index": []
+  },
+  {
+    "ticker": "KMTS",
+    "company": "Kestra Medical Technologies Ltd",
+    "sector": "Healthcare",
+    "industry": "Medical Instruments & Supplies",
+    "price": 24.43,
+    "sma200": 3.97,
+    "_52w_high": -18.57,
+    "_50d_low": 19.75,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 394494.75,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "SONY",
+    "company": "Sony Group Corp ADR",
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "price": 23.46,
+    "sma200": 3.98,
+    "_52w_high": -22.68,
+    "_50d_low": 13.99,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 3870930.75,
+    "index": []
+  },
+  {
+    "ticker": "NOG",
+    "company": "Northern Oil and Gas Inc",
+    "sector": "Energy",
+    "industry": "Oil & Gas E&P",
+    "price": 25.05,
+    "sma200": 4,
+    "_52w_high": -19.63,
+    "_50d_low": 36.1,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 2131196.95,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "ALKT",
+    "company": "Alkami Technology Inc",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "price": 19.13,
+    "sma200": 4,
+    "_52w_high": -28.86,
+    "_50d_low": 18.89,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1508597.1,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "MKTX",
+    "company": "MarketAxess Holdings Inc",
+    "sector": "Financial",
+    "industry": "Capital Markets",
+    "price": 163.42,
+    "sma200": 4.07,
+    "_52w_high": -16.61,
+    "_50d_low": 46.04,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 912484.45,
+    "index": []
+  },
+  {
+    "ticker": "QTWO",
+    "company": "Q2 Holdings Inc",
+    "sector": "Technology",
+    "industry": "Software - Application",
+    "price": 58.73,
+    "sma200": 4.21,
+    "_52w_high": -30.91,
+    "_50d_low": 17.84,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 629562.75,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "SRPT",
+    "company": "Sarepta Therapeutics Inc",
+    "sector": "Healthcare",
+    "industry": "Biotechnology",
+    "price": 20.11,
+    "sma200": 4.36,
+    "_52w_high": -20.58,
+    "_50d_low": 36.34,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 3243584.15,
+    "index": [
+      "RUT"
+    ]
+  },
+  {
+    "ticker": "VNO",
+    "company": "Vornado Realty Trust",
+    "sector": "Real Estate",
+    "industry": "REIT - Office",
+    "price": 34.9,
+    "sma200": 4.5,
+    "_52w_high": -17.42,
+    "_50d_low": 2.32,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 1233356.95,
+    "index": []
+  },
+  {
+    "ticker": "ARQQ",
+    "company": "Arqit Quantum Inc",
+    "sector": "Technology",
+    "industry": "Software - Infrastructure",
+    "price": 20.13,
+    "sma200": 4.79,
+    "_52w_high": -67.53,
+    "_50d_low": 30.54,
+    "finviz_index": "-",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 375854.1,
+    "index": []
+  },
+  {
+    "ticker": "VCEL",
+    "company": "Vericel Corp",
+    "sector": "Healthcare",
+    "industry": "Biotechnology",
+    "price": 40.02,
+    "sma200": 4.92,
+    "_52w_high": -18.86,
+    "_50d_low": 7.15,
+    "finviz_index": "RUT",
+    "anl_datum": "2026-09-18T22:31:12.537Z",
+    "vma_20": 526682.25,
+    "index": [
+      "RUT"
+    ]
+  }
+]
